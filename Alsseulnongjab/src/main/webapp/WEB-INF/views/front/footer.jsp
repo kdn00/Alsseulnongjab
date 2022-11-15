@@ -10,8 +10,8 @@
 </head>
 <body>
    <footer class = "footer_main">
-        <div class="footer__logo">
-            <img src = "/Alsseulnongjab/src/main/webapp/resources/img/logo.png">
+        <div class="footer_logo">
+            <img src = "/webapp/resources/img/logo.png">
             <img src = "/Alsseulnongjab/src/main/webapp/resources/img/mail.png" width="30px" style="opacity: 0.5;">
         </div>
 </body>

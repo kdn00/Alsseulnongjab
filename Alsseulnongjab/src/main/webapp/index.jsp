@@ -9,13 +9,11 @@
 <link rel="stylesheet" href="/Alsseulnongjab/src/main/webapp/resources/css/header.css">
 </head>
 <body>
-	<header id="header"></header>
+
+<%@ include file="/WEB-INF/views/front/header.jsp" %>
 
 
-
-
-
-	<footer id="footer"></footer>
+<%@ include file="/WEB-INF/views/front/footer.jsp" %>
 	<script src="/js/main.js"></script>
 </body>
 </html>
