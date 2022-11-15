@@ -4,18 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="../css/main.css">
-<link rel="stylesheet" href="../css/header.css">
+<title>Header</title>
+<link rel="stylesheet" href="/Alsseulnongjab/src/main/webapp/resources/css/main.css">
+<link rel="stylesheet" href="/Alsseulnongjab/src/main/webapp/resources/css/header.css">
 </head>
 <body>
 	<header class="header__main">
 		<div class="header__logo">
-			<img src="../img/logo/logo.png">
+			<img src="/Alsseulnongjab/src/main/webapp/resources/img/logo.png">
 		</div>
 		<div class="header__serach">
-			<input type="text" placeholder="검색어를 입력해주세요"> <img
-				src="../img/search/search.png" width="25px" height="25px">
+			<input type="text" placeholder="검색어를 입력해주세요"> <img src="/Alsseulnongjab/src/main/webapp/resources/img/search.png" width="25px" height="25px">
 		</div>
 		<ul class="header__login">
 			<li><a href="#">회원가입</a></li>

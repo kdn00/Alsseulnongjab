@@ -4,16 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="../css/footer.css">
+<title>footer</title>
+<link rel="stylesheet" href="/Alsseulnongjab/src/main/webapp/resources/css/main.css">
+<link rel="stylesheet" href="/Alsseulnongjab/src/main/webapp/resources/css/header.css">
 </head>
 <body>
    <footer class = "footer_main">
         <div class="footer__logo">
-            <img src = "../img/logo/logo.png">
-            <img src = "../img/mail/mail.png" width="30px" style="opacity: 0.5;">
+            <img src = "/Alsseulnongjab/src/main/webapp/resources/img/logo.png">
+            <img src = "/Alsseulnongjab/src/main/webapp/resources/img/mail.png" width="30px" style="opacity: 0.5;">
         </div>
 </body>
 </html>

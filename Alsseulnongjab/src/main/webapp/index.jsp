@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../css/main.css">
-<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="/Alsseulnongjab/src/main/webapp/resources/css/main.css">
+<link rel="stylesheet" href="/Alsseulnongjab/src/main/webapp/resources/css/header.css">
 </head>
 <body>
 	<header id="header"></header>
