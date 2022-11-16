@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.footer_main {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 182px;
+    border-top: 1px solid black;
+}
