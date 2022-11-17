@@ -27,7 +27,7 @@
 		</div>
 		<ul class="header__login">
 			<li><a href="#">회원가입</a></li>
-			<li><a href="#">로그인</a></li>
+			<li><a href="Logingo.do">로그인</a></li>
 		</ul>
 	</header>
 	<nav class="nav__main">
