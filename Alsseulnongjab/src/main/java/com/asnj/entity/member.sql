@@ -10,5 +10,5 @@ CREATE TABLE tb_member (
 
 select * from tb_member;
 
-INSERT INTO tb_member(mem_user_id, mem_user_pw, mem_user_name, mem_user_email, mem_user_job)
-VALUES ('admin', '1234', '관리자', 'admin@mail.com', '관리자');
+--INSERT INTO tb_member(mem_user_id, mem_user_pw, mem_user_name, mem_user_email, mem_user_job)
+--VALUES ('admin', '1234', '관리자', 'admin@mail.com', '관리자');
