@@ -129,9 +129,9 @@
 		<dependency>
           <groupId>mysql</groupId>
           <artifactId>mysql-connector-java</artifactId>
-          <version>5.1.38</version>
+          <version>8.0.15</version>
       </dependency>
-      <!-- 오라클 라이브러리 넣었는데 안 될 경우ㅇ에는 ojdbc6.jar 파일을 WEB-INF/lib에 넣어준다.  -->
+      <!-- 오라클 라이브러리 넣었는데 안 될 경우에는 ojdbc6.jar 파일을 WEB-INF/lib에 넣어준다.  -->
       
       <!-- myBatis 라이브러리 -->
       <dependency>
@@ -159,7 +159,39 @@
 	      <groupId>com.fasterxml.jackson.core</groupId>
 	      <artifactId>jackson-databind</artifactId>
 	      <version>2.10.1</version>
-      </dependency> 
+      </dependency>
+      
+    <!-- 아직 사용 x, 시간 되면 활용하는 방식으로 진행 -->
+	<!--     시큐리티 관련 태그 라이브러리
+		https://mvnrepository.com/artifact/org.springframework.security/spring-security-web
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-web</artifactId>
+		    <version>5.0.6.RELEASE</version>
+		</dependency>
+		
+		https://mvnrepository.com/artifact/org.springframework.security/spring-security-config
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-config</artifactId>
+		    <version>5.0.6.RELEASE</version>
+		</dependency> 
+		
+		https://mvnrepository.com/artifact/org.springframework.security/spring-security-core
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-core</artifactId>
+		    <version>5.0.6.RELEASE</version>
+		</dependency>
+		   
+	    https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-taglibs</artifactId>
+		    <version>5.0.6.RELEASE</version>
+		</dependency> -->
+
+
 	</dependencies>	
     <build>
         <plugins>
