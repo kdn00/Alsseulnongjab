@@ -8,7 +8,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>공지사항</title>
+<title>사이트 소개</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="" name="keywords">
 <meta content="" name="description">
@@ -68,7 +68,6 @@
 	</div>
 	<!-- Full Screen Search End -->
 
-	<!-- 여기부터 content 시작 -->
 	<div>
 		<jsp:include page="top.jsp" />
 	</div>
@@ -90,7 +89,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<div class="navbar-nav ms-auto py-0">
-						<a href="introduce.jsp" class="nav-item nav-link">사이트 소개</a>
+						<a href="introduce.jsp" class="nav-item nav-link active">사이트 소개</a>
 						<a class="nav-item nav-link">병해충 예측</a>  
 						<div class="nav-item dropdown">
 							<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
@@ -99,7 +98,7 @@
 								<a href="testimonial.html" class="dropdown-item">해충</a> 
 							</div>
 						</div>
-						<a href="notice.jsp" class="nav-item nav-link active">공지사항</a> 
+						<a href="notice.jsp" class="nav-item nav-link">공지사항</a> 
 						<a href="#"	class="nav-item nav-link">문의사항</a>
 						<a href="#"	class="nav-item nav-link">농업일지</a>
 					</div>
@@ -109,92 +108,79 @@
 	</div>
 	<!-- 카테고리 끝 -->
 
-<!-- 내용 시작 -->
-<div class="container-xxl bg-white p-0" style="display: flex; justify-content: center; align-items: center;">
+	<!-- 내용 시작 -->
+	
+	<!-- 사이트 타이틀 시작 -->
+	<div class="container-xxl bg-white p-0"	style="display: flex; justify-content: center; align-items: center;">
+		<div class="container-fluid pt-4 px-4">
+			<div class="mx-auto" style="width: 200px;">
+				<div id="underline">
+					<h3>사이트 소개</h3>
+				</div>
+				<br>
+			</div>
+		</div>
+	</div>
+	<!-- 사이트 타이틀 끝 -->
+
 	<div class="container-fluid pt-4 px-4">
-		 <div class="mx-auto" style="width: 200px;"> 
-		<div id="underline">
-			<h3>공지사항</h3>
+		<div class="mx-auto" style="width: 500px;">
+			<span>저희 알쓸농잡에서는 다양한 병해충 관련 정보를 제공합니다.</span>
+		</div>
+</div>
+<br>
+<br>
+	<!-- 여기서부터  -->
+		<div class="container-xxl p-0"
+			style="display: flex; justify-content: center; align-items: center;">
+			<div class="row">
+				<div class="col">
+					<i class="bi bi-building fa-5x" style="margin-right:100px;"></i>
+					<span id="site_st"></span> 
+				<br> <span>알쓸농잡</span>
+				</div>
+			
+				<div class="col" >
+				<i class="bi bi-hourglass fa-5x" style="margin-right:80px;"></i>
+					<span id="site_st"></span> 
+				<br><span id="site_font1">최종프로젝트 일자</span> <br> <span id="site_font1">2022년 12월 13일</span>
+				</div>
+			
+				<div class="col" >
+				<i class="bi bi-people-fill fa-5x" style="margin-right:80px;"></i>
+					<span id="site_st"></span> 
+				<br><span id="site_font1">팀장: 송영지</span> <br> <span id="site_font1">팀원:김도연,김동현,박승현</span>
+				</div>
+			
+				<div class="col">
+					<i class="bi bi-map fa-5x"></i>
+					<br> <span style="margin-left:20px;">소재지</span> <br><span id="site_font1">전라남도 순천시 석현동 87 5층,</span>
+					<br> <span id="site_font1">스마트인재개발원 순천점</span>
+				</div>
+				
+			</div>	
 		</div>
 		<br>
-	</div>
-	</div>
-	</div>
-<br>
-<!-- 공지사항 테이블 시작 -->
-	<div class="container-fluid pt-4 px-4">
-		<div class="container col-6 text-center">
-			<table
-				class="table table-bordered table-light table-hover border-success">
-				<thead>
-					<tr>
-						<th>순번</th>
-						<th>내용</th>
-						<th>첨부파일</th>
-						<th>작성자</th>
-						<th>작성 일자</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td>##########</td>
-						<td><i class="bi bi-paperclip"></i></td>
-						<td>홍길동</td>
-						<td>2022-11-18</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>##########</td>
-						<td><i class="bi bi-paperclip"></i></td>
-						<td>홍길동2</td>
-						<td>2022-11-18</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>##########</td>
-						<td><i class="bi bi-paperclip"></i></td>
-						<td>홍길동3</td>
-						<td>2022-11-18</td>
-					</tr>
-					<tr>
-						<td>4</td>
-						<td>##########</td>
-						<td><i class="bi bi-paperclip"></i></td>
-						<td>홍길동4</td>
-						<td>2022-11-18</td>
-					</tr>
-				</tbody>
-			</table>
+		<br>
+		<!-- 여기까지 -->
+		
+		<div class="container-xxl bg-white p-0"	style="display: flex; justify-content: center; align-items: center;">
+		<div class="container-fluid pt-3 px-4">
+			<div class="mx-auto" style="width: 200px;">
+					<h4>프로젝트 소개</h4>
+			</div>
 		</div>
 	</div>
-<!-- 공지사항 테이블 끝 -->
 
-<!-- 페이징 번호 시작 -->
 	<div class="container-fluid pt-4 px-4">
-		<ul class="pagination justify-content-center" id="pagination">
-			<li class="page-item">
-				<a class="page-link" href="#" aria-label="Previous">
-					<span aria-hidden="true">&laquo;</span>
-				</a>
-			</li>
-			<li class="page-item">
-				<a class="page-link" href="#">1</a>
-			</li>
-			<li class="page-item">
-				<a class="page-link" href="#">2</a>
-			</li>
-			<li class="page-item">
-				<a class="page-link" href="#">3</a>
-			</li>
-			<li class="page-item">
-				<a class="page-link" href="#" aria-label="Next">
-					<span aria-hidden="true">&raquo;</span>
-				</a>
-			</li>
-		</ul>
+		<div class="mx-auto" style="width: 500px;">
+			<span>프로젝트 소개내용 적기!!!!</span>
+		</div>
 	</div>
-	<!-- 페이징 번호 끝 -->
+
+	<!-- 내용 끝 -->
+
+
 
 	<!-- 푸터 시작 -->
 	<div>

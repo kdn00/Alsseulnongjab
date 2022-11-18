@@ -83,10 +83,10 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<div class="navbar-nav ms-auto py-0">
-						<a href="#" class="nav-item nav-link">사이트 소개</a> <a href="#"
-							class="nav-item nav-link">병해충 예측</a>  
+						<a href="introduce.jsp" class="nav-item nav-link">사이트 소개</a>
+						<a href="#"	class="nav-item nav-link">병해충 예측</a>  
 						<div class="nav-item dropdown">
-							<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
+							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
 							<div class="dropdown-menu m-0">
 								<a href="team.html" class="dropdown-item">병(病)</a> 
 								<a href="testimonial.html" class="dropdown-item">해충</a> 
