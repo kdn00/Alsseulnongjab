@@ -399,3 +399,16 @@ h6,
     padding-right: 0;
     border-right: none;
 }
+
+#underline {
+	/* text-decoration: underline;
+	text-underline-position: under;
+	text-decoration-color: #7ebc12; */
+	border-left: 3px solid;
+ 	padding-left: 10px;
+ 	color : #7ebc12;
+}
+
+#pagination{
+	margin:50px 0;
+}

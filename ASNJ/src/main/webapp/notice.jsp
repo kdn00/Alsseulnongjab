@@ -8,7 +8,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>GreenHost - Web Hosting HTML Template</title>
+<title>공지사항</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="" name="keywords">
 <meta content="" name="description">
@@ -19,13 +19,16 @@
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
+<link
+	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
 	rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
 	rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
 	rel="stylesheet">
 
 <!-- Libraries Stylesheet -->
@@ -65,7 +68,11 @@
 	</div>
 	<!-- Full Screen Search End -->
 
-
+	<!-- 여기부터 content 시작 -->
+	<div>
+		<jsp:include page="top.jsp" />
+	</div>
+	
 	<!-- 카테고리 시작 -->
 	<div class="container-xxl py-5 bg-primary hero-header mb-0" style="padding-top: 2rem !important;
     padding-bottom: 2rem !important;">
@@ -102,59 +109,95 @@
 	</div>
 	<!-- 카테고리 끝 -->
 
-	<!-- 이미지 슬라이스 시작 -->
-	<div id="demo" class="carousel slide container-xxl position-relative p-0" data-bs-ride="carousel">
-
-		<!-- Indicators/dots -->
-		<div class="carousel-indicators">
-			<button type="button" data-bs-target="#demo" data-bs-slide-to="0"
-				class="active"></button>
-			<button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-			<button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+<!-- 내용 시작 -->
+	<div class="container-fluid pt-4 px-4">
+	<div class="mx-auto" style="width: 200px;">
+		<div id="underline">
+			<h3>공지사항</h3>
 		</div>
-
-		<!-- The slideshow/carousel -->
-		<div class="carousel-inner" style="height: 500px;">
-			<div class="carousel-item active">
-				<img src="resources/image/farm1.jpg" alt="Los Angeles" class="d-block"
-					style="width: 100%">
-				<div class="carousel-caption">
-					<h3>#</h3>
-					<p>#</p>
-				</div>
-			</div>
-			<div class="carousel-item">
-				<img src="resources/image/farm2.jpg" alt="Chicago" class="d-block"
-					style="width: 100%">
-				<div class="carousel-caption">
-					<h3>#</h3>
-					<p>#</p>
-				</div>
-			</div>
-			<div class="carousel-item">
-				<img src="resources/image/farm3.jpg" alt="New York" class="d-block" style="width: 100%">
-				<div class="carousel-caption">
-					<h3>#</h3>
-					<p>#</p>
-				</div>
-			</div>
+	</div>
+	</div>
+<br>
+<!-- 공지사항 테이블 시작 -->
+	<div class="container-fluid pt-4 px-4">
+		<div class="container col-6 text-center">
+			<table
+				class="table table-bordered table-light table-hover border-success">
+				<thead>
+					<tr>
+						<th>순번</th>
+						<th>내용</th>
+						<th>첨부파일</th>
+						<th>작성자</th>
+						<th>작성 일자</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>##########</td>
+						<td><i class="bi bi-paperclip"></i></td>
+						<td>홍길동</td>
+						<td>2022-11-18</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>##########</td>
+						<td><i class="bi bi-paperclip"></i></td>
+						<td>홍길동2</td>
+						<td>2022-11-18</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>##########</td>
+						<td><i class="bi bi-paperclip"></i></td>
+						<td>홍길동3</td>
+						<td>2022-11-18</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>##########</td>
+						<td><i class="bi bi-paperclip"></i></td>
+						<td>홍길동4</td>
+						<td>2022-11-18</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
+	</div>
+<!-- 공지사항 테이블 끝 -->
 
-		<!-- Left and right controls/icons -->
-		<button class="carousel-control-prev" type="button"
-			data-bs-target="#demo" data-bs-slide="prev">
-			<span class="carousel-control-prev-icon"></span>
-		</button>
-		<button class="carousel-control-next" type="button"
-			data-bs-target="#demo" data-bs-slide="next">
-			<span class="carousel-control-next-icon"></span>
-		</button>
-	</div>	
-	<!-- 이미지 슬라이스 끝 -->
-	
-<!-- 여기서부터 시작  -->
+<!-- 페이징 번호 시작 -->
+	<div class="container-fluid pt-4 px-4">
+		<ul class="pagination justify-content-center" id="pagination">
+			<li class="page-item">
+				<a class="page-link" href="#" aria-label="Previous">
+					<span aria-hidden="true">&laquo;</span>
+				</a>
+			</li>
+			<li class="page-item">
+				<a class="page-link" href="#">1</a>
+			</li>
+			<li class="page-item">
+				<a class="page-link" href="#">2</a>
+			</li>
+			<li class="page-item">
+				<a class="page-link" href="#">3</a>
+			</li>
+			<li class="page-item">
+				<a class="page-link" href="#" aria-label="Next">
+					<span aria-hidden="true">&raquo;</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- 페이징 번호 끝 -->
 
-코딩하면 됩니다./
-	
+	<!-- 푸터 시작 -->
+	<div>
+		<jsp:include page="bottom.jsp" />
+	</div>
+<!-- 푸터 끝 -->
+
 </body>
 </html>
