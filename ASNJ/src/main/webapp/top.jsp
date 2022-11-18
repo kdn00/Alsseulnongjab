@@ -32,97 +32,164 @@
 	rel="stylesheet">
 
 <!-- Libraries Stylesheet -->
-<link href="lib/animate/animate.min.css" rel="stylesheet">
-<link href="lib/owlcarousel/assets/owl.carousel.min.css"
+<link href="resources/lib/animate/animate.min.css" rel="stylesheet">
+<link href="resources/lib/owlcarousel/assets/owl.carousel.min.css"
 	rel="stylesheet">
 
 <!-- Customized Bootstrap Stylesheet -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="resources/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Template Stylesheet -->
-<link href="css/style.css" rel="stylesheet">
+<link href="resources/css/style.css" rel="stylesheet">
+
+<style type="text/css">
+.header__login {
+	display: flex !important;
+	flex-basis: auto;
+	justify-content: flex-end;
+	flex-direction: row;
+}
+
+input:focus::-webkit-input-placeholder {
+	color:transparent;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+</style>
+
 </head>
+<!-- 자동완성 스크립 -->
+<!-- <script>	
+	$(function () {	//화면 로딩후 시작
+		$("#searchInput").autocomplete({  //오토 컴플릿트 시작
+			source: #,	// source는 data.js파일 내부의 List 배열
+			focus : function(event, ui) { // 방향키로 자동완성단어 선택 가능하게 만들어줌	
+				return false;
+			},
+			minLength: 1,// 최소 글자수
+			delay: 100,	//autocomplete 딜레이 시간(ms)
+			//disabled: true, //자동완성 기능 끄기
+		});
+	});
+</script> -->
 
 <body>
-	<header>
-		<div class="container-xxl position-relative p-0 w-100 my-3 wow fadeInUp">
-			<div class="ms-auto py-0">
-				<a href="" class="navbar-brand p-0">
-					<h1 class="mb-3">
-						<i class="fa me-3"></i><img src="resources/img/logo/logo.png">&nbsp;&nbsp;<span>알쓸농잡</span>
-					</h1>
-				</a> </div>
-				<div class="ms-auto py-0">
-					<input type="text" class="form-control bg-transparent w-100 py-3 ps-4 pe-5"	placeholder="검색어를 입력해주세요">
-					<img src="resources/img/search/search.png" width="25px" height="25px">
-				</div>
-				<div class="ms-auto py-0">
-				<ul class="header__login">
-					<li><a href="#">회원가입</a></li>
-					<li><a href="#">로그인</a></li>
-				</ul></div>
+	<div class="container-xxl bg-white p-0 " style="display: flex; justify-content: space-between; align-items: center;">
+		<div class="header__logo col-lg-4 pe-lg-5"
+			style="float: left; padding-left: 1rem !important;">
+			<a href="index.jsp"><img src="resources/img/logo/logo.png"></a>
+		</div>
+		<div class="position-relative w-100 my-3 wow fadeInUp"
+			data-wow-delay="0.3s" style="margin-right: 16px;">
+			<input id="searchInput" class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
+				type="text" placeholder="검색어를 입력하세요.">
+			<button type="button"
+				class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">검색</button>
+		</div>
+		<div class="col-lg-4 pe-lg-5" style="display: inline-block; min-width: max-content;">
+			<div class="header__login" style="margin-right: 10px;">
+				<a href="#">회원가입</a> <a href="#" style="margin-left: 30px;">로그인</a>
 			</div>
 		</div>
-	</header>
+	</div>
+	<!-- Spinner Start -->
+	<!--  <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div> -->
+	<!-- Spinner End -->
+
 
 	<!-- Navbar & Hero Start -->
-	<div class="container-xxl position-relative p-0">
-		<nav
-			class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-				<span class="fa fa-bars"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarCollapse">
-				<div class="navbar-nav ms-auto py-0">
-					<a href="index.jsp" class="nav-item nav-link active">Home</a> <a
-						href="about.html" class="nav-item nav-link">About</a> <a
-						href="domain.html" class="nav-item nav-link">Domain</a> <a
-						href="hosting.html" class="nav-item nav-link">Hosting</a>
-					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown">Pages</a>
-						<div class="dropdown-menu m-0">
-							<a href="team.html" class="dropdown-item">Our Team</a> <a
-								href="testimonial.html" class="dropdown-item">Testimonial</a> <a
-								href="comparison.html" class="dropdown-item">Comparison</a>
+	<div class="container-xxl py-5 bg-primary hero-header mb-0" style="padding-top: 2rem !important;
+    padding-bottom: 2rem !important;">
+		<div class="container-xxl position-relative p-0">
+			<nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0" style="bottom: 0px;">
+				<a href="" class="navbar-brand p-0">
+					<h1 class="m-0">
+						<i class="fa me-3"></i>
+						<!-- 알쓸농잡 -->
+					</h1> <!-- <img src="img/logo.png" alt="Logo"> -->
+				</a>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+					<span class="fa fa-bars"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<div class="navbar-nav ms-auto py-0">
+						<a href="#" class="nav-item nav-link">사이트 소개</a> <a href="#"
+							class="nav-item nav-link">병해충 예측</a>  
+						<div class="nav-item dropdown">
+							<a href="#" class="nav-link dropdown-toggle"
+								data-bs-toggle="dropdown">병해충 정보</a>
+							<div class="dropdown-menu m-0">
+								<a href="team.html" class="dropdown-item">#</a> 
+								<a href="testimonial.html" class="dropdown-item">#</a> 
+								<a href="comparison.html" class="dropdown-item">#</a>
+							</div>
 						</div>
-					</div>
-					<a href="contact.html" class="nav-item nav-link">Contact</a>
-				</div>
-
-				<a href="" class="btn btn-secondary py-2 px-4 ms-3">Register</a>
-			</div>
-		</nav>
-
-		<div class="container-xxl py-5 bg-primary hero-header mb-5">
-			<div class="container my-5 py-5 px-lg-5">
-				<div class="row g-5">
-					<div class="col-lg-6 pt-5 text-center text-lg-start">
-						<h1 class="display-4 text-white mb-4 animated slideInLeft">Shared
-							Hosting</h1>
-						<p class="text-white animated slideInLeft">Tempor rebum no at
-							dolore lorem clita rebum rebum ipsum rebum stet dolor sed justo
-							kasd.</p>
-						<h1 class="text-white mb-4 animated slideInLeft">
-							<small class="align-top fw-normal"
-								style="font-size: 15px; line-height: 25px;">Starting:</small> <span>$2.49</span>
-							<small class="align-bottom fw-normal"
-								style="font-size: 15px; line-height: 33px;">/ Mo</small>
-						</h1>
-						<a href=""
-							class="btn btn-secondary py-sm-3 px-sm-5 me-3 animated slideInLeft">Get
-							Started Now</a>
-					</div>
-					<div class="col-lg-6 text-center text-lg-start">
-						<img class="img-fluid animated zoomIn" src="img/hero.png" alt="">
+						<a href="#"	class="nav-item nav-link">공지사항</a> 
+						<a href="#"	class="nav-item nav-link">문의사항</a>
+						<a href="#"	class="nav-item nav-link">농업일지</a>
 					</div>
 				</div>
-			</div>
+			</nav>
 		</div>
 	</div>
 	<!-- Navbar & Hero End -->
 
+
+	<!-- Carousel -->
+	<div id="demo" class="carousel slide container-xxl position-relative p-0" data-bs-ride="carousel">
+
+		<!-- Indicators/dots -->
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#demo" data-bs-slide-to="0"
+				class="active"></button>
+			<button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+			<button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+		</div>
+
+		<!-- The slideshow/carousel -->
+		<div class="carousel-inner" style="height: 500px;">
+			<div class="carousel-item active">
+				<img src="resources/image/farm1.jpg" alt="Los Angeles" class="d-block"
+					style="width: 100%">
+				<div class="carousel-caption">
+					<h3>#</h3>
+					<p>#</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="resources/image/farm2.jpg" alt="Chicago" class="d-block"
+					style="width: 100%">
+				<div class="carousel-caption">
+					<h3>#</h3>
+					<p>#</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="resources/image/farm3.jpg" alt="New York" class="d-block" style="width: 100%">
+				<div class="carousel-caption">
+					<h3>#</h3>
+					<p>#</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Left and right controls/icons -->
+		<button class="carousel-control-prev" type="button"
+			data-bs-target="#demo" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon"></span>
+		</button>
+		<button class="carousel-control-next" type="button"
+			data-bs-target="#demo" data-bs-slide="next">
+			<span class="carousel-control-next-icon"></span>
+		</button>
+	</div>	
 </body>
 </html>
