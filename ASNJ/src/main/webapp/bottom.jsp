@@ -46,12 +46,11 @@
 <body>
 
 	<!-- Footer Start -->
-	<div
-		class="container-fluid bg-primary text-white footer mt-5 pt-5 wow fadeIn"
+	<div class="container-fluid bg-primary text-white footer mt-5 wow fadeIn"
 		data-wow-delay="0.1s">
 		<div class="container py-5 px-lg-5">
-			<div class="row gy-5 gx-4 pt-5">
-				<div class="col-12">
+			<div class="row gy-5 gx-4">
+				<!-- <div class="col-12">
 					<h5 class="fw-bold text-white mb-4">Subscribe Our Newsletter</h5>
 					<div class="position-relative" style="max-width: 400px;">
 						<input class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5"
@@ -59,46 +58,46 @@
 						<button type="button"
 							class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Submit</button>
 					</div>
+				</div> -->
+				<div class="col-lg-3 col-md-2">
+					<h1 class="text-white mb-4" style="font-style: italic;">알쓸</h1>				
+					<h1 class="text-white mb-4" style="font-style: italic;">농잡</h1>					
 				</div>
-				<div>
-					<img src="resources/img/logo/logo.png" alt="404">
-				</div>
-				<div class="col-lg-5 col-md-12">
+				<div class="col-lg-4 col-md-3">
 					<div class="row gy-5 g-4">
-						<div class="col-md-6">
+						<div class="col-md-8">
 							<h5 class="fw-bold text-white mb-4">About Us</h5>
-							<a class="btn btn-link" href="">사이트소개</a> 
-							<a class="btn btn-link"	href="">공지사항</a> 
-							<a class="btn btn-link" href="">연락처</a>
-							<a class="btn btn-link" href="">광고문의</a>
+							<a class="btn btn-link" href="">사이트소개</a> <a class="btn btn-link"
+								href="">공지사항</a> <a class="btn btn-link" href="">연락처</a> <a
+								class="btn btn-link" href="">광고문의</a>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 col-lg-3">
-					<h5 class="fw-bold text-white mb-4">Get In Touch</h5>
-					<p class="mb-2">
-						<i class="fa fa-map-marker-alt me-3"></i>소재지 : 전라남도 순천시 석현동 87 5층,
-						스마트인재개발원 순천점
-					</p>
-					<p class="mb-2">
-						<i class="fa fa-phone-alt me-3"></i>TEL: 061-754-3501
-					</p>
-					<p class="mb-2">
-						<i class="fa fa-envelope me-3"></i>팀원(팀장)송영지(팀원)김도연,김동현,박선우,박승현
-					</p>
-					<div class="d-flex pt-2">
-						<a class="btn btn-outline-light btn-social" href=""> <i
-							class="fab fa-twitter"></i>
-						</a> <a class="btn btn-outline-light btn-social" href=""> <i
-							class="fab fa-facebook-f"></i>
-						</a> <a class="btn btn-outline-light btn-social" href=""> <i
-							class="fab fa-youtube"></i>
-						</a> <a class="btn btn-outline-light btn-social" href=""> <i
-							class="fab fa-linkedin-in"></i>
-						</a>
+				<div class="col-lg-5 col-md-5">					
+						<h5 class="fw-bold text-white mb-4">Get In Touch</h5>
+						<p class="mb-2">
+							<i class="fa fa-map-marker-alt me-3"></i>소재지 : 전라남도 순천시 석현동 87
+							5층, 스마트인재개발원 순천점
+						</p>
+						<p class="mb-2">
+							<i class="fa fa-phone-alt me-3"></i>TEL&nbsp;: 061-754-3501
+						</p>
+						<p class="mb-2">
+							<i class="fa fa-envelope me-3"></i>팀원 : &nbsp;(팀장)송영지,&nbsp;(팀원)김도연,&nbsp;김동현,&nbsp;박승현
+						</p>
+						<div class="d-flex pt-2">
+							<a class="btn btn-outline-light btn-social" href=""> <i
+								class="fab fa-twitter"></i>
+							</a> <a class="btn btn-outline-light btn-social" href=""> <i
+								class="fab fa-facebook-f"></i>
+							</a> <a class="btn btn-outline-light btn-social" href=""> <i
+								class="fab fa-youtube"></i>
+							</a> <a class="btn btn-outline-light btn-social" href=""> <i
+								class="fab fa-linkedin-in"></i>
+							</a>
+						</div>
 					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 mt-lg-n5">
+					<!-- <div class="col-md-6 col-lg-4 mt-lg-n5">
 					<div class="bg-light rounded" style="padding: 30px;">
 						<input type="text" class="form-control border-0 py-2 mb-2"
 							placeholder="Name"> <input type="email"
@@ -107,36 +106,35 @@
 							placeholder="Message"></textarea>
 						<button class="btn btn-primary w-100 py-2">Send Message</button>
 					</div>
+				</div> -->
 				</div>
 			</div>
-		</div>
-		<div class="container px-lg-5">
-			<div class="copyright">
-				<div class="row">
-					<div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-						&copy; <a class="border-bottom" href="#">Your Site Name</a>, All
-						Right Reserved.
+			<div class="container px-lg-5">
+				<div class="copyright">
+					<div class="row">
+						<div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+							&copy; <a class="border-bottom" href="#">Alsseulnongjob</a>, All
+							Right Reserved.
 
-						<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-						Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML
-							Codex</a> </br> Distributed By <a class="border-bottom"
-							href="https://themewagon.com" target="_blank">ThemeWagon</a>
-					</div>
-					<div class="col-md-6 text-center text-md-end">
-						<div class="footer-menu">
-							<a href="">Home</a> <a href="">Cookies</a> <a href="">Help</a> <a
-								href="">FQAs</a>
+							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML
+								Codex</a> </br> Distributed By <a class="border-bottom"
+								href="https://themewagon.com" target="_blank">ThemeWagon</a>
+						</div>
+						<div class="col-md-6 text-center text-md-end">
+							<div class="footer-menu">
+								<a href="#">회사소개</a> <a href="#">서비스 가이드</a> <a href="#">개인정보보호정책</a> <a
+									href="#">이용약관</a>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- Footer End -->
+		<!-- Footer End -->
 
-	<!-- Back to Top -->
-	<a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i
-		class="bi bi-arrow-up"></i></a>
-
+		<!-- Back to Top -->
+		<a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i
+			class="bi bi-arrow-up"></i></a>
 </body>
 </html>
