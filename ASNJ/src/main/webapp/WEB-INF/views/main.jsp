@@ -19,13 +19,16 @@
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
+<link
+	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
 	rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
 	rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
 	rel="stylesheet">
 
 <!-- Libraries Stylesheet -->
@@ -41,6 +44,10 @@
 </head>
 
 <body>
+	<!-- header -->
+	<jsp:include page="top.jsp" />
+	<!-- header -->
+	
 	<!-- Full Screen Search Start -->
 	<div class="modal fade" id="searchModal" tabindex="-1">
 		<div class="modal-dialog modal-fullscreen">
@@ -67,15 +74,16 @@
 
 
 	<!-- 카테고리 시작 -->
-	<div class="container-xxl py-5 bg-primary hero-header mb-0" style="padding-top: 2rem !important;
-    padding-bottom: 2rem !important;">
+	<div class="container-xxl py-5 bg-primary hero-header mb-0"
+		style="padding-top: 2rem !important; padding-bottom: 2rem !important;">
 		<div class="container-xxl position-relative p-0">
-			<nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0" style="bottom: 0px;">
+			<nav
+				class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
+				style="bottom: 0px;">
 				<a href="" class="navbar-brand p-0">
-					<h1 class="m-0">
-						<i class="fa me-3"></i>
-						<!-- 알쓸농잡 -->
-					</h1> <!-- <img src="img/logo.png" alt="Logo"> -->
+					<h4 class="m-0 text-white" style="font-style: italic;">
+						<i class="fa me-3"></i> 알쓸농잡
+					</h4> <!-- <img src="img/logo.png" alt="Logo"> -->
 				</a>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -83,18 +91,19 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<div class="navbar-nav ms-auto py-0">
-						<a href="introduce.jsp" class="nav-item nav-link">사이트 소개</a>
-						<a href="#"	class="nav-item nav-link">병해충 예측</a>  
+						<a href="${cpath}/introduce.do" class="nav-item nav-link">사이트 소개</a> <a
+							href="#" class="nav-item nav-link">병해충 예측</a>
 						<div class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
+							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충
+								정보</a>
 							<div class="dropdown-menu m-0">
-								<a href="team.html" class="dropdown-item">병(病)</a> 
-								<a href="testimonial.html" class="dropdown-item">해충</a> 
+								<a href="#" class="dropdown-item">병(病)</a> <a href="#"
+									class="dropdown-item">해충</a>
 							</div>
 						</div>
-						<a href="notice.jsp" class="nav-item nav-link">공지사항</a> 
-						<a href="#"	class="nav-item nav-link">문의사항</a>
-						<a href="#"	class="nav-item nav-link">농업일지</a>
+						<a href="${cpath}/notice.do" class="nav-item nav-link">공지사항</a> <a
+							href="#" class="nav-item nav-link">문의사항</a> <a href="#"
+							class="nav-item nav-link">농업일지</a>
 					</div>
 				</div>
 			</nav>
@@ -103,7 +112,9 @@
 	<!-- 카테고리 끝 -->
 
 	<!-- 이미지 슬라이스 시작 -->
-	<div id="demo" class="carousel slide container-xxl position-relative p-0" data-bs-ride="carousel">
+	<div id="demo"
+		class="carousel slide container-xxl position-relative p-0"
+		data-bs-ride="carousel">
 
 		<!-- Indicators/dots -->
 		<div class="carousel-indicators">
@@ -116,8 +127,8 @@
 		<!-- The slideshow/carousel -->
 		<div class="carousel-inner" style="height: 500px;">
 			<div class="carousel-item active">
-				<img src="resources/image/farm1.jpg" alt="Los Angeles" class="d-block"
-					style="width: 100%">
+				<img src="resources/image/farm1.jpg" alt="Los Angeles"
+					class="d-block" style="width: 100%">
 				<div class="carousel-caption">
 					<h3>#</h3>
 					<p>#</p>
@@ -132,7 +143,8 @@
 				</div>
 			</div>
 			<div class="carousel-item">
-				<img src="resources/image/farm3.jpg" alt="New York" class="d-block" style="width: 100%">
+				<img src="resources/image/farm3.jpg" alt="New York" class="d-block"
+					style="width: 100%">
 				<div class="carousel-caption">
 					<h3>#</h3>
 					<p>#</p>
@@ -149,12 +161,29 @@
 			data-bs-target="#demo" data-bs-slide="next">
 			<span class="carousel-control-next-icon"></span>
 		</button>
-	</div>	
+	</div>
 	<!-- 이미지 슬라이스 끝 -->
-	
-<!-- 여기서부터 시작  -->
 
-코딩하면 됩니다./
+	<!-- 여기서부터 시작  -->
+
+	코딩하면 됩니다./
+
+	<!-- < footer > -->
+	<jsp:include page="bottom.jsp" />
+	<!-- < footer > -->
+	
+	<!-- JavaScript Libraries -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="lib/wow/wow.min.js"></script>
+	<script src="lib/easing/easing.min.js"></script>
+	<script src="lib/waypoints/waypoints.min.js"></script>
+	<script src="lib/counterup/counterup.min.js"></script>
+	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+	<!-- Template Javascript -->
+	<script src="js/main.js"></script>
 	
 </body>
 </html>

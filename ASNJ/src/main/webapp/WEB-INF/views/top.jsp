@@ -51,12 +51,12 @@
 }
 
 input:focus::-webkit-input-placeholder {
-	color:transparent;
+	color: transparent;
 }
 
 .dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0;
+	display: block;
+	margin-top: 0;
 }
 </style>
 
@@ -77,24 +77,28 @@ input:focus::-webkit-input-placeholder {
 </script> -->
 
 <body>
-	<div class="container-xxl bg-white p-0 " style="display: flex; justify-content: space-between; align-items: center;">
+	<div class="container-xxl bg-white p-0 "
+		style="display: flex; justify-content: space-between; align-items: center;">
 		<div class="header__logo col-lg-4 pe-lg-5"
 			style="float: left; padding-left: 1rem !important;">
 			<a href="index.jsp"><img src="resources/img/logo/logo.png"></a>
 		</div>
 		<div class="position-relative w-100 my-3 wow fadeInUp"
 			data-wow-delay="0.3s" style="margin-right: 16px;">
-			<input id="searchInput" class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
-				type="text" placeholder="검색어를 입력하세요.">
+			<input id="searchInput"
+				class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
+				placeholder="검색어를 입력하세요.">
 			<button type="button"
 				class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">검색</button>
 		</div>
-		<div class="col-lg-4 pe-lg-5" style="display: inline-block; min-width: max-content;">
+		<div class="col-lg-4 pe-lg-5"
+			style="display: inline-block; min-width: max-content;">
 			<div class="header__login" style="margin-right: 10px;">
 				<a href="#">회원가입</a> <a href="#" style="margin-left: 30px;">로그인</a>
 			</div>
 		</div>
 	</div>
+	
 	<!-- Spinner Start -->
 	<!--  <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">

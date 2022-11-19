@@ -60,14 +60,15 @@
 					</div>
 				</div> -->
 				<div class="col-lg-3 col-md-2">
-					<h1 class="text-white mb-4" style="font-style: italic;">알쓸</h1>				
-					<h1 class="text-white mb-4" style="font-style: italic;">농잡</h1>					
+					<img alt="" src="resources/image/nong.png" style="float : left; width: 70px; height: 90px;">&nbsp;&nbsp;&nbsp;
+					<h1 class="text-white mb-4" style="font-style: italic; display: inline-block;">알쓸<br>농잡</h1>				
+					<!-- <h1 class="text-white mb-4" style="font-style: italic;">농잡</h1>	 -->				
 				</div>
 				<div class="col-lg-4 col-md-3">
 					<div class="row gy-5 g-4">
 						<div class="col-md-8">
 							<h5 class="fw-bold text-white mb-4">About Us</h5>
-							<a class="btn btn-link" href="">사이트소개</a> <a class="btn btn-link"
+							<a class="btn btn-link" href="${cpath}/introduce.do">사이트소개</a> <a class="btn btn-link"
 								href="">공지사항</a> <a class="btn btn-link" href="">연락처</a> <a
 								class="btn btn-link" href="">광고문의</a>
 						</div>
@@ -113,7 +114,7 @@
 				<div class="copyright">
 					<div class="row">
 						<div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-							&copy; <a class="border-bottom" href="#">Alsseulnongjob</a>, All
+							&copy; <a class="border-bottom" href="index.jsp">Alsseulnongjob</a>, All
 							Right Reserved.
 
 							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->

@@ -81,7 +81,7 @@
 				<a href="" class="navbar-brand p-0">
 					<h1 class="m-0">
 						<i class="fa me-3"></i>
-						<!-- 알쓸농잡 -->
+						<!-- 알쓸농잡  -->
 					</h1> <!-- <img src="img/logo.png" alt="Logo"> -->
 				</a>
 				<button class="navbar-toggler" type="button"
@@ -90,16 +90,16 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<div class="navbar-nav ms-auto py-0">
-						<a href="introduce.jsp" class="nav-item nav-link">사이트 소개</a>
-						<a class="nav-item nav-link">병해충 예측</a>  
+						<a href="introduce.jsp" class="nav-item nav-link">사이트 소개</a> <a href="#"
+							class="nav-item nav-link">병해충 예측</a>  
 						<div class="nav-item dropdown">
-							<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
+							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
 							<div class="dropdown-menu m-0">
 								<a href="team.html" class="dropdown-item">병(病)</a> 
 								<a href="testimonial.html" class="dropdown-item">해충</a> 
 							</div>
 						</div>
-						<a href="notice.jsp" class="nav-item nav-link active">공지사항</a> 
+						<a href="notice.jsp" class="nav-item nav-link">공지사항</a> 
 						<a href="#"	class="nav-item nav-link">문의사항</a>
 						<a href="#"	class="nav-item nav-link">농업일지</a>
 					</div>
@@ -110,91 +110,9 @@
 	<!-- 카테고리 끝 -->
 
 <!-- 내용 시작 -->
-<div class="container-xxl bg-white p-0" style="display: flex; justify-content: center; align-items: center;">
-	<div class="container-fluid pt-4 px-4">
-		 <div class="mx-auto" style="width: 200px;"> 
-		<div id="underline">
-			<h3>공지사항</h3>
-		</div>
-		<br>
-	</div>
-	</div>
-	</div>
-<br>
-<!-- 공지사항 테이블 시작 -->
-	<div class="container-fluid pt-4 px-4">
-		<div class="container col-6 text-center">
-			<table
-				class="table table-bordered table-light table-hover border-success">
-				<thead>
-					<tr>
-						<th>순번</th>
-						<th>내용</th>
-						<th>첨부파일</th>
-						<th>작성자</th>
-						<th>작성 일자</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td>##########</td>
-						<td><i class="bi bi-paperclip"></i></td>
-						<td>홍길동</td>
-						<td>2022-11-18</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>##########</td>
-						<td><i class="bi bi-paperclip"></i></td>
-						<td>홍길동2</td>
-						<td>2022-11-18</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>##########</td>
-						<td><i class="bi bi-paperclip"></i></td>
-						<td>홍길동3</td>
-						<td>2022-11-18</td>
-					</tr>
-					<tr>
-						<td>4</td>
-						<td>##########</td>
-						<td><i class="bi bi-paperclip"></i></td>
-						<td>홍길동4</td>
-						<td>2022-11-18</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-<!-- 공지사항 테이블 끝 -->
 
-<!-- 페이징 번호 시작 -->
-	<div class="container-fluid pt-4 px-4">
-		<ul class="pagination justify-content-center" id="pagination">
-			<li class="page-item">
-				<a class="page-link" href="#" aria-label="Previous">
-					<span aria-hidden="true">&laquo;</span>
-				</a>
-			</li>
-			<li class="page-item">
-				<a class="page-link" href="#">1</a>
-			</li>
-			<li class="page-item">
-				<a class="page-link" href="#">2</a>
-			</li>
-			<li class="page-item">
-				<a class="page-link" href="#">3</a>
-			</li>
-			<li class="page-item">
-				<a class="page-link" href="#" aria-label="Next">
-					<span aria-hidden="true">&raquo;</span>
-				</a>
-			</li>
-		</ul>
-	</div>
-	<!-- 페이징 번호 끝 -->
+
+<!-- 내용 끝 -->
 
 	<!-- 푸터 시작 -->
 	<div>
