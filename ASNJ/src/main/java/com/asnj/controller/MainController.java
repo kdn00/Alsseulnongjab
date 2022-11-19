@@ -15,7 +15,7 @@ public class MainController {
 	// 메인 페이지에 비동기 통신이 들어가게 바뀌면 컨트롤러 타입을 변경하거나 이동할 예정
 	@GetMapping("/Mainpage.do")
 	public String Main() {
-		System.out.print("content.jsp로 이동\n");
+		System.out.print("main.jsp로 이동\n");
 		return "main";
 	}
 	
