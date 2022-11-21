@@ -165,8 +165,34 @@
 	<!-- 이미지 슬라이스 끝 -->
 
 	<!-- 여기서부터 시작  -->
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="bg-white p-0" style="display: flex; justify-content: center; align-items: center;">
+					<h2>방제력</h2>
+					
+					
+			
 
-	코딩하면 됩니다./
+
+
+				</div>
+			</div>
+
+			<!-- 小 공지사항 -->
+			<div class="col-sm-6">
+			<div class="bg-white p-0" style="display: flex; justify-content: center; align-items: center;">
+				<h2>공지사항</h2>
+				
+				<div></div>
+
+			</div>
+			</div>
+			<!-- 小 공지사항  끝-->
+		</div>
+	</div>
+
+	<!-- 내용 끝 -->
 
 	<!-- < footer > -->
 	<jsp:include page="bottom.jsp" />
