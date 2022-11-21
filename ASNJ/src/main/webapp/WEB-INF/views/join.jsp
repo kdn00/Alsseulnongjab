@@ -104,7 +104,7 @@
 						</div>
 						<div class="form-floating mb-3">
 							<label for="floatingInput">Password (특수문자 포함 6자 이상)</label>
-							<input type="password" class="form-control" name="pw" id="mem_user_pw2" onchange="check_pw()">
+							<input type="password" class="form-control" name="pw" id="mem_user_pw" onchange="check_pw()">
 						</div>
 						<div class="form-floating mb-3">
                             <input type="password" name="pw2" class="form-control" id="mem_user_pw2" onchange="check_pw()">
@@ -125,7 +125,7 @@
 								<label class="form-check-label" for="mem_user_job"> 농부 </label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="mem_user_job2" id="mem_user_job2" value="일반인">
+							<input class="form-check-input" type="radio" name="mem_user_job2" id="mem_user_job" value="일반인">
 							<label class="form-check-label" for="mem_user_job"> 일반인 </label>
 						</div>
 						<br>
