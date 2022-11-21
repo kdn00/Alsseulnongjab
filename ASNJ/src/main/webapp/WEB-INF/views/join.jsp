@@ -97,7 +97,7 @@
 					<a href="index.jsp"><img src="resources/img/logo/logo2.png"></a>
 					<h3 class="text-center">회원가입</h3>
 					<br>
-					<form class="form-inline" action="${cpath}/Joinpage.do" method="post">
+					<form class="form-inline" action="${cpath}/Loginpage.do" method="post">
 						<div class="form-floating mb-3">
 							<label for="floatingInput">ID</label>
 							<input type="text" class="form-control" name="id" id="mem_user_id" >

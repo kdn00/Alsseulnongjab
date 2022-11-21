@@ -47,7 +47,7 @@
 						EL식에서 empty는 !=와 같은 의미이다.	--%>
 					<c:choose>
 						<c:when test="${empty loginMember}">
-							<form class="form-inline" action="${cpath}/Loginpage.do" method="post">
+							<form class="form-inline" action="index.jsp" method="post">
 								<div class="form-floating mb-3">
 									<input type="text" class="form-control" name="mem_user_id" id="floatingInput" placeholder="name@example.com">
 									<label for="floatingInput">아이디 </label>
