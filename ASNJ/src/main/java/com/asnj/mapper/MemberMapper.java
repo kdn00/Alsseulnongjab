@@ -10,7 +10,7 @@ public interface MemberMapper {
 	Member memberLogin(Member mem);
 	
 	// 회원가입
-	Member memberJoin(Member mem);
+	int memberJoin(Member mem);
 	
 	// 회원정보 수정
 	Member memberUpdate(Member mem);

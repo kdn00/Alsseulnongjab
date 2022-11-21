@@ -46,12 +46,12 @@
 		
 		<br><br>
 		<div class="form-check">
-		  <input class="form-check-input" type="radio" name="mem_user_job" id="mem_user_job">
+		  <input class="form-check-input" type="radio" name="mem_user_job" id="mem_user_job" value="농부">
 		  <label class="form-check-label" for="mem_user_job"> 농부 </label>
 		</div>
 		<div class="form-check">
-		  <input class="form-check-input" type="radio" name="mem_user_job" id="mem_user_job2" checked>
-		  <label class="form-check-label" for="mem_user_job2"> 일반인 </label>
+		  <input class="form-check-input" type="radio" name="mem_user_job" id="mem_user_job2" value="일반인" checked>
+		  <label class="form-check-label" for="mem_user_job	2"> 일반인 </label>
 		</div>
 		
 		<br>

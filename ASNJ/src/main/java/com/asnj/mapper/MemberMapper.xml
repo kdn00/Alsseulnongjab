@@ -15,7 +15,7 @@
     </insert>
     
     <!-- 회원 전체 검색 - 회원관리 -->
-    <select id="memberSelect" parameterType="com.asnj.entity.Member" resultType="com.asnj.entity.Member">
-    	select * from tb_member
+    <select id="memberSelect" resultType="com.asnj.entity.Member">
+    	select mem_user_name, mem_user_id, mem_user_email, mem_user_job, mem_time from tb_member
     </select>
 </mapper>
