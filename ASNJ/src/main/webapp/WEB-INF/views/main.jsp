@@ -47,7 +47,7 @@
 	<!-- header -->
 	<jsp:include page="top.jsp" />
 	<!-- header -->
-	
+
 	<!-- Full Screen Search Start -->
 	<div class="modal fade" id="searchModal" tabindex="-1">
 		<div class="modal-dialog modal-fullscreen">
@@ -91,8 +91,9 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<div class="navbar-nav ms-auto py-0">
-						<a href="${cpath}/introduce.do" class="nav-item nav-link">사이트 소개</a> <a
-							href="#" class="nav-item nav-link">병해충 예측</a>
+						<a href="${cpath}/introduce.do" class="nav-item nav-link">사이트
+							소개</a> <a href="${cpath}/prediction.do" class="nav-item nav-link">병해충
+							예측</a>
 						<div class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충
 								정보</a>
@@ -168,36 +169,30 @@
 	<div class="container mt-5">
 		<div class="row">
 			<div class="col-sm-6">
-				<div class="bg-white p-0" style="display: flex; justify-content: center; align-items: center;">
+				<div class="bg-white p-0"
+					style="display: flex; justify-content: center; align-items: center;">
 					<h2>방제력</h2>
-					
-					
-			
-
-
 
 				</div>
 			</div>
 
 			<!-- 小 공지사항 -->
 			<div class="col-sm-6">
-			<div class="bg-white p-0" style="display: flex; justify-content: center; align-items: center;">
-				<h2>공지사항</h2>
-				
-				<div></div>
+				<div class="bg-white p-0"
+					style="display: flex; justify-content: center; align-items: center;">
+					<h2>공지사항</h2>
 
-			</div>
+					<div></div>
+
+				</div>
 			</div>
 			<!-- 小 공지사항  끝-->
 		</div>
 	</div>
-
-	<!-- 내용 끝 -->
-
 	<!-- < footer > -->
 	<jsp:include page="bottom.jsp" />
 	<!-- < footer > -->
-	
+
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script
@@ -210,6 +205,6 @@
 
 	<!-- Template Javascript -->
 	<script src="js/main.js"></script>
-	
+
 </body>
 </html>

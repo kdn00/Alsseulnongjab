@@ -19,13 +19,16 @@
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
+<link
+	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
 	rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
 	rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
 	rel="stylesheet">
 
 <!-- Libraries Stylesheet -->
@@ -38,13 +41,17 @@
 
 <!-- Template Stylesheet -->
 <link href="resources/css/style.css" rel="stylesheet">
+
+<!-- prediction Stylesheet -->
+<link href="resources/css/prediction.css" rel="stylesheet">
+
 </head>
 
 <body>
 	<!-- 헤더 시작 -->
 	<jsp:include page="top.jsp" />
 	<!-- 헤더 끝 -->
-	
+
 	<!-- Full Screen Search Start -->
 	<div class="modal fade" id="searchModal" tabindex="-1">
 		<div class="modal-dialog modal-fullscreen">
@@ -88,8 +95,9 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<div class="navbar-nav ms-auto py-0">
-						<a href="${cpath}/introduce.do" class="nav-item nav-link active">사이트 소개</a> <a
-							href="${cpath}/prediction.do" class="nav-item nav-link">병해충 예측</a>
+						<a href="${cpath}/introduce.do" class="nav-item nav-link">사이트
+							소개</a> <a href="${cpath}/prediction.do"
+							class="nav-item nav-link active">병해충 예측</a>
 						<div class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충
 								정보</a>
@@ -109,73 +117,60 @@
 	<!-- 카테고리 끝 -->
 
 	<!-- 내용 시작 -->
-	
-	<!-- 사이트 타이틀 시작 -->
-	<div class="container-xxl bg-white p-0"	style="display: flex; justify-content: center; align-items: center;">
+
+	<!-- 병해충 예측 타이틀-->
+	<div class="container-xxl bg-white p-0"
+		style="display: flex; justify-content: center; align-items: center;">
 		<div class="container-fluid pt-4 px-4">
 			<div class="mx-auto" style="width: 200px;">
 				<div id="underline">
-					<h3>사이트 소개</h3>
+					<h3>병해충 예측</h3>
 				</div>
 				<br>
 			</div>
 		</div>
 	</div>
-	<!-- 사이트 타이틀 끝 -->
 
-	<div class="container-fluid pt-4 px-4">
-		<div class="mx-auto" style="width: 500px;">
-			<span>저희 알쓸농잡에서는 다양한 병해충 관련 정보를 제공합니다.</span>
-		</div>
-</div>
-<br>
-<br>
-	<!-- 여기서부터  -->
-		<div class="container-xxl p-0"
-			style="display: flex; justify-content: center; align-items: center;">
-			<div class="row">
-				<div class="col">
-					<i class="bi bi-building fa-5x" style="margin-right:100px;"></i>
-					<span id="site_st"></span> 
-				<br> <span>알쓸농잡</span>
-				</div>
-			
-				<div class="col" >
-				<i class="bi bi-hourglass fa-5x" style="margin-right:80px;"></i>
-					<span id="site_st"></span> 
-				<br><span id="site_font1">최종프로젝트 일자</span> <br> <span id="site_font1">2022년 12월 13일</span>
-				</div>
-			
-				<div class="col" >
-				<i class="bi bi-people-fill fa-5x" style="margin-right:80px;"></i>
-					<span id="site_st"></span> 
-				<br><span id="site_font1">팀장: 송영지</span> <br> <span id="site_font1">팀원:김도연,김동현,박승현</span>
-				</div>
-			
-				<div class="col">
-					<i class="bi bi-map fa-5x"></i>
-					<br> <span style="margin-left:20px;">소재지</span> <br><span id="site_font1">전라남도 순천시 석현동 87 5층,</span>
-					<br> <span id="site_font1">스마트인재개발원 순천점</span>
-				</div>
-				
-			</div>	
-		</div>
-		<br>
-		<br>
-		<!-- 여기까지 -->
-		
-		<div class="container-xxl bg-white p-0"	style="display: flex; justify-content: center; align-items: center;">
-		<div class="container-fluid pt-3 px-4">
-			<div class="mx-auto" style="width: 200px;">
-					<h4>프로젝트 소개</h4>
-			</div>
-		</div>
-	</div>
+	<!-- 병해충 예측 이미지 업로드 -->
+	<div class="container d-flex justify-content-center container-fluid pt-4 px-4">
+		<div class="image-upload" id="image-upload">
 
-	<div class="container-fluid pt-4 px-4">
-		<div class="mx-auto" style="width: 500px;">
-			<span>프로젝트 소개내용 적기!!!!</span>
+			<form method="post" enctype="multipart/form-data">
+				<div class="upload-box" style="width: 600px;">
+					<div id="drop-file" class="drag-file">
+						<img src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일 아이콘" class="image">
+						<p class="message">파일을 드래그해서 여기에 놓으세요!!</p>
+						<img src="" alt="미리보기 이미지" class="preview">
+						<div type="button" class="btn" style="width: 100%;">
+							<label class="file-label" for="chooseFile">👉 파일 검색👈</label>
+						</div>
+					</div>
+				</div>
+				<input class="file" id="chooseFile" type="file"
+					onchange="dropFile.handleFiles(this.files)"
+					accept="image/png, image/jpeg, image/gif">
+				<div class="fileContainer">
+					<div class="fileInput row" style="margin-top: 20px;">
+						<h4 class="col-3" style="align-self: flex-end; margin-top: inherit;">작물 이름 :</h4>
+						<input class="form-control col-md-9 border-0" type="text" placeholder="작물 이름" style="width: 73%;">						
+					</div>
+					<div class="fileInput row" style="margin-top: 20px;">
+						<h4 class="col-md-2" style="align-self: center;">증상 :</h4>
+						<textarea class="form-control col-md-9 border-0 " cols="50" rows="5" placeholder="간단히 작성하세요" style="width: 81.5%;"></textarea>
+					</div>
+					<div class="buttonContainer row" style="margin-top: 20px;">
+						<h4 class="col-md-3" style="align-self: flex-end; margin-top: inherit;">파일명 :</h4>
+						<div class="position-relative" style="max-width: 75%;">
+							<input class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5 col-md-9" type="text" placeholder="파일명">
+							<button type="button" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-4">전송</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
 		</div>
+
+		<div class="image-show" id="image-show"></div>
 	</div>
 
 	<!-- 내용 끝 -->
@@ -187,7 +182,7 @@
 		<jsp:include page="bottom.jsp" />
 	</div>
 	<!-- 푸터 끝 -->
-	
+
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script
@@ -198,8 +193,11 @@
 	<script src="lib/counterup/counterup.min.js"></script>
 	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
+	<!-- 이미지 드래그 앤 드롭 -->
+	<script src="resources/js/prediction.js"></script>
+
 	<!-- Template Javascript -->
-	<script src="js/main.js"></script>
+	<script src="resources/js/main.js"></script>
 
 </body>
 </html>

@@ -91,8 +91,8 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<div class="navbar-nav ms-auto py-0">
-						<a href="${cpath}/introduce.do" class="nav-item nav-link ">사이트
-							소개</a> <a href="#" class="nav-item nav-link">병해충 예측</a>
+						<a href="${cpath}/introduce.do" class="nav-item nav-link ">사이트	소개</a> 
+						<a href="${cpath}/prediction.do" class="nav-item nav-link">병해충 예측</a>
 						<div class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충
 								정보</a>
@@ -101,7 +101,7 @@
 									class="dropdown-item">해충</a>
 							</div>
 						</div>
-						<a href="${cpath}/notice.do" class="nav-item nav-link active">공지사항</a>
+						<a href="${cpath}/notice.do" class="nav-item nav-link">공지사항</a>
 						<a href="#" class="nav-item nav-link">문의사항</a> <a href="#"
 							class="nav-item nav-link">농업일지</a>
 					</div>
@@ -112,8 +112,7 @@
 	<!-- 카테고리 끝 -->
 
 	<!-- 내용 시작 -->
-	<div class="container-xxl bg-white p-0"
-		style="display: flex; justify-content: center; align-items: center;">
+	<div class="container-xxl bg-white p-0"  style="display: flex; justify-content: center; align-items: center;">
 		<div class="container-fluid pt-4 px-4">
 			<div class="mx-auto" style="width: 200px;">
 				<div id="underline">
@@ -124,6 +123,7 @@
 		</div>
 	</div>
 	<br>
+	
 	<!-- 공지사항 테이블 시작 -->
 	<div class="container-fluid pt-4 px-4">
 		<div class="container col-6 text-center">
