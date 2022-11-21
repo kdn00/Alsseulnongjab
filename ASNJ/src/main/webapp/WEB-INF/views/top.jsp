@@ -85,16 +85,15 @@ input:focus::-webkit-input-placeholder {
 		</div>
 		<div class="position-relative w-100 my-3 wow fadeInUp"
 			data-wow-delay="0.3s" style="margin-right: 16px;">
-			<input id="searchInput"
-				class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
-				placeholder="검색어를 입력하세요.">
+			<input id="searchInput"	class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="search" name="search" placeholder="검색어를 입력하세요.">
 			<button type="button"
 				class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">검색</button>
 		</div>
 		<div class="col-lg-4 pe-lg-5"
 			style="display: inline-block; min-width: max-content;">
 			<div class="header__login" style="margin-right: 10px;">
-				<a href="#">회원가입</a> <a href="#" style="margin-left: 30px;">로그인</a>
+				<a href="${cpath}/Joinpage.do" class="btn btn-outline-success bi bi-person-circle"> 회원가입</a> 
+				<a href="${cpath}/Loginpage.do" class="btn btn-outline-success bi bi-person" style="margin-left: 30px;"> 로그인</a>
 			</div>
 		</div>
 	</div>
