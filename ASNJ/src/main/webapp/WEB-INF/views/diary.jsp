@@ -82,19 +82,17 @@
 	<jsp:include page="top.jsp" />
 </div>
 
-<!-- 카테고리 시작 -->
 <div class="container-xxl py-5 bg-primary hero-header mb-0"
-	style="padding-top: 2rem !important; padding-bottom: 2rem !important;">
-	<div class="container-xxl position-relative p-0">
-		<nav
-			class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
-			style="bottom: 0px;">
-			<a href="" class="navbar-brand p-0">
-				<h1 class="m-0">
-					<i class="fa me-3"></i>
-					<!-- 알쓸농잡  -->
-				</h1> <!-- <img src="img/logo.png" alt="Logo"> -->
-			</a>
+		style="padding-top: 2rem !important; padding-bottom: 2rem !important;">
+		<div class="container-xxl position-relative p-0">
+			<nav
+				class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
+				style="bottom: 0px;">
+				<a href="" class="navbar-brand p-0">
+					<h4 class="m-0 text-white" style="font-style: italic;">
+						<i class="fa me-3"></i> 알쓸농잡
+					</h4> <!-- <img src="img/logo.png" alt="Logo"> -->
+				</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 				<span class="fa fa-bars"></span>
