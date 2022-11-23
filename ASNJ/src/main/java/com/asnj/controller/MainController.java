@@ -33,8 +33,8 @@ public class MainController {
 	
 	@GetMapping("/Diary.do")
 	public String Diary() {
-		System.out.print("notice.jsp로 이동\n");
-		return "notice";
+		System.out.print("diary.jsp로 이동\n");
+		return "diary";
 	}
 	
 	@GetMapping("/Prediction.do")
