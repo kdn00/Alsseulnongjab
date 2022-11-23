@@ -19,19 +19,19 @@ public class MainController {
 		return "main";
 	}
 	
-	@GetMapping("/introduce.do")
+	@GetMapping("/Introduce.do")
 	public String Intro() {
 		System.out.print("introduce.jsp로 이동\n");
 		return "introduce";
 	}
 	
-	@GetMapping("/notice.do")
+	@GetMapping("/Notice.do")
 	public String Notice() {
 		System.out.print("notice.jsp로 이동\n");
 		return "notice";
 	}
 	
-	@GetMapping("/prediction.do")
+	@GetMapping("/Prediction.do")
 	public String Prediction() {
 		System.out.print("prediction.jsp로 이동\n");
 		return "prediction";
@@ -47,6 +47,9 @@ public class MainController {
 		return "join";
 	}
 	
-	
+	@GetMapping("/Memberpage.do")
+	public String Memberpage() {
+		return "membertest";
+	}
 
 }

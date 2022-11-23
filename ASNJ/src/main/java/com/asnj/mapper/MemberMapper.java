@@ -2,24 +2,23 @@ package com.asnj.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
 import com.asnj.entity.Member;
 
+@Mapper
 public interface MemberMapper {
 
 	// 로그인
-	Member memberLogin(Member mem);
+	public Member memberLogin(Member mem);
 	
 	// 회원가입
-	int memberJoin(Member mem);
+	public int memberJoin(Member mem);
 	
 	// 회원정보 수정
-	Member memberUpdate(Member mem);
+	public Member memberUpdate(Member mem);
 	
 	// 회원 탈퇴 및 회원 삭제
-	Member memberDelete(Member mem);
-	
-	// 회원 검색
-	Member memberSelect(Member mem);
+	public Member memberDelete(Member mem);
 
-	List<Member> memberSelect();
+	public List<Member> memberSelect();
 }

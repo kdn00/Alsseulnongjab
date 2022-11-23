@@ -2,30 +2,29 @@ package com.asnj.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.asnj.mapper.MemberMapper;
 import com.asnj.entity.Member;
+import com.asnj.mapper.MemberMapper;
 
-// Ajax 통신을 위해서 사용하는 Controller
-@RestController
-public class MemberController {
+@Controller
+@RequestMapping(value="/board/*")
+public class BoardController {
 	
 	@Autowired
 	private MemberMapper mapper;
 	
 	// 회원 목록
-	@GetMapping("/Member")
-	public List<Member> MemberAjax() {
+	@RequestMapping(value = "/MemberList.do", method = RequestMethod.GET)
+	public String MemberList(Model model) {
 		List<Member> list = mapper.memberSelect();
-		return list;
+		model.addAttribute("list", list);
+		return "membertest";
 	}
+
 }
