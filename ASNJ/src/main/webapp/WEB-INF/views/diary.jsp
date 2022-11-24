@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
@@ -183,7 +184,7 @@
 
 	<!-- 카테고리 시작 -->
 	<div class="container-xxl py-5 bg-primary hero-header mb-0"
-		style="padding-top: 2rem !important; padding-bottom: 2rem !important;">
+		style="padding-top: 2rem !important; padding-bottom: 2rem !important; max-width: none;">
 		<div class="container-xxl position-relative p-0">
 			<nav
 				class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
@@ -221,171 +222,177 @@
 	<!-- 카테고리 끝 -->
 
 	<!-- 내용 시작 -->
-
-	<!-- 농업일지 타이틀 -->
-	<div class="container"
-		style="background-color: rgb(250, 255, 250); width: 65%; height: 100px; border-radius: 1em; box-shadow: 3px 3px 3px gray; margin-top: 10px;">
-		<div>
-			<img src="resources/image/farmicon.png" align=right>
-			<span align="center"><br>
-				<h2>농업일지</h2>
-				<p>방제력 확인과 농업일지를 작성해보세요~♬</p> </span>
+	<div class="diaryStart">
+		<!-- 농업일지 타이틀 -->
+		<div class="container container-xxl"
+			style="background-color: rgb(250, 255, 250); max-width: 1450px; height: 100px; border-radius: 1em; box-shadow: 3px 3px 3px gray; margin-top: 10px;">
+			<div class="row">
+				<div class="col-sm-11" style="padding-left: 10%;">
+					<span align="center"><br>
+						<h2>농업일지</h2>
+						<p>방제력 확인과 농업일지를 작성해보세요~♬</p> </span>
+				</div>
+				<div class="col-sm-1">
+					<img src="resources/image/farmicon.png" align="right">
+				</div>
+			</div>
 		</div>
-	</div>
-	<!-- 농업일지 타이틀 끝 -->
-	<br>
-	<div class="container">
-		<!-- 방제력 -->
-		<div class="row">
-			<!-- <div class="col-sm-6"> -->
-			<div class="bg-white p-2"
-				style="display: flex; justify-content: center; align-items: center;">
-				<i class="bi bi-calendar2-minus fa-2x" style="color: green;"></i>&nbsp;
-				&nbsp; <span><h3>방제력</h3></span>
-			</div>
-			<div class="container"
-				style="background-color: rgb(250, 255, 240); width: 95%; height: 900px; border-radius: 1em; margin-top: 5px;">
-				<!-- 달력 시작 -->
-
-				<div id='external-events'
-					style="float: left; width: 20%; padding-right: 10px; margin-top: 100px;">
-					<p>
-						<strong>아래의 내용을 드래그하여 설정해 보세요.</strong>
-					</p>
-					<div
-						class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-						<div class='fc-event-main'>고추</div>
-					</div>
-					<div
-						class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-						<div class='fc-event-main'>오이</div>
-					</div>
-					<div
-						class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-						<div class='fc-event-main'>파</div>
-					</div>
-					<div
-						class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-						<div class='fc-event-main'>딸기</div>
-					</div>
-					<div
-						class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-						<div class='fc-event-main'>호박</div>
-					</div>
-
-					<p>
-						<input type='checkbox' id='drop-remove' /> <label
-							for='drop-remove'>드래그 앤 드롭후 제거</label>
-					</p>
-				</div>
-
-				<br>
-
-				<div style="float: left; width: 80%; background-color: white;">
-					<br>
-					<div id='calendar'></div>
-				</div>
-				<!-- 달력 끝 -->
-			</div>
-				<!-- 저장 버튼 -->
-			<div class="d-flex justify-content-end">
-				<div style="width: 60%; float: left; text-align: right">
-					<button type="submit" class="btn btn-sm btn-success">
-						<span>저장</span>
-					</button>
-				</div>
-			</div>
-			<!-- 방제력 끝 -->
-		</div>
-
-		<!-- 농업일지 시작 -->
+		<!-- 농업일지 타이틀 끝 -->
 		<br>
-		<!-- <div class="col-sm-6"> -->
-		<div class="row">
-			<div class="bg-white p-2"
-				style="display: flex; justify-content: center; align-items: center;">
-				<i class="bi bi-journal fa-2x" style="color: green;"></i>&nbsp;
-				&nbsp; <span><h3>농업일지</h3></span>
-			</div>
-			<div class="container"
-				style="background-color: rgb(250, 255, 240); width: 95%; height: 900px; border-radius: 1em; margin-top: 5px;">
-				<br>
-
-				<!-- 농업일지 list 시작 -->
-				<div>
-					<form>
-						<table class="table table-bordered">
-							<thead align="center">
-								<th><span>순번</span></th>
-								<th><span>제목</span></th>
-								<th><span>내용</span></th>
-								<th><span>작성날짜</span></th>
-							</thead>
-							<tbody>
-								<tr>
-									<td align="center"><span>1</span></td>
-									<td><span>시작해볼까</span></td>
-									<td><span>여기에 내용이 들어가네요?</span></td>
-									<td><span>2022.11.23</span></td>
-								</tr>
-							</tbody>
-						</table>
-						<div class=" d-flex justify-content-end">
-							<button type="button" class="btn btn-sm btn-success bi bi-check-circle"	data-bs-toggle="modal" data-bs-target="#myModal">
-								<span> 글쓰기</span>
-							</button>
-					</form>
+		<div class="container">
+			<!-- 방제력 -->
+			<div class="row">
+				<!-- <div class="col-sm-6"> -->
+				<div class="bg-white p-2"
+					style="display: flex; justify-content: center; align-items: center;">
+					<i class="bi bi-calendar2-minus fa-2x" style="color: green;"></i>&nbsp;
+					&nbsp; <span><h3>방제력</h3></span>
 				</div>
+				<div class="container"
+					style="background-color: rgb(250, 255, 240); width: 95%; height: 900px; border-radius: 1em; margin-top: 5px;">
+					<!-- 달력 시작 -->
 
-				<!-- 농업일지 모달 뷰  시작 -->
-				<!-- The Modal -->
-				<div class="modal" id="myModal">
-					<div class="modal-dialog">
-						<div class="modal-content">
+					<div id='external-events'
+						style="float: left; width: 20%; padding-right: 10px; margin-top: 100px;">
+						<p>
+							<strong>아래의 내용을 드래그하여 설정해 보세요.</strong>
+						</p>
+						<div
+							class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+							<div class='fc-event-main'>고추</div>
+						</div>
+						<div
+							class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+							<div class='fc-event-main'>오이</div>
+						</div>
+						<div
+							class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+							<div class='fc-event-main'>파</div>
+						</div>
+						<div
+							class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+							<div class='fc-event-main'>딸기</div>
+						</div>
+						<div
+							class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+							<div class='fc-event-main'>호박</div>
+						</div>
 
-							<!-- Modal Header -->
-							<div class="modal-header">
-								<h4 class="modal-title">농업일지 작성하세요.</h4>
-								<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-							</div>
+						<p>
+							<input type='checkbox' id='drop-remove' /> <label
+								for='drop-remove'>드래그 앤 드롭후 제거</label>
+						</p>
+					</div>
 
-							<!-- Modal body -->
-							<div class="modal-body">
-								<form>
-									<div id="dialog-confirm">
-										<div class="input-group mb-3">
-											<span class="input-group-text">제목</span> <input type="text"
-												class="form-control" placeholder="제목을 입력하세요."> <span
-												class="input-group-text">날짜</span> <input type="date"
-												class="form-control" placeholder="date">
+					<br>
+
+					<div style="float: left; width: 80%; background-color: white;">
+						<br>
+						<div id='calendar'></div>
+					</div>
+					<!-- 달력 끝 -->
+				</div>
+				<!-- 저장 버튼 -->
+				<div class="d-flex justify-content-end">
+					<div style="width: 60%; float: left; text-align: right">
+						<button type="submit" class="btn btn-sm btn-success">
+							<span>저장</span>
+						</button>
+					</div>
+				</div>
+				<!-- 방제력 끝 -->
+			</div>
+
+			<!-- 농업일지 시작 -->
+			<br>
+			<!-- <div class="col-sm-6"> -->
+			<div class="row">
+				<div class="bg-white p-2"
+					style="display: flex; justify-content: center; align-items: center;">
+					<i class="bi bi-journal fa-2x" style="color: green;"></i>&nbsp;
+					&nbsp; <span><h3>농업일지</h3></span>
+				</div>
+				<div class="container"
+					style="background-color: rgb(250, 255, 240); width: 95%; height: 900px; border-radius: 1em; margin-top: 5px;">
+					<br>
+
+					<!-- 농업일지 list 시작 -->
+					<div>
+						<form>
+							<table class="table table-bordered">
+								<thead align="center">
+									<th><span>순번</span></th>
+									<th><span>제목</span></th>
+									<th><span>내용</span></th>
+									<th><span>작성날짜</span></th>
+								</thead>
+								<tbody>
+									<tr>
+										<td align="center"><span>1</span></td>
+										<td><span>시작해볼까</span></td>
+										<td><span>여기에 내용이 들어가네요?</span></td>
+										<td><span>2022.11.23</span></td>
+									</tr>
+								</tbody>
+							</table>
+							<div class=" d-flex justify-content-end">
+								<button type="button"
+									class="btn btn-sm btn-success bi bi-check-circle"
+									data-bs-toggle="modal" data-bs-target="#myModal">
+									<span> 글쓰기</span>
+								</button>
+						</form>
+					</div>
+
+					<!-- 농업일지 모달 뷰  시작 -->
+					<!-- The Modal -->
+					<div class="modal" id="myModal">
+						<div class="modal-dialog">
+							<div class="modal-content">
+
+								<!-- Modal Header -->
+								<div class="modal-header">
+									<h4 class="modal-title">농업일지 작성하세요.</h4>
+									<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+								</div>
+
+								<!-- Modal body -->
+								<div class="modal-body">
+									<form>
+										<div id="dialog-confirm">
+											<div class="input-group mb-3">
+												<span class="input-group-text">제목</span> <input type="text"
+													class="form-control" placeholder="제목을 입력하세요."> <span
+													class="input-group-text">날짜</span> <input type="date"
+													class="form-control" placeholder="date">
+											</div>
+											<!-- textarea와 pre 비슷한 개념  -->
+											<textarea style="width: 100%;" placeholder="내용을 입력하세요."></textarea>
 										</div>
-										<!-- textarea와 pre 비슷한 개념  -->
-										<textarea style="width: 100%;" placeholder="내용을 입력하세요."></textarea>
-									</div>
 
-									<!-- Modal footer -->
-									<div class="modal-footer">
-										<button type="submit"
-											class="btn btn-sm btn-success bi bi-check-circle">
-											<span> 등록</span>
-										</button>
-										<button type="submit"
-											class="btn btn-sm btn-success bi bi-check-circle">
-											<span> 삭제</span>
-										</button>
-									</div>
-								</form>
+										<!-- Modal footer -->
+										<div class="modal-footer">
+											<button type="submit"
+												class="btn btn-sm btn-success bi bi-check-circle">
+												<span> 등록</span>
+											</button>
+											<button type="submit"
+												class="btn btn-sm btn-success bi bi-check-circle">
+												<span> 삭제</span>
+											</button>
+										</div>
+									</form>
 
+								</div>
 							</div>
 						</div>
+						<!-- 농업일지 모달 뷰 끝  -->
 					</div>
-					<!-- 농업일지 모달 뷰 끝  -->
 				</div>
 			</div>
+			<!-- 농업일지  끝-->
 		</div>
-		<!-- 농업일지  끝-->
 	</div>
-	<!-- </div> -->
 	<!-- 내용 끝 -->
 
 	<!-- 푸터 시작 -->
