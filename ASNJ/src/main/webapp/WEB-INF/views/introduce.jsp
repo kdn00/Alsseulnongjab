@@ -110,7 +110,7 @@
 	<!-- 내용 시작 -->
 	
 	<!-- 사이트 타이틀 시작 -->
-	<div class="container-xxl bg-white p-0"	style="display: flex; justify-content: center; align-items: center;">
+	<div class="container-xxl bg-white p-0"	style="display: flex; justify-content: center; align-items: center; max-width: none;">
 		<div class="container-fluid pt-4 px-4">
 			<div class="mx-auto" style="width: 200px;">
 				<div id="underline">

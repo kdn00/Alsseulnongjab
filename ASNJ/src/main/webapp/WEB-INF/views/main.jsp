@@ -40,6 +40,18 @@
 
 <!-- Template Stylesheet -->
 <link href="resources/css/style.css" rel="stylesheet">
+
+<!-- 이미지 배너 css -->
+<style>
+.carousel-inner .carousel-item .d-block{height: 300px; width: 100%; overflow: hidden;}
+
+.product-title {text-align:center; display:table; border:1px solid #cecece;
+    width:280px; height:250px;}
+
+.image-div {display:table-cell; vertical-align:middle;}
+
+.d-block {background-size: contain;}
+</style>
 </head>
 
 <body>
@@ -74,7 +86,7 @@
 
 	<!-- 카테고리 시작 -->
 	<div class="container-xxl py-5 bg-primary hero-header mb-0"
-		style="padding-top: 2rem !important; padding-bottom: 2rem !important;">
+		style="padding-top: 2rem !important; padding-bottom: 2rem !important; max-width: none;">
 		<div class="container-xxl position-relative p-0">
 			<nav
 				class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
@@ -112,7 +124,7 @@
 	<!-- 이미지 슬라이스 시작 -->
 	<div id="demo"
 		class="carousel slide container-xxl position-relative p-0"
-		data-bs-ride="carousel">
+		data-bs-ride="carousel" style="max-width: none;">
 
 		<!-- Indicators/dots -->
 		<div class="carousel-indicators">
@@ -123,30 +135,15 @@
 		</div>
 
 		<!-- The slideshow/carousel -->
-		<div class="carousel-inner" style="height: 500px;">
+		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="resources/image/farm1.jpg" alt="Los Angeles"
-					class="d-block" style="width: 100%">
-				<div class="carousel-caption">
-					<h3>#</h3>
-					<p>#</p>
-				</div>
+				<img src="resources/image/farm1.jpg" alt="" class="d-block img-fluid">				
 			</div>
-			<div class="carousel-item">
-				<img src="resources/image/farm2.jpg" alt="Chicago" class="d-block"
-					style="width: 100%">
-				<div class="carousel-caption">
-					<h3>#</h3>
-					<p>#</p>
-				</div>
+			<div class="carousel-item text-cente image-div">
+				<img src="resources/image/farm2.jpg" alt="Chicago" class="d-block img-fluid">				
 			</div>
-			<div class="carousel-item">
-				<img src="resources/image/farm3.jpg" alt="New York" class="d-block"
-					style="width: 100%">
-				<div class="carousel-caption">
-					<h3>#</h3>
-					<p>#</p>
-				</div>
+			<div class="carousel-item text-cente image-div">
+				<img src="resources/image/farm3.jpg" alt="New York" class="d-block img-fluid">				
 			</div>
 		</div>
 

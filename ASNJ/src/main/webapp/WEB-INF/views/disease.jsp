@@ -79,7 +79,7 @@
 
 	<!-- 카테고리 시작 -->
 	<div class="container-xxl py-5 bg-primary hero-header mb-0"
-		style="padding-top: 2rem !important; padding-bottom: 2rem !important;">
+		style="padding-top: 2rem !important; padding-bottom: 2rem !important; max-width: none;">
 		<div class="container-xxl position-relative p-0">
 			<nav
 				class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
@@ -119,7 +119,7 @@
 
 	<!-- 병 피해 타이틀-->
 	<div class="container-xxl bg-white p-0"
-		style="display: flex; justify-content: center; align-items: center;">
+		style="display: flex; justify-content: center; align-items: center; max-width: none;">
 		<div class="container-fluid pt-4 px-4">
 			<div class="mx-auto" style="width: 200px;">
 				<div id="underline">

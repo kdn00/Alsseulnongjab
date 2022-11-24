@@ -75,7 +75,7 @@
 	
 	<!-- 카테고리 시작 -->
 	<div class="container-xxl py-5 bg-primary hero-header mb-0" style="padding-top: 2rem !important;
-    padding-bottom: 2rem !important;">
+    padding-bottom: 2rem !important; max-width: none;">
 		<div class="container-xxl position-relative p-0">
 			<nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0" style="bottom: 0px;">
 				<a href="" class="navbar-brand p-0">
@@ -92,8 +92,7 @@
 					<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트	소개</a> 
 						<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충 예측</a>
 						<div class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충
-								정보</a>
+							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
 							<div class="dropdown-menu m-0">
 								<a href="${cpath}/Disease.do" class="dropdown-item">병(病)</a> 
 								<a href="${cpath}/Pests.do" class="dropdown-item">해충</a>

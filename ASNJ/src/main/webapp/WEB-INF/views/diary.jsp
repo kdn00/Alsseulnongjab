@@ -74,7 +74,7 @@
 
 	<!-- 카테고리 시작 -->
 	<div class="container-xxl py-5 bg-primary hero-header mb-0"
-		style="padding-top: 2rem !important; padding-bottom: 2rem !important;">
+		style="padding-top: 2rem !important; padding-bottom: 2rem !important; max-width: none;">
 		<div class="container-xxl position-relative p-0">
 			<nav
 				class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
@@ -114,8 +114,8 @@
 
 <!-- 농업일지 타이틀 -->
 <div class="container"
-	style="background-color: rgb(250, 255, 250); width: 65%; height: 100px; border-radius: 1em; box-shadow: 3px 3px 3px gray; margin-top: 10px;">
-	<div>
+	style="background-color: rgb(250, 255, 250); width: 1510px; height: 100px; border-radius: 1em; box-shadow: 3px 3px 3px gray; margin-top: 10px; max-width: none;">
+	<div style="max-width: none;">
 		<img src="resources/image/farmicon.png" align=right> <span
 			align="center"><br>
 			<h2>농업일지</h2>
@@ -130,8 +130,8 @@
 		<div class="col-sm-6">
 			<div class="bg-white p-2"
 				style="display: flex; justify-content: center; align-items: center;">
-				<i class="bi bi-calendar2-minus fa-2x" style="color: green;"></i>&nbsp
-				&nbsp <span><h3>방제력</h3></span>
+				<i class="bi bi-calendar2-minus fa-2x" style="color: green;"></i>&nbsp;
+				&nbsp; <span><h3>방제력</h3></span>
 			</div>
 			<div class="container"
 				style="background-color: rgb(250, 255, 240); width: 90%; height: 600px; border-radius: 1em; margin-top: 5px;">
@@ -144,7 +144,7 @@
 		<div class="col-sm-6">
 			<div class="bg-white p-2"
 				style="display: flex; justify-content: center; align-items: center;">
-				<i class="bi bi-journal fa-2x" style="color: green;"></i>&nbsp &nbsp
+				<i class="bi bi-journal fa-2x" style="color: green;"></i>&nbsp; &nbsp;
 				<span><h3>농업일지</h3></span>
 			</div>
 			<div class="container"
@@ -176,6 +176,7 @@
 								data-bs-toggle="modal" data-bs-target="#myModal">
 								<span> 글쓰기</span>
 							</button>
+						</div>
 					</form>
 				</div>
 
