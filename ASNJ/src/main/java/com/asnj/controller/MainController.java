@@ -43,6 +43,24 @@ public class MainController {
 		return "prediction";
 	}
 	
+	@GetMapping("/Disease.do")
+	public String Disease() {
+		System.out.print("disease.jsp로 이동\n");
+		return "disease";
+	}
+	
+	@GetMapping("/Pests.do")
+	public String Pests() {
+		System.out.print("pests.jsp로 이동\n");
+		return "pests";
+	}
+	
+	@PostMapping("/PredictionInfoPage.do")
+	public String PredictionInfoPage() {
+		System.out.print("prediction_Info.jsp로 이동\n");
+		return "prediction_Info";
+	}
+	
 	@GetMapping("/Loginpage.do")
 	public String Loginpage() {
 		return "login";

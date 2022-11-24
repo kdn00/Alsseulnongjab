@@ -91,19 +91,19 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<div class="navbar-nav ms-auto py-0">
-						<a href="${cpath}/introduce.do" class="nav-item nav-link ">사이트	소개</a> 
-						<a href="${cpath}/prediction.do" class="nav-item nav-link">병해충 예측</a>
+						<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트	소개</a> 
+						<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충 예측</a>
 						<div class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충
 								정보</a>
 							<div class="dropdown-menu m-0">
-								<a href="#" class="dropdown-item">병(病)</a> <a href="#"
-									class="dropdown-item">해충</a>
+								<a href="${cpath}/Disease.do" class="dropdown-item">병(病)</a> 
+								<a href="${cpath}/Pests.do" class="dropdown-item">해충</a>
 							</div>
 						</div>
-						<a href="${cpath}/notice.do" class="nav-item nav-link">공지사항</a>
-						<a href="#" class="nav-item nav-link">문의사항</a> <a href="#"
-							class="nav-item nav-link">농업일지</a>
+						<a href="${cpath}/Notice.do" class="nav-item nav-link active">공지사항</a>
+						<a href="#" class="nav-item nav-link">문의사항</a> 
+						<a href="${cpath}/Diary.do"	class="nav-item nav-link">농업일지</a>
 					</div>
 				</div>
 			</nav>
@@ -195,18 +195,7 @@
 	</div>
 	<!-- 푸터 끝 -->
 
-	<!-- JavaScript Libraries -->
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="lib/wow/wow.min.js"></script>
-	<script src="lib/easing/easing.min.js"></script>
-	<script src="lib/waypoints/waypoints.min.js"></script>
-	<script src="lib/counterup/counterup.min.js"></script>
-	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-	<!-- Template Javascript -->
-	<script src="js/main.js"></script>
+	
 
 </body>
 </html>

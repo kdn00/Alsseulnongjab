@@ -95,20 +95,18 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<div class="navbar-nav ms-auto py-0">
-						<a href="${cpath}/introduce.do" class="nav-item nav-link">사이트
-							소개</a> <a href="${cpath}/prediction.do"
-							class="nav-item nav-link active">병해충 예측</a>
+						<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
+						<a href="${cpath}/Prediction.do" class="nav-item nav-link active">병해충 예측</a>
 						<div class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충
-								정보</a>
+							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
 							<div class="dropdown-menu m-0">
-								<a href="#" class="dropdown-item">병(病)</a> <a href="#"
-									class="dropdown-item">해충</a>
+								<a href="${cpath}/Disease.do" class="dropdown-item">병(病)</a> 
+								<a href="${cpath}/Pests.do" class="dropdown-item">해충</a>
 							</div>
 						</div>
-						<a href="${cpath}/notice.do" class="nav-item nav-link">공지사항</a> <a
-							href="#" class="nav-item nav-link">문의사항</a> <a href="#"
-							class="nav-item nav-link">농업일지</a>
+						<a href="${cpath}/Notice.do" class="nav-item nav-link">공지사항</a> <a
+							href="#" class="nav-item nav-link">문의사항</a> 
+							<a href="#"	class="nav-item nav-link">농업일지</a>
 					</div>
 				</div>
 			</nav>
@@ -132,13 +130,16 @@
 	</div>
 
 	<!-- 병해충 예측 이미지 업로드 -->
-	<div class="container d-flex justify-content-center container-fluid pt-4 px-4">
+	<div
+		class="container d-flex justify-content-center container-fluid pt-4 px-4">
 		<div class="image-upload" id="image-upload">
 
-			<form method="post" enctype="multipart/form-data">
+			<form id="imgForm" method="post" enctype="multipart/form-data"
+				action="${cpath}/PredictionInfoPage.do">
 				<div class="upload-box" style="width: 600px;">
 					<div id="drop-file" class="drag-file">
-						<img src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일 아이콘" class="image">
+						<img src="https://img.icons8.com/pastel-glyph/2x/image-file.png"
+							alt="파일 아이콘" class="image">
 						<p class="message">파일을 드래그해서 여기에 놓으세요!!</p>
 						<img src="" alt="미리보기 이미지" class="preview">
 						<div type="button" class="btn" style="width: 100%;">
@@ -150,22 +151,19 @@
 					onchange="dropFile.handleFiles(this.files)"
 					accept="image/png, image/jpeg, image/gif">
 				<div class="fileContainer">
-					<div class="fileInput row" style="margin-top: 20px;">
-						<h4 class="col-3" style="align-self: flex-end; margin-top: inherit;">작물 이름 :</h4>
-						<input class="form-control col-md-9 border-0" type="text" placeholder="작물 이름" style="width: 73%;">						
-					</div>
-					<div class="fileInput row" style="margin-top: 20px;">
-						<h4 class="col-md-2" style="align-self: center;">증상 :</h4>
-						<textarea class="form-control col-md-9 border-0 " cols="50" rows="5" placeholder="간단히 작성하세요" style="width: 81.5%;"></textarea>
-					</div>
 					<div class="buttonContainer row" style="margin-top: 20px;">
-						<h4 class="col-md-3" style="align-self: flex-end; margin-top: inherit;">파일명 :</h4>
-						<div class="position-relative" style="max-width: 75%;">
-							<input class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5 col-md-9" type="text" placeholder="파일명">
-							<button type="button" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-4">전송</button>
+						<h4 class="col-md-3"
+							style="align-self: flex-end; margin-top: inherit;">파일명 :</h4>
+						<div class="position-relative col-md-9" style="max-width: 75%;">
+							<input id="fileName"
+								class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5"
+								type="text" placeholder="파일명">
+							<button type="submit"
+								class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-4">전송</button>
 						</div>
 					</div>
 				</div>
+				<button type="reset" id="reset">초기화</button>
 			</form>
 
 		</div>
@@ -183,21 +181,16 @@
 	</div>
 	<!-- 푸터 끝 -->
 
-	<!-- JavaScript Libraries -->
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="lib/wow/wow.min.js"></script>
-	<script src="lib/easing/easing.min.js"></script>
-	<script src="lib/waypoints/waypoints.min.js"></script>
-	<script src="lib/counterup/counterup.min.js"></script>
-	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+	
 
 	<!-- 이미지 드래그 앤 드롭 -->
 	<script src="resources/js/prediction.js"></script>
+	<script type="text/javascript">
+	// 등록 이미지 삭제 ( input file reset )
+		
+	</script>
 
-	<!-- Template Javascript -->
-	<script src="resources/js/main.js"></script>
+	
 
 </body>
 </html>
