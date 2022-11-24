@@ -91,8 +91,8 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<div class="navbar-nav ms-auto py-0">
-						<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트	소개</a> 
-						<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충 예측</a>
+						<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a> 
+						<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충 분석</a>
 						<div class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
 							<div class="dropdown-menu m-0">
