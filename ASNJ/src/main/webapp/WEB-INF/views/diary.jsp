@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
@@ -19,7 +18,8 @@
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
+<link
+	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
 	rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
@@ -31,8 +31,8 @@
 	rel="stylesheet">
 
 <!-- Libraries Stylesheet -->
-<link href="lib/animate/animate.min.css" rel="stylesheet">
-<link href="lib/owlcarousel/assets/owl.carousel.min.css"
+<link href="resources/lib/animate/animate.min.css" rel="stylesheet">
+<link href="resources/lib/owlcarousel/assets/owl.carousel.min.css"
 	rel="stylesheet">
 
 <!-- Customized Bootstrap Stylesheet -->
@@ -40,6 +40,115 @@
 
 <!-- Template Stylesheet -->
 <link href="resources/css/style.css" rel="stylesheet">
+
+<!-- 달력 -->
+<link href='resources/fullcalendar-5.11.3/lib/main.min.css'
+	rel='stylesheet' />
+<script src='resources/fullcalendar-5.11.3/lib/main.min.js'></script>
+<script src='resources/fullcalendar-5.11.3/lib/main.min.js'></script>
+<script src='resources/js/ko.js'></script>
+
+<!-- 달력 왼쪽 사이트  style -->
+<style>
+.fc-event {
+	margin-top: 5px;
+	cursor: move;
+}
+</style>
+
+<script>
+	var Calendar = null;
+
+	document.addEventListener('DOMContentLoaded', function() {
+		var Calendar = FullCalendar.Calendar;
+		var Draggable = FullCalendar.Draggable;
+
+		var containerEl = document.getElementById('external-events');
+		var calendarEl = document.getElementById('calendar');
+		var checkbox = document.getElementById('drop-remove');
+
+		// initialize the external events
+		// -----------------------------------------------------------------
+
+		new Draggable(containerEl, {
+			itemSelector : '.fc-event',
+			eventData : function(eventEl) {
+				return {
+					title : eventEl.innerText
+				};
+			}
+		});
+
+		// initialize the calendar
+		// -----------------------------------------------------------------
+
+		calendar = new Calendar(calendarEl, {
+			headerToolbar : {
+				left : 'prev,next today', /* 이전, 다음, 오늘 */
+				center : 'title',
+				right : 'dayGridMonth,timeGridWeek,timeGridDay' /* 월간, 주간,일간 */
+			},
+			editable : true, // 수정가능여부 -- false는 수정 불가능
+			droppable : true, // this allows things to be dropped onto the calendar  캘린더 안으로 드롭할 수 있다. false는 드롭 불가
+			drop : function(info) {
+				// is the "remove after drop" checkbox checked?
+				if (checkbox.checked) {
+					// if so, remove the element from the "Draggable Events" list
+					info.draggedEl.parentNode.removeChild(info.draggedEl);
+				}
+			},
+			locale : 'ko'
+		});
+
+		calendar.render();
+	});
+
+	// 여기서 부터 error 발생
+	// 1. 전체 이벤트 데이터를 추출해야한다. 2. Ajax로 서버에 전송하여 DB에 저장해야 한다.
+	/*   document.addEventListener('DOMContentLoaded', function allSave()
+	 {
+	 // calendar.getEvents() ->  배열형태로 값 변환
+	 var allEvent = calendar.getEvents();	 
+	 /* console.log(allEvent); */
+
+	/*  var events = new Array();
+	 for(var i=0; i<allEvent.length; i++)
+		 {
+		 var obj = new Object(); // Json 객체 형태로 넘겨주기.
+		 
+		 obj.title = allEvent[i]._def.title; // 이벤트 명칭
+		 obj.allday = allEvent[i]._def.allDay; // 하루 종일의 이벤트인지 알려주는 boolean 값(true/false)
+		 obj.start = allEvent[i]._instance.range.start; // 시작 날짜 및 시간
+		 obj.end = allEvent[i]._instance.range.end; // 마친 날짜 및 시간
+		 
+		 events.push(obj); // 전체 이벤트들이 배열 형태로, 그리고 json 객체 형태로 events 변수에 담긴다.
+		 }
+	 // enents를 서버에서 전송할 때, string.. 문자열 형태로 넘길것이지 떼문에, 이 내용을 json.stringify라는 함수로 
+	 var jsondata = JSON.strigify  // 문자열로 변환. and jsondata라고 해당 값을 정의
+	 console.log(jsondata);
+	 
+	 savedata(jsondata);
+	}) ;  */
+
+	/*   document.addEventListener('DOMContentLoaded',function savedata(jsondata) {
+	 $.ajax({
+	 type:'POST',
+	 url:'#', // https://www.youtube.com/watch?v=DYcHohTci84  -> 3분 41초 참고
+	 data:("alldata:"jsondata),
+	 dataType:'test',
+	 async:false // 동기
+	 })
+	 .done(function(result){
+	
+	 }) // 성공
+	 .fail(function(result, status, error){
+	 alert("에러발생:" + error);
+	 }) // 실페
+	 }; */
+	// 여기까지  error 끝
+</script>
+
+
 </head>
 
 <body>
@@ -74,7 +183,7 @@
 
 	<!-- 카테고리 시작 -->
 	<div class="container-xxl py-5 bg-primary hero-header mb-0"
-		style="padding-top: 2rem !important; padding-bottom: 2rem !important; max-width: none;">
+		style="padding-top: 2rem !important; padding-bottom: 2rem !important;">
 		<div class="container-xxl position-relative p-0">
 			<nav
 				class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
@@ -90,19 +199,20 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<div class="navbar-nav ms-auto py-0">
-						<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a> 
-						<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충 분석</a>
+						<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트
+							소개</a> <a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충
+							분석</a>
 						<div class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충
 								정보</a>
 							<div class="dropdown-menu m-0">
-								<a href="${cpath}/Disease.do" class="dropdown-item">병(病)</a> 
-								<a href="${cpath}/Pests.do" class="dropdown-item">해충</a>
+								<a href="${cpath}/Disease.do" class="dropdown-item">병(病)</a> <a
+									href="${cpath}/Pests.do" class="dropdown-item">해충</a>
 							</div>
 						</div>
-						<a href="${cpath}/Notice.do" class="nav-item nav-link">공지사항</a>
-						<a href="${cpath}/Questions.do" class="nav-item nav-link">문의사항</a> 
-						<a href="${cpath}/Diary.do"	class="nav-item nav-link active">농업일지</a>
+						<a href="${cpath}/Notice.do" class="nav-item nav-link">공지사항</a> <a
+							href="${cpath}/Questions.do" class="nav-item nav-link">문의사항</a> <a
+							href="${cpath}/Diary.do" class="nav-item nav-link active">농업일지</a>
 					</div>
 				</div>
 			</nav>
@@ -110,45 +220,95 @@
 	</div>
 	<!-- 카테고리 끝 -->
 
-<!-- 내용 시작 -->
+	<!-- 내용 시작 -->
 
-<!-- 농업일지 타이틀 -->
-<div class="container"
-	style="background-color: rgb(250, 255, 250); width: 1510px; height: 100px; border-radius: 1em; box-shadow: 3px 3px 3px gray; margin-top: 10px; max-width: none;">
-	<div style="max-width: none;">
-		<img src="resources/image/farmicon.png" align=right> <span
-			align="center"><br>
-			<h2>농업일지</h2>
-			<p>방제력 확인과 농업일지를 작성해보세요~♬</p> </span>
+	<!-- 농업일지 타이틀 -->
+	<div class="container"
+		style="background-color: rgb(250, 255, 250); width: 65%; height: 100px; border-radius: 1em; box-shadow: 3px 3px 3px gray; margin-top: 10px;">
+		<div>
+			<img src="resources/image/farmicon.png" align=right>
+			<span align="center"><br>
+				<h2>농업일지</h2>
+				<p>방제력 확인과 농업일지를 작성해보세요~♬</p> </span>
+		</div>
 	</div>
-</div>
-<!-- 농업일지 타이틀 끝 -->
-<br>
-<div class="container">
-	<!-- 방제력 -->
-	<div class="row">
-		<div class="col-sm-6">
+	<!-- 농업일지 타이틀 끝 -->
+	<br>
+	<div class="container">
+		<!-- 방제력 -->
+		<div class="row">
+			<!-- <div class="col-sm-6"> -->
 			<div class="bg-white p-2"
 				style="display: flex; justify-content: center; align-items: center;">
 				<i class="bi bi-calendar2-minus fa-2x" style="color: green;"></i>&nbsp;
 				&nbsp; <span><h3>방제력</h3></span>
 			</div>
 			<div class="container"
-				style="background-color: rgb(250, 255, 240); width: 90%; height: 600px; border-radius: 1em; margin-top: 5px;">
+				style="background-color: rgb(250, 255, 240); width: 95%; height: 900px; border-radius: 1em; margin-top: 5px;">
+				<!-- 달력 시작 -->
+
+				<div id='external-events'
+					style="float: left; width: 20%; padding-right: 10px; margin-top: 100px;">
+					<p>
+						<strong>아래의 내용을 드래그하여 설정해 보세요.</strong>
+					</p>
+					<div
+						class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+						<div class='fc-event-main'>고추</div>
+					</div>
+					<div
+						class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+						<div class='fc-event-main'>오이</div>
+					</div>
+					<div
+						class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+						<div class='fc-event-main'>파</div>
+					</div>
+					<div
+						class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+						<div class='fc-event-main'>딸기</div>
+					</div>
+					<div
+						class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+						<div class='fc-event-main'>호박</div>
+					</div>
+
+					<p>
+						<input type='checkbox' id='drop-remove' /> <label
+							for='drop-remove'>드래그 앤 드롭후 제거</label>
+					</p>
+				</div>
+
+				<br>
+
+				<div style="float: left; width: 80%; background-color: white;">
+					<br>
+					<div id='calendar'></div>
+				</div>
+				<!-- 달력 끝 -->
 			</div>
+				<!-- 저장 버튼 -->
+			<div class="d-flex justify-content-end">
+				<div style="width: 60%; float: left; text-align: right">
+					<button type="submit" class="btn btn-sm btn-success">
+						<span>저장</span>
+					</button>
+				</div>
+			</div>
+			<!-- 방제력 끝 -->
 		</div>
 
-		<!-- 방제력 끝 -->
-
 		<!-- 농업일지 시작 -->
-		<div class="col-sm-6">
+		<br>
+		<!-- <div class="col-sm-6"> -->
+		<div class="row">
 			<div class="bg-white p-2"
 				style="display: flex; justify-content: center; align-items: center;">
-				<i class="bi bi-journal fa-2x" style="color: green;"></i>&nbsp; &nbsp;
-				<span><h3>농업일지</h3></span>
+				<i class="bi bi-journal fa-2x" style="color: green;"></i>&nbsp;
+				&nbsp; <span><h3>농업일지</h3></span>
 			</div>
 			<div class="container"
-				style="background-color: rgb(250, 255, 240); width: 90%; height: 600px; border-radius: 1em; margin-top: 5px;">
+				style="background-color: rgb(250, 255, 240); width: 95%; height: 900px; border-radius: 1em; margin-top: 5px;">
 				<br>
 
 				<!-- 농업일지 list 시작 -->
@@ -171,12 +331,9 @@
 							</tbody>
 						</table>
 						<div class=" d-flex justify-content-end">
-							<button type="button"
-								class="btn btn-sm btn-success bi bi-check-circle"
-								data-bs-toggle="modal" data-bs-target="#myModal">
+							<button type="button" class="btn btn-sm btn-success bi bi-check-circle"	data-bs-toggle="modal" data-bs-target="#myModal">
 								<span> 글쓰기</span>
 							</button>
-						</div>
 					</form>
 				</div>
 
@@ -194,8 +351,8 @@
 
 							<!-- Modal body -->
 							<div class="modal-body">
-							<form>
-								<div id="dialog-confirm">
+								<form>
+									<div id="dialog-confirm">
 										<div class="input-group mb-3">
 											<span class="input-group-text">제목</span> <input type="text"
 												class="form-control" placeholder="제목을 입력하세요."> <span
@@ -204,19 +361,19 @@
 										</div>
 										<!-- textarea와 pre 비슷한 개념  -->
 										<textarea style="width: 100%;" placeholder="내용을 입력하세요."></textarea>
-								</div>
+									</div>
 
-								<!-- Modal footer -->
-								<div class="modal-footer">
-									<button type="submit"
-										class="btn btn-sm btn-success bi bi-check-circle">
-										<span> 등록</span>
-									</button>
-									<button type="submit"
-										class="btn btn-sm btn-success bi bi-check-circle">
-										<span> 삭제</span>
-									</button>
-								</div>
+									<!-- Modal footer -->
+									<div class="modal-footer">
+										<button type="submit"
+											class="btn btn-sm btn-success bi bi-check-circle">
+											<span> 등록</span>
+										</button>
+										<button type="submit"
+											class="btn btn-sm btn-success bi bi-check-circle">
+											<span> 삭제</span>
+										</button>
+									</div>
 								</form>
 
 							</div>
@@ -227,8 +384,8 @@
 			</div>
 		</div>
 		<!-- 농업일지  끝-->
-
 	</div>
+	<!-- </div> -->
 	<!-- 내용 끝 -->
 
 	<!-- 푸터 시작 -->
@@ -237,5 +394,5 @@
 	</div>
 	<!-- 푸터 끝 -->
 
-	</body>
+</body>
 </html>
