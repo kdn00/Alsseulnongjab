@@ -1,3 +1,21 @@
+fetch("header.html")
+.then(response => {
+    return response.text()
+})
+.then(data => {
+    document.querySelector("header").innerHTML = data;
+})
+
+
+
+fetch("footer.html")
+.then(response => {
+return response.text()
+})
+.then(data => {
+document.querySelector("footer").innerHTML = data;
+});
+
 (function ($) {
     "use strict";
 
@@ -11,6 +29,11 @@
     };
     spinner();
     
+    
+    // Initiate the wowjs
+    new WOW().init();
+
+
     // Sticky Navbar
     $(window).scroll(function () {
         if ($(this).scrollTop() > 45) {
@@ -60,6 +83,38 @@
     $('.back-to-top').click(function () {
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
+    });
+
+
+    // Facts counter
+    $('[data-toggle="counter-up"]').counterUp({
+        delay: 10,
+        time: 2000
+    });
+
+
+    // Testimonials carousel
+    $(".testimonial-carousel").owlCarousel({
+        autoplay: true,
+        smartSpeed: 1000,
+        margin: 25,
+        dots: true,
+        loop: true,
+        center: true,
+        responsive: {
+            0:{
+                items:1
+            },
+            576:{
+                items:1
+            },
+            768:{
+                items:2
+            },
+            992:{
+                items:3
+            }
+        }
     });
     
 })(jQuery);
