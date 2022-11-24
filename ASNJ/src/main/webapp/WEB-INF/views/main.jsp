@@ -101,7 +101,7 @@
 							</div>
 						</div>
 						<a href="${cpath}/Notice.do" class="nav-item nav-link">공지사항</a>
-						<a href="#" class="nav-item nav-link">문의사항</a> 
+						<a href="${cpath}/Questions.do" class="nav-item nav-link">문의사항</a> 
 						<a href="${cpath}/Diary.do"	class="nav-item nav-link">농업일지</a>
 					</div>
 				</div>
