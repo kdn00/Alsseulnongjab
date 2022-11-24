@@ -125,50 +125,64 @@
 	<br>
 	
 	<!-- 공지사항 테이블 시작 -->
-	<div class="container-fluid pt-4 px-4">
-		<div class="container col-6 text-center">
-			<table
-				class="table table-bordered table-light table-hover border-success">
-				<thead>
-					<tr>
-						<th>순번</th>
-						<th>내용</th>
-						<th>첨부파일</th>
-						<th>작성자</th>
-						<th>작성 일자</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td>##########</td>
-						<td><i class="bi bi-paperclip"></i></td>
-						<td>홍길동</td>
-						<td>2022-11-18</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>##########</td>
-						<td><i class="bi bi-paperclip"></i></td>
-						<td>홍길동2</td>
-						<td>2022-11-18</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>##########</td>
-						<td><i class="bi bi-paperclip"></i></td>
-						<td>홍길동3</td>
-						<td>2022-11-18</td>
-					</tr>
-					<tr>
-						<td>4</td>
-						<td>##########</td>
-						<td><i class="bi bi-paperclip"></i></td>
-						<td>홍길동4</td>
-						<td>2022-11-18</td>
-					</tr>
-				</tbody>
-			</table>
+		<div class="container-fluid pt-4 px-4">
+		<div class="container col-8 text-center">
+		
+			<div id="accordion">
+			
+			  <div class="card">
+			    <div class="card-header">
+			      <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+			        #1 공지사항 제목
+			      </a>
+			    </div>
+			    <div id="collapseOne" class="collapse" data-bs-parent="#accordion">
+			      <div class="card-body">
+			      <span>서비스 점검?</span>
+			      </div>
+			    </div>
+			  </div>
+			
+			  <div class="card">
+			    <div class="card-header">
+			      <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
+			        #2 공지사항 제목
+			      </a>
+			    </div>
+			    <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+			      <div class="card-body">
+			        <span>서비스 점검?</span>
+			      </div>
+			    </div>
+			  </div>
+			
+			  <div class="card">
+			    <div class="card-header">
+			      <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+			         #3 공지사항 제목
+			      </a>
+			    </div>
+			    <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+			      <div class="card-body">
+			        <span>업데이트???</span>
+			      </div>
+			    </div>
+			  </div>
+			  
+			  <div class="card">
+			    <div class="card-header">
+			      <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseFour">
+			         #4 알쓸농잡
+			      </a>
+			    </div>
+			    <div id="collapseFour" class="collapse" data-bs-parent="#accordion">
+			      <div class="card-body">
+			        <span>뜻  → 알아두면 쓸모있는 농사에 대한 잡지식</span>
+			      </div>
+			    </div>
+			  </div>
+	
+			</div>
 		</div>
 	</div>
 	<!-- 공지사항 테이블 끝 -->
