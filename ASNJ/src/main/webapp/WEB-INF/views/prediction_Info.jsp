@@ -433,7 +433,6 @@
 	<!-- 병해충 정보 출력 끝-->
 
 
-
 	<!-- 푸터 시작 -->
 	<div>
 		<jsp:include page="bottom.jsp" />

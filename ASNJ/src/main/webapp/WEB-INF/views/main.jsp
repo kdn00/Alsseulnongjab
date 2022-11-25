@@ -58,14 +58,6 @@
 <script src='resources/fullcalendar-5.11.3/lib/main.min.js'></script>
 <script src='resources/js/ko.js'></script>
 
-<!-- 달력 왼쪽 사이트  style -->
-<!-- <style>
-.fc-event {
-	margin-top: 5px;
-	cursor: move;
-}
-</style> -->
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
