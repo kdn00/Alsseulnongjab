@@ -297,7 +297,6 @@
 				</div>
 			</div>		
 
-
 			<!-- 개별 링크 클릭 코드 -->
 			<div class="group_theme" data-block-id=""
 				data-block-code="PC-THEME-FINANCE-MOBILE-RANKING-DEFAULT-10"

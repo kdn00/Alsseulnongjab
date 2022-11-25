@@ -167,7 +167,6 @@
 
 	<!-- 내용 끝 -->
 
-
 	<!-- 푸터 시작 -->
 	<div>
 		<jsp:include page="bottom.jsp" />
