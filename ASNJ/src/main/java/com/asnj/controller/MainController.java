@@ -76,10 +76,9 @@ public class MainController {
 	public String Joinpage() {
 		return "join";
 	}
-	
-	@GetMapping("/Memberpage.do")
-	public String Memberpage() {
-		return "membertest";
+	@GetMapping("/Mypage.do")
+	public String Mypage() {
+		return "mypage";
 	}
 
 }
