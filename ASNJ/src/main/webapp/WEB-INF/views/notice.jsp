@@ -49,11 +49,12 @@
 		<!-- 헤더 시작 -->
 		<jsp:include page="top.jsp" />
 		<!-- 헤더 끝 -->
-	
+
 		<!-- Full Screen Search Start -->
 		<div class="modal fade" id="searchModal" tabindex="-1">
 			<div class="modal-dialog modal-fullscreen">
-				<div class="modal-content" style="background: rgba(29, 40, 51, 0.8);">
+				<div class="modal-content"
+					style="background: rgba(29, 40, 51, 0.8);">
 					<div class="modal-header border-0">
 						<button type="button" class="btn bg-white btn-close"
 							data-bs-dismiss="modal" aria-label="Close"></button>
@@ -73,11 +74,11 @@
 			</div>
 		</div>
 		<!-- Full Screen Search End -->
-	
+
 		<!-- 카테고리 시작 -->
 		<div class="container-xxl py-5 bg-primary hero-header mb-0"
 			style="padding-top: 2rem !important; padding-bottom: 2rem !important; max-width: none;">
-			<div class="container-xxl position-relative p-0" style="margin-right: 0px; max-width: inherit;">
+			<div class="container-xxl position-relative p-0">
 				<nav
 					class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
 					style="bottom: 0px;">
@@ -113,119 +114,215 @@
 	</div>
 	<!-- 카테고리 끝 -->
 
-	<!-- 공지사항 시작 -->
-	<div class="container-xxl bg-white p-0"  style="display: flex; justify-content: center; align-items: center;  max-width: none;">
+	<!-- 커뮤니티 시작 -->
+	<div class="container-xxl bg-white p-0"
+		style="display: flex; justify-content: center; align-items: center; max-width: none;">
 		<div class="container-fluid pt-4 px-4">
 			<div class="mx-auto" style="width: 200px;">
 				<div id="underline">
-					<h3>공지사항</h3>
+					<h3>커뮤니티</h3>
 				</div>
 				<br>
 			</div>
 		</div>
 	</div>
 	<br>
-	
-	<!-- 공지사항 테이블 시작 -->
-		<div class="container-fluid px-5">
-		<div class="container col-8 text-center">
-		
-			<div id="accordion">
-			
-			  <div class="card">
-			    <div class="card-header">
-			      <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
-			        #1 공지사항 제목
-			      </a>
-			    </div>
-			    <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
-			      <div class="card-body">
-			      <span>서비스 점검?</span>
-			      </div>
-			    </div>
-			  </div>
-			
-			  <div class="card">
-			    <div class="card-header">
-			      <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
-			        #2 공지사항 제목
-			      </a>
-			    </div>
-			    <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
-			      <div class="card-body">
-			        <span>서비스 점검?</span>
-			      </div>
-			    </div>
-			  </div>
-			
-			  <div class="card">
-			    <div class="card-header">
-			      <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
-			         #3 공지사항 제목
-			      </a>
-			    </div>
-			    <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
-			      <div class="card-body">
-			        <span>업데이트???</span>
-			      </div>
-			    </div>
-			  </div>
-			  
-			  <div class="card">
-			    <div class="card-header">
-			      <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseFour">
-			         #4 알쓸농잡
-			      </a>
-			    </div>
-			    <div id="collapseFour" class="collapse" data-bs-parent="#accordion">
-			      <div class="card-body">
-			        <span>뜻  → 알아두면 쓸모있는 농사에 대한 잡지식</span>
-			      </div>
-			    </div>
-			  </div>
-	
-			</div>
-			
-		</div>
-	</div>
-	<!-- 공지사항 테이블 끝 -->
-	<!-- 공지사항 끝  -->
-	
-	<br><br>
-	<!-- 문의사항 시작 -->
-	<div class="container-xxl bg-white p-0"  style="display: flex; justify-content: center; align-items: center;  max-width: none;">
+
+	<!-- 공지사항 탭 시작  -->
+	<div class="container-xxl bg-white"
+		style="display: flex; justify-content: center; align-items: center;">
 		<div class="container-fluid pt-4 px-4">
-			<div class="mx-auto" style="width: 200px;">
-				<div id="underline">
-					<h3>문의사항</h3>
+			<ul class="nav nav-tabs nav-justified nav-pills nav-fill">
+				<li class="nav-item"><a class="nav-link active"
+					data-bs-toggle="tab" href="#info">
+						<h4>
+							<i class="bi bi-megaphone">공지사항</i>
+						</h4>
+				</a></li>
+				<li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
+					href="#actlist">
+						<h4>
+							<i class="bi bi-pen"></i>문의사항
+						</h4>
+				</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="container tab-pane active" id="info">
+					<!-- 공지사항 시작 -->
+					<div class="container"
+						style="background-color: rgb(250, 255, 240); width: 100%; height: 600px; border-radius: 1em; margin-top: 5px;">
+						<br>
+						<div class="accordion accordion-flush" id="accordionFlushExample">
+							<!-- #1 서비스 안내 -->
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="flush-headingOne">
+									<button class="accordion-button collapsed" type="button"
+										data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+										aria-expanded="false" aria-controls="flush-collapseOne">
+										<span>#1 서비스 안내</span>
+									</button>
+								</h2>
+								<div id="flush-collapseOne" class="accordion-collapse collapse"
+									aria-labelledby="flush-headingOne"
+									data-bs-parent="#accordionFlushExample">
+									<div class="accordion-body bg-white">
+										<span>서비스 준비중입니다.</span>
+									</div>
+								</div>
+							</div>
+							<!-- #2 업데이트 안내  -->
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="flush-headingTwo">
+									<button class="accordion-button collapsed" type="button"
+										data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+										aria-expanded="false" aria-controls="flush-collapseTwo">
+										<span>#2 업데이트 안내</span>
+									</button>
+								</h2>
+								<div id="flush-collapseTwo" class="accordion-collapse collapse"
+									aria-labelledby="flush-headingTwo"
+									data-bs-parent="#accordionFlushExample">
+									<div class="accordion-body bg-white">
+										<span>방제력 업데이트 중입니다.</span>
+									</div>
+								</div>
+							</div>
+							<!-- #3 알쓸농장 뜻 -->
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="flush-headingThree">
+									<button class="accordion-button collapsed" type="button"
+										data-bs-toggle="collapse"
+										data-bs-target="#flush-collapseThree" aria-expanded="false"
+										aria-controls="flush-collapseThree">
+										<span>#3 [알쓸농장] 뜻</span>
+									</button>
+								</h2>
+								<div id="flush-collapseThree"
+									class="accordion-collapse collapse"
+									aria-labelledby="flush-headingThree"
+									data-bs-parent="#accordionFlushExample">
+									<div class="accordion-body bg-white">
+										<span>알아두면 쓸모있는 농사에 대한 잡지식</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 				<br>
+				<!-- 공지사항 끝 -->
+
+				<!-- 문의사항 탭 시작  -->
+				<div id="actlist" class="container tab-pane fade">
+					<div class="container-xxl p-0"
+						style="display: flex; justify-content: center; align-items: center;">
+
+						<!-- 문의사항 시작 -->
+						<div class="container"
+							style="background-color: rgb(250, 255, 240); width: 100%; height: 600px; border-radius: 1em; margin-top: 5px;">
+							<br>
+							<!-- 문의사항 list 시작 -->
+							<from action="">
+							<table class="table table-bordered caption-top"
+								style="vertical-align: middle;">
+								<thead class="table table-light" align="center">
+									<th>#</th>
+									<th>제목</th>
+									<th>내용</th>
+									<th style="width: 100px;">작성날짜</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td align="center">1</td>
+										<td>인사</td>
+										<td>안녕하세요</td>
+										<td>2022.11.25</td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- 페이징 시작 -->
+							<nav class=" d-flex justify-content-center"
+								aria-label="Page navigation example">
+								<ul class="pagination">
+									<li class="page-item"><a class="page-link" href="#"
+										aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+									</a></li>
+									<li class="page-item active"><a class="page-link" href="#">1</a></li>
+									<li class="page-item"><a class="page-link" href="#">2</a></li>
+									<li class="page-item"><a class="page-link" href="#">3</a></li>
+									<li class="page-item"><a class="page-link" href="#"
+										aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+									</a></li>
+								</ul>
+							</nav>
+							<!-- 페이징 끝 --> </from>
+							<!-- 글쓰기 버튼 -->
+							<div class=" d-flex justify-content-end">
+								<button type="button"
+									class="btn btn-sm btn-success bi bi-check-circle"
+									data-bs-toggle="modal" data-bs-target="#myModal">
+									<span> 글쓰기</span>
+								</button>
+							</div>
+						</div>
+						<!-- 문의사항 list 끝 -->
+
+						<!-- 글쓰기 모달 뷰  시작 -->
+						<!-- The Modal -->
+						<div class="modal" id="myModal" data-bs-backdrop="static">
+							<div class="modal-dialog modal-lg modal-dialog-centered">
+								<div class="modal-content">
+
+									<!-- Modal Header -->
+									<div class="modal-header">
+										<h4 class="modal-title">문의사항</h4>
+										<button type="button" class="btn-close"
+											data-bs-dismiss="modal"></button>
+									</div>
+
+									<!-- Modal body -->
+									<div class="modal-body">
+										<form>
+											<div id="dialog-confirm">
+												<div class="input-group mb-3">
+													<span class="input-group-text">제목</span> <input type="text"
+														class="form-control" placeholder="제목을 입력하세요."> <span
+														class="input-group-text">날짜</span> <input type="date"
+														class="form-control" placeholder="date">
+												</div>
+												<textarea style="width: 100%;" placeholder="내용을 입력하세요."></textarea>
+											</div>
+
+											<!-- Modal footer -->
+											<div class="modal-footer">
+												<button type="submit"
+													class="btn btn-sm btn-success bi bi-check-circle">
+													<span> 등록</span>
+												</button>
+												<button type="submit"
+													class="btn btn-sm btn-success bi bi-check-circle">
+													<span> 삭제</span>
+												</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 글쓰기 모달 뷰 끝  -->
+					</div>
+					<!-- 문의사항 끝  -->
+				</div>
 			</div>
+			<br>
+			<br>
+			<!-- 문의사항 탭 끝  -->
 		</div>
 	</div>
-	<br>
-	
-	<!-- 문의사항 테이블 시작 -->
-	<div class="container-fluid pt-4 px-4">
-		<div class="container col-8 text-center">
-		
-		<!-- 여기부터 넣으면 됩니다. -->
-		
-		
-		
-		
-		
-		
-		
-		<!-- 여기부터 넣으면 됩니다. 끝 -->
-		</div>
-	</div>
-	<!-- 문의사항 테이블 시끝 -->
+	<!-- 마이페이지 탭 끝  -->
+	<!-- 마이페이지 끝  -->
 
-	<!-- 문의사항 끝  -->
-	
-
-	<!-- 푸터 시작 -->
+	<!-- 푸터 시작  -->
 	<div>
 		<jsp:include page="bottom.jsp" />
 	</div>
