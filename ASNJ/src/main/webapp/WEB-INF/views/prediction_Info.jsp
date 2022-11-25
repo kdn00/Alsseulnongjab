@@ -84,7 +84,7 @@ ul {
 		<!-- 카테고리 시작 -->
 		<div class="container-xxl py-5 bg-primary hero-header mb-0"
 			style="padding-top: 2rem !important; padding-bottom: 2rem !important; max-width: none;">
-			<div class="container-xxl position-relative p-0">
+			<div class="container-xxl position-relative p-0" style="margin-right: 0px; max-width: inherit;">
 				<nav
 					class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
 					style="bottom: 0px;">
@@ -109,8 +109,9 @@ ul {
 								</div>
 							</div>
 							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
-							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니케이션</a> 
+							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
 							<a href="${cpath}/Mypage.do" class="nav-item nav-link">마이페이지</a>
+							<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보 관리</a>
 						</div>
 					</div>
 				</nav>
