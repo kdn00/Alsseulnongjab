@@ -61,10 +61,10 @@ public class MainController {
 		return "prediction_Info";
 	}
 	
-	@GetMapping("/Questions.do")
-	public String Questions() {
-		System.out.print("questions.jsp로 이동\n");
-		return "questions";
+	@GetMapping("/UserInfo.do")
+	public String UserInfo() {
+		System.out.print("user_Info.jsp로 이동\n");
+		return "user_Info";
 	}
 	
 	@GetMapping("/Loginpage.do")
