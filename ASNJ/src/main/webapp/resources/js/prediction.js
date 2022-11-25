@@ -43,6 +43,8 @@ function DropFile(dropAreaId, fileListId) {
 		  function previewFile(file) {
 		    console.log(file);
 		    renderFile(file);
+		    console.log(file.name);
+		    document.getElementById('fileName').value = file.name; 
 		  }
 
 		  function renderFile(file) {
