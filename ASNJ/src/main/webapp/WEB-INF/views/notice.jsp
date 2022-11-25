@@ -78,7 +78,7 @@
 		<!-- 카테고리 시작 -->
 		<div class="container-xxl py-5 bg-primary hero-header mb-0"
 			style="padding-top: 2rem !important; padding-bottom: 2rem !important; max-width: none;">
-			<div class="container-xxl position-relative p-0">
+			<div class="container-xxl position-relative p-0" style="margin-right: 0px; max-width: inherit;">
 				<nav
 					class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
 					style="bottom: 0px;">
