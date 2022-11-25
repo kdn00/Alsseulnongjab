@@ -62,6 +62,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
+      headerToolbar : {
+			left : 'prev,next today', /* 이전, 다음, 오늘 */
+			center : 'title',
+			right : 'dayGridMonth,timeGridWeek,timeGridDay' /* 월간, 주간,일간 */
+		},
       locale : 'ko'
     })
     calendar.render();
@@ -175,27 +180,27 @@ document.addEventListener('DOMContentLoaded', function() {
 		<div class="row">
 			<div class="container-xxl bg-white p-0" style="display: flex; justify-content: center; align-items: center;">
 				<div class="container-fluid pt-4 px-4">
-					<div class="mx-auto" style="width: 200px;">
-						<div id="underline">
-							<h2>방제력</h2>
+					<div style="margin-left:10%;">
+						<div class="mx-auto" style="width: 200px;">
+							<div id="underline">
+								<h2>방제력</h2>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- 내용 들어갈 곳 -->
 			<!-- 방제력 달력 시작 -->
-			<div class="row">
-				<div class="container"	style="background-color: rgb(250, 255, 240); width: 100%; height: 500px; border-radius: 1em; margin-top: 10px;">
+				<div class="container" style="background-color: rgb(250, 255, 240); width: 90%; height: 1000px; border-radius: 1em; margin-top: 20px;">
 									
 					<!-- 달력 -->
 						<br><br>
-						 <div class="container" style="background-color: white; width: 70%; display: flex; justify-content: center;">
+						 <div style="background-color: white; width: 100%; display:block;  justify-content: center; margin-top: -20px;">
 							<br>
 							<div id="calendar"></div>
 						</div>
 						<!-- 달력 끝 -->
 					</div>
-				</div> 
 			<!-- 방제력 달력 끝  -->	
 						<!-- 내용 들어갈 곳 끝 -->
 		</div>
