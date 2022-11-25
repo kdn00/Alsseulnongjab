@@ -52,70 +52,69 @@ ul {
 </head>
 
 <body>
-	<!-- 헤더 시작 -->
-	<jsp:include page="top.jsp" />
-	<!-- 헤더 끝 -->
-
-	<!-- Full Screen Search Start -->
-	<div class="modal fade" id="searchModal" tabindex="-1">
-		<div class="modal-dialog modal-fullscreen">
-			<div class="modal-content" style="background: rgba(29, 40, 51, 0.8);">
-				<div class="modal-header border-0">
-					<button type="button" class="btn bg-white btn-close"
-						data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div
-					class="modal-body d-flex align-items-center justify-content-center">
-					<div class="input-group" style="max-width: 600px;">
-						<input type="text"
-							class="form-control bg-transparent border-light p-3"
-							placeholder="Type search keyword">
-						<button class="btn btn-light px-4">
-							<i class="bi bi-search"></i>
-						</button>
+	<div class="sticky-top">
+		<!-- 헤더 시작 -->
+		<jsp:include page="top.jsp" />
+		<!-- 헤더 끝 -->
+	
+		<!-- Full Screen Search Start -->
+		<div class="modal fade" id="searchModal" tabindex="-1">
+			<div class="modal-dialog modal-fullscreen">
+				<div class="modal-content" style="background: rgba(29, 40, 51, 0.8);">
+					<div class="modal-header border-0">
+						<button type="button" class="btn bg-white btn-close"
+							data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div
+						class="modal-body d-flex align-items-center justify-content-center">
+						<div class="input-group" style="max-width: 600px;">
+							<input type="text"
+								class="form-control bg-transparent border-light p-3"
+								placeholder="Type search keyword">
+							<button class="btn btn-light px-4">
+								<i class="bi bi-search"></i>
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- Full Screen Search End -->
-
-
-	<!-- 카테고리 시작 -->
-	<div class="container-xxl py-5 bg-primary hero-header mb-0"
-		style="padding-top: 2rem !important; padding-bottom: 2rem !important; max-width: none;">
-		<div class="container-xxl position-relative p-0">
-			<nav
-				class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
-				style="bottom: 0px;">
-				<a href="index.jsp" class="navbar-brand p-0">
-					<h4 class="m-0 text-white" style="font-style: italic;">
-						<i class="fa me-3"></i> 알쓸농잡
-					</h4> <!-- <img src="img/logo.png" alt="Logo"> -->
-				</a>
-				<button class="navbar-toggler" type="button"
-					data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-					<span class="fa fa-bars"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarCollapse">
-					<div class="navbar-nav ms-auto py-0">
-						<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트
-							소개</a> <a href="${cpath}/Prediction.do"
-							class="nav-item nav-link  active">병해충 예측</a>
-						<div class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충
-								정보</a>
-							<div class="dropdown-menu m-0">
-								<a href="${cpath}/Disease.do" class="dropdown-item">병(病)</a> <a
-									href="${cpath}/Pests.do" class="dropdown-item">해충</a>
+		<!-- Full Screen Search End -->
+	
+		<!-- 카테고리 시작 -->
+		<div class="container-xxl py-5 bg-primary hero-header mb-0"
+			style="padding-top: 2rem !important; padding-bottom: 2rem !important; max-width: none;">
+			<div class="container-xxl position-relative p-0">
+				<nav
+					class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
+					style="bottom: 0px;">
+					<a href="index.jsp" class="navbar-brand p-0">
+						<h4 class="m-0 text-white" style="font-style: italic;">
+							<i class="fa me-3"></i> 알쓸농잡
+						</h4>
+					</a>
+					<button class="navbar-toggler" type="button"
+						data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+						<span class="fa fa-bars"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarCollapse">
+						<div class="navbar-nav ms-auto py-0">
+							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
+							<a href="${cpath}/Prediction.do" class="nav-item nav-link active">병해충 분석</a>
+							<div class="nav-item dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
+								<div class="dropdown-menu m-0">
+									<a href="${cpath}/Disease.do" class="dropdown-item">병(病) 피해</a>
+									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
+								</div>
 							</div>
+							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
+							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니케이션</a> 
+							<a href="${cpath}/Mypage.do" class="nav-item nav-link">마이페이지</a>
 						</div>
-						<a href="${cpath}/Notice.do" class="nav-item nav-link">공지사항</a> <a
-							href="#" class="nav-item nav-link">문의사항</a> <a
-							href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
 					</div>
-				</div>
-			</nav>
+				</nav>
+			</div>
 		</div>
 	</div>
 	<!-- 카테고리 끝 -->
@@ -128,7 +127,7 @@ ul {
 		<div class="container-fluid pt-4 px-4">
 			<div class="mx-auto" style="width: 200px;">
 				<div id="underline">
-					<h3>병해충 예측</h3>
+					<h3>병해충 분석</h3>
 				</div>
 				<br>
 			</div>
