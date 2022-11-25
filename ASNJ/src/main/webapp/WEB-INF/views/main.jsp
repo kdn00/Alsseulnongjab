@@ -57,21 +57,74 @@
 <script src='resources/fullcalendar-5.11.3/lib/main.min.js'></script>
 <script src='resources/js/ko.js'></script>
 
+<!-- 달력 왼쪽 사이트  style -->
+<style>
+.fc-event {
+	margin-top: 5px;
+	cursor: move;
+}
+</style>
+
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+/* document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
       headerToolbar : {
 			left : 'prev,next today', /* 이전, 다음, 오늘 */
-			center : 'title',
+			/* center : 'title',
 			right : 'dayGridMonth,timeGridWeek,timeGridDay' /* 월간, 주간,일간 */
-		},
+	/*	},
       locale : 'ko'
     })
     calendar.render();
-  });
-	
+  }); */
+
+  var Calendar = null;
+
+	document.addEventListener('DOMContentLoaded', function() {
+		var Calendar = FullCalendar.Calendar;
+		var Draggable = FullCalendar.Draggable;
+
+		var containerEl = document.getElementById('external-events');
+		var calendarEl = document.getElementById('calendar');
+		var checkbox = document.getElementById('drop-remove');
+
+		// initialize the external events
+		// -----------------------------------------------------------------
+
+		new Draggable(containerEl, {
+			itemSelector : '.fc-event',
+			eventData : function(eventEl) {
+				return {
+					title : eventEl.innerText
+				};
+			}
+		});
+
+		// initialize the calendar
+		// -----------------------------------------------------------------
+
+		calendar = new Calendar(calendarEl, {
+			headerToolbar : {
+				left : 'prev,next today', /* 이전, 다음, 오늘 */
+				center : 'title',
+				right : 'dayGridMonth,timeGridWeek,timeGridDay' /* 월간, 주간,일간 */
+			},
+			editable : true, // 수정가능여부 -- false는 수정 불가능
+			droppable : true, // this allows things to be dropped onto the calendar  캘린더 안으로 드롭할 수 있다. false는 드롭 불가
+			drop : function(info) {
+				// is the "remove after drop" checkbox checked?
+				if (checkbox.checked) {
+					// if so, remove the element from the "Draggable Events" list
+					info.draggedEl.parentNode.removeChild(info.draggedEl);
+				}
+			},
+			locale : 'ko'
+		});
+
+		calendar.render();
+	});
 </script>
 
 </head>
@@ -198,17 +251,49 @@ document.addEventListener('DOMContentLoaded', function() {
 			</div>
 			<!-- 내용 들어갈 곳 -->
 			<!-- 방제력 달력 시작 -->
-				<div class="container" style="background-color: rgb(250, 255, 240); width: 90%; height: 1000px; border-radius: 1em; margin-top: 20px;">
+				<div class="container" style="background-color: rgb(250, 255, 240); width: 90%; height: 750px; border-radius: 1em; margin-top: 20px;">
 									
-					<!-- 달력 -->
-						<br><br>
-						 <div style="background-color: white; width: 100%; display:block;  justify-content: center; margin-top: -20px;">
-							<br>
-							<div id="calendar"></div>
-						</div>
-						<!-- 달력 끝 -->
+					<!-- 달력 시작 -->
+				<!-- 달력 -->
+				<div style="float: left; width: 70%; background-color: white; margin-top: 20px;">
+					<br>
+					<div id="calendar"></div>
+				</div>
+				<!-- 달력 끝 -->
+				
+				<!-- 사이드바 시작 -->
+				<div id="external-events" style="float: right; width: 30%; padding-left: 20px; margin-top: 100px;">
+					<p>
+						<strong>아래의 내용을 드래그하여 설정해 보세요.</strong>
+						<br>
+						<input type="checkbox" id="drop-remove"> 
+						<label for="drop-remove">드래그 앤 드롭후 제거</label>
+					</p>
+
+					<div class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event">
+						<div class="fc-event-main">고추</div>
 					</div>
-			<!-- 방제력 달력 끝  -->	
+					<div class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event">
+						<div class="fc-event-main">오이</div>
+					</div>
+					<div class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event">
+						<div class="fc-event-main">파</div>
+					</div>
+					<div class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event">
+						<div class='fc-event-main'>딸기</div>
+					</div>
+					<div class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event">
+						<div class="fc-event-main">호박</div>
+					</div>
+					<!-- 저장 버튼 -->
+					<div style="width: 200%; margin-top: 5%;">
+						<button type="submit" class="btn btn-sm btn-success" style="width: 50%;">
+							<span>저장</span>
+						</button>
+					</div>
+					<!-- 저장버튼 끝 -->
+				</div>
+				<!-- 사이드바 끝 -->
 						<!-- 내용 들어갈 곳 끝 -->
 		</div>
 	</div>

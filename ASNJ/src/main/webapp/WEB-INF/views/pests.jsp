@@ -108,7 +108,7 @@
 							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
 							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
 							<div class="nav-item dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
+								<a href="#" class="nav-link dropdown-toggle avtive" data-bs-toggle="dropdown">병해충 정보</a>
 								<div class="dropdown-menu m-0">
 									<a href="${cpath}/Disease.do" class="dropdown-item">병(病) 피해</a>
 									<a href="${cpath}/Pests.do" class="dropdown-item active">해충 피해</a>
