@@ -298,6 +298,7 @@
 		</div>
 	</div>
 	<!-- 방제력 끝 -->
+</div>
 	
 	<!-- < footer > -->
 	<jsp:include page="bottom.jsp" />
