@@ -149,6 +149,7 @@
 						</div>
 					</div>
 				</div>
+				
 				<input class="file" id="chooseFile" type="file"
 					onchange="dropFile.handleFiles(this.files)"
 					accept="image/png, image/jpeg, image/gif">
@@ -164,8 +165,10 @@
 								class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-4">전송</button>
 						</div>
 					</div>
+				</div><br>
+				<div>
+					<button type="reset" id="reset" class="btn btn-warning">초기화</button>
 				</div>
-				<button type="reset" id="reset">초기화</button>
 			</form>
 
 		</div>

@@ -76,8 +76,9 @@
 
 	<!-- 카테고리 시작 -->
 	<div class="container-xxl py-5 bg-primary hero-header mb-0"
-			style="padding-top: 2rem !important; padding-bottom: 2rem !important; max-width: none;">
-			<div class="container-xxl position-relative p-0" style="margin-right: 0px; max-width: inherit;">
+		style="padding-top: 2rem !important; padding-bottom: 2rem !important; max-width: none;">
+		<div class="container-xxl position-relative p-0"
+			style="margin-right: 0px; max-width: inherit;">
 			<nav
 				class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
 				style="bottom: 0px;">
@@ -103,10 +104,11 @@
 									href="${cpath}/Pests.do" class="dropdown-item">해충</a>
 							</div>
 						</div>
-						<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
-						<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
-						<a href="${cpath}/Mypage.do" class="nav-item nav-link">마이페이지</a>
-						<a href="${cpath}/UserInfo.do" class="nav-item nav-link active">회원정보 관리</a>
+						<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> <a
+							href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> <a
+							href="${cpath}/Mypage.do" class="nav-item nav-link">마이페이지</a> <a
+							href="${cpath}/UserInfo.do" class="nav-item nav-link active">회원정보
+							관리</a>
 					</div>
 				</div>
 			</nav>
@@ -126,93 +128,87 @@
 			</div>
 		</div>
 	</div>
-	<br>
-
-	<!-- 회원정보 테이블 시작 -->
-
+	
+	<!-- 여기부터 넣으면 됩니다. -->
 	<div class="container-xs m-5 p-5 my-5 mt-4 borde rounded bg-success"
 		style="max-width: 100%; background-color: #f6ffe191 !important;">
-		<div class="d-flex justify-content-center center-block" style="display: flex !important; align-items: center; flex-wrap: wrap;">
-			<div class="container-fluid pt-4 px-4">
-				<div class="container text-center">
 
-					<!-- 여기부터 넣으면 됩니다. -->
-					<table class="table bg-white">
-						<thead class="table-success">
-							<tr>
-								<th>등급</th>
-								<th>이름</th>
-								<th>아이디</th>
-								<th>비밀번호</th>
-								<th>이메일</th>
-								<th>가입일자</th>
-								<th>직업</th>
-								<th>수정/삭제</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th>관리자</th>
-								<th>송영지</th>
-								<th>MG1</th>
-								<th>*******</th>
-								<th>*******@naver.com</th>
-								<th>0000.00.00</th>
-								<th>취준생</th>
-								<th><button type="button" class="btn-sm btn-success">수정</button>&nbsp;/&nbsp;
-									<button type="button" class="btn-sm btn-danger">삭제</button></th>
-							</tr>
-							<tr>
-								<th>관리자</th>
-								<th>박승현</th>
-								<th>MG2</th>
-								<th>*******</th>
-								<th>*******@naver.com</th>
-								<th>0000.00.00</th>
-								<th>취준생</th>
-								<th><button type="button" class="btn-sm btn-success">수정</button>&nbsp;/&nbsp;
-									<button type="button" class="btn-sm btn-danger">삭제</button></th>
-							</tr>
-							<tr>
-								<th>관리자</th>
-								<th>김도연</th>
-								<th>MG3</th>
-								<th>*******</th>
-								<th>*******@naver.com</th>
-								<th>0000.00.00</th>
-								<th>취준생</th>
-								<th><button type="button" class="btn-sm btn-success">수정</button>&nbsp;/&nbsp;
-									<button type="button" class="btn-sm btn-danger">삭제</button></th>
-							</tr>
-							<tr>
-								<th>관리자</th>
-								<th>김동연</th>
-								<th>MG4</th>
-								<th>*******</th>
-								<th>*******@naver.com</th>
-								<th>0000.00.00</th>
-								<th>취준생</th>
-								<th><button type="button" class="btn-sm btn-success">수정</button>&nbsp;/&nbsp;
-									<button type="button" class="btn-sm btn-danger">삭제</button></th>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+
+		<!-- 회원정보 테이블 시작 -->
+		<form method="post" enctype="multipart/form-data" action="" style="margin-left: 5%; margin-right: 5%;">
+			<div class="d-flex justify-content-center center-block"
+				style="display: flex !important; align-items: center; flex-wrap: wrap;">
+
+				<table class="table bg-white" style="overflow-wrap: anywhere; text-align: center;">
+					<thead class="table-success">
+						<tr>
+							<th>등급</th>
+							<th>이름</th>
+							<th>아이디</th>
+							<th>비밀번호</th>
+							<th>이메일</th>
+							<th>가입일자</th>
+							<th>직업</th>
+							<th>수정/삭제</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>관리자</th>
+							<th>송영지</th>
+							<th>MG1</th>
+							<th>*******</th>
+							<th>*******@naver.com</th>
+							<th>0000.00.00</th>
+							<th>취준생</th>
+							<th><button type="button" class="btn-sm btn-success">수정</button>&nbsp;/&nbsp;
+								<button type="button" class="btn-sm btn-danger">삭제</button></th>
+						</tr>
+						<tr>
+							<th>관리자</th>
+							<th>박승현</th>
+							<th>MG2</th>
+							<th>*******</th>
+							<th>*******@naver.com</th>
+							<th>0000.00.00</th>
+							<th>취준생</th>
+							<th><button type="button" class="btn-sm btn-success">수정</button>&nbsp;/&nbsp;
+								<button type="button" class="btn-sm btn-danger">삭제</button></th>
+						</tr>
+						<tr>
+							<th>관리자</th>
+							<th>김도연</th>
+							<th>MG3</th>
+							<th>*******</th>
+							<th>*******@naver.com</th>
+							<th>0000.00.00</th>
+							<th>취준생</th>
+							<th><button type="button" class="btn-sm btn-success">수정</button>&nbsp;/&nbsp;
+								<button type="button" class="btn-sm btn-danger">삭제</button></th>
+						</tr>
+						<tr>
+							<th>관리자</th>
+							<th>김동연</th>
+							<th>MG4</th>
+							<th>*******</th>
+							<th>*******@naver.com</th>
+							<th>0000.00.00</th>
+							<th>취준생</th>
+							<th><button type="button" class="btn-sm btn-success">수정</button>&nbsp;/&nbsp;
+								<button type="button" class="btn-sm btn-danger">삭제</button></th>
+						</tr>
+					</tbody>
+				</table>
 			</div>
-		</div>
+			<!-- 회원정보 테이블 끝 -->
 
-
-
-
-
-
-
-
-
-		<!-- 여기부터 넣으면 됩니다. 끝 -->
+			<div style="justify-content: center; margin-left: 43%;">
+				<button class="btn btn-success" style="width: 100px;" type="submit"
+					id="button-addon4">저장</button>
+			</div>
+		</form>
 	</div>
-	</div>
-	<!-- 회원정보 테이블 끝 -->
+	<!-- 여기부터 넣으면 됩니다. 끝 -->
 
 	<!-- 내용 끝  -->
 
