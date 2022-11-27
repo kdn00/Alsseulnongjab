@@ -213,13 +213,13 @@
 		<!-- The slideshow/carousel -->
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="resources/image/farm1.jpg" alt="" class="d-block img-fluid">				
+				<img src="resources/image/farm4.jpg" alt="" class="d-block img-fluid">				
 			</div>
 			<div class="carousel-item text-cente image-div">
-				<img src="resources/image/farm2.jpg" alt="Chicago" class="d-block img-fluid">				
+				<img src="resources/image/farm2.jpg" alt="" class="d-block img-fluid">				
 			</div>
 			<div class="carousel-item text-cente image-div">
-				<img src="resources/image/farm3.jpg" alt="New York" class="d-block img-fluid">				
+				<img src="resources/image/farm3.jpg" alt="" class="d-block img-fluid">				
 			</div>
 		</div>
 
