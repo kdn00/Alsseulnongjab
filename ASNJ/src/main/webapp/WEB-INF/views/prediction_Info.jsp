@@ -8,7 +8,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>GreenHost - Web Hosting HTML Template</title>
+<title>병해충 정보</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="" name="keywords">
 <meta content="" name="description">
@@ -49,6 +49,8 @@ ul {
 	list-style: none;
 }
 </style>
+
+
 </head>
 
 <body>
@@ -56,11 +58,12 @@ ul {
 		<!-- 헤더 시작 -->
 		<jsp:include page="layout/top.jsp" />
 		<!-- 헤더 끝 -->
-	
+
 		<!-- Full Screen Search Start -->
 		<div class="modal fade" id="searchModal" tabindex="-1">
 			<div class="modal-dialog modal-fullscreen">
-				<div class="modal-content" style="background: rgba(29, 40, 51, 0.8);">
+				<div class="modal-content"
+					style="background: rgba(29, 40, 51, 0.8);">
 					<div class="modal-header border-0">
 						<button type="button" class="btn bg-white btn-close"
 							data-bs-dismiss="modal" aria-label="Close"></button>
@@ -80,11 +83,12 @@ ul {
 			</div>
 		</div>
 		<!-- Full Screen Search End -->
-	
+
 		<!-- 카테고리 시작 -->
 		<div class="container-xxl py-5 bg-primary hero-header mb-0"
 			style="padding-top: 2rem !important; padding-bottom: 2rem !important; max-width: none;">
-			<div class="container-xxl position-relative p-0" style="margin-right: 0px; max-width: inherit;">
+			<div class="container-xxl position-relative p-0"
+				style="margin-right: 0px; max-width: inherit;">
 				<nav
 					class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
 					style="bottom: 0px;">
@@ -99,19 +103,22 @@ ul {
 					</button>
 					<div class="collapse navbar-collapse" id="navbarCollapse">
 						<div class="navbar-nav ms-auto py-0">
-							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
-							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충 분석</a>
+							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트
+								소개</a> <a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충
+								분석</a>
 							<div class="nav-item dropdown">
-								<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">병해충 정보</a>
+								<a href="#" class="nav-link dropdown-toggle active"
+									data-bs-toggle="dropdown">병해충 정보</a>
 								<div class="dropdown-menu m-0">
 									<a href="${cpath}/Disease.do" class="dropdown-item">병(病) 피해</a>
 									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
 								</div>
 							</div>
-							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
-							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
-							<a href="${cpath}/Mypage.do" class="nav-item nav-link">마이페이지</a>
-							<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보 관리</a>
+							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> <a
+								href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> <a
+								href="${cpath}/Mypage.do" class="nav-item nav-link">마이페이지</a> <a
+								href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보
+								관리</a>
 						</div>
 					</div>
 				</nav>
@@ -128,7 +135,7 @@ ul {
 		<div class="container-fluid pt-4 px-4">
 			<div class="mx-auto" style="width: 200px;">
 				<div id="underline">
-					<h3>병해충 분석</h3>
+					<h3>병해충 정보</h3>
 				</div>
 				<br>
 			</div>
@@ -146,9 +153,8 @@ ul {
 			<span class=""><h2>{*병해충명*}</h2></span>
 		</div>
 		<hr>
-		<br>
-
-		<img alt="기본정보" src="resources/image/book.png" style="width: 30px; height: 30px; float: left;">&nbsp;&nbsp;&nbsp;
+		<br> <img alt="기본정보" src="resources/image/book.png"
+			style="width: 30px; height: 30px; float: left;">&nbsp;&nbsp;&nbsp;
 		<h4>기본정보</h4>
 		<hr>
 		<div class="photoSch container-xxl p-0 ml-5">
@@ -187,7 +193,8 @@ ul {
 		<div class="container d-inline-flex justify-content-center">
 			<div class="row" style="width: 400px;">
 				<div class="col-sm-4 p-2">
-					<a href="" style="color: #198754 !important;"><span class="">예측 다시하기</span></a>
+					<a href="" style="color: #198754 !important;"><span class="">예측
+							다시하기</span></a>
 				</div>
 				<div class="col-sm-4 p-2">
 					<a href="" style="color: #198754 !important;"><span class="">농약정보</span></a>
@@ -202,7 +209,8 @@ ul {
 
 		<!-- //정보별,시기별,월별 탭 -->
 
-		<img alt="기본정보" src="resources/image/lamp.png" style="width: 30px; height: 30px; float: left;">&nbsp;&nbsp;&nbsp;
+		<img alt="기본정보" src="resources/image/lamp.png"
+			style="width: 30px; height: 30px; float: left;">&nbsp;&nbsp;&nbsp;
 		<h4>일반정보</h4>
 		<hr>
 
@@ -257,11 +265,7 @@ ul {
 		<!-- //시기별,월별 TAB -->
 
 		<!-- 공통 사진영역 -->
-
-
-
-
-		<script type="text/javascript">
+		<!-- <script type="text/javascript">
 			var tabActive1 = 0;
 			var tabActive2 = 0;
 
@@ -315,52 +319,46 @@ ul {
 						.append(
 								"<button type=\"button\" onclick=\"" + evt + "\">사진 다운로드</button>");
 			}
-		</script>
+		</script> -->
 
-
-
-		<div class="tabS mb0 mt20">
-			<button type="button" id="tabA" onclick="fncChangeTab(1);"
-				class="active">
-				병 사진정보(<strong>1</strong>)
-			</button>
-
-		</div>
-
-		<div id="tabAArea" class="mb20">
-			<div class="picScroll">
-				<div class="srollYdiv">
-					<ul id="photoDataUl1">
-
-						<li onclick="fncClickImg('1', '0');" class="active"><img
-							alt="병든 잎"
-							src="thumbnailViewer.np?IMG_INFO=5ab1f191-b64c-4d8c-9b9f-cd8a4ac200cc">
-							<span style="display: none;"><button type="button"
-									onclick="cfDownLoadFile('npms','/photo/sickns/','D00000007001[201010190000000].jpg', 'D00000007001.jpg');return false;">다운받기</button></span>
-						</li>
-
-					</ul>
-				</div>
-				<div class="imgLview">
-					<div class="imgLArea">
-						<img
-							src="thumbnailViewer.np?IMG_INFO=5ab1f191-b64c-4d8c-9b9f-cd8a4ac200cc"
-							alt="">
+		<!-- 병 사진 정보  -->
+		<div class="container mt-3" style="max-width: inherit;">
+			<div id="accordion">
+				<div class="card">
+					<div class="card-header bg-success text-white"
+						style="background-color: #7ebc12 !important; border-radius: 7px !important; height: 40px;">
+						<a class="coll-btn btn-block text-white" data-bs-toggle="collapse"
+							href="#collapseOne"> <i class="bi bi-caret-down" class="down"><span>사진정보</span></i>
+						</a>
 					</div>
-					<p>병든 잎</p>
-					<br>
-					<hr>
-					<button type="button"
-						onclick="cfDownLoadFile('npms','/photo/sickns/','D00000007001[201010190000000].jpg', 'D00000007001.jpg');return false;">사진
-						다운로드</button>
+					<div id="collapseOne" class="collapse show"
+						data-bs-parent="#accordion">
+						<div class="card-body scroll-image">
+							<ul id="photoDataUl1">
+								<li onclick="fncClickImg('1', '0');" class="active">
+									<img alt="{사진 설명}" src="#"> 
+									<img alt="{사진 설명}" src="#"> 
+									<img alt="{사진 설명}" src="#"> 
+									<img alt="{사진 설명}" src="#"> 
+									<img alt="{사진 설명}"	src="#"></li>
+								<br>
+								<li>
+									<span>{사진 설명}</span>
+									<span>{사진 설명}</span>
+									<span>{사진 설명}</span>
+									<span>{사진 설명}</span>
+									<span>{사진 설명}</span>									
+								</li>
+							</ul>
+						</div>
+
+					</div>
+
 				</div>
 			</div>
 		</div>
 
 	</div>
-
-
-
 
 	<!-- 병해충 정보 출력 끝-->
 
@@ -372,5 +370,6 @@ ul {
 	</div>
 	<!-- 푸터 끝 -->
 
+	</script>
 </body>
 </html>
