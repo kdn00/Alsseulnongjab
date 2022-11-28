@@ -34,65 +34,69 @@
 <!-- Template Stylesheet -->
 <link href="resources/css/style.css" rel="stylesheet">
 
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+
 <!-- 달력 -->
 <link href='resources/fullcalendar-5.11.3/lib/main.min.css'	rel='stylesheet' />
 <script src='resources/fullcalendar-5.11.3/lib/main.min.js'></script>
 <script src='resources/js/ko.js'></script>
 
-<!-- 달력 왼쪽 사이트  style -->
-<style>
-.fc-event {
-	margin-top: 5px;
-	cursor: move;
-}
-</style>
+<script src='resources/fullcalendar-5.11.3/lib/locales-all.js'></script>
+<script src='resources/fullcalendar-5.11.3/lib/locales-all.min.js'></script>
+<script src='resources/fullcalendar-5.11.3/lib/main.js'></script>
 
 <script>
-	var Calendar = null;
+document.addEventListener('DOMContentLoaded', function() {
+	 var Calendar = null;
+	    var calendarEl = document.getElementById('calendar');
 
-	document.addEventListener('DOMContentLoaded', function() {
-		var Calendar = FullCalendar.Calendar;
-		var Draggable = FullCalendar.Draggable;
+	    var calendar = new FullCalendar.Calendar(calendarEl, {
+	      headerToolbar: {
+	        left: 'prev,next today',
+	        center: 'title',
+	        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+	      },
+	      navLinks: true, // can click day/week names to navigate views
+	      selectable: true,
+	      selectMirror: true,
+	      businessHours: true, // display business hours
+	      editable: true,
+	      selectable: true,
+	      select: function(arg) {
+	        var title = prompt('내용을 적으세요.');
+	        if (title) {
+	          calendar.addEvent({
+	            title: title,
+	            start: arg.start,
+	            end: arg.end,
+	            allDay: arg.allDay
+	          })
+	        }
+	        calendar.unselect()
+	      },
+	      eventClick: function(arg) {
+	        if (confirm('삭제하시겠습니까?')) {
+	          arg.event.remove()
+	        }
+	      },
+	      editable: true,
+	      dayMaxEvents: true, // allow "more" link when too many events
+	      locale : 'ko'
+	    });
 
-		var containerEl = document.getElementById('external-events');
-		var calendarEl = document.getElementById('calendar');
-		var checkbox = document.getElementById('drop-remove');
+	    calendar.render();
+	  });
 
-		// initialize the external events
-		// -----------------------------------------------------------------
-
-		new Draggable(containerEl, {
-			itemSelector : '.fc-event',
-			eventData : function(eventEl) {
-				return {
-					title : eventEl.innerText
-				};
-			}
-		});
-
-		// initialize the calendar
-		// -----------------------------------------------------------------
-
-		calendar = new Calendar(calendarEl, {
-			headerToolbar : {
-				left : 'prev,next today', /* 이전, 다음, 오늘 */
-				center : 'title',
-				right : 'dayGridMonth,timeGridWeek,timeGridDay' /* 월간, 주간,일간 */
-			},
-			editable : true, // 수정가능여부 -- false는 수정 불가능
-			droppable : true, // this allows things to be dropped onto the calendar  캘린더 안으로 드롭할 수 있다. false는 드롭 불가
-			drop : function(info) {
-				// is the "remove after drop" checkbox checked?
-				if (checkbox.checked) {
-					// if so, remove the element from the "Draggable Events" list
-					info.draggedEl.parentNode.removeChild(info.draggedEl);
-				}
-			},
-			locale : 'ko'
-		});
-
-		calendar.render();
-	});
+/* 모달 시작 */
+jQuery(document).ready(function() {
+       $('#myModal').show();
+});
+//팝업 Close 기능
+function close_pop(flag) {
+    $('#myModal').hide();
+};
+/* 모달 끝 */
+ 
 </script>
 </head>
 
@@ -174,138 +178,46 @@
 	<div class="container">
 		<!-- 농업일지 시작 -->
 		<div class="row">
-			<div class="container"	style="background-color: rgb(250, 255, 240); width: 100%; height: 800px; border-radius: 1em; margin-top: 5px;">
+			<div class="container"	style="background-color: rgb(250, 255, 240); width: 100%; height: 1000px; border-radius: 1em; margin-top: 5px;">
 				
 				<!-- 달력 시작 -->
 				<!-- 달력 -->
-				<div style="float: left; width: 70%; background-color: white; margin-top: 20px;">
+				<div class="container-fluid pt-4 px-4" style="width: 90%; background-color: white; margin-top: 30px;">
 					<br>
 					<div id="calendar"></div>
 				</div>
 				<!-- 달력 끝 -->
 				
-				<!-- 사이드바 시작 -->
-				<div id="external-events" style="float: right; width: 30%; padding-left: 20px; margin-top: 100px;">
-					<p>
-						<strong>아래의 내용을 드래그하여 설정해 보세요.</strong>
-						<br>
-						<input type="checkbox" id="drop-remove"> 
-						<label for="drop-remove">드래그 앤 드롭후 제거</label>
-					</p>
-
-					<div class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event">
-						<div class="fc-event-main">고추</div>
-					</div>
-					<div class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event">
-						<div class="fc-event-main">오이</div>
-					</div>
-					<div class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event">
-						<div class="fc-event-main">파</div>
-					</div>
-					<div class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event">
-						<div class='fc-event-main'>딸기</div>
-					</div>
-					<div class="fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event">
-						<div class="fc-event-main">호박</div>
-					</div>
-					<!-- 저장 버튼 -->
-					<div style="width: 200%; margin-top: 5%;">
-						<button type="submit" class="btn btn-sm btn-success" style="width: 50%;">
-							<span>저장</span>
-						</button>
-					</div>
-					<!-- 저장버튼 끝 -->
-					<!-- 농업일지 list 시작 -->
-					<div>
-					<br>
-						<h5 class="fw-bold" style="text-align:center;">[농업일지 목록]</h5>
-						<form>
-							<table class="table table-bordered" style="table-layout:fixed">
-								<thead align="center">
-									<th style="width: 50px;">순번</th>
-									<th style="width: 90px;">제목</th>
-									<th>내용</th>
-								</thead>
-								<tbody class="text-break">
-									<tr>
-										<td align="center">1</td>
-										<td>시작해볼까요</td>
-										<td>여기에 내용이 들어가네요?</td>
-									</tr>
-								</tbody>
-							</table>
-							
-							<!-- 페이징 시작 -->
-							<nav class=" d-flex justify-content-center" aria-label="Page navigation example">
-							  <ul class="pagination">
-							    <li class="page-item">
-							      <a class="page-link" href="#" aria-label="Previous">
-							        <span aria-hidden="true">&laquo;</span>
-							      </a>
-							    </li>
-							    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-							    <li class="page-item"><a class="page-link" href="#">2</a></li>
-							    <li class="page-item"><a class="page-link" href="#">3</a></li>
-							    <li class="page-item">
-							      <a class="page-link" href="#" aria-label="Next">
-							        <span aria-hidden="true">&raquo;</span>
-							      </a>
-							    </li>
-							  </ul>
-							</nav>
-							<!-- 페이징 끝 -->
-							
-							<div class=" d-flex justify-content-end">
-								<button type="button" class="btn btn-sm btn-success bi bi-check-circle"	data-bs-toggle="modal" data-bs-target="#myModal">
-									<span> 글쓰기</span>
-								</button>
+				<!-- 로그인 모달 시작 -->
+				<div class="modal" id="myModal" data-bs-backdrop="static">
+					<div class="modal-dialog modal-lg modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title">알림</h4>
+								<button type="button" class="btn-close" onClick="close_pop();"data-bs-dismiss="modal"></button>
 							</div>
-						</form>
-					</div>
-					<!-- 농업일지 list 끝 -->
 
-					<!-- 농업일지 모달 뷰  시작 -->
-					<!-- The Modal -->
-					<div class="modal" id="myModal" data-bs-backdrop="static">
-						<div class="modal-dialog modal-lg modal-dialog-centered">
-							<div class="modal-content">
-
-								<!-- Modal Header -->
-								<div class="modal-header">
-									<h4 class="modal-title">농업일지 작성하세요.</h4>
-									<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-								</div>
-
-								<!-- Modal body -->
-								<div class="modal-body">
-									<form>
-										<div id="dialog-confirm">
-											<div class="input-group mb-3">
-												<span class="input-group-text">제목</span> 
-												<input type="text" 	class="form-control" placeholder="제목을 입력하세요."> 
-												<span class="input-group-text">날짜</span> 
-												<input type="date" class="form-control" placeholder="date">
-											</div>
-											<textarea style="width: 100%;" placeholder="내용을 입력하세요."></textarea>
-										</div>
-
-										<!-- Modal footer -->
-										<div class="modal-footer">
-											<button type="submit" class="btn btn-sm btn-success bi bi-check-circle">
-												<span> 등록</span>
-											</button>
-											<button type="submit" class="btn btn-sm btn-success bi bi-check-circle">
-												<span> 삭제</span>
-											</button>
-										</div>
-									</form>
-								</div>
+							<div class="modal-body">
+							<br><br><br>
+							<div align="center">
+								<h2>로그인 후 이용 가능합니다.</h2>
+							</div>
+							<br><br><br>
+							<div class="modal-footer">
+								<span class="text-center mb-0">비회원이십니까?	
+									<a href="${cpath}/Joinpage.do">회원가입</a>
+								</span>	&nbsp;&nbsp;&nbsp;
+								<span class="text-center mb-0">로그인 하시겠습니까?	
+									<a href="${cpath}/Loginpage.do">로그인</a>
+								</span>
 							</div>
 						</div>
 					</div>
-					<!-- 농업일지 모달 뷰 끝  -->
 				</div>
-				<!-- 사이드바 끝 -->
+			</div>
+			<!-- 로그인 모달창 끝 -->
+			
+			
 			</div>
 		</div>
 		<!-- 농업일지 끝 -->
