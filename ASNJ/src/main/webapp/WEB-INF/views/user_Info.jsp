@@ -46,7 +46,7 @@
 </head>
 <body>
 	<!-- 헤더 시작 -->
-	<jsp:include page="top.jsp" />
+	<jsp:include page="layout/top.jsp" />
 	<!-- 헤더 끝 -->
 
 	<!-- Full Screen Search Start -->
@@ -214,7 +214,7 @@
 
 	<!-- 푸터 시작 -->
 	<div>
-		<jsp:include page="bottom.jsp" />
+		<jsp:include page="layout/bottom.jsp" />
 	</div>
 	<!-- 푸터 끝 -->
 </body>

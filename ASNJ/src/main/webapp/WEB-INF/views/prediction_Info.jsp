@@ -54,7 +54,7 @@ ul {
 <body>
 	<div class="sticky-top">
 		<!-- 헤더 시작 -->
-		<jsp:include page="top.jsp" />
+		<jsp:include page="layout/top.jsp" />
 		<!-- 헤더 끝 -->
 	
 		<!-- Full Screen Search Start -->
@@ -100,9 +100,9 @@ ul {
 					<div class="collapse navbar-collapse" id="navbarCollapse">
 						<div class="navbar-nav ms-auto py-0">
 							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
-							<a href="${cpath}/Prediction.do" class="nav-item nav-link active">병해충 분석</a>
+							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충 분석</a>
 							<div class="nav-item dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
+								<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">병해충 정보</a>
 								<div class="dropdown-menu m-0">
 									<a href="${cpath}/Disease.do" class="dropdown-item">병(病) 피해</a>
 									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
@@ -143,7 +143,7 @@ ul {
 		<div class="d-flex justify-content-center center-block"
 			style="display: flex !important; align-items: center; flex-wrap: wrap;">
 			<img alt="결과정보" src="resources/image/info-icon.png">&nbsp;&nbsp;&nbsp;
-			<span class=""><h2>###님이 파일 업로드하신 결과페이지입니다.</h2></span>
+			<span class=""><h2>{*병해충명*}</h2></span>
 		</div>
 		<hr>
 		<br>
@@ -368,7 +368,7 @@ ul {
 
 	<!-- 푸터 시작 -->
 	<div>
-		<jsp:include page="bottom.jsp" />
+		<jsp:include page="layout/bottom.jsp" />
 	</div>
 	<!-- 푸터 끝 -->
 

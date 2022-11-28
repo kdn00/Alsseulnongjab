@@ -63,6 +63,12 @@
 	margin-top: 5px;
 	cursor: move;
 }
+
+.carousel-inner img {
+  width: 300px;
+  height: 150px;
+  object-fit: cover;
+}
 </style>
 
 <script>
@@ -132,7 +138,7 @@
 <body>
 	<div class="sticky-top">
 		<!-- 헤더 시작 -->
-		<jsp:include page="top.jsp" />
+		<jsp:include page="layout/top.jsp" />
 		<!-- 헤더 끝 -->
 	
 		<!-- Full Screen Search Start -->
@@ -301,7 +307,7 @@
 </div>
 	
 	<!-- < footer > -->
-	<jsp:include page="bottom.jsp" />
+	<jsp:include page="layout/bottom.jsp" />
 	<!-- < footer > -->
 
 </body>

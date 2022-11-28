@@ -70,7 +70,7 @@
 
 	<!-- 여기부터 content 시작 -->
 	<div>
-		<jsp:include page="top.jsp" />
+		<jsp:include page="layout/top.jsp" />
 	</div>
 
 	<!-- 카테고리 시작 -->
@@ -120,7 +120,7 @@
 
 	<!-- 푸터 시작 -->
 	<div>
-		<jsp:include page="bottom.jsp" />
+		<jsp:include page="layout/bottom.jsp" />
 	</div>
 	<!-- 푸터 끝 -->
 
