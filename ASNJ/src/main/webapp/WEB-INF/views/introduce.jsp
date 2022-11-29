@@ -134,26 +134,26 @@
 	<!-- 여기서부터  -->
 		<div class="container-xxl p-0"
 			style="display: flex; justify-content: center; align-items: center;">
-			<div class="row">
-				<div class="col">
+			<div class="row" style="margin-left: 5%">
+				<div class="col-6 col-sm-3">
 					<i class="bi bi-building fa-5x" style="margin-right:100px;"></i>
 					<span id="site_st"></span> 
 				<br> <span>알쓸농잡</span>
 				</div>
 			
-				<div class="col" >
+				<div class="col-6 col-sm-3" >
 				<i class="bi bi-hourglass fa-5x" style="margin-right:80px;"></i>
 					<span id="site_st"></span> 
 				<br><span id="site_font1">최종프로젝트 일자</span> <br> <span id="site_font1">2022년 12월 13일</span>
 				</div>
 			
-				<div class="col" >
+				<div class="col-6 col-sm-3" >
 				<i class="bi bi-people-fill fa-5x" style="margin-right:80px;"></i>
 					<span id="site_st"></span> 
 				<br><span id="site_font1">팀장: 송영지</span> <br> <span id="site_font1">팀원:김도연,김동현,박승현</span>
 				</div>
 			
-				<div class="col">
+				<div class="col-6 col-sm-3">
 					<i class="bi bi-map fa-5x"></i>
 					<br> <span style="margin-left:20px;">소재지</span> <br><span id="site_font1">전라남도 순천시 석현동 87 5층,</span>
 					<br> <span id="site_font1">스마트인재개발원 순천점</span>
