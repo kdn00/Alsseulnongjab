@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.asnj.mapper.MemberMapper;
+import com.asnj.mapper.AsnjMapper;
 import com.asnj.entity.Member;
 
 // Ajax 통신을 위해서 사용하는 Controller
 @RestController
-public class MemberController {
+public class AsnjRestController {
 	
 	@Autowired
-	private MemberMapper mapper;
+	private AsnjMapper mapper;
 	
 	// 회원 목록
 	@GetMapping("/Member")

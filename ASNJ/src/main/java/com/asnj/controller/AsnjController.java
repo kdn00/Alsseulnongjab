@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.asnj.entity.Member;
-import com.asnj.mapper.MemberMapper;
+import com.asnj.mapper.AsnjMapper;
 
 @Controller
-public class MainController {
+public class AsnjController {
 	
 	@Autowired
-	private MemberMapper mapper;
+	private AsnjMapper mapper;
 	
 	// 페이지 이동
 	// 메인페이지 -> json 받아오려면 restcontroller 페이지에서 따로 지정해야 함
@@ -115,12 +115,10 @@ public class MainController {
 		return "redirect:/Loginpage.do";
 	}
 	
-	// 회원가입 기능 --> 라디오 박스 관련으로 공부해야 함
+	// 회원가입 기능
 	@PostMapping("/Join.do")
 	public String Join(Member mem) {
-		
 		int joinMember = mapper.memberJoin(mem);
-		
 		if(joinMember > 0) {
 			return "redirect:/Mainpage.do";
 		} else {

@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import com.asnj.entity.Member;
 
 @Mapper
-public interface MemberMapper {
+public interface AsnjMapper {
 
 	// 로그인
 	public Member memberLogin(Member mem);
