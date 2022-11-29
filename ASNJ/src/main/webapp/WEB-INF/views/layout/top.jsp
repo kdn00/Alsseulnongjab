@@ -77,26 +77,30 @@ input:focus::-webkit-input-placeholder {
 </script> -->
 
 <body>
-	<div class="container-xxl bg-white p-0" style="display: flex; justify-content: space-between; align-items: center; max-width: none;">
-		<div class="header__logo col-lg-4 pe-lg-5"
-			style="float: left; padding-left: 1rem !important;">
-			<a href="index.jsp"><img src="resources/img/logo/logo.png"></a>
-		</div>
-		<div class="position-relative w-100 my-3 wow fadeInUp"
-			data-wow-delay="0.3s" style="margin-right: 16px;">
-			<input id="searchInput"	class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="search" name="search" placeholder="검색어를 입력하세요.">
-			<button type="button"
-				class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">검색</button>
-		</div>
-		<div class="col-lg-4 pe-lg-5"
-			style="display: inline-block; min-width: max-content;">
-			<div class="header__login" style="margin-right: 10px;">
-				<a href="${cpath}/Joinpage.do" class="btn btn-outline-success bi bi-person-circle"> 회원가입</a> 
-				<a href="${cpath}/Loginpage.do" class="btn btn-outline-success bi bi-person" style="margin-left: 30px;"> 로그인</a>
+	<div class="container-xs bg-white p-0" style="max-width: none;">
+		<div class="row d-flex justify-content-around" style="align-items: center;">
+			<div class="header__logo col-2" style="float: left; padding-left: 1rem !important;">
+				<a href="index.jsp"><img src="resources/img/logo/logo.png"></a>
+			</div>
+			<div class="col-6 flex-grow position-relative w-40 my-3 wow fadeInUp"
+				data-wow-delay="0.3s" style="margin-right: 16px;">
+				<input id="searchInput"	class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
+					type="search" name="search" placeholder="검색어를 입력하세요.">
+				<button type="button"
+					class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-3">검색</button>
+			</div>
+			<div class="col-2 p-2 m-3" style="display: inline-block; min-width: max-content;">
+				<div class="header__login" style="margin-right: 10px;">
+					<a href="${cpath}/Joinpage.do"
+						class="btn btn-outline-success bi bi-person-circle"> 회원가입</a> <a
+						href="${cpath}/Loginpage.do"
+						class="btn btn-outline-success bi bi-person"
+						style="margin-left: 30px;"> 로그인</a>
+				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- Spinner Start -->
 	<!--  <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
