@@ -116,7 +116,7 @@ function close_pop(flag) {
 
 	<!-- 내용 시작 -->
 	<!-- 농업일지 타이틀 -->
-	<div class="container" style="background-color: rgb(250, 255, 250); width: 62%; height: 100px; border-radius: 1em; box-shadow: 3px 3px 3px gray; margin-top: 10px; max-width: none;">
+	<div class="container" style="background-color: rgb(250, 255, 250); width: 70%; height: 100px; border-radius: 1em; box-shadow: 3px 3px 3px gray; margin-top: 10px; max-width: none;">
 		<div>
 			<img src="resources/image/farmicon.png" align=right> 
 			<span align="center"><br>
