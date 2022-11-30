@@ -138,8 +138,10 @@ function close_pop(flag) {
 					<div id="calendar"></div>
 				</div>
 				<!-- 달력 끝 -->
-				
-				<!-- 로그인 모달 시작 -->
+				<c:choose>
+				<%-- 로그인 안 했을 때 --%>
+				<c:when test="${empty loginMember}">
+				<%-- 로그인 모달 시작 --%>
 				<div class="modal" id="myModal" data-bs-backdrop="static">
 					<div class="modal-dialog modal-lg modal-dialog-centered">
 						<div class="modal-content">
@@ -166,7 +168,10 @@ function close_pop(flag) {
 					</div>
 				</div>
 			</div>
-			<!-- 로그인 모달창 끝 -->
+			<%-- 로그인 모달창 끝 --%>
+			</c:when>
+			</c:choose>
+			
 			
 			
 			</div>

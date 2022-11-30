@@ -157,7 +157,14 @@
 				<div id="NM_THEME_CATE_GROUPS" class="group_category"
 					data-demo-key="default">
 					<div class="list_category_wrap ">
-					<form action="${cpath}/DiseaseSelect.do" method="get">
+					<c:choose>
+					<c:when test="${diseaselist ne null}">
+						<c:forEach items="${diseaselist}" var="crops" end="0">
+						<h2>${crops.disease_crops} 작물의 질병 정보입니다.</h2>
+						</c:forEach>
+					</c:when>
+					</c:choose>
+					<form action="${cpath}/Disease.do" method="get">
 						<label class="form-check-label" for="고추">고추</label>
 						<input class="form-check-input" type="radio" name="disease_crops" id="고추" value="고추" checked>
 						<label class="form-check-label" for="감">감</label>
