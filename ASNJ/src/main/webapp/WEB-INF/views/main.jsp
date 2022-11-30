@@ -756,8 +756,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 			<!-- 내용 들어갈 곳 -->
 			<!-- 방제력 달력 시작 -->
-			<div class="container"	style="background-color: rgb(250, 255, 240); width: 100%; height:1150px; border-radius: 1em; margin-top: 20px;">
-				<div class="container mt-3" style="display: flex; justify-content: center; align-items: center;">
+			<div class="container" width: 100%; height:1150px;  margin-top: 20px;">
+				<div class="container mt-3" style="display: flex; justify-content: center; align-items: center; margin:10px 0;">
 					<ul class="list-group list-group-horizontal">
 					    <li class="list-group-item checkbox-inline" style="background-color: #4CA975 ; color:#fff;">
 					    	<input class='filter' type="checkbox" value="고추" checked> 고추
