@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	            end: arg.end,
 	            allDay: arg.allDay
 	          })
-	        }
+	        } 
 	        calendar.unselect()
 	      },
 	      eventClick: function(arg) {
