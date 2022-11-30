@@ -89,6 +89,9 @@ input:focus::-webkit-input-placeholder {
 				<button type="button"
 					class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-3">검색</button>
 			</div>
+			<c:choose>
+			<%-- 로그인 안 했을 때 --%>
+			<c:when test="${empty loginMember}">
 			<div class="col-2 p-2 m-3" style="display: inline-block; min-width: max-content;">
 				<div class="header__login" style="margin-right: 10px;">
 					<a href="${cpath}/Joinpage.do"
@@ -97,6 +100,18 @@ input:focus::-webkit-input-placeholder {
 						class="btn btn-outline-success bi bi-person"
 						style="margin-left: 30px;"> 로그인</a>
 				</div>
+			</div>
+			</c:when>
+			<c:otherwise>
+			<div class="col-2 p-2 m-3" style="display: inline-block; min-width: max-content;">
+				<div class="header__login" style="margin-right: 10px;">
+			<label for="mem_user_pw">${loginMember.mem_user_name}님 어서오세요</label>
+			<a href="${cpath}/Logout.do" class="btn btn-outline-success">로그아웃</a>
+			</div>
+			</div>
+			</c:otherwise>
+			<%-- 로그인 시 끝 --%>
+			</c:choose>
 			</div>
 		</div>
 	</div>

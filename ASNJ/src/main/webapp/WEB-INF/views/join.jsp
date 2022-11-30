@@ -54,7 +54,7 @@
             }
         }
     </script>
-<script>
+<!-- <script>
 	function signup() {
 		var pw = document.getElementById('floatingPassword').value;
 		var SC = ["!","@","#","$","%","^","&","*"];
@@ -86,7 +86,7 @@
         }
 	}
 </script>
-
+ -->
 
 <body>
 	<div class="container-fluid">

@@ -112,7 +112,7 @@ public class AsnjController {
 			// 2. 세션에 값 저장(회원정보 데이터를 객체 바인딩)
 			session.setAttribute("loginMember", loginMember);
 		}
-		return "redirect:/Loginpage.do";
+		return "main";
 	}
 	
 	// 회원가입 기능
@@ -120,10 +120,10 @@ public class AsnjController {
 	public String Join(Member mem) {
 		int joinMember = mapper.memberJoin(mem);
 		if(joinMember > 0) {
-			return "redirect:/Mainpage.do";
+			return "main";
 		} else {
 			System.out.println("회원가입 실패!");
-			return "redirect:/Joinpage.do";	
+			return "join";	
 		}
 	}
 	// 로그아웃 기능
