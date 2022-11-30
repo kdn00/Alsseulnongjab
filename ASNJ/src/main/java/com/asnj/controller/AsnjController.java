@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.asnj.entity.Disease;
 import com.asnj.entity.Member;
 import com.asnj.mapper.AsnjMapper;
 
@@ -54,9 +55,12 @@ public class AsnjController {
 		return "prediction";
 	}
 	
+	// 질병 페이지
 	@GetMapping("/Disease.do")
-	public String Disease() {
+	public String Disease(Model model, String disease_crops) {
 		System.out.print("disease.jsp로 이동\n");
+		List<Disease> diseaselist = mapper.diseaseSelect(disease_crops);
+		model.addAttribute("diseaselist", diseaselist);
 		return "disease";
 	}
 	
@@ -66,9 +70,13 @@ public class AsnjController {
 		return "pests";
 	}
 	
-	@PostMapping("/PredictionInfoPage.do")
-	public String PredictionInfoPage() {
+	// 병해충 정보 페이지
+	@GetMapping("/PredictionInfoPage.do")
+	public String PredictionInfoPage(Model model, int disease_pk) {
 		System.out.print("prediction_Info.jsp로 이동\n");
+		List<Disease> diseaseinfo = mapper.diseaseinfoSelect(disease_pk);
+		System.out.println(diseaseinfo.toString());
+		model.addAttribute("diseaseinfo", diseaseinfo);
 		return "prediction_Info";
 	}
 	

@@ -18,4 +18,19 @@
     <select id="memberSelect" resultType="com.asnj.entity.Member">
     	select * from tb_member
     </select>
+    
+    <!-- 질병 작물 불러오기 -->
+    <select id="diseasecropSelect" resultType="com.asnj.entity.Disease">
+        select distinct disease_crops from tb_disease order by disease_crops
+    </select>
+    
+    <!-- 질병 정보 페이지 불러오기(작물로 검색) 기능 -->
+    <select id="diseaseSelect" parameterType="com.asnj.entity.Disease" resultType="com.asnj.entity.Disease">
+        select * from tb_disease where disease_crops=#{disease_crops}
+    </select>
+    
+    <!-- 질병 상세 정보 페이지(질병명으로 검색) 불러오기 -->
+    <select id="diseaseinfoSelect" parameterType="com.asnj.entity.Disease" resultType="com.asnj.entity.Disease">
+        select * from tb_disease where disease_pk=#{disease_pk}
+    </select>
 </mapper>
