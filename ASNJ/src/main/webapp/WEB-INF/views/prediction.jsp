@@ -138,7 +138,7 @@
 
 	<!-- 병해충 분석 이미지 업로드 -->
 	<div class="container-xs m-5 p-5 my-5 mt-4 borde rounded bg-success"
-		style="max-width: 100%; background-color: #f6ffe191 !important;">
+		style="max-width: 100%; background-color: #f6ffe191 !important; margin-bottom: 0px !important;">
 		<div
 			class="container d-flex justify-content-center container-fluid pt-4 px-4"
 			style="max-width: 700px;">
