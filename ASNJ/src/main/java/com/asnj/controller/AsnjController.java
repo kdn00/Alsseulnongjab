@@ -130,7 +130,7 @@ public class AsnjController {
 	@RequestMapping("/Logout.do")
 	public String Logout(HttpSession session) {
 		session.removeAttribute("loginMember");
-		return "redirect:/Mainpage.do";
+		return "main";
 	}
 
 }
