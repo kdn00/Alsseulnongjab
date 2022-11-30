@@ -639,7 +639,7 @@
 }
 
 .fc-theme-standard .fc-popover-header {
-	background: rgba(208, 208, 208, .3);
+	background: #dbd9d9;
 	background: var(- -fc-neutral-bg-color, rgba(208, 208, 208, .3))
 }
 
@@ -776,7 +776,8 @@
 
 .fc .fc-more-popover .fc-popover-body {
 	min-width: 220px;
-	padding: 10px
+	padding: 10px;
+	background-color: #fff;
 }
 
 .fc-direction-ltr .fc-daygrid-event.fc-event-start, .fc-direction-rtl .fc-daygrid-event.fc-event-end

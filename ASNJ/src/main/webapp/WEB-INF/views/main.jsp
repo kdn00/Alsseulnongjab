@@ -77,553 +77,553 @@ document.addEventListener('DOMContentLoaded', function() {
 		dayMaxEvents : true, // allow "more" link when too many events
 		events : [
 		// 고추 시작 
-		{
-			groupId : 999,
-			title : '[고추]발아기,육모기',
-			start : '2022-01-21',
-			end : '2022-04-01',
-			backgroundColor : "#669900"
-		}, {
-			groupId : 999,
-			title : '[고추]정식기',
-			start : '2022-04-01',
-			end : '2022-05-01',
-			backgroundColor : "#669900"
-		}, {
-			groupId : 999,
-			title : '[고추]]개화기',
-			start : '2022-05-01',
-			end : '2022-04-11',
-			backgroundColor : "#669900"
-		}, {
-			groupId : 999,
-			title : '[고추]온상설치',
-			start : '2022-01-01',
-			end : '2022-02-01',
-			backgroundColor : "#669900"
-		}, {
-			groupId : 999,
-			title : '[고추]품종선책',
-			start : '2022-02-01',
-			end : '2022-03-21',
-			backgroundColor : "#669900"
-		}, {
-			groupId : 999,
-			title : '[고추]정식',
-			start : '2022-03-21',
-			end : '2022-04-21',
-			backgroundColor : "#669900"
-		}, {
-			groupId : 999,
-			title : '[고추]지주설치,유인',
-			start : '2022-04-21',
-			end : '2022-06-01',
-			backgroundColor : "#669900"
-		}, {
-			groupId : 999,
-			title : '[고추]풋고추 수확',
-			start : '2022-06-01',
-			end : '2022-07-01',
-			backgroundColor : "#669900"
-		}, {
-			groupId : 999,
-			title : '[고추]붉은고추 수확',
-			start : '2022-07-01',
-			end : '2022-09-21',
-			backgroundColor : "#669900"
-		}, {
-			groupId : 999,
-			title : '[고추]생산량 및 수량 감소시 연장 재배',
-			start : '2022-09-21',
-			end : '2022-12-11',
-			backgroundColor : "#669900"
-		}, {
-			groupId : 999,
-			title : '[고추]1회웃거름',
-			start : '2022-05-01',
-			end : '2022-06-01',
-			backgroundColor : "#669900"
-		}, {
-			groupId : 999,
-			title : '[고추]2회웃거름',
-			start : '2022-06-01',
-			end : '2022-07-01',
-			backgroundColor : "#669900"
-		}, {
-			groupId : 999,
-			title : '[고추]3회웃거름',
-			start : '2022-07-11',
-			end : '2022-08-11',
-			backgroundColor : "#669900"
-		},
-		// 오이
-		{
-			groupId : 998,
-			title : '[오이]발아,육모',
-			start : '2022-10-11',
-			end : '2022-11-21',
-			backgroundColor : "#75D19D"
-		}, {
-			groupId : 998,
-			title : '[오이]생육기',
-			start : '2022-10-11',
-			end : '2023-11-21',
-			backgroundColor : "#75D19D",
-		}, {
-			groupId : 998,
-			title : '[오이]수확기',
-			start : '2023-02-01',
-			end : '2023-06-01',
-			backgroundColor : "#75D19D",
-		}, {
-			groupId : 998,
-			title : '[오이]파종',
-			start : '2022-10-11',
-			end : '2022-11-01',
-			backgroundColor : "#75D19D",
-		}, {
-			groupId : 998,
-			title : '[오이]파종준비',
-			start : '2022-10-21',
-			end : '2022-11-01',
-			backgroundColor : "#75D19D",
-		}, {
-			groupId : 998,
-			title : '[오이]접목',
-			start : '2022-11-01',
-			end : '2022-11-11',
-			backgroundColor : "#75D19D",
-		}, {
-			groupId : 998,
-			title : '[오이]접목 묘관리',
-			start : '2022-11-11',
-			end : '2022-11-21',
-			backgroundColor : "#75D19D",
-		}, {
-			groupId : 998,
-			title : '[오이]정식 후 관리',
-			start : '2022-11-21',
-			end : '2022-12-01',
-			backgroundColor : "#75D19D",
-		}, {
-			groupId : 998,
-			title : '[오이]정식',
-			start : '2022-12-01',
-			end : '2022-12-11',
-			backgroundColor : "#75D19D",
-		}, {
-			groupId : 998,
-			title : '[오이]지주세우기, 유인',
-			start : '2022-12-11',
-			end : '2023-02-01',
-			backgroundColor : "#75D19D",
-		}, {
-			groupId : 998,
-			title : '[오이]유인',
-			start : '2023-02-01',
-			end : '2023-03-11',
-			backgroundColor : "#75D19D",
-		}, {
-			groupId : 998,
-			title : '[오이]수확',
-			start : '2023-03-11',
-			end : '2023-06-01',
-			backgroundColor : "#75D19D",
-		}, {
-			groupId : 998,
-			title : '[오이]1회 웃거름',
-			start : '2023-02-01',
-			end : '2023-02-21',
-			backgroundColor : "#75D19D",
-		}, {
-			groupId : 998,
-			title : '[오이]2회 웃거름',
-			start : '2023-03-01',
-			end : '2023-03-21',
-			backgroundColor : "#75D19D",
-		}, {
-			groupId : 998,
-			title : '[오이]3회 웃거름',
-			start : '2023-04-01',
-			end : '2023-04-21',
-			backgroundColor : "#75D19D"
-		},
+			{
+				groupId : 999,
+				title : '[고추]발아기,육모기',
+				start : '2022-01-21',
+				end : '2022-04-01',
+				backgroundColor : "#4CA975 "
+			}, {
+				groupId : 999,
+				title : '[고추]정식기',
+				start : '2022-04-01',
+				end : '2022-05-01',
+				backgroundColor : "#4CA975 "
+			}, {
+				groupId : 999,
+				title : '[고추]]개화기',
+				start : '2022-05-01',
+				end : '2022-04-11',
+				backgroundColor : "#4CA975 "
+			}, {
+				groupId : 999,
+				title : '[고추]온상설치',
+				start : '2022-01-01',
+				end : '2022-02-01',
+				backgroundColor : "#4CA975 "
+			}, {
+				groupId : 999,
+				title : '[고추]품종선책',
+				start : '2022-02-01',
+				end : '2022-03-21',
+				backgroundColor : "#4CA975 "
+			}, {
+				groupId : 999,
+				title : '[고추]정식',
+				start : '2022-03-21',
+				end : '2022-04-21',
+				backgroundColor : "#4CA975 "
+			}, {
+				groupId : 999,
+				title : '[고추]지주설치,유인',
+				start : '2022-04-21',
+				end : '2022-06-01',
+				backgroundColor : "#4CA975 "
+			}, {
+				groupId : 999,
+				title : '[고추]풋고추 수확',
+				start : '2022-06-01',
+				end : '2022-07-01',
+				backgroundColor : "#4CA975 "
+			}, {
+				groupId : 999,
+				title : '[고추]붉은고추 수확',
+				start : '2022-07-01',
+				end : '2022-09-21',
+				backgroundColor : "#4CA975 "
+			}, {
+				groupId : 999,
+				title : '[고추]생산량 및 수량 감소시 연장 재배',
+				start : '2022-09-21',
+				end : '2022-12-11',
+				backgroundColor : "#4CA975 "
+			}, {
+				groupId : 999,
+				title : '[고추]1회웃거름',
+				start : '2022-05-01',
+				end : '2022-06-01',
+				backgroundColor : "#4CA975 "
+			}, {
+				groupId : 999,
+				title : '[고추]2회웃거름',
+				start : '2022-06-01',
+				end : '2022-07-01',
+				backgroundColor : "#4CA975 "
+			}, {
+				groupId : 999,
+				title : '[고추]3회웃거름',
+				start : '2022-07-11',
+				end : '2022-08-11',
+				backgroundColor : "#4CA975 "
+			},
+			// 오이
+			{
+				groupId : 998,
+				title : '[오이]발아,육모',
+				start : '2022-10-11',
+				end : '2022-11-21',
+				backgroundColor : "#75D19D"
+			}, {
+				groupId : 998,
+				title : '[오이]생육기',
+				start : '2022-10-11',
+				end : '2023-11-21',
+				backgroundColor : "#75D19D",
+			}, {
+				groupId : 998,
+				title : '[오이]수확기',
+				start : '2023-02-01',
+				end : '2023-06-01',
+				backgroundColor : "#75D19D",
+			}, {
+				groupId : 998,
+				title : '[오이]파종',
+				start : '2022-10-11',
+				end : '2022-11-01',
+				backgroundColor : "#75D19D",
+			}, {
+				groupId : 998,
+				title : '[오이]파종준비',
+				start : '2022-10-21',
+				end : '2022-11-01',
+				backgroundColor : "#75D19D",
+			}, {
+				groupId : 998,
+				title : '[오이]접목',
+				start : '2022-11-01',
+				end : '2022-11-11',
+				backgroundColor : "#75D19D",
+			}, {
+				groupId : 998,
+				title : '[오이]접목 묘관리',
+				start : '2022-11-11',
+				end : '2022-11-21',
+				backgroundColor : "#75D19D",
+			}, {
+				groupId : 998,
+				title : '[오이]정식 후 관리',
+				start : '2022-11-21',
+				end : '2022-12-01',
+				backgroundColor : "#75D19D",
+			}, {
+				groupId : 998,
+				title : '[오이]정식',
+				start : '2022-12-01',
+				end : '2022-12-11',
+				backgroundColor : "#75D19D",
+			}, {
+				groupId : 998,
+				title : '[오이]지주세우기, 유인',
+				start : '2022-12-11',
+				end : '2023-02-01',
+				backgroundColor : "#75D19D",
+			}, {
+				groupId : 998,
+				title : '[오이]유인',
+				start : '2023-02-01',
+				end : '2023-03-11',
+				backgroundColor : "#75D19D",
+			}, {
+				groupId : 998,
+				title : '[오이]수확',
+				start : '2023-03-11',
+				end : '2023-06-01',
+				backgroundColor : "#75D19D",
+			}, {
+				groupId : 998,
+				title : '[오이]1회 웃거름',
+				start : '2023-02-01',
+				end : '2023-02-21',
+				backgroundColor : "#75D19D",
+			}, {
+				groupId : 998,
+				title : '[오이]2회 웃거름',
+				start : '2023-03-01',
+				end : '2023-03-21',
+				backgroundColor : "#75D19D",
+			}, {
+				groupId : 998,
+				title : '[오이]3회 웃거름',
+				start : '2023-04-01',
+				end : '2023-04-21',
+				backgroundColor : "#75D19D"
+			},
 
-		// 파
-		{
-			groupId : 997,
-			title : '[파]춘파재배',
-			start : '2022-01-21',
-			end : '2022-03-21'
-		}, {
-			groupId : 997,
-			title : '[파]묘신장기',
-			start : '2022-04-01',
-			end : '2022-07-01'
-		}, {
-			groupId : 997,
-			title : '[파]엽포(잎집부의)신장기',
-			start : '2022-08-01',
-			end : '2022-11-01'
-		}, {
-			groupId : 997,
-			title : '[파]파종',
-			start : '2022-04-01',
-			end : '2022-04-21'
-		}, {
-			groupId : 997,
-			title : '[파]솎음',
-			start : '2022-05-01',
-			end : '2022-05-21'
-		}, {
-			groupId : 997,
-			title : '[파]솎음',
-			start : '2022-06-01',
-			end : '2022-06-21'
-		}, {
-			groupId : 997,
-			title : '[파]정식',
-			start : '2022-06-21',
-			end : '2022-07-21'
-		}, {
-			groupId : 997,
-			title : '[파]북주기',
-			start : '2022-08-01',
-			end : '2022-10-21'
-		}, {
-			groupId : 997,
-			title : '[파]수확',
-			start : '2022-11-01',
-			end : '2022-12-11'
-		}, {
-			groupId : 997,
-			title : '[파]김매기',
-			start : '2022-05-01',
-			end : '2022-07-01'
-		}, {
-			groupId : 997,
-			title : '[파]1회 웃거름',
-			start : '2022-07-11',
-			end : '2022-08-01'
-		}, {
-			groupId : 997,
-			title : '[파]2회 웃거름',
-			start : '2022-08-01',
-			end : '2022-09-11'
-		}, {
-			groupId : 997,
-			title : '[파]3회 웃거름',
-			start : '2022-09-21',
-			end : '2022-10-11'
-		}, {
-			groupId : 997,
-			title : '[파]추대주솎음,화구절단',
-			start : '2022-02-01',
-			end : '2022-04-01'
-		}, {
-			groupId : 997,
-			title : '[파]짚, 비닐피복',
-			start : '2022-01-01',
-			end : '2022-03-11'
-		}, {
-			groupId : 997,
-			title : '[파]정식',
-			start : '2022-03-11',
-			end : '2022-04-21'
-		}, {
-			groupId : 997,
-			title : '[파]수확',
-			start : '2022-06-01',
-			end : '2022-07-21'
-		}, {
-			groupId : 997,
-			title : '[파]추파재배',
-			start : '2022-08-01',
-			end : '2022-09-21'
-		}, {
-			groupId : 997,
-			title : '[파]파종',
-			start : '2022-09-21',
-			end : '2022-10-21'
-		}, {
-			groupId : 997,
-			title : '[파]짚, 비닐피복',
-			start : '2022-11-21',
-			end : '2023-04-01'
-		},
+			// 파
+			{
+				groupId : 997,
+				title : '[파]춘파재배',
+				start : '2022-01-21',
+				end : '2022-03-21'
+			}, {
+				groupId : 997,
+				title : '[파]묘신장기',
+				start : '2022-04-01',
+				end : '2022-07-01'
+			}, {
+				groupId : 997,
+				title : '[파]엽포(잎집부의)신장기',
+				start : '2022-08-01',
+				end : '2022-11-01'
+			}, {
+				groupId : 997,
+				title : '[파]파종',
+				start : '2022-04-01',
+				end : '2022-04-21'
+			}, {
+				groupId : 997,
+				title : '[파]솎음',
+				start : '2022-05-01',
+				end : '2022-05-21'
+			}, {
+				groupId : 997,
+				title : '[파]솎음',
+				start : '2022-06-01',
+				end : '2022-06-21'
+			}, {
+				groupId : 997,
+				title : '[파]정식',
+				start : '2022-06-21',
+				end : '2022-07-21'
+			}, {
+				groupId : 997,
+				title : '[파]북주기',
+				start : '2022-08-01',
+				end : '2022-10-21'
+			}, {
+				groupId : 997,
+				title : '[파]수확',
+				start : '2022-11-01',
+				end : '2022-12-11'
+			}, {
+				groupId : 997,
+				title : '[파]김매기',
+				start : '2022-05-01',
+				end : '2022-07-01'
+			}, {
+				groupId : 997,
+				title : '[파]1회 웃거름',
+				start : '2022-07-11',
+				end : '2022-08-01'
+			}, {
+				groupId : 997,
+				title : '[파]2회 웃거름',
+				start : '2022-08-01',
+				end : '2022-09-11'
+			}, {
+				groupId : 997,
+				title : '[파]3회 웃거름',
+				start : '2022-09-21',
+				end : '2022-10-11'
+			}, {
+				groupId : 997,
+				title : '[파]추대주솎음,화구절단',
+				start : '2022-02-01',
+				end : '2022-04-01'
+			}, {
+				groupId : 997,
+				title : '[파]짚, 비닐피복',
+				start : '2022-01-01',
+				end : '2022-03-11'
+			}, {
+				groupId : 997,
+				title : '[파]정식',
+				start : '2022-03-11',
+				end : '2022-04-21'
+			}, {
+				groupId : 997,
+				title : '[파]수확',
+				start : '2022-06-01',
+				end : '2022-07-21'
+			}, {
+				groupId : 997,
+				title : '[파]추파재배',
+				start : '2022-08-01',
+				end : '2022-09-21'
+			}, {
+				groupId : 997,
+				title : '[파]파종',
+				start : '2022-09-21',
+				end : '2022-10-21'
+			}, {
+				groupId : 997,
+				title : '[파]짚, 비닐피복',
+				start : '2022-11-21',
+				end : '2023-04-01'
+			},
 
-		// 딸기/사계성여름재배
-		{
-			groupId : 996,
-			title : '[딸기/사계성여름재배]묘 냉장저장',
-			start : '2022-01-01',
-			end : '2022-03-11',
-			backgroundColor : "#FF3300"
-		}, {
-			groupId : 996,
-			title : '[딸기/사계성여름재배]모주정식',
-			start : '2022-03-11',
-			end : '2022-05-01',
-			backgroundColor : "#FF3300"
-		}, {
-			groupId : 996,
-			title : '[딸기/사계성여름재배]자묘증식',
-			start : '2022-06-01',
-			end : '2022-09-20',
-			backgroundColor : "#FF3300"
-		}, {
-			groupId : 996,
-			title : '[딸기/사계성여름재배]묘 냉장저장',
-			start : '2022-10-01',
-			end : '2022-12-01',
-			backgroundColor : "#FF3300"
-		}, {
-			groupId : 996,
-			title : '[딸기/사계성여름재배]육묘기간',
-			start : '2022-03-01',
-			end : '2022-04-01',
-			backgroundColor : "#FF3300"
-		}, {
-			groupId : 996,
-			title : '[딸기/사계성여름재배]정식기간',
-			start : '2022-04-01',
-			end : '2022-05-01',
-			backgroundColor : "#FF3300"
-		}, {
-			groupId : 996,
-			title : '[딸기/사계성여름재배]수확기간',
-			start : '2022-06-01',
-			end : '2022-11-01',
-			backgroundColor : "#FF3300"
-		},
+			// 딸기/사계성여름재배
+			{
+				groupId : 996,
+				title : '[딸기/사계성여름재배]묘 냉장저장',
+				start : '2022-01-01',
+				end : '2022-03-11',
+				backgroundColor : "#FF7493"
+			}, {
+				groupId : 996,
+				title : '[딸기/사계성여름재배]모주정식',
+				start : '2022-03-11',
+				end : '2022-05-01',
+				backgroundColor : "#FF7493"
+			}, {
+				groupId : 996,
+				title : '[딸기/사계성여름재배]자묘증식',
+				start : '2022-06-01',
+				end : '2022-09-20',
+				backgroundColor : "#FF7493"
+			}, {
+				groupId : 996,
+				title : '[딸기/사계성여름재배]묘 냉장저장',
+				start : '2022-10-01',
+				end : '2022-12-01',
+				backgroundColor : "#FF7493"
+			}, {
+				groupId : 996,
+				title : '[딸기/사계성여름재배]육묘기간',
+				start : '2022-03-01',
+				end : '2022-04-01',
+				backgroundColor : "#FF7493"
+			}, {
+				groupId : 996,
+				title : '[딸기/사계성여름재배]정식기간',
+				start : '2022-04-01',
+				end : '2022-05-01',
+				backgroundColor : "#FF7493"
+			}, {
+				groupId : 996,
+				title : '[딸기/사계성여름재배]수확기간',
+				start : '2022-06-01',
+				end : '2022-11-01',
+				backgroundColor : "#FF7493"
+			},
 
-		// 딸기/반촉성재배
-		{
-			groupId : 996,
-			title : '[딸기/반촉성재배]모주정식',
-			start : '2022-03-11',
-			end : '2022-04-21',
-			backgroundColor : "#FF3366"
-		}, {
-			groupId : 996,
-			title : '[딸기/반촉성재배]자묘증식',
-			start : '2022-05-11',
-			end : '2022-08-11',
-			backgroundColor : "#FF3366"
-		}, {
-			groupId : 996,
-			title : '[딸기/반촉성재배]정식',
-			start : '2022-08-21',
-			end : '2022-09-11',
-			backgroundColor : "#FF3366"
-		}, {
-			groupId : 996,
-			title : '[딸기/반촉성재배]보온',
-			start : '2022-10-11',
-			end : '2022-11-21',
-			backgroundColor : "#FF3366"
-		}, {
-			groupId : 996,
-			title : '[딸기/반촉성재배]수확',
-			start : '2022-01-21',
-			end : '2022-05-01',
-			backgroundColor : "#FF3366"
-		},
+			// 딸기/반촉성재배
+			{
+				groupId : 996,
+				title : '[딸기/반촉성재배]모주정식',
+				start : '2022-03-11',
+				end : '2022-04-21',
+				backgroundColor : "#FF7493"
+			}, {
+				groupId : 996,
+				title : '[딸기/반촉성재배]자묘증식',
+				start : '2022-05-11',
+				end : '2022-08-11',
+				backgroundColor : "#FF7493"
+			}, {
+				groupId : 996,
+				title : '[딸기/반촉성재배]정식',
+				start : '2022-08-21',
+				end : '2022-09-11',
+				backgroundColor : "#FF7493"
+			}, {
+				groupId : 996,
+				title : '[딸기/반촉성재배]보온',
+				start : '2022-10-11',
+				end : '2022-11-21',
+				backgroundColor : "#FF7493"
+			}, {
+				groupId : 996,
+				title : '[딸기/반촉성재배]수확',
+				start : '2022-01-21',
+				end : '2022-05-01',
+				backgroundColor : "#FF7493"
+			},
 
-		// 딸기/촉성재배
-		{
-			groupId : 996,
-			title : '[딸기/촉성재배]모주삽목',
-			start : '2022-09-11',
-			end : '2022-10-11',
-			backgroundColor : "#FF3399"
-		}, {
-			groupId : 996,
-			title : '[딸기/촉성재배]모주전조처리',
-			start : '2022-02-01',
-			end : '2022-03-21',
-			backgroundColor : "#FF3399"
-		}, {
-			groupId : 996,
-			title : '[딸기/촉성재배]모주정식',
-			start : '2022-03-21',
-			end : '2022-04-11',
-			backgroundColor : "#FF3399"
-		}, {
-			groupId : 996,
-			title : '[딸기/촉성재배]자묘정식',
-			start : '2022-05-21',
-			end : '2022-07-21',
-			backgroundColor : "#FF3399"
-		}, {
-			groupId : 996,
-			title : '[딸기/촉성재배]정식',
-			start : '2022-08-01',
-			end : '2022-09-01',
-			backgroundColor : "#FF3399"
-		}, {
-			groupId : 996,
-			title : '[딸기/촉성재배]보온',
-			start : '2022-09-11',
-			end : '2022-10-21',
-			backgroundColor : "#FF3399"
-		}, {
-			groupId : 996,
-			title : '[딸기/촉성재배]전조처리',
-			start : '2022-11-11',
-			end : '2022-12-11',
-			backgroundColor : "#FF3399"
-		}, {
-			groupId : 996,
-			title : '[딸기/촉성재배]수확',
-			start : '2022-01-01',
-			end : '2022-06-11',
-			backgroundColor : "#FF3399"
-		}, {
-			groupId : 996,
-			title : '[딸기/촉성재배]수확개시',
-			start : '2022-10-11',
-			end : '2022-11-11',
-			backgroundColor : "#FF3399"
-		},
+			// 딸기/촉성재배
+			{
+				groupId : 996,
+				title : '[딸기/촉성재배]모주삽목',
+				start : '2022-09-11',
+				end : '2022-10-11',
+				backgroundColor : "#FF7493"
+			}, {
+				groupId : 996,
+				title : '[딸기/촉성재배]모주전조처리',
+				start : '2022-02-01',
+				end : '2022-03-21',
+				backgroundColor : "#FF7493"
+			}, {
+				groupId : 996,
+				title : '[딸기/촉성재배]모주정식',
+				start : '2022-03-21',
+				end : '2022-04-11',
+				backgroundColor : "#FF7493"
+			}, {
+				groupId : 996,
+				title : '[딸기/촉성재배]자묘정식',
+				start : '2022-05-21',
+				end : '2022-07-21',
+				backgroundColor : "#FF7493"
+			}, {
+				groupId : 996,
+				title : '[딸기/촉성재배]정식',
+				start : '2022-08-01',
+				end : '2022-09-01',
+				backgroundColor : "#FF7493"
+			}, {
+				groupId : 996,
+				title : '[딸기/촉성재배]보온',
+				start : '2022-09-11',
+				end : '2022-10-21',
+				backgroundColor : "#FF7493"
+			}, {
+				groupId : 996,
+				title : '[딸기/촉성재배]전조처리',
+				start : '2022-11-11',
+				end : '2022-12-11',
+				backgroundColor : "#FF7493"
+			}, {
+				groupId : 996,
+				title : '[딸기/촉성재배]수확',
+				start : '2022-01-01',
+				end : '2022-06-11',
+				backgroundColor : "#FF7493"
+			}, {
+				groupId : 996,
+				title : '[딸기/촉성재배]수확개시',
+				start : '2022-10-11',
+				end : '2022-11-11',
+				backgroundColor : "#FF7493"
+			},
 
-		// 호바
-		{
-			groupId : 995,
-			title : '[호박]조숙재배',
-			start : '2022-06-11',
-			end : '2022-08-01',
-			backgroundColor : "#DC9146"
-		}, {
-			groupId : 995,
-			title : '[호박]파종',
-			start : '2022-02-01',
-			end : '2022-03-01',
-			backgroundColor : "#DC9146"
-		}, {
-			groupId : 995,
-			title : '[호박]정식',
-			start : '2022-03-11',
-			end : '2022-04-01',
-			backgroundColor : "#DC9146"
-		}, {
-			groupId : 995,
-			title : '[호박]수확',
-			start : '2022-05-11',
-			end : '2022-08-11',
-			backgroundColor : "#DC9146"
-		}, {
-			groupId : 995,
-			title : '[호박]멀칭, 터널',
-			start : '2022-03-11',
-			end : '2022-04-11',
-			backgroundColor : "#DC9146"
-		}, {
-			groupId : 995,
-			title : '[호박]1차 웃거름',
-			start : '2022-04-11',
-			end : '2022-05-01',
-			backgroundColor : "#DC9146"
-		}, {
-			groupId : 995,
-			title : '[호박]2차 웃거름',
-			start : '2022-05-21',
-			end : '2022-06-11',
-			backgroundColor : "#DC9146"
-		}, {
-			groupId : 995,
-			title : '[호박]3차 웃거름',
-			start : '2022-07-21',
-			end : '2022-08-01',
-			backgroundColor : "#DC9146"
-		}, {
-			groupId : 995,
-			title : '[호박]촉성재배',
-			start : '2022-10-11',
-			end : '2022-11-11',
-			backgroundColor : "#DC9146"
-		}, {
-			groupId : 995,
-			title : '[호박]정식',
-			start : '2022-01-01',
-			end : '2022-02-01',
-			backgroundColor : "#DC9146"
-		}, {
-			groupId : 995,
-			title : '[호박]수확',
-			start : '2022-03-01',
-			end : '2022-05-11',
-			backgroundColor : "#DC9146"
-		}, {
-			groupId : 995,
-			title : '[호박]파종',
-			start : '2022-01-11',
-			end : '2022-12-11',
-			backgroundColor : "#DC9146"
-		},
+			// 호바
+			{
+				groupId : 995,
+				title : '[호박]조숙재배',
+				start : '2022-06-11',
+				end : '2022-08-01',
+				backgroundColor : "#DC9146"
+			}, {
+				groupId : 995,
+				title : '[호박]파종',
+				start : '2022-02-01',
+				end : '2022-03-01',
+				backgroundColor : "#DC9146"
+			}, {
+				groupId : 995,
+				title : '[호박]정식',
+				start : '2022-03-11',
+				end : '2022-04-01',
+				backgroundColor : "#DC9146"
+			}, {
+				groupId : 995,
+				title : '[호박]수확',
+				start : '2022-05-11',
+				end : '2022-08-11',
+				backgroundColor : "#DC9146"
+			}, {
+				groupId : 995,
+				title : '[호박]멀칭, 터널',
+				start : '2022-03-11',
+				end : '2022-04-11',
+				backgroundColor : "#DC9146"
+			}, {
+				groupId : 995,
+				title : '[호박]1차 웃거름',
+				start : '2022-04-11',
+				end : '2022-05-01',
+				backgroundColor : "#DC9146"
+			}, {
+				groupId : 995,
+				title : '[호박]2차 웃거름',
+				start : '2022-05-21',
+				end : '2022-06-11',
+				backgroundColor : "#DC9146"
+			}, {
+				groupId : 995,
+				title : '[호박]3차 웃거름',
+				start : '2022-07-21',
+				end : '2022-08-01',
+				backgroundColor : "#DC9146"
+			}, {
+				groupId : 995,
+				title : '[호박]촉성재배',
+				start : '2022-10-11',
+				end : '2022-11-11',
+				backgroundColor : "#DC9146"
+			}, {
+				groupId : 995,
+				title : '[호박]정식',
+				start : '2022-01-01',
+				end : '2022-02-01',
+				backgroundColor : "#DC9146"
+			}, {
+				groupId : 995,
+				title : '[호박]수확',
+				start : '2022-03-01',
+				end : '2022-05-11',
+				backgroundColor : "#DC9146"
+			}, {
+				groupId : 995,
+				title : '[호박]파종',
+				start : '2022-01-11',
+				end : '2022-12-11',
+				backgroundColor : "#DC9146"
+			},
 
-		// 호작/늙은호박
-		{
-			groupId : 995,
-			title : '[호박/늙은호박]노지재배',
-			start : '2022-01-01',
-			end : '2022-02-21',
-			backgroundColor : "#EF8847"
-		}, {
-			groupId : 995,
-			title : '[호박/늙은호박]파종',
-			start : '2022-03-11',
-			end : '2022-04-11',
-			backgroundColor : "#EF8847"
-		}, {
-			groupId : 995,
-			title : '[호박/늙은호박]정식',
-			start : '2022-04-11',
-			end : '2022-05-21',
-			backgroundColor : "#EF8847"
-		}, {
-			groupId : 995,
-			title : '[호박/늙은호박]덩굴신장 및 수정',
-			start : '2022-05-21',
-			end : '2022-07-11',
-			backgroundColor : "#EF8847"
-		}, {
-			groupId : 995,
-			title : '[호박/늙은호박]과실비대 및 성숙',
-			start : '2022-07-11',
-			end : '2022-09-21',
-			backgroundColor : "#EF8847"
-		}, {
-			groupId : 995,
-			title : '[호박/늙은호박]수확',
-			start : '2022-09-21',
-			end : '2022-11-01',
-			backgroundColor : "#EF8847"
-		}, {
-			groupId : 995,
-			title : '[호박/늙은호박]멀칭, 터널',
-			start : '2022-04-11',
-			end : '2022-05-21',
-			backgroundColor : "#EF8847"
-		}, {
-			groupId : 995,
-			title : '[호박/늙은호박]1차 웃거름',
-			start : '2022-06-11',
-			end : '2022-07-01',
-			backgroundColor : "#EF8847"
-		}, {
-			groupId : 995,
-			title : '[호박/늙은호박]2차 웃거름',
-			start : '2022-07-11',
-			end : '2022-08-01',
-			backgroundColor : "#EF8847"
-		}, {
-			groupId : 995,
-			title : '[호박/늙은호박]3차 웃거름',
-			start : '2022-08-11',
-			end : '2022-09-01',
-			backgroundColor : "#EF8847"
-		} ],
+			// 호작/늙은호박
+			{
+				groupId : 995,
+				title : '[호박/늙은호박]노지재배',
+				start : '2022-01-01',
+				end : '2022-02-21',
+				backgroundColor : "#EF8847"
+			}, {
+				groupId : 995,
+				title : '[호박/늙은호박]파종',
+				start : '2022-03-11',
+				end : '2022-04-11',
+				backgroundColor : "#EF8847"
+			}, {
+				groupId : 995,
+				title : '[호박/늙은호박]정식',
+				start : '2022-04-11',
+				end : '2022-05-21',
+				backgroundColor : "#EF8847"
+			}, {
+				groupId : 995,
+				title : '[호박/늙은호박]덩굴신장 및 수정',
+				start : '2022-05-21',
+				end : '2022-07-11',
+				backgroundColor : "#EF8847"
+			}, {
+				groupId : 995,
+				title : '[호박/늙은호박]과실비대 및 성숙',
+				start : '2022-07-11',
+				end : '2022-09-21',
+				backgroundColor : "#EF8847"
+			}, {
+				groupId : 995,
+				title : '[호박/늙은호박]수확',
+				start : '2022-09-21',
+				end : '2022-11-01',
+				backgroundColor : "#EF8847"
+			}, {
+				groupId : 995,
+				title : '[호박/늙은호박]멀칭, 터널',
+				start : '2022-04-11',
+				end : '2022-05-21',
+				backgroundColor : "#EF8847"
+			}, {
+				groupId : 995,
+				title : '[호박/늙은호박]1차 웃거름',
+				start : '2022-06-11',
+				end : '2022-07-01',
+				backgroundColor : "#EF8847"
+			}, {
+				groupId : 995,
+				title : '[호박/늙은호박]2차 웃거름',
+				start : '2022-07-11',
+				end : '2022-08-01',
+				backgroundColor : "#EF8847"
+			}, {
+				groupId : 995,
+				title : '[호박/늙은호박]3차 웃거름',
+				start : '2022-08-11',
+				end : '2022-09-01',
+				backgroundColor : "#EF8847"
+			} ],
 		locale : 'ko'
 	});
 	calendar.render();
@@ -759,19 +759,19 @@ document.addEventListener('DOMContentLoaded', function() {
 			<div class="container"	style="background-color: rgb(250, 255, 240); width: 100%; height:1150px; border-radius: 1em; margin-top: 20px;">
 				<div class="container mt-3" style="display: flex; justify-content: center; align-items: center;">
 					<ul class="list-group list-group-horizontal">
-					    <li class="list-group-item checkbox-inline" style="background-color: #669900;">
+					    <li class="list-group-item checkbox-inline" style="background-color: #4CA975 ; color:#fff;">
 					    	<input class='filter' type="checkbox" value="고추" checked> 고추
 					    </li>
-					    <li class="list-group-item checkbox-inline" style="background-color: #75D19D;">
+					    <li class="list-group-item checkbox-inline" style="background-color: #75D19D; color:#fff;">
 					    	<input class='filter' type="checkbox" value="오이" checked> 오이
 					    </li>
-					    <li class="list-group-item checkbox-inline" style="background-color: #0099FF">
+					    <li class="list-group-item checkbox-inline" style="background-color: #0099FF; color:#fff;">
 					    	<input class='filter' type="checkbox" value="파" checked> 파
 					    </li>
-					    <li class="list-group-item checkbox-inline" style="background-color: #FF3300;">
+					    <li class="list-group-item checkbox-inline" style="background-color: #FF7493; color:#fff;">
 					    	<input class='filter' type="checkbox" value="딸기" checked> 딸기
 					    </li>
-					    <li class="list-group-item checkbox-inline" style="background-color: #DC9146;">
+					    <li class="list-group-item checkbox-inline" style="background-color: #DC9146; color:#fff;">
 					    	<input class='filter' type="checkbox" value="호박" checked> 호박
 					    </li>
 					 </ul>
