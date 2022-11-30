@@ -68,6 +68,7 @@
 	<div class="sticky-top">
 		<!-- 헤더 시작 -->
 		<jsp:include page="layout/top.jsp" />
+		
 		<!-- 헤더 끝 -->
 	
 		<!-- Full Screen Search Start -->
