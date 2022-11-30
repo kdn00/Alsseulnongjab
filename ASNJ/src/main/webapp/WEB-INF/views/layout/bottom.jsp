@@ -46,9 +46,8 @@
 <body>
 
 	<!-- Footer Start -->
-	<div
-		class="container-fluid bg-primary text-white footer mt-5 wow fadeIn"
-		data-wow-delay="0.1s">
+	<div class="container-fluid bg-primary text-white footer mt-3 wow fadeIn"
+		data-wow-delay="0.1s" style="background-color: #6b9f0f !important;">
 		<div class="container py-5 px-lg-5">
 			<div class="row gy-5 gx-4">
 				<!-- <div class="col-12">
@@ -124,10 +123,12 @@
 						&copy; <a class="border-bottom" href="index.jsp">Alsseulnongjob</a>,
 						a useful knowledge of farming...
 					</div>
-					<div class="col-md-6 text-center text-md-end">
-						<div class="footer-menu">
-							<a href="#">회사소개</a> <a href="#">서비스 가이드</a> <a href="#">개인정보보호정책</a>
-							<a href="#">이용약관</a>
+					<div class="container col-md-6 text-center text-md-center">
+						<div class="footer-menu row">
+							<a class="col-sm-2" href="#">회사소개</a> 
+							<a class="col-sm-3" href="#">서비스 가이드</a> 
+							<a class="col-sm-3" href="#" style="font-weight: bolder;">개인정보보호정책</a>
+							<a class="col-sm-2" href="#">이용약관</a>
 						</div>
 					</div>
 				</div>
