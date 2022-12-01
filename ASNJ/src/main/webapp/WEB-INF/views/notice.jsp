@@ -107,7 +107,7 @@
 								</div>
 							</div>
 							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
-							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
+							<a href="${cpath}/Notice.do" class="nav-item nav-link active">커뮤니티</a> 
 						</div>
 					</div>
 					</c:when>

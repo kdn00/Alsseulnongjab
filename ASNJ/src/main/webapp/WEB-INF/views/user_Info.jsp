@@ -104,11 +104,10 @@
 									href="${cpath}/Pests.do" class="dropdown-item">해충</a>
 							</div>
 						</div>
-						<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> <a
-							href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> <a
-							href="${cpath}/Mypage.do" class="nav-item nav-link">마이페이지</a> <a
-							href="${cpath}/UserInfo.do" class="nav-item nav-link active">회원정보
-							관리</a>
+						<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
+						<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
+						<a href="${cpath}/Mypage.do" class="nav-item nav-link">마이페이지</a>
+						<a	href="${cpath}/UserInfo.do" class="nav-item nav-link active">회원정보 관리</a>
 					</div>
 				</div>
 			</nav>

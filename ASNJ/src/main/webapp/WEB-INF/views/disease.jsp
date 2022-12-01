@@ -100,8 +100,7 @@ ul {
 			style="padding-top: 2rem !important; padding-bottom: 2rem !important; max-width: none;">
 			<div class="container-xxl position-relative p-0"
 				style="margin-right: 0px; max-width: inherit;">
-				<nav
-					class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
+				<nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
 					style="bottom: 0px;">
 					<a href="index.jsp" class="navbar-brand p-0">
 						<h4 class="m-0 text-white" style="font-style: italic;">
@@ -120,9 +119,9 @@ ul {
 							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
 							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
 							<div class="nav-item dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
+								<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">병해충 정보</a>
 								<div class="dropdown-menu m-0">
-									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
+									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item active">병(病) 피해</a>
 									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
 								</div>
 							</div>
@@ -139,7 +138,7 @@ ul {
 							<div class="nav-item dropdown">
 								<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">병해충 정보</a>
 								<div class="dropdown-menu m-0">
-									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
+									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item active">병(病) 피해</a>
 									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
 								</div>
 							</div>
