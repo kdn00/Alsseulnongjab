@@ -212,38 +212,39 @@
 			</div>
 
 			<!-- 내용 들어갈 곳 -->
-			<!-- 방제력 달력 시작 -->
-			<div class="container" width: 100%; height:1150px;  margin-top: 20px;">
-				<div class="container mt-3" style="display: flex; justify-content: center; align-items: center; margin:10px 0;">
-					<ul class="list-group list-group-horizontal">
-					    <li class="list-group-item checkbox-inline" style="background-color: #4CA975 ; color:#fff;">
-					    	<input class='filter' type="checkbox" value="고추" checked> 고추
-					    </li>
-					    <li class="list-group-item checkbox-inline" style="background-color: #75D19D; color:#fff;">
-					    	<input class='filter' type="checkbox" value="오이" checked> 오이
-					    </li>
-					    <li class="list-group-item checkbox-inline" style="background-color: #0099FF; color:#fff;">
-					    	<input class='filter' type="checkbox" value="파" checked> 파
-					    </li>
-					    <li class="list-group-item checkbox-inline" style="background-color: #FF7493; color:#fff;">
-					    	<input class='filter' type="checkbox" value="딸기" checked> 딸기
-					    </li>
-					    <li class="list-group-item checkbox-inline" style="background-color: #DC9146; color:#fff;">
-					    	<input class='filter' type="checkbox" value="호박" checked> 호박
-					    </li>
-					 </ul>
-				</div>
+			<div class="container" width: 100%; height:1150px; margin-top: 20px;">
 
 				<!-- 방제력 달력 시작 -->
 				<div id="external-events" style="float: right; width: 100%;">
 					<!-- 달력 -->
-					<div style="float: left; width: 100%; height: 100%; background-color: white; margin-top: 10px;"><br>
+					<div
+						style="float: left; width: 85%; height: 100%; background-color: white; margin-top: 30px;">
+						<br>
 						<div id="calendar"></div>
 					</div>
-				<!-- 달력 끝 -->
-				</div> 
-			</div>
+
+					<!-- 달력 끝 -->
+					<!-- 방제력 달력 체크 시작 -->
+					<div id="external-events" style="float: right; margin-top: 50px;">
+						<div class="container mt-3"	style="display: flex; justify-content: center; align-items: center;">
+							<ul class="list-group">
+								<li class="list-group-item checkbox-inline"	style="background-color: #3FD739; color: #fff;">
+									<input class='filter' type="checkbox" value="고추" checked> 고추</li>
+								<li class="list-group-item checkbox-inline"	style="background-color: #75D19D; color: #fff;">
+									<input class='filter' type="checkbox" value="오이" checked> 오이</li>
+								<li class="list-group-item checkbox-inline"	style="background-color: #0099FF; color: #fff;">
+									<input class='filter' type="checkbox" value="파" checked> 파</li>
+								<li class="list-group-item checkbox-inline"	style="background-color: #FFB7B7; color: #fff;">
+									<input class='filter' type="checkbox" value="딸기" checked> 딸기</li>
+								<li class="list-group-item checkbox-inline" style="background-color: #FCA651; color: #fff;">
+									<input class='filter' type="checkbox" value="호박" checked> 호박</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 방제력 달력 체크 끝 -->
+				</div>
 			<!-- 방재력 달력 끝 -->
+			</div>
 			<!-- 내용 들어갈 곳 끝 -->
 		</div>
 		<!-- 방제력 끝 -->
@@ -260,103 +261,103 @@
 <script src='resources/js/ko.js'></script>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-	var initialLocaleCode = 'en';
-	var localeSelectorEl = document.getElementById('locale-selector');
-	var calendarEl = document.getElementById('calendar');
+	document.addEventListener('DOMContentLoaded', function() {
+		var initialLocaleCode = 'en';
+		var localeSelectorEl = document.getElementById('locale-selector');
+		var calendarEl = document.getElementById('calendar');
 
-	var calendar = new FullCalendar.Calendar(calendarEl, {
-		headerToolbar : {
-			left : 'prev,next today',
-			center : 'title',
-			right : 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
-		},
-		locale : initialLocaleCode,
-		buttonIcons : false, // show the prev/next text
-		// weekNumbers: true,
-		navLinks : true, // can click day/week names to navigate views
-		// editable: true,
-		dayMaxEvents : true, // allow "more" link when too many events
-		events : [
-		// 고추 시작 
+		var calendar = new FullCalendar.Calendar(calendarEl, {
+			headerToolbar : {
+				left : 'prev,next today',
+				center : 'title',
+				right : 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+			},
+			locale : initialLocaleCode,
+			buttonIcons : false, // show the prev/next text
+			// weekNumbers: true,
+			navLinks : true, // can click day/week names to navigate views
+			// editable: true,
+			dayMaxEvents : true, // allow "more" link when too many events
+			events : [
+			// 고추 시작 
 			{
 				groupId : 999,
 				title : '[고추]발아기,육모기',
 				start : '2022-01-21',
 				end : '2022-04-01',
-				backgroundColor : "#4CA975 "
+				backgroundColor : "#3FD739 "
 			}, {
 				groupId : 999,
 				title : '[고추]정식기',
 				start : '2022-04-01',
 				end : '2022-05-01',
-				backgroundColor : "#4CA975 "
+				backgroundColor : "#3FD739 "
 			}, {
 				groupId : 999,
 				title : '[고추]]개화기',
 				start : '2022-05-01',
 				end : '2022-04-11',
-				backgroundColor : "#4CA975 "
+				backgroundColor : "#3FD739 "
 			}, {
 				groupId : 999,
 				title : '[고추]온상설치',
 				start : '2022-01-01',
 				end : '2022-02-01',
-				backgroundColor : "#4CA975 "
+				backgroundColor : "#3FD739 "
 			}, {
 				groupId : 999,
 				title : '[고추]품종선책',
 				start : '2022-02-01',
 				end : '2022-03-21',
-				backgroundColor : "#4CA975 "
+				backgroundColor : "#3FD739 "
 			}, {
 				groupId : 999,
 				title : '[고추]정식',
 				start : '2022-03-21',
 				end : '2022-04-21',
-				backgroundColor : "#4CA975 "
+				backgroundColor : "#3FD739 "
 			}, {
 				groupId : 999,
 				title : '[고추]지주설치,유인',
 				start : '2022-04-21',
 				end : '2022-06-01',
-				backgroundColor : "#4CA975 "
+				backgroundColor : "#3FD739 "
 			}, {
 				groupId : 999,
 				title : '[고추]풋고추 수확',
 				start : '2022-06-01',
 				end : '2022-07-01',
-				backgroundColor : "#4CA975 "
+				backgroundColor : "#3FD739 "
 			}, {
 				groupId : 999,
 				title : '[고추]붉은고추 수확',
 				start : '2022-07-01',
 				end : '2022-09-21',
-				backgroundColor : "#4CA975 "
+				backgroundColor : "#3FD739 "
 			}, {
 				groupId : 999,
 				title : '[고추]생산량 및 수량 감소시 연장 재배',
 				start : '2022-09-21',
 				end : '2022-12-11',
-				backgroundColor : "#4CA975 "
+				backgroundColor : "#3FD739 "
 			}, {
 				groupId : 999,
 				title : '[고추]1회웃거름',
 				start : '2022-05-01',
 				end : '2022-06-01',
-				backgroundColor : "#4CA975 "
+				backgroundColor : "#3FD739 "
 			}, {
 				groupId : 999,
 				title : '[고추]2회웃거름',
 				start : '2022-06-01',
 				end : '2022-07-01',
-				backgroundColor : "#4CA975 "
+				backgroundColor : "#3FD739 "
 			}, {
 				groupId : 999,
 				title : '[고추]3회웃거름',
 				start : '2022-07-11',
 				end : '2022-08-11',
-				backgroundColor : "#4CA975 "
+				backgroundColor : "#3FD739 "
 			},
 			// 오이
 			{
@@ -560,43 +561,43 @@ document.addEventListener('DOMContentLoaded', function() {
 				title : '[딸기/사계성여름재배]묘 냉장저장',
 				start : '2022-01-01',
 				end : '2022-03-11',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			}, {
 				groupId : 996,
 				title : '[딸기/사계성여름재배]모주정식',
 				start : '2022-03-11',
 				end : '2022-05-01',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			}, {
 				groupId : 996,
 				title : '[딸기/사계성여름재배]자묘증식',
 				start : '2022-06-01',
 				end : '2022-09-20',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			}, {
 				groupId : 996,
 				title : '[딸기/사계성여름재배]묘 냉장저장',
 				start : '2022-10-01',
 				end : '2022-12-01',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			}, {
 				groupId : 996,
 				title : '[딸기/사계성여름재배]육묘기간',
 				start : '2022-03-01',
 				end : '2022-04-01',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			}, {
 				groupId : 996,
 				title : '[딸기/사계성여름재배]정식기간',
 				start : '2022-04-01',
 				end : '2022-05-01',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			}, {
 				groupId : 996,
 				title : '[딸기/사계성여름재배]수확기간',
 				start : '2022-06-01',
 				end : '2022-11-01',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			},
 
 			// 딸기/반촉성재배
@@ -605,31 +606,31 @@ document.addEventListener('DOMContentLoaded', function() {
 				title : '[딸기/반촉성재배]모주정식',
 				start : '2022-03-11',
 				end : '2022-04-21',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			}, {
 				groupId : 996,
 				title : '[딸기/반촉성재배]자묘증식',
 				start : '2022-05-11',
 				end : '2022-08-11',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			}, {
 				groupId : 996,
 				title : '[딸기/반촉성재배]정식',
 				start : '2022-08-21',
 				end : '2022-09-11',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			}, {
 				groupId : 996,
 				title : '[딸기/반촉성재배]보온',
 				start : '2022-10-11',
 				end : '2022-11-21',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			}, {
 				groupId : 996,
 				title : '[딸기/반촉성재배]수확',
 				start : '2022-01-21',
 				end : '2022-05-01',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			},
 
 			// 딸기/촉성재배
@@ -638,55 +639,55 @@ document.addEventListener('DOMContentLoaded', function() {
 				title : '[딸기/촉성재배]모주삽목',
 				start : '2022-09-11',
 				end : '2022-10-11',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			}, {
 				groupId : 996,
 				title : '[딸기/촉성재배]모주전조처리',
 				start : '2022-02-01',
 				end : '2022-03-21',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			}, {
 				groupId : 996,
 				title : '[딸기/촉성재배]모주정식',
 				start : '2022-03-21',
 				end : '2022-04-11',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			}, {
 				groupId : 996,
 				title : '[딸기/촉성재배]자묘정식',
 				start : '2022-05-21',
 				end : '2022-07-21',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			}, {
 				groupId : 996,
 				title : '[딸기/촉성재배]정식',
 				start : '2022-08-01',
 				end : '2022-09-01',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			}, {
 				groupId : 996,
 				title : '[딸기/촉성재배]보온',
 				start : '2022-09-11',
 				end : '2022-10-21',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			}, {
 				groupId : 996,
 				title : '[딸기/촉성재배]전조처리',
 				start : '2022-11-11',
 				end : '2022-12-11',
-				backgroundColor : "#FF7493"
+				backgroundColor : '#FFB7B7'
 			}, {
 				groupId : 996,
 				title : '[딸기/촉성재배]수확',
 				start : '2022-01-01',
 				end : '2022-06-11',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			}, {
 				groupId : 996,
 				title : '[딸기/촉성재배]수확개시',
 				start : '2022-10-11',
 				end : '2022-11-11',
-				backgroundColor : "#FF7493"
+				backgroundColor : "#FFB7B7"
 			},
 
 			// 호바
@@ -695,73 +696,73 @@ document.addEventListener('DOMContentLoaded', function() {
 				title : '[호박]조숙재배',
 				start : '2022-06-11',
 				end : '2022-08-01',
-				backgroundColor : "#DC9146"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박]파종',
 				start : '2022-02-01',
 				end : '2022-03-01',
-				backgroundColor : "#DC9146"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박]정식',
 				start : '2022-03-11',
 				end : '2022-04-01',
-				backgroundColor : "#DC9146"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박]수확',
 				start : '2022-05-11',
 				end : '2022-08-11',
-				backgroundColor : "#DC9146"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박]멀칭, 터널',
 				start : '2022-03-11',
 				end : '2022-04-11',
-				backgroundColor : "#DC9146"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박]1차 웃거름',
 				start : '2022-04-11',
 				end : '2022-05-01',
-				backgroundColor : "#DC9146"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박]2차 웃거름',
 				start : '2022-05-21',
 				end : '2022-06-11',
-				backgroundColor : "#DC9146"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박]3차 웃거름',
 				start : '2022-07-21',
 				end : '2022-08-01',
-				backgroundColor : "#DC9146"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박]촉성재배',
 				start : '2022-10-11',
 				end : '2022-11-11',
-				backgroundColor : "#DC9146"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박]정식',
 				start : '2022-01-01',
 				end : '2022-02-01',
-				backgroundColor : "#DC9146"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박]수확',
 				start : '2022-03-01',
 				end : '2022-05-11',
-				backgroundColor : "#DC9146"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박]파종',
 				start : '2022-01-11',
 				end : '2022-12-11',
-				backgroundColor : "#DC9146"
+				backgroundColor : "#FCA651"
 			},
 
 			// 호작/늙은호박
@@ -770,66 +771,66 @@ document.addEventListener('DOMContentLoaded', function() {
 				title : '[호박/늙은호박]노지재배',
 				start : '2022-01-01',
 				end : '2022-02-21',
-				backgroundColor : "#EF8847"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박/늙은호박]파종',
 				start : '2022-03-11',
 				end : '2022-04-11',
-				backgroundColor : "#EF8847"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박/늙은호박]정식',
 				start : '2022-04-11',
 				end : '2022-05-21',
-				backgroundColor : "#EF8847"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박/늙은호박]덩굴신장 및 수정',
 				start : '2022-05-21',
 				end : '2022-07-11',
-				backgroundColor : "#EF8847"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박/늙은호박]과실비대 및 성숙',
 				start : '2022-07-11',
 				end : '2022-09-21',
-				backgroundColor : "#EF8847"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박/늙은호박]수확',
 				start : '2022-09-21',
 				end : '2022-11-01',
-				backgroundColor : "#EF8847"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박/늙은호박]멀칭, 터널',
 				start : '2022-04-11',
 				end : '2022-05-21',
-				backgroundColor : "#EF8847"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박/늙은호박]1차 웃거름',
 				start : '2022-06-11',
 				end : '2022-07-01',
-				backgroundColor : "#EF8847"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박/늙은호박]2차 웃거름',
 				start : '2022-07-11',
 				end : '2022-08-01',
-				backgroundColor : "#EF8847"
+				backgroundColor : "#FCA651"
 			}, {
 				groupId : 995,
 				title : '[호박/늙은호박]3차 웃거름',
 				start : '2022-08-11',
 				end : '2022-09-01',
-				backgroundColor : "#EF8847"
+				backgroundColor : "#FCA651"
 			} ],
-		locale : 'ko'
+			locale : 'ko'
+		});
+		calendar.render();
 	});
-	calendar.render();
-});
 </script>
 
 </html>

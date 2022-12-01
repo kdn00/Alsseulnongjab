@@ -82,8 +82,7 @@
 							<i class="fa me-3"></i> 알쓸농잡
 						</h4>
 					</a>
-					<button class="navbar-toggler" type="button"
-						data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 						<span class="fa fa-bars"></span>
 					</button>
 					<c:choose>
@@ -91,7 +90,7 @@
 					<c:when test="${empty loginMember}">
 					<div class="collapse navbar-collapse" id="navbarCollapse">
 						<div class="navbar-nav ms-auto py-0">
-							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
+							<a href="${cpath}/Introduce.do" class="nav-item nav-link active">사이트 소개</a>
 							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
 							<div class="nav-item dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
@@ -188,21 +187,31 @@
 		<br>
 		<br>
 		<!-- 여기까지 -->
-		
+		<!-- 프로젝트 소개 시작 -->
 		<div class="container-xxl bg-white p-0"	style="display: flex; justify-content: center; align-items: center; max-width: none;">
 			<div class="container-fluid pt-4 px-4">
 				<div class="mx-auto" style="width: 200px;">
 					<div id="underline">
-						<h4>프로젝트 소개</h4>
+						<h3>프로젝트 소개</h3>
 				</div>
+				<br>
 			</div>
 		</div>
 	</div>
 
-	<div class="container-fluid pt-4 px-4">
-		<div class="mx-auto" style="display: flex; justify-content: center;">
-			<span>프로젝트 소개내용 적기!!!!</span>
-		</div>
+	<div class="container-fluid pt-4 px-4 mx-auto" style="justify-content: left;" align="center">
+		 <div>
+			 <div class="container" style="background-color: rgb(250, 255, 250); width: 80%; height: 500px; margin-top: 10px; text-align: left;">
+				<br>
+				<h3 align="center">[YOLO v7을 활용한 병해충 분석 및 정보 서비스입니다.]</h3>
+				<h4>1. Main 화면: 작물들의(고추, 파, 오이, 딸리, 호박) 방제력을 볼 수 있습니다.</h4>
+				<h4>2. 병해충 분석 페이지: 병·해충에 걸린 작물의 사진을 업로드 하면 사진을 딥러닝 모델 중 하나인 YOLO v7으로 분석한 해당 피해 결과 페이지로 이동하여 병해충 정보를 확인 할 수 있습니다.</h4>
+				<h4>3. 병해충 정보 페이지: 평 피해, 해충 피해 각각 클릭시 해당 페이지의 작물들의 질병에 관련된 정보를 확인 할 수 있습니다.</h4>
+				<h4>4. 농업일지: 로그인 후 이용이 가능하며  일기장처럼 작뭉들의 상태 및 길이 등의 내용을 적을 수 있습니다.</h4>
+				<h4>5. 커뮤니티: 공지사항과 문의사항이 있으며, 문의사항은 로그인 후 이용이 가능합니다.</h4>
+				<h4>6. 마이페이지: 개인정보 수정 및 탈퇴, 활동내역(북맠, 문의사항 재확인)을 확인 할 수 있습니다.</h4>
+			</div>
+		 </div>
 	</div>
 
 	<!-- 내용 끝 -->
