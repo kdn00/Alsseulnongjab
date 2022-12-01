@@ -58,10 +58,6 @@ ul {
 	list-style: none;
 }
 
-.form-check-input {
-	margin-top: 17px !important;
-}
-
 .theme_thumb:hover {
 	color: #50D050 !important;
 }
@@ -116,26 +112,47 @@ ul {
 						data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 						<span class="fa fa-bars"></span>
 					</button>
+					<c:choose>
+					<%-- 로그인 안 했을 때 --%>
+					<c:when test="${empty loginMember}">
 					<div class="collapse navbar-collapse" id="navbarCollapse">
 						<div class="navbar-nav ms-auto py-0">
-							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트
-								소개</a> <a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충
-								분석</a>
+							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
+							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
 							<div class="nav-item dropdown">
-								<a href="#" class="nav-link dropdown-toggle active"
-									data-bs-toggle="dropdown">병해충 정보</a>
+								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
 								<div class="dropdown-menu m-0">
-									<a href="${cpath}/Disease.do" class="dropdown-item active">병(病)
-										피해</a> <a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
+									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
+									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
 								</div>
 							</div>
-							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> <a
-								href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> <a
-								href="${cpath}/Mypage.do" class="nav-item nav-link">마이페이지</a> <a
-								href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보
-								관리</a>
+							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
+							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
 						</div>
 					</div>
+					</c:when>
+					<c:otherwise>
+					<div class="collapse navbar-collapse" id="navbarCollapse">
+						<div class="navbar-nav ms-auto py-0">
+							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
+							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
+							<div class="nav-item dropdown">
+								<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">병해충 정보</a>
+								<div class="dropdown-menu m-0">
+									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
+									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
+								</div>
+							</div>
+							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
+							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
+							<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}" class="nav-item nav-link">마이페이지</a>
+							<c:if test="${loginMember.mem_user_job eq '관리자'}">
+							<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보 관리</a>
+							</c:if>
+						</div>
+					</div>
+					</c:otherwise>
+					</c:choose>
 				</nav>
 			</div>
 		</div>
@@ -163,7 +180,7 @@ ul {
 		<!-- 작물 카테고리 -->
 		<div class="main_category row align-items-center table table-hover"
 			style="text-align: center; width: 80%; margin: auto;">
-			<div class="w-25 p-5 col-md-auto flex-fill">
+			<div class="w-25 p-4 m-5 col-md-auto flex-fill">
 				<div id="NM_THEME_CATE_GROUPS" class="group_category"
 					data-demo-key="default">
 					<div class="row list_category_wrap" style="align-items: center;">
@@ -172,7 +189,8 @@ ul {
 							<i class="bi bi-chevron-double-right"></i>
 						</div>
 						<div class="col-sm-7">
-							<form action="${cpath}/Disease.do" method="get">
+							<form action="${cpath}/Disease.do" method="get"
+								style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;">
 								<input class="form-check-input" type="radio"
 									name="disease_crops" id="고추" value="고추" checked> <label
 									class="form-check-label" for="고추">고추</label>&nbsp;&nbsp;&nbsp;
@@ -190,8 +208,10 @@ ul {
 									for="파">파</label>&nbsp;&nbsp;&nbsp; <input
 									class="form-check-input" type="radio" name="disease_crops"
 									id="호박" value="호박"> <label class="form-check-label"
-									for="호박">호박</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>
+									for="호박">호박</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 									
+									
+									<span style="margin-left: 30px;">
 									<button type="submit"
 										class="btn btn-outline-success searchTitle m-2">
 										<i class="bi bi-hand-index-thumb" style="margin-right: 5px;"></i>보기
@@ -220,6 +240,7 @@ ul {
 		</div>
 		<hr>
 		<br> <br>
+		
 		<!-- 작물 정보 contents -->
 		<div id="NM_THEME_CONTAINER" class="theme_cont" role="tabpanel"
 			data-panel-code="FINANCE" data-parent-code="">
@@ -230,20 +251,20 @@ ul {
 
 				<div class="list_theme_wrap">
 					<ul class="list_theme container" style="padding-right: 32px;">
-					
-						<li class="theme_item row">
-							<strong class="col-sm-3"><h4>•&nbsp;사진</h4></strong>
-							<strong class="col-sm-3"><h4>•&nbsp;병명(病名)</h4></strong>
-							<strong class="col-sm-4"><h4>•&nbsp;간략설명</h4></strong>
-						</li><hr><br>
+
+						<li class="theme_item row"><strong class="col-sm-3"><h4>•&nbsp;사진</h4></strong>
+							<strong class="col-sm-3"><h4>•&nbsp;병명(病名)</h4></strong> <strong
+							class="col-sm-4"><h4>•&nbsp;간략설명</h4></strong></li>
+						<hr>
+						<br>
 
 						<c:forEach items="${diseaselist}" var="list">
 							<a href="PredictionInfoPage.do?disease_pk=${list.disease_pk}"
 								class="theme_thumb" style="color: #000">
-								<li class="theme_item row">
-								<img src="${list.disease_imgpath}" alt="" width="auto;"
-									height="250px;" class="col-sm-3" /> 
-								<strong class="title elss col-sm-3" style="font-size: large;">${list.disease_name}</strong>
+								<li class="theme_item row"><img
+									src="${list.disease_imgpath}" alt="" width="auto;"
+									height="250px;" class="col-sm-3" /> <strong
+									class="title elss col-sm-3" style="font-size: large;">${list.disease_name}</strong>
 									<p class="desc col-sm-6" style="font-size: large;">${list.disease_symptom}</p></li>
 							</a>
 							<hr>
