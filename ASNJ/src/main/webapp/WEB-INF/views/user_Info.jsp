@@ -167,8 +167,8 @@
 			<!-- 회원정보 테이블 끝 -->
 
 			<div style="justify-content: center; margin-left: 43%;">
-				<button class="btn btn-success" style="width: 100px;" type="submit"
-					id="button-addon4">저장</button>
+				<!-- <button class="btn btn-success" style="width: 100px;" type="submit"
+					id="button-addon4">저장</button> -->
 			</div>
 		</form>
 	</div>

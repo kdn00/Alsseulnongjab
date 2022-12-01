@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
@@ -91,6 +92,9 @@
 						data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 						<span class="fa fa-bars"></span>
 					</button>
+					<c:choose>
+					<%-- 로그인 안 했을 때 --%>
+					<c:when test="${empty loginMember}">
 					<div class="collapse navbar-collapse" id="navbarCollapse">
 						<div class="navbar-nav ms-auto py-0">
 							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
@@ -98,16 +102,37 @@
 							<div class="nav-item dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
 								<div class="dropdown-menu m-0">
-									<a href="${cpath}/Disease.do" class="dropdown-item">병(病) 피해</a>
+									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
+									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
+								</div>
+							</div>
+							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
+							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
+						</div>
+					</div>
+					</c:when>
+					<c:otherwise>
+					<div class="collapse navbar-collapse" id="navbarCollapse">
+						<div class="navbar-nav ms-auto py-0">
+							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
+							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
+							<div class="nav-item dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
+								<div class="dropdown-menu m-0">
+									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
 									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
 								</div>
 							</div>
 							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
 							<a href="${cpath}/Notice.do" class="nav-item nav-link active">커뮤니티</a> 
-							<a href="${cpath}/Mypage.do" class="nav-item nav-link">마이페이지</a>
+							<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}" class="nav-item nav-link">마이페이지</a>
+							<c:if test="${loginMember.mem_user_job eq '관리자'}">
 							<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보 관리</a>
+							</c:if>
 						</div>
 					</div>
+					</c:otherwise>
+					</c:choose>
 				</nav>
 			</div>
 		</div>
@@ -216,12 +241,15 @@
 									<th style="width: 200px;">작성날짜</th>
 								</thead>
 								<tbody>
+								<c:forEach items="${questionlist}" var="list" varStatus="status">
+									<c:set var="ques_time" value="${fn:split(list.ques_time, ' ')[0]}"/>
 									<tr align="center">
-										<td>1</td>
-										<td>인사</td>
-										<td>안녕하세요</td>
-										<td>2022.11.25</td>
+										<td>${status.count}</td>
+										<td>${list.ques_title}</td>
+										<td>${list.ques_content}</td>
+										<td>${ques_time}</td>
 									</tr>
+								</c:forEach>
 								</tbody>
 							</table>
 							<!-- 페이징 시작 -->
@@ -232,8 +260,6 @@
 										aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
 									</a></li>
 									<li class="page-item active"><a class="page-link" href="#">1</a></li>
-									<li class="page-item"><a class="page-link" href="#">2</a></li>
-									<li class="page-item"><a class="page-link" href="#">3</a></li>
 									<li class="page-item"><a class="page-link" href="#"
 										aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 									</a></li>
@@ -266,27 +292,25 @@
 
 									<!-- Modal body -->
 									<div class="modal-body">
-										<form>
+										<form action="${cpath}/QuestionInsert.do" method="post">
+										<input type="hidden" name="mem_pk" value="${loginMember.mem_pk}">
+										<input type="hidden" name="ques_user_id" value="${loginMember.mem_user_id}">
 											<div id="dialog-confirm">
 												<div class="input-group mb-3">
-													<span class="input-group-text">제목</span> <input type="text"
-														class="form-control" placeholder="제목을 입력하세요."> <span
-														class="input-group-text">날짜</span> <input type="date"
-														class="form-control" placeholder="date">
+													<span class="input-group-text">제목</span>
+													<input type="text" class="form-control" name="ques_title" placeholder="제목을 입력하세요."> 
 												</div>
-												<textarea style="width: 100%;" placeholder="내용을 입력하세요."></textarea>
+												<textarea style="width: 100%;" name="ques_content" placeholder="내용을 입력하세요."></textarea>
 											</div>
 
 											<!-- Modal footer -->
 											<div class="modal-footer">
-												<button type="submit"
-													class="btn btn-sm btn-success bi bi-check-circle">
+												<button type="submit" class="btn btn-sm btn-success bi bi-check-circle">
 													<span> 등록</span>
 												</button>
-												<button type="submit"
-													class="btn btn-sm btn-success bi bi-check-circle">
+												<!-- <button type="submit" class="btn btn-sm btn-success bi bi-check-circle">
 													<span> 삭제</span>
-												</button>
+												</button> -->
 											</div>
 										</form>
 									</div>
@@ -294,7 +318,6 @@
 							</div>
 						</div>
 						<!-- 글쓰기 모달 뷰 끝  -->
-						
 					</div>
 					<!-- 문의사항 끝  -->
 					

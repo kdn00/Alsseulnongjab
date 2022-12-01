@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
@@ -93,25 +94,47 @@
 						data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 						<span class="fa fa-bars"></span>
 					</button>
+					<c:choose>
+					<%-- 로그인 안 했을 때 --%>
+					<c:when test="${empty loginMember}">
 					<div class="collapse navbar-collapse" id="navbarCollapse">
 						<div class="navbar-nav ms-auto py-0">
-							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트
-								소개</a> <a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충
-								분석</a>
+							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
+							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
 							<div class="nav-item dropdown">
-								<a href="#" class="nav-link dropdown-toggle"
-									data-bs-toggle="dropdown">병해충 정보</a>
+								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
 								<div class="dropdown-menu m-0">
-									<a href="${cpath}/Disease.do" class="dropdown-item">병(病) 피해</a>
+									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
 									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
 								</div>
 							</div>
 							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
 							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
-							<a href="${cpath}/Mypage.do" class="nav-item nav-link active">마이페이지</a>
-							<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보 관리</a>
 						</div>
 					</div>
+					</c:when>
+					<c:otherwise>
+					<div class="collapse navbar-collapse" id="navbarCollapse">
+						<div class="navbar-nav ms-auto py-0">
+							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
+							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
+							<div class="nav-item dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
+								<div class="dropdown-menu m-0">
+									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
+									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
+								</div>
+							</div>
+							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
+							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
+							<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}" class="nav-item nav-link active">마이페이지</a>
+							<c:if test="${loginMember.mem_user_job eq '관리자'}">
+							<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보 관리</a>
+							</c:if>
+						</div>
+					</div>
+					</c:otherwise>
+					</c:choose>
 				</nav>
 			</div>
 		</div>
@@ -124,7 +147,7 @@
 			<div style="margin-left: 10%;">
 				<div class="mx-auto" style="width: 500px;">
 					<div id="underline">
-						<h3>홍길동님 마이페이지</h3>
+						<h3>${loginMember.mem_user_name}님 마이페이지</h3>
 					</div>
 				</div>
 			</div>	
@@ -150,54 +173,69 @@
 						<!-- 개인정보 시작 -->
 						<div class="container tab-pane active" id="info" >
 							<br>
-							<form action="" style="margin-left: 15%; margin-right: 15%;">
+							<form action="${cpath}/MypageInfo.do" method="post" style="margin-left: 15%; margin-right: 15%;">
+							<input type="hidden" name="mem_pk" value="${loginMember.mem_pk}">
 								<table class="table table-bordered caption-top"	style="vertical-align: middle;">
 									<thead class="table table-light">
 										<th>아이디</th>
-										<th>abcd</th> <!-- 아이디값 받을 곳 -->
+										<th>${loginMember.mem_user_id}</th> <!-- 아이디값 받을 곳 -->
 									</thead>
 									<tbody>
 										<!-- 닉네임  -->
 										<tr>
 											<td>닉네임</td>
-											<td>홍길동</td>
+											<td>${loginMember.mem_user_name}</td>
 										</tr>
 										<!-- 수정할 닉네임  -->
 										<tr>
 											<td>수정할 닉네임</td>
 											<td>
-												<input type="text" class="form-control" placeholder="수정할 닉네임"	aria-label="Recipient's username1" aria-describedby="button-addon1">
+												<input type="text" name="mem_user_name" value="${loginMember.mem_user_name}" class="form-control" placeholder="수정할 닉네임을 적어주세요" aria-label="Recipient's username1" aria-describedby="button-addon1">
 												<!-- <button class="btn btn-success" type="submit" id="button-addon1">수정하기</button></td> -->
 										</tr>
 										<!-- 비밀번호  -->
 										<tr>
 											<td>비밀번호</td>
-											<td>ㅇㅇㅇㅇㅇ*</td>
+											<td>${loginMember.mem_user_pw}</td>
 										</tr>
 										<!-- 수정할 비밀번호 -->
 										<tr>
 											<td>수정할 비밀번호</td>
-											<td><input type="text" class="form-control"	placeholder="수정할 비밀번호" aria-label="Recipient's username2" aria-describedby="button-addon2"></td>
+											<td><input type="text" name="mem_user_pw" value="${loginMember.mem_user_pw}" class="form-control" placeholder="수정할 비밀번호를 적어주세요" aria-label="Recipient's username2" aria-describedby="button-addon2"></td>
 										</tr>
-										<!-- 비밀번호 재확인 -->
+										<%--<!-- 비밀번호 재확인 -->
 										<tr>
 											<td>비밀번호 재확인</td>
 											<td>
 												<input type="text" class="form-control" placeholder="비밀번호 재확인" aria-label="Recipient's username3" aria-describedby="button-addon3">
 												<!-- <button class="btn btn-success" type="submit" id="button-addon3">수정하기</button></td> -->
-										</tr>
+										</tr> --%>
 										<!-- 사용자 -->
 										<tr>
 											<td>사용자</td>
 											<td>
+											<c:choose>
+											<c:when test="${loginMember.mem_user_job eq '농부'}">
 												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 
+													<input class="form-check-input" type="radio" name="mem_user_job" id="inlineRadio1" value="농부" checked> 
 													<label class="form-check-label"	for="inlineRadio1">농부</label>
 												</div>
 												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+													<input class="form-check-input" type="radio" name="mem_user_job" id="inlineRadio2" value="홈가드닝">
 													<label class="form-check-label"	for="inlineRadio2">홈가드닝</label>
 												</div>
+											</c:when>
+											<c:otherwise>
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="mem_user_job" id="inlineRadio1" value="농부"> 
+													<label class="form-check-label"	for="inlineRadio1">농부</label>
+												</div>
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="mem_user_job" id="inlineRadio2" value="홈가드닝" checked>
+													<label class="form-check-label"	for="inlineRadio2">홈가드닝</label>
+												</div>
+											</c:otherwise>
+											</c:choose>
 											</td>
 										</tr>
 									</tbody>
@@ -251,8 +289,6 @@
 												      </a>
 												    </li>
 												    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-												    <li class="page-item"><a class="page-link" href="#">2</a></li>
-												    <li class="page-item"><a class="page-link" href="#">3</a></li>
 												    <li class="page-item">
 												      <a class="page-link" href="#" aria-label="Next">
 												        <span aria-hidden="true">&raquo;</span>
@@ -276,17 +312,20 @@
 											<table class="table table-bordered caption-top" style="vertical-align: middle;">
 												<thead class="table table-light" align="center">
 													<th>#</th>
-													<th>제목</th>
+													<th >제목</th>
 													<th>내용</th>
-													<th style="width:100px;">작성날짜</th>
+													<th style="width:110px;">작성날짜</th>
 												</thead>
 												<tbody>
+												<c:forEach items="${myquestionlist}" var="list" varStatus="status">
+												<c:set var="ques_time" value="${fn:split(list.ques_time, ' ')[0]}"/>
 													<tr>
-														<td align="center">1</td>
-														<td>인사</td>
-														<td>안녕하세요</td>
-														<td>2022.11.25</td>
+														<td align="center">${status.count}</td>
+														<td>${list.ques_title}</td>
+														<td>${list.ques_content}</td>
+														<td>${ques_time}</td>
 													</tr>
+												</c:forEach>
 												</tbody>
 											</table>
 											<!-- 페이징 시작 -->
@@ -298,8 +337,6 @@
 											      </a>
 											    </li>
 											    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-											    <li class="page-item"><a class="page-link" href="#">2</a></li>
-											    <li class="page-item"><a class="page-link" href="#">3</a></li>
 											    <li class="page-item">
 											      <a class="page-link" href="#" aria-label="Next">
 											        <span aria-hidden="true">&raquo;</span>

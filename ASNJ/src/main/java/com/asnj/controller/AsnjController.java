@@ -11,9 +11,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.asnj.entity.Disease;
 import com.asnj.entity.Member;
+import com.asnj.entity.Question;
 import com.asnj.mapper.AsnjMapper;
 
 @Controller
@@ -37,12 +39,27 @@ public class AsnjController {
 		return "introduce";
 	}
 	
+	// 커뮤니티(문의사항)
 	@GetMapping("/Notice.do")
-	public String Notice() {
+	public String Notice(Model model) {
 		System.out.print("notice.jsp로 이동\n");
+		List<Question> questionlist = mapper.questionSelect();
+		model.addAttribute("questionlist", questionlist);
+		
 		return "notice";
 	}
+
+	// 문의사항 글쓰기
+	@PostMapping("/QuestionInsert.do")
+	public String QuestionInsert(Model model, Question vo) {
+		mapper.questionInsert(vo);
+		return "redirect:/Notice.do";
+	}
 	
+	// 문의사항 삭제
+	
+	
+	// 농업일지 띄우기
 	@GetMapping("/Diary.do")
 	public String Diary() {
 		System.out.print("diary.jsp로 이동\n");
@@ -63,7 +80,7 @@ public class AsnjController {
 		model.addAttribute("diseaselist", diseaselist);
 		return "disease";
 	}
-	
+
 	@GetMapping("/Pests.do")
 	public String Pests() {
 		System.out.print("pests.jsp로 이동\n");
@@ -98,12 +115,36 @@ public class AsnjController {
 	public String Joinpage() {
 		return "join";
 	}
+	
+	// Mypage.do에 ?mem_pk=${loginMember.mem_pk}제이쿼리 다 추가해야함??? 이건 일단 나중에 진행
 	@GetMapping("/Mypage.do")
-	public String Mypage() {
+	public String Mypage(Model model, Member mem) {
+	//public String Mypage(Member mem, HttpServletRequest request) {
+//		Member loginMember = mapper.memberOneSelect(mem);
+//		HttpSession session = request.getSession();
+//		session.removeAttribute("loginMember");
+//		session.setAttribute("loginMember", loginMember);
+		List<Question> myquestionlist = mapper.mypagequestionSelect(mem);
+		model.addAttribute("myquestionlist", myquestionlist);
 		return "mypage";
 	}
 	
-	// 기능 
+	// 마이페이지 회원 정보 수정
+	@PostMapping("/MypageInfo.do")
+	public String MypageInfo(Member mem) {
+		mapper.memberUpdate(mem);
+		return "redirect:/Mypage.do";
+	}
+	
+	// 마이페이지 문의사항
+	@GetMapping("/MypageQusetion.do")
+	public String MypageQusetion(Model model, Member mem) {
+		System.out.print("mypage 문의사항으로 이동\n");
+		List<Question> myquestionlist = mapper.mypagequestionSelect(mem);
+		model.addAttribute("myquestionlist", myquestionlist);
+		return "mypage";
+	}
+	
 	// 로그인 기능
 	@PostMapping("/Login.do")
 	public String Login(Member mem, HttpServletRequest request) {
