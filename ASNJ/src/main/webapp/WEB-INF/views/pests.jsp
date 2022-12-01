@@ -103,26 +103,6 @@
 						data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 						<span class="fa fa-bars"></span>
 					</button>
-					<c:choose>
-					<%-- 로그인 안 했을 때 --%>
-					<c:when test="${empty loginMember}">
-					<div class="collapse navbar-collapse" id="navbarCollapse">
-						<div class="navbar-nav ms-auto py-0">
-							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
-							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
-							<div class="nav-item dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
-								<div class="dropdown-menu m-0">
-									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
-									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
-								</div>
-							</div>
-							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
-							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
-						</div>
-					</div>
-					</c:when>
-					<c:otherwise>
 					<div class="collapse navbar-collapse" id="navbarCollapse">
 						<div class="navbar-nav ms-auto py-0">
 							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
@@ -130,20 +110,16 @@
 							<div class="nav-item dropdown">
 								<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">병해충 정보</a>
 								<div class="dropdown-menu m-0">
-									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
-									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
+									<a href="${cpath}/Disease.do" class="dropdown-item">병(病) 피해</a>
+									<a href="${cpath}/Pests.do" class="dropdown-item active">해충 피해</a>
 								</div>
 							</div>
 							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
 							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
-							<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}" class="nav-item nav-link">마이페이지</a>
-							<c:if test="${loginMember.mem_user_job eq '관리자'}">
+							<a href="${cpath}/Mypage.do" class="nav-item nav-link">마이페이지</a>
 							<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보 관리</a>
-							</c:if>
 						</div>
 					</div>
-					</c:otherwise>
-					</c:choose>
 				</nav>
 			</div>
 		</div>
@@ -152,7 +128,7 @@
 
 	<!-- 내용 시작 -->
 
-	<!-- 병 피해 타이틀-->
+	<!-- 해충 피해 타이틀-->
 	<div class="container-xxl bg-white p-0"
 		style="display: flex; justify-content: center; align-items: center; max-width: none;">
 		<div class="container-fluid pt-4 px-4">
@@ -165,42 +141,72 @@
 		</div>
 	</div>
 
-	<!-- 병 피해 내용 시작 -->
+	<!--  해충 피해 내용 시작 -->
 	<div id="themecast" class="container-xxl p-0 ml-5">
 
 		<!-- 작물 카테고리 -->
-		<div class="main_category row align-items-center table table-hover" style="text-align: center; width: 80%; margin: auto;">
-			<div class="col col-md-3 p-2 mt-3" style="text-align: end;">
-				<img alt="선택아이콘" src="resources/image/handTouch.png" style="width: 30px; height: 30px; margin-bottom: 10px;">
-				<h4 class="searchTitle" style="display: inline-block;">작물 선택</h4>
-			</div>
-			<div class="w-25 p-5 col-md-auto flex-fill">
+		<div class="main_category row align-items-center table table-hover"
+			style="text-align: center; width: 80%; margin: auto;">
+			<div class="w-25 p-4 m-5 col-md-auto flex-fill">
 				<div id="NM_THEME_CATE_GROUPS" class="group_category"
 					data-demo-key="default">
-					<div class="list_category_wrap">
-						<select
-							class="form-select form-select-lg bg-white border-1 w-100 py-3 ps-4 pe-1">
-							<option><a href="#" role="tab" class=""
-									aria-selected="false" aria-controls="" data-clk=""
-									data-panel-code="">고추</a></option>
-							<option><a href="#" role="tab" class=""
-									aria-selected="false" aria-controls="" data-clk=""
-									data-panel-code="">오이</a></option>
-							<option><a href="#" role="tab" class=""
-									aria-selected="false" aria-controls="" data-clk=""
-									data-panel-code="">파</a></option>
-							<option><a href="#" role="tab" class=""
-									aria-selected="false" aria-controls="" data-clk=""
-									data-panel-code="">호박</a></option>
-						</select>
+					<div class="row list_category_wrap" style="align-items: center;">
+						<div class="col-sm-2" style="text-align: center; margin-left: 14%">
+							<h4 class="searchTitle" style="display: inline-block;">작물 선택</h4>
+							<i class="bi bi-chevron-double-right"></i>
+						</div>
+						<div class="col-sm-7">
+							<form action="${cpath}/Pests.do" method="get"
+								style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;">
+								<input class="form-check-input" type="radio"
+									name="disease_crops" id="고추" value="고추" checked> <label
+									class="form-check-label" for="고추">고추</label>&nbsp;&nbsp;&nbsp;
+								<input class="form-check-input" type="radio"
+									name="disease_crops" id="감" value="감"> <label
+									class="form-check-label" for="감">감</label>&nbsp;&nbsp;&nbsp; <input
+									class="form-check-input" type="radio" name="disease_crops"
+									id="딸기" value="딸기"> <label class="form-check-label"
+									for="딸기">딸기</label>&nbsp;&nbsp;&nbsp; <input
+									class="form-check-input" type="radio" name="disease_crops"
+									id="오이" value="오이"> <label class="form-check-label"
+									for="오이">오이</label>&nbsp;&nbsp;&nbsp; <input
+									class="form-check-input" type="radio" name="disease_crops"
+									id="파" value="파"> <label class="form-check-label"
+									for="파">파</label>&nbsp;&nbsp;&nbsp; <input
+									class="form-check-input" type="radio" name="disease_crops"
+									id="호박" value="호박"> <label class="form-check-label"
+									for="호박">호박</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+									
+									
+									<span style="margin-left: 30px;">
+									<button type="submit"
+										class="btn btn-outline-success searchTitle m-2">
+										<i class="bi bi-hand-index-thumb" style="margin-right: 5px;"></i>보기
+									</button>
+								</span>
+
+							</form>
+						</div>
+
+						<div class="mt-5">
+							<c:choose>
+								<c:when test="${diseaselist ne null}">
+									<c:forEach items="${diseaselist}" var="crops" end="0">
+										<h2>
+											<i class="bi bi-info-circle" style="margin-right: 20px;"></i>"${crops.disease_crops}"&nbsp;작물의
+											질병 정보입니다.
+										</h2>
+									</c:forEach>
+								</c:when>
+							</c:choose>
+						</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
 		<hr>
 		<br> <br>
-				
-
 
 		<!-- 작물 정보 contents -->
 		<div id="NM_THEME_CONTAINER" class="theme_cont" role="tabpanel"
