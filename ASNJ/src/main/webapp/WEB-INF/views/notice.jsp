@@ -265,7 +265,8 @@
 									</a></li>
 								</ul>
 							</nav>
-							<!-- 페이징 끝 --> </from>
+							<!-- 페이징 끝 -->
+							</from>
 							<!-- 글쓰기 버튼 -->
 							<div class=" d-flex justify-content-end">
 								<button type="button"
@@ -276,7 +277,40 @@
 							</div>
 						</div>
 						<!-- 문의사항 list 끝 -->
-
+						
+						<c:choose>
+						<%-- 로그인 안 했을 때 --%>
+						<c:when test="${empty loginMember}">
+						<%-- 로그인 모달 시작 --%>
+						<div class="modal" id="myModal" data-bs-backdrop="static">
+							<div class="modal-dialog modal-lg modal-dialog-centered">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h4 class="modal-title">알림</h4>
+										<button type="button" class="btn-close" onClick="close_pop();"data-bs-dismiss="modal"></button>
+									</div>
+		
+									<div class="modal-body">
+									<br><br><br>
+									<div align="center">
+										<h2>로그인 후 이용 가능합니다.</h2>
+									</div>
+									<br><br><br>
+									<div class="modal-footer">
+										<span class="text-center mb-0">비회원이십니까?	
+											<a href="${cpath}/Joinpage.do">회원가입</a>
+										</span>	&nbsp;&nbsp;&nbsp;
+										<span class="text-center mb-0">로그인 하시겠습니까?	
+											<a href="${cpath}/Loginpage.do">로그인</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<%-- 로그인 모달창 끝 --%>
+						</c:when>
+						<c:otherwise>
 						<!-- 글쓰기 모달 뷰  시작 -->
 						<!-- The Modal -->
 						<div class="modal" id="myModal" data-bs-backdrop="static">
@@ -317,6 +351,8 @@
 								</div>
 							</div>
 						</div>
+						</c:otherwise>
+						</c:choose>
 						<!-- 글쓰기 모달 뷰 끝  -->
 					</div>
 					<!-- 문의사항 끝  -->
