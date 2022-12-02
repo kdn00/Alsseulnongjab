@@ -4,6 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
@@ -186,29 +187,31 @@ ul {
 		<!-- 검색 안내 타이틀 -->
 		<div class="main_category row align-items-center table table-hover"
 			style="text-align: center; width: 80%; margin: auto;">
-			<div class="w-25 p-4 m-5 col-md-auto flex-fill">
+			<!-- <div class="w-25 p-4 m-5 col-md-auto flex-fill"> -->
 				<div id="NM_THEME_CATE_GROUPS" class="group_category"
 					data-demo-key="default">
 					<div class="row list_category_wrap" style="align-items: center;">
-
 						<div class="mt-5">
-						<%-- 	<c:choose>
-								<c:when test="${diseaselist ne null}">
-									<c:forEach items="${diseaselist}" var="crops" end="0"> --%>
-										<h2>
-											<i class="bi bi-info-circle" style="margin-right: 20px;"></i>검색하신&nbsp;"${searchkey}"&nbsp;에
-											대한 검색 결과입니다.
-										</h2>
-							<%-- 		</c:forEach>
-								</c:when>
-							</c:choose> --%>
+						<c:choose>
+						    <c:when test="${fn:length(diseassearchlist) == 0}">
+						    <h2>
+							<i class="bi bi-info-circle" style="margin-right: 20px;">
+							</i>&nbsp;"${search}"&nbsp;에 대한 게시글이 없습니다.
+							</h2>
+						    </c:when>
+						    <c:otherwise>
+						    <h2>
+							<i class="bi bi-info-circle" style="margin-right: 20px;">
+							</i>입력하신&nbsp;"${search}"&nbsp;에  대한 검색 결과입니다.
+							</h2>
+						    </c:otherwise>
+						   </c:choose>
+						
 						</div>
-
 					</div>
 				</div>
-			</div>
+			<!-- </div> -->
 		</div>
-		<hr>
 		<br> <br>
 
 		<!-- 작물 정보 contents -->
@@ -222,13 +225,18 @@ ul {
 				<div class="list_theme_wrap">
 					<ul class="list_theme container" style="padding-right: 32px;">
 
-						<li class="theme_item row"><strong class="col-sm-3"><h4>•&nbsp;병(病)
-									피해</h4></strong></li>
+						<li class="theme_item row"><strong class="col-sm-3">
+						<h4>•&nbsp;병(病) 피해</h4></strong></li>
 						<hr>
 						<br>
-
-						<c:forEach items="${diseaselist}" var="list">
-							<a href="PredictionInfoPage.do?disease_pk=${list.disease_pk}"
+						<c:choose>
+						    <c:when test="${fn:length(diseassearchlist) == 0}">
+						        <h5> 빠른 시일 내에 정보를 등록하겠습니다. 죄송합니다.</h5>
+						    </c:when>
+						    <c:otherwise>
+						    	<%-- <h5>총 ${fn:length(diseassearchlist)}개의 게시글이 있습니다.</h5> --%>
+						        <c:forEach items="${diseassearchlist}" var="list">
+						            <a href="PredictionInfoPage.do?disease_pk=${list.disease_pk}"
 								class="theme_thumb" style="color: #000">
 								<li class="theme_item row"><img
 									src="${list.disease_imgpath}" alt="" width="auto;"
@@ -236,8 +244,11 @@ ul {
 									class="title elss col-sm-3" style="font-size: large;">${list.disease_name}</strong>
 									<p class="desc col-sm-6" style="font-size: large;">${list.disease_symptom}</p></li>
 							</a>
-
-						</c:forEach>
+							<hr>
+						        </c:forEach>
+						    </c:otherwise> 
+						</c:choose>
+						
 					</ul>
 				</div>
 				<br>

@@ -39,6 +39,16 @@ public class AsnjController {
 		return "introduce";
 	}
 	
+	// 검색페이지 이동
+	@GetMapping("/SearchView.do")
+	public String SearchView(Model model, String search) {
+		System.out.print("search_View.jsp로 이동\n");
+		List<Disease> diseassearchlist = mapper.diseaseSearch(search);
+		model.addAttribute("search", search);
+		model.addAttribute("diseassearchlist", diseassearchlist);
+		return "search_View";
+	}	
+	
 	// 커뮤니티(문의사항)
 	@GetMapping("/Notice.do")
 	public String Notice(Model model) {
