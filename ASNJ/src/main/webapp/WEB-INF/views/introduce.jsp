@@ -181,7 +181,6 @@
 					<br> <span style="margin-left:20px;">소재지</span> <br><span id="site_font1">전라남도 순천시 석현동 87 5층,</span>
 					<br> <span id="site_font1">스마트인재개발원 순천점</span>
 				</div>
-				
 			</div>	
 		</div>
 		<br>
@@ -215,8 +214,6 @@
 	</div>
 
 	<!-- 내용 끝 -->
-
-
 	<!-- 푸터 시작 -->
 	<div>
 		<jsp:include page="layout/bottom.jsp" />

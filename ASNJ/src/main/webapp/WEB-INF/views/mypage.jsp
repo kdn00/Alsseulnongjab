@@ -255,54 +255,6 @@
 						<div id="actlist" class="container tab-pane fade">
 							<div class="container-xxl p-0" style="display: flex; justify-content: center; align-items: center;">
 							
-								<!-- 북마크 시작 -->
-								<div class="container-fluid pt-4 px-4">
-									<h4><i class="bi bi-bookmark-check-fill">북마크</i></h4>
-									<div class="row">
-										<div class="container" style="background-color: rgb(250, 255, 240); width: 100%; height: 600px; border-radius: 1em; margin-top: 5px;">
-										<br>
-											<from action="">
-												<table class="table table-bordered caption-top" style="vertical-align: middle;">
-													<thead class="table table-light" align="center">
-														<th>#</th>
-														<th>작물명</th>
-														<th>질병명</th>
-														<th style="width:80px;">삭제</th>
-													</thead>
-													<tbody>
-														<tr>
-															<td align="center">1</td>
-															<td>고추</td>
-															<td>탄저병</td>
-															<td>
-																<button class="btn btn-success" type="submit">삭제</button>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-												<!-- 페이징 시작 -->
-												<nav class=" d-flex justify-content-center" aria-label="Page navigation example">
-												  <ul class="pagination">
-												    <li class="page-item">
-												      <a class="page-link" href="#" aria-label="Previous">
-												        <span aria-hidden="true">&laquo;</span>
-												      </a>
-												    </li>
-												    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-												    <li class="page-item">
-												      <a class="page-link" href="#" aria-label="Next">
-												        <span aria-hidden="true">&raquo;</span>
-												      </a>
-												    </li>
-												  </ul>
-												</nav>
-												<!-- 페이징 끝 -->
-											</from>
-										</div>
-									</div>	
-								</div>
-								<!-- 북마크 끝 -->
-								
 								<!-- 문의사항 시작 -->
 								<div class="container-fluid pt-4 px-4">
 									<h4><i class="bi bi-pen">문의사항</i></h4>
@@ -315,6 +267,7 @@
 													<th >제목</th>
 													<th>내용</th>
 													<th style="width:110px;">작성날짜</th>
+													<th>삭제</th>
 												</thead>
 												<tbody>
 												<c:forEach items="${myquestionlist}" var="list" varStatus="status">
@@ -324,6 +277,7 @@
 														<td>${list.ques_title}</td>
 														<td>${list.ques_content}</td>
 														<td>${ques_time}</td>
+														<td align="center"><button type="button" class="btn-sm btn-danger">삭제</button></td>
 													</tr>
 												</c:forEach>
 												</tbody>

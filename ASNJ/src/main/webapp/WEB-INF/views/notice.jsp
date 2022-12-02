@@ -238,6 +238,7 @@
 									<th>#</th>
 									<th>제목</th>
 									<th>내용</th>
+									<th>작성자</th>
 									<th style="width: 200px;">작성날짜</th>
 								</thead>
 								<tbody>
@@ -247,6 +248,7 @@
 										<td>${status.count}</td>
 										<td>${list.ques_title}</td>
 										<td>${list.ques_content}</td>
+										<td>${list.ques_user_id}</td>
 										<td>${ques_time}</td>
 									</tr>
 								</c:forEach>

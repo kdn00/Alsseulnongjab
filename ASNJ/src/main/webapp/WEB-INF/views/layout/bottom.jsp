@@ -80,7 +80,7 @@
 					</div>
 				</div>
 				<div class="col-lg-5 col-md-5">
-					<h5 class="fw-bold text-white mb-4">Get In Touch</h5>
+					<h5 class="fw-bold text-white mb-4">Team Introduction</h5>
 					<p class="mb-2">
 						<i class="fa fa-map-marker-alt me-3"></i>소재지 : 전라남도 순천시 석현동 87 5층,
 						스마트인재개발원 순천점
