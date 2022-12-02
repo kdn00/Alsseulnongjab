@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.asnj.entity.Disease;
 import com.asnj.entity.Member;
+import com.asnj.entity.Paging;
+import com.asnj.entity.Pests;
 import com.asnj.entity.Question;
 
 @Mapper
@@ -44,11 +46,27 @@ public interface AsnjMapper {
 	// 질병 정보 페이지 불러오기(작물로 검색) 기능 
 	public List<Disease> diseaseSelect(String disease_crops);
 		
+	// 해충 정보 페이지 불러오기(작물로 검색) 기능 
+	public List<Pests> pestsSelect(String pest_crops);
+	
 	// 질병 상세 정보 페이지(질병명과 작물로 검색) 불러오기
 	public List<Disease> diseaseinfoSelect(int disease_pk);
 
 	// ajax 질병 게시판
 	public List<Disease> diseasesList();
+	
+	// 검색(질병)
+	public List<Disease> diseaseSearch(String search);
+	
+	// 검색(해충)
+	public List<Disease> pestSearch(String search);
+	
+	// 페이징
+	// 문의사항 페이징
+	public int questionCount();
+	
+	// 페이징 처리 후 문의사항 게시글 조회
+	public List<Question> questionPagingSelect(Paging num);
 	
 	
 }

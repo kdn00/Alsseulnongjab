@@ -114,7 +114,7 @@
 								<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">병해충 정보</a>
 								<div class="dropdown-menu m-0">
 									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
-									<a href="${cpath}/Pests.do" class="dropdown-item active">해충 피해</a>
+									<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
 								</div>
 							</div>
 							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
@@ -131,7 +131,7 @@
 								<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">병해충 정보</a>
 								<div class="dropdown-menu m-0">
 									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
-									<a href="${cpath}/Pests.do" class="dropdown-item active">해충 피해</a>
+									<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
 								</div>
 							</div>
 							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
@@ -168,12 +168,25 @@
 	<!--  해충 피해 내용 시작 -->
 	<div id="themecast" class="container-xxl p-0 ml-5">
 
+
 		<!-- 작물 카테고리 -->
 		<div class="main_category row align-items-center table table-hover"
 			style="text-align: center; width: 80%; margin: auto;">
-			<div class="w-25 p-4 m-5 col-md-auto flex-fill">
+			<!-- <div class="w-25 p-4 m-5 col-md-auto flex-fill"> -->
 				<div id="NM_THEME_CATE_GROUPS" class="group_category"
 					data-demo-key="default">
+					<div class="mt-5">
+							<c:choose>
+								<c:when test="${pestlist ne null}">
+									<c:forEach items="${pestlist}" var="crops" end="0">
+										<h2>
+											<i class="bi bi-info-circle" style="margin-right: 20px;"></i>"${crops.pest_crops}"&nbsp;작물의
+											해충 정보입니다.
+										</h2>
+									</c:forEach>
+								</c:when>
+							</c:choose>
+						</div>
 					<div class="row list_category_wrap" style="align-items: center;">
 						<div class="col-sm-2" style="text-align: center; margin-left: 14%">
 							<h4 class="searchTitle" style="display: inline-block;">작물 선택</h4>
@@ -183,21 +196,21 @@
 							<form action="${cpath}/Pests.do" method="get"
 								style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;">
 								<input class="form-check-input" type="radio"
-									name="disease_crops" id="고추" value="고추" checked> <label
+									name="pest_crops" id="고추" value="고추" checked> <label
 									class="form-check-label" for="고추">고추</label>&nbsp;&nbsp;&nbsp;
 								<input class="form-check-input" type="radio"
-									name="disease_crops" id="감" value="감"> <label
+									name="pest_crops" id="감" value="감"> <label
 									class="form-check-label" for="감">감</label>&nbsp;&nbsp;&nbsp; <input
-									class="form-check-input" type="radio" name="disease_crops"
+									class="form-check-input" type="radio" name="pest_crops"
 									id="딸기" value="딸기"> <label class="form-check-label"
 									for="딸기">딸기</label>&nbsp;&nbsp;&nbsp; <input
-									class="form-check-input" type="radio" name="disease_crops"
+									class="form-check-input" type="radio" name="pest_crops"
 									id="오이" value="오이"> <label class="form-check-label"
 									for="오이">오이</label>&nbsp;&nbsp;&nbsp; <input
-									class="form-check-input" type="radio" name="disease_crops"
+									class="form-check-input" type="radio" name="pest_crops"
 									id="파" value="파"> <label class="form-check-label"
 									for="파">파</label>&nbsp;&nbsp;&nbsp; <input
-									class="form-check-input" type="radio" name="disease_crops"
+									class="form-check-input" type="radio" name="pest_crops"
 									id="호박" value="호박"> <label class="form-check-label"
 									for="호박">호박</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 									
@@ -211,23 +224,9 @@
 
 							</form>
 						</div>
-
-						<div class="mt-5">
-							<c:choose>
-								<c:when test="${diseaselist ne null}">
-									<c:forEach items="${diseaselist}" var="crops" end="0">
-										<h2>
-											<i class="bi bi-info-circle" style="margin-right: 20px;"></i>"${crops.disease_crops}"&nbsp;작물의
-											질병 정보입니다.
-										</h2>
-									</c:forEach>
-								</c:when>
-							</c:choose>
-						</div>
-
 					</div>
 				</div>
-			</div>
+			<!-- </div> -->
 		</div>
 		<hr>
 		<br> <br>
@@ -235,129 +234,34 @@
 		<!-- 작물 정보 contents -->
 		<div id="NM_THEME_CONTAINER" class="theme_cont" role="tabpanel"
 			data-panel-code="FINANCE" data-parent-code="">
-
 			<div class="group_theme" data-block-id=""
 				data-block-code="PC-THEME-FINANCE-MOBILE-RANKING-DEFAULT-0"
 				data-block-type="MATERIALS" data-template-code="MOBILE-RANKING-LIST"
 				data-da="container" data-index="" data-page="1">
-				
 
 				<div class="list_theme_wrap">
-					<ul class="list_theme" style="padding-right: 32px;">						
-						<li class="theme_item" data-gdid="C3S_RANKING_https://post.naver.com/viewer/postView.naver?memberNo=49797427&amp;volumeNo=34818483"
-							data-da-position="true">
-							<a href="#" class="theme_thumb" data-clk="tcc_fin.list1cont1" target="_blank">
-								<img src="http://webbuild1.knu.ac.kr/~bskim/image/powd1.jpg" alt="" width="170" height="114" onerror="this.outerHTML='<span class=\'pm_noimg\'>
-								<span class=\'noimg_text\'>이미지 준비중</span></span>'" loading="lazy"> 
-								<span class="thumb_bd"></span>
+					<ul class="list_theme container" style="padding-right: 32px;">
 
-						</a> 
-						<a href="" class="theme_info" data-clk="tcc_fin.list1cont1" target="_blank">
-								<strong class="title elss">흰가루병 (白粉病)</strong>
-								<p class="desc">노지와 하우스재배에서 모두 발생하며 전국적으로 심하게 발생하고 있다. 
-								흰가루병은 그 피해가 직접적으로 잘 나타나지 않기 때문에 재배농가에서는 방제를 소흘히 하는 경향이나
-								초세가 약해져 과실의 착생과 비대가 불량해 진다.</p>								
-						</a></li>
-						<hr>			
-						
-						<li class="theme_item" data-gdid="C3S_RANKING_https://post.naver.com/viewer/postView.naver?memberNo=49797427&amp;volumeNo=34818483"
-							data-da-position="true">
-							<a href="#" class="theme_thumb" data-clk="tcc_fin.list1cont1" target="_blank">
-								<img src="http://webbuild1.knu.ac.kr/~bskim/image/powd1.jpg" alt="" width="170" height="114" onerror="this.outerHTML='<span class=\'pm_noimg\'>
-								<span class=\'noimg_text\'>이미지 준비중</span></span>'" loading="lazy"> 
-								<span class="thumb_bd"></span>
-
-						</a> 
-						<a href="" class="theme_info" data-clk="tcc_fin.list1cont1" target="_blank">
-								<strong class="title elss">흰가루병 (白粉病)</strong>
-								<p class="desc">노지와 하우스재배에서 모두 발생하며 전국적으로 심하게 발생하고 있다. 
-								흰가루병은 그 피해가 직접적으로 잘 나타나지 않기 때문에 재배농가에서는 방제를 소흘히 하는 경향이나
-								초세가 약해져 과실의 착생과 비대가 불량해 진다.</p>								
-						</a></li>
+						<li class="theme_item row"><strong class="col-sm-3"><h4>•&nbsp;사진</h4></strong>
+							<strong class="col-sm-3"><h4>•&nbsp;해충명(害蟲名)</h4></strong> <strong
+							class="col-sm-4"><h4>•&nbsp;간략설명</h4></strong></li>
 						<hr>
-						
-						<li class="theme_item" data-gdid="C3S_RANKING_https://post.naver.com/viewer/postView.naver?memberNo=49797427&amp;volumeNo=34818483"
-							data-da-position="true">
-							<a href="#" class="theme_thumb" data-clk="tcc_fin.list1cont1" target="_blank">
-								<img src="http://webbuild1.knu.ac.kr/~bskim/image/powd1.jpg" alt="" width="170" height="114" onerror="this.outerHTML='<span class=\'pm_noimg\'>
-								<span class=\'noimg_text\'>이미지 준비중</span></span>'" loading="lazy"> 
-								<span class="thumb_bd"></span>
+						<br>
 
-						</a> 
-						<a href="" class="theme_info" data-clk="tcc_fin.list1cont1" target="_blank">
-								<strong class="title elss">흰가루병 (白粉病)</strong>
-								<p class="desc">노지와 하우스재배에서 모두 발생하며 전국적으로 심하게 발생하고 있다. 
-								흰가루병은 그 피해가 직접적으로 잘 나타나지 않기 때문에 재배농가에서는 방제를 소흘히 하는 경향이나
-								초세가 약해져 과실의 착생과 비대가 불량해 진다.</p>								
-						</a></li>
-						<hr>
-						
-						<li class="theme_item" data-gdid="C3S_RANKING_https://post.naver.com/viewer/postView.naver?memberNo=49797427&amp;volumeNo=34818483"
-							data-da-position="true">
-							<a href="#" class="theme_thumb" data-clk="tcc_fin.list1cont1" target="_blank">
-								<img src="http://webbuild1.knu.ac.kr/~bskim/image/powd1.jpg" alt="" width="170" height="114" onerror="this.outerHTML='<span class=\'pm_noimg\'>
-								<span class=\'noimg_text\'>이미지 준비중</span></span>'" loading="lazy"> 
-								<span class="thumb_bd"></span>
-
-						</a> 
-						<a href="" class="theme_info" data-clk="tcc_fin.list1cont1" target="_blank">
-								<strong class="title elss">흰가루병 (白粉病)</strong>
-								<p class="desc">노지와 하우스재배에서 모두 발생하며 전국적으로 심하게 발생하고 있다. 
-								흰가루병은 그 피해가 직접적으로 잘 나타나지 않기 때문에 재배농가에서는 방제를 소흘히 하는 경향이나
-								초세가 약해져 과실의 착생과 비대가 불량해 진다.</p>								
-						</a></li>
-						<hr>
-						
-						<li class="theme_item" data-gdid="C3S_RANKING_https://post.naver.com/viewer/postView.naver?memberNo=49797427&amp;volumeNo=34818483"
-							data-da-position="true">
-							<a href="#" class="theme_thumb" data-clk="tcc_fin.list1cont1" target="_blank">
-								<img src="http://webbuild1.knu.ac.kr/~bskim/image/powd1.jpg" alt="" width="170" height="114" onerror="this.outerHTML='<span class=\'pm_noimg\'>
-								<span class=\'noimg_text\'>이미지 준비중</span></span>'" loading="lazy"> 
-								<span class="thumb_bd"></span>
-
-						</a> 
-						<a href="" class="theme_info" data-clk="tcc_fin.list1cont1" target="_blank">
-								<strong class="title elss">흰가루병 (白粉病)</strong>
-								<p class="desc">노지와 하우스재배에서 모두 발생하며 전국적으로 심하게 발생하고 있다. 
-								흰가루병은 그 피해가 직접적으로 잘 나타나지 않기 때문에 재배농가에서는 방제를 소흘히 하는 경향이나
-								초세가 약해져 과실의 착생과 비대가 불량해 진다.</p>								
-						</a></li>
-						<hr>
-						
-						<li class="theme_item" data-gdid="C3S_RANKING_https://post.naver.com/viewer/postView.naver?memberNo=49797427&amp;volumeNo=34818483"
-							data-da-position="true">
-							<a href="#" class="theme_thumb" data-clk="tcc_fin.list1cont1" target="_blank">
-								<img src="http://webbuild1.knu.ac.kr/~bskim/image/powd1.jpg" alt="" width="170" height="114" onerror="this.outerHTML='<span class=\'pm_noimg\'>
-								<span class=\'noimg_text\'>이미지 준비중</span></span>'" loading="lazy"> 
-								<span class="thumb_bd"></span>
-
-						</a> 
-						<a href="" class="theme_info" data-clk="tcc_fin.list1cont1" target="_blank">
-								<strong class="title elss">흰가루병 (白粉病)</strong>
-								<p class="desc">노지와 하우스재배에서 모두 발생하며 전국적으로 심하게 발생하고 있다. 
-								흰가루병은 그 피해가 직접적으로 잘 나타나지 않기 때문에 재배농가에서는 방제를 소흘히 하는 경향이나
-								초세가 약해져 과실의 착생과 비대가 불량해 진다.</p>								
-						</a></li>
-						<hr>
-						
-						<li class="theme_item" data-gdid="C3S_RANKING_https://post.naver.com/viewer/postView.naver?memberNo=49797427&amp;volumeNo=34818483"
-							data-da-position="true">
-							<a href="#" class="theme_thumb" data-clk="tcc_fin.list1cont1" target="_blank">
-								<img src="http://webbuild1.knu.ac.kr/~bskim/image/powd1.jpg" alt="" width="170" height="114" onerror="this.outerHTML='<span class=\'pm_noimg\'>
-								<span class=\'noimg_text\'>이미지 준비중</span></span>'" loading="lazy"> 
-								<span class="thumb_bd"></span>
-
-						</a> 
-						<a href="" class="theme_info" data-clk="tcc_fin.list1cont1" target="_blank">
-								<strong class="title elss">흰가루병 (白粉病)</strong>
-								<p class="desc">노지와 하우스재배에서 모두 발생하며 전국적으로 심하게 발생하고 있다. 
-								흰가루병은 그 피해가 직접적으로 잘 나타나지 않기 때문에 재배농가에서는 방제를 소흘히 하는 경향이나
-								초세가 약해져 과실의 착생과 비대가 불량해 진다.</p>								
-						</a></li>											
-
+						<c:forEach items="${pestlist}" var="list">
+							<a href="PredictionInfoPage.do?pest_pk=${list.pest_pk}"
+								class="theme_thumb" style="color: #000">
+								<li class="theme_item row"><img
+									src="${list.pest_imgpath}" alt="" width="auto;"
+									height="250px;" class="col-sm-3" /> <strong
+									class="title elss col-sm-3" style="font-size: large;">${list.pest_name}</strong>
+									<p class="desc col-sm-6" style="font-size: large;">${list.pest_harm}</p></li>
+							</a>
+							<hr>
+						</c:forEach>
 					</ul>
 				</div>
-			</div>		
+			</div>
 
 			<!-- 개별 링크 클릭 코드 -->
 			<div class="group_theme" data-block-id=""

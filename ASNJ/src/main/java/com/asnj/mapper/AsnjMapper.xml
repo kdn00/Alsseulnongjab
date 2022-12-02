@@ -44,6 +44,11 @@
         select * from tb_disease where disease_pk=#{disease_pk}
     </select>
     
+    <!-- 해충 정보 페이지 불러오기(작물로 검색) 기능 -->
+    <select id="pestsSelect" parameterType="com.asnj.entity.Pests" resultType="com.asnj.entity.Pests">
+        select * from tb_pest where pest_crops=#{pest_crops}
+    </select>
+    
 	<!-- 문의사항 조회 -->
     <select id="questionSelect" parameterType="com.asnj.entity.Question" resultType="com.asnj.entity.Question">
 		select * from tb_question_board order by ques_pk desc
@@ -61,4 +66,34 @@
     
     <!-- 문의사항 삭제 -->
     
+    <!-- 질병 검색 -->
+	<select id="diseaseSearch" parameterType="com.asnj.entity.Disease" resultType="com.asnj.entity.Disease">
+		select * from tb_disease
+		where (disease_crops like concat('%', #{search}, '%')
+		or disease_name like concat('%', #{search}, '%')
+		or disease_environment like concat('%', #{search}, '%')
+		or disease_solution like concat('%', #{search}, '%'))
+	</select>
+	
+	<!-- 해충 검색 -->
+	<select id="pestSearch" parameterType="com.asnj.entity.Disease" resultType="com.asnj.entity.Disease">
+		select * from tb_pest
+		where (pest_crops like concat('%', #{search}, '%'))
+		or pest_name like concat('%', #{search}, '%'))
+		or pest_state like concat('%', #{search}, '%'))
+		or pest_harm like concat('%', #{search}, '%'))
+		or pest_solution like concat('%', #{search}, '%'))
+	</select>
+	
+    <!-- 페이징 -->
+    <!-- 문의사항 페이징 -->
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="questionCount" resultType="int">
+		SELECT COUNT(*) FROM tb_question_board
+	</select>
+	
+	<!-- 페이징 처리 후 게시글 조회 -->
+	<select id="questionPagingSelect" resultType="com.asnj.entity.Question">
+		SELECT * FROM tb_question_board LIMIT #{start}, #{end};
+	</select>
 </mapper>

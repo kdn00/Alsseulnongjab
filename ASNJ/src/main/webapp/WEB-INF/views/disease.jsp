@@ -1,4 +1,4 @@
-<%@page import="com.asnj.entity.Disease"%>
+<%@page import="com.asnj.entity.Pests"%>
 <%@page import="com.asnj.entity.Member"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -179,9 +179,21 @@ ul {
 		<!-- 작물 카테고리 -->
 		<div class="main_category row align-items-center table table-hover"
 			style="text-align: center; width: 80%; margin: auto;">
-			<div class="w-25 p-4 m-5 col-md-auto flex-fill">
+			<!-- <div class="w-25 p-4 m-5 col-md-auto flex-fill"> -->
 				<div id="NM_THEME_CATE_GROUPS" class="group_category"
 					data-demo-key="default">
+					<div class="mt-5">
+							<c:choose>
+								<c:when test="${diseaselist ne null}">
+									<c:forEach items="${diseaselist}" var="crops" end="0">
+										<h2>
+											<i class="bi bi-info-circle" style="margin-right: 20px;"></i>"${crops.disease_crops}"&nbsp;작물의
+											질병 정보입니다.
+										</h2>
+									</c:forEach>
+								</c:when>
+							</c:choose>
+						</div>
 					<div class="row list_category_wrap" style="align-items: center;">
 						<div class="col-sm-2" style="text-align: center; margin-left: 14%">
 							<h4 class="searchTitle" style="display: inline-block;">작물 선택</h4>
@@ -220,22 +232,11 @@ ul {
 							</form>
 						</div>
 
-						<div class="mt-5">
-							<c:choose>
-								<c:when test="${diseaselist ne null}">
-									<c:forEach items="${diseaselist}" var="crops" end="0">
-										<h2>
-											<i class="bi bi-info-circle" style="margin-right: 20px;"></i>"${crops.disease_crops}"&nbsp;작물의
-											질병 정보입니다.
-										</h2>
-									</c:forEach>
-								</c:when>
-							</c:choose>
-						</div>
+						
 
 					</div>
 				</div>
-			</div>
+			<!-- </div> -->
 		</div>
 		<hr>
 		<br> <br>
