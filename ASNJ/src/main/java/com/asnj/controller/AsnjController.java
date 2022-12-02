@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.asnj.entity.Disease;
 import com.asnj.entity.Member;
+import com.asnj.entity.Pests;
 import com.asnj.entity.Question;
 import com.asnj.mapper.AsnjMapper;
 
@@ -97,10 +98,13 @@ public class AsnjController {
 		model.addAttribute("diseaselist", diseaselist);
 		return "disease";
 	}
-
+	
+	// 해충 페이지
 	@GetMapping("/Pests.do")
-	public String Pests() {
+	public String Pests(Model model, String pest_crops) {
 		System.out.print("pests.jsp로 이동\n");
+		List<Pests> pestlist = mapper.pestsSelect(pest_crops);
+		model.addAttribute("pestlist", pestlist);
 		return "pests";
 	}
 	

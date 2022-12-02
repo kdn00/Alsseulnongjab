@@ -44,6 +44,11 @@
         select * from tb_disease where disease_pk=#{disease_pk}
     </select>
     
+    <!-- 해충 정보 페이지 불러오기(작물로 검색) 기능 -->
+    <select id="pestsSelect" parameterType="com.asnj.entity.Pests" resultType="com.asnj.entity.Pests">
+        select * from tb_pest where pest_crops=#{pest_crops}
+    </select>
+    
 	<!-- 문의사항 조회 -->
     <select id="questionSelect" parameterType="com.asnj.entity.Question" resultType="com.asnj.entity.Question">
 		select * from tb_question_board order by ques_pk desc
