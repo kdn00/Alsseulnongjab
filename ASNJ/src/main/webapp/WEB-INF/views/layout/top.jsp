@@ -85,14 +85,15 @@ input:focus::-webkit-input-placeholder {
 				style="float: left; padding-left: 1rem !important;">
 				<a href="index.jsp"><img src="resources/img/logo/logo.png"></a>
 			</div>
-			<div class="col-6 flex-grow position-relative w-40 my-3 wow fadeInUp"
-				data-wow-delay="0.3s" style="margin-right: 16px;">
-				<input id="searchInput"
-					class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
-					type="search" name="search" placeholder="검색어를 입력하세요.">
-				<button type="button"
-					class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-3">검색</button>
+
+			<!-- 검색창  -->
+			<div class="col-6 flex-grow position-relative w-40 my-3 wow fadeInUp" data-wow-delay="0.3s" style="margin-right: 16px;">
+				<form action="${cpath}/SearchView.do" method="get">
+					<input id="searchInput" class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" name="search" placeholder="검색어를 입력하세요.">
+					<button type="submit" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-3">검색</button>
+				</form>
 			</div>
+
 			<c:choose>
 				<%-- 로그인 안 했을 때 --%>
 				<c:when test="${empty loginMember}">
@@ -110,13 +111,17 @@ input:focus::-webkit-input-placeholder {
 				<c:otherwise>
 					<div class="col-2 p-2 m-3"
 						style="display: inline-block; min-width: max-content;">
-						<div class="header__login" style="margin-right: 10px; display: flex; align-items: center; color:#7ebc12;">
-							<img alt="" src="resources/image/handshake-simple-solid.svg" style="width: 30px; height: 30px;">&nbsp;&nbsp;
-							<label for="mem_user_pw" style="padding-right: 15px;">
-							<p style="margin-bottom: 0px;">
-								<span style="font-size: x-large; font-weight: bolder; color: #537f07;">${loginMember.mem_user_name}</span>&nbsp;님
-							</p>어서오세요!</label>&nbsp;&nbsp;
-							 <a href="${cpath}/Logout.do" class="btn btn-outline-success bi bi-door-open"></i>로그아웃</a>
+						<div class="header__login"
+							style="margin-right: 10px; display: flex; align-items: center; color: #7ebc12;">
+							<img alt="" src="resources/image/handshake-simple-solid.svg"
+								style="width: 30px; height: 30px;">&nbsp;&nbsp; <label
+								for="mem_user_pw" style="padding-right: 15px;">
+								<p style="margin-bottom: 0px;">
+									<span
+										style="font-size: x-large; font-weight: bolder; color: #537f07;">${loginMember.mem_user_name}</span>&nbsp;님
+								</p>어서오세요!
+							</label>&nbsp;&nbsp; <a href="${cpath}/Logout.do"
+								class="btn btn-outline-success bi bi-door-open"></i>로그아웃</a>
 						</div>
 					</div>
 				</c:otherwise>
