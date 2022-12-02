@@ -121,8 +121,8 @@ ul {
 											data-bs-toggle="dropdown">병해충 정보</a>
 										<div class="dropdown-menu m-0">
 											<a href="${cpath}/Disease.do?disease_crops=고추"
-												class="dropdown-item">병(病) 피해</a> <a
-												href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
+												class="dropdown-item">병(病) 피해</a>
+												<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
 										</div>
 									</div>
 									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
@@ -141,9 +141,8 @@ ul {
 											data-bs-toggle="dropdown">병해충 정보</a>
 										<div class="dropdown-menu m-0">
 											<a href="${cpath}/Disease.do?disease_crops=고추"
-												class="dropdown-item">병(病) 피해</a> <a
-												href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
-										</div>
+												class="dropdown-item">병(病) 피해</a>
+									<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
 									</div>
 									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
 									<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a>

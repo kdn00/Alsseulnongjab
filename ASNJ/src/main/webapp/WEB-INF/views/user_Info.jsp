@@ -100,8 +100,8 @@
 							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충
 								정보</a>
 							<div class="dropdown-menu m-0">
-								<a href="${cpath}/Disease.do" class="dropdown-item">병(病)</a> <a
-									href="${cpath}/Pests.do" class="dropdown-item">해충</a>
+								<a href="${cpath}/Disease.do" class="dropdown-item">병(病)</a>
+							<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
 							</div>
 						</div>
 						<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
