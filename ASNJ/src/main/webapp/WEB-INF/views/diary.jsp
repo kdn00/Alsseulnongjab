@@ -171,7 +171,10 @@ function close_pop(flag) {
 						<div class="modal-content">
 							<div class="modal-header">
 								<h4 class="modal-title">알림</h4>
-								<button type="button" class="btn-close" onClick="close_pop();"data-bs-dismiss="modal"></button>
+								<a href="${cpath}/Mainpage.do">
+								<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+								</a>
+								<!-- <button type="button" class="btn-close" onClick="close_pop();"data-bs-dismiss="modal"></button> -->
 							</div>
 
 							<div class="modal-body">

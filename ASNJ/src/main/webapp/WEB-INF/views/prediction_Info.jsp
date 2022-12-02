@@ -49,6 +49,12 @@
 ul {
 	list-style: none;
 }
+
+.table img {
+   width: 200px;
+   height: auto;
+   object-fit: cover;
+}
 </style>
 
 
@@ -103,45 +109,53 @@ ul {
 						<span class="fa fa-bars"></span>
 					</button>
 					<c:choose>
-					<%-- 로그인 안 했을 때 --%>
-					<c:when test="${empty loginMember}">
-					<div class="collapse navbar-collapse" id="navbarCollapse">
-						<div class="navbar-nav ms-auto py-0">
-							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
-							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
-							<div class="nav-item dropdown">
-								<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">병해충 정보</a>
-								<div class="dropdown-menu m-0">
-									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
-									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
+						<%-- 로그인 안 했을 때 --%>
+						<c:when test="${empty loginMember}">
+							<div class="collapse navbar-collapse" id="navbarCollapse">
+								<div class="navbar-nav ms-auto py-0">
+									<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트
+										소개</a> <a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충
+										분석</a>
+									<div class="nav-item dropdown">
+										<a href="#" class="nav-link dropdown-toggle active"
+											data-bs-toggle="dropdown">병해충 정보</a>
+										<div class="dropdown-menu m-0">
+											<a href="${cpath}/Disease.do?disease_crops=고추"
+												class="dropdown-item">병(病) 피해</a> <a
+												href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
+										</div>
+									</div>
+									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
+									<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a>
 								</div>
 							</div>
-							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
-							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
-						</div>
-					</div>
-					</c:when>
-					<c:otherwise>
-					<div class="collapse navbar-collapse" id="navbarCollapse">
-						<div class="navbar-nav ms-auto py-0">
-							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
-							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
-							<div class="nav-item dropdown">
-								<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">병해충 정보</a>
-								<div class="dropdown-menu m-0">
-									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
-									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
+						</c:when>
+						<c:otherwise>
+							<div class="collapse navbar-collapse" id="navbarCollapse">
+								<div class="navbar-nav ms-auto py-0">
+									<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트
+										소개</a> <a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충
+										분석</a>
+									<div class="nav-item dropdown">
+										<a href="#" class="nav-link dropdown-toggle active"
+											data-bs-toggle="dropdown">병해충 정보</a>
+										<div class="dropdown-menu m-0">
+											<a href="${cpath}/Disease.do?disease_crops=고추"
+												class="dropdown-item">병(病) 피해</a> <a
+												href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
+										</div>
+									</div>
+									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
+									<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a>
+									<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}"
+										class="nav-item nav-link">마이페이지</a>
+									<c:if test="${loginMember.mem_user_job eq '관리자'}">
+										<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보
+											관리</a>
+									</c:if>
 								</div>
 							</div>
-							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
-							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
-							<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}" class="nav-item nav-link">마이페이지</a>
-							<c:if test="${loginMember.mem_user_job eq '관리자'}">
-							<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보 관리</a>
-							</c:if>
-						</div>
-					</div>
-					</c:otherwise>
+						</c:otherwise>
 					</c:choose>
 				</nav>
 			</div>
@@ -248,39 +262,56 @@ ul {
 								class="bi bi-caret-down" class="down"><span>사진정보</span></i>
 							</a>
 						</div>
-						<div id="collapseOne" class="collapse show"	data-bs-parent="#accordion">
-							<div class="card-body scroll-image">
-								<ul id="photoDataUl1">
-									<li onclick="fncClickImg('1', '0');" class="active"><img
-										alt="${list.disease_imginfo}" src="${list.disease_imgpath}">
-										<img alt="${list.disease_imginfo2}"
-										src="${list.disease_imgpath2}"> <img
-										alt="${list.disease_imginfo3}" src="${list.disease_imgpath3}">
-										<img alt="${list.disease_imginfo4}"
-										src="${list.disease_imgpath4}"> <img
-										alt="${list.disease_imginfo5}" src="${list.disease_imgpath5}">
-									</li>
-									<br>
-									<li><span>${list.disease_imginfo}</span> <span>${list.disease_imginfo2}</span>
-										<span>${list.disease_imginfo3}</span> <span>${list.disease_imginfo4}</span>
-										<span>${list.disease_imginfo5}</span></li>
-								</ul>
+						<div id="collapseOne" class="collapse show container"	data-bs-parent="#accordion">
+							<div class="card-body scroll-image d-flex justify-content-center center-block">
+								<table class="table table-borderless" style="overflow-wrap: anywhere; text-align: center;" style= "display: flex !important; align-items: center; flex-wrap: wrap;">									
+									<tbody class="container">
+										<tr class="row" style="float: left;">
+											<td class="col p-2 m-2" rowspan="2">
+												<img alt="${list.disease_imginfo}" src="${list.disease_imgpath}"><br>
+												<strong>${list.disease_imginfo}</strong>
+											</td>
+											<td class="col p-2 m-2" rowspan="2">
+												<img alt="${list.disease_imginfo2}" src="${list.disease_imgpath2}"><br>
+												<strong>${list.disease_imginfo2}</strong>
+											</td>
+											<td class="col p-2 m-2" rowspan="2">
+												<img alt="${list.disease_imginfo3}" src="${list.disease_imgpath3}"><br>
+												<strong>${list.disease_imginfo3}</strong>
+											</td>
+											<td class="col p-2 m-2" rowspan="2">
+												<img alt="${list.disease_imginfo4}"	src="${list.disease_imgpath4}"><br>
+											<strong>${list.disease_imginfo4}</strong>
+											</td>
+											<td class="col p-2 m-2" rowspan="2">
+												<img alt="${list.disease_imginfo5}" src="${list.disease_imgpath5}"><br>
+												<strong>${list.disease_imginfo5}</strong>
+											</td>
+										</tr>																			
+									</tbody>
+								</table>								
 							</div>
-
 						</div>
-
 					</div>
 				</div>
-			</div><hr><br>
-			<div class="container d-inline-flex justify-content-center" style="max-width: inherit;">
+			</div>
+			<hr>
+			<br>
+			<div class="container d-inline-flex justify-content-center"
+				style="max-width: inherit;">
 				<div class="row" style="width: 400px; text-align: center;">
 					<div class="col-sm-6 p-2">
-						<button type="button" class="btn btn-success" onclick="history.go(-1);">
-						<strong class="">이전 페이지로</strong></a>
+						<button type="button" class="btn btn-success"
+							onclick="history.go(-1);">
+							<strong class=""><i class="bi bi-reply-all"></i>&nbsp;이전
+								페이지로</strong>
+						</button>
 					</div>
 					<div class="col-sm-6 p-2">
-						<button type="button" class="btn btn-success" onclick="location.href='${cpath}/Notice.do'">
-						<strong class="">문의하기</strong></button>
+						<button type="button" class="btn btn-success"
+							onclick="location.href='${cpath}/Notice.do'">
+							<strong class=""><i class="bi bi-pen"></i>&nbsp;문의하기</strong>
+						</button>
 					</div>
 				</div>
 			</div>

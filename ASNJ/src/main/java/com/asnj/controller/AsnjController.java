@@ -52,8 +52,15 @@ public class AsnjController {
 	// 문의사항 글쓰기
 	@PostMapping("/QuestionInsert.do")
 	public String QuestionInsert(Model model, Question vo) {
-		mapper.questionInsert(vo);
-		return "redirect:/Notice.do";
+		int confirm = mapper.questionInsert(vo);
+		if(confirm > 0) {
+			model.addAttribute("msg", "문의 등록 성공!\\n"+vo.getQues_user_id()+"님의 문의에 빠른 답변 드리겠습니다.");
+    		model.addAttribute("url", "Notice.do");
+		} else {
+			model.addAttribute("msg", "문의사항 등록 실패!");
+    		model.addAttribute("url", "Notice.do");
+		}
+		return "alert";
 	}
 	
 	// 문의사항 삭제
@@ -118,12 +125,13 @@ public class AsnjController {
 	
 	// Mypage.do에 ?mem_pk=${loginMember.mem_pk}제이쿼리 다 추가해야함??? 이건 일단 나중에 진행
 	@GetMapping("/Mypage.do")
-	public String Mypage(Model model, Member mem) {
+	public String Mypage(Model model, HttpServletRequest request, Member mem) {
 	//public String Mypage(Member mem, HttpServletRequest request) {
-//		Member loginMember = mapper.memberOneSelect(mem);
-//		HttpSession session = request.getSession();
-//		session.removeAttribute("loginMember");
-//		session.setAttribute("loginMember", loginMember);
+		HttpSession session = request.getSession();
+		session.removeAttribute("loginMember");
+		
+		Member loginMember = mapper.memberOneSelect(mem);
+		session.setAttribute("loginMember", loginMember);
 		List<Question> myquestionlist = mapper.mypagequestionSelect(mem);
 		model.addAttribute("myquestionlist", myquestionlist);
 		return "mypage";
@@ -131,9 +139,16 @@ public class AsnjController {
 	
 	// 마이페이지 회원 정보 수정
 	@PostMapping("/MypageInfo.do")
-	public String MypageInfo(Member mem) {
-		mapper.memberUpdate(mem);
-		return "redirect:/Mypage.do";
+	public String MypageInfo(Model model, Member mem) {
+		int confirm = mapper.memberUpdate(mem);
+		if(confirm > 0) {
+			model.addAttribute("msg", "회원 정보 수정 성공!");
+    		model.addAttribute("url", "Mypage.do?mem_pk="+mem.getMem_pk());
+		} else {
+			model.addAttribute("msg", "회원 정보 수정 실패!");
+    		model.addAttribute("url", "Mypage.do");
+		}
+		return "alert";
 	}
 	
 	// 마이페이지 문의사항
@@ -147,7 +162,7 @@ public class AsnjController {
 	
 	// 로그인 기능
 	@PostMapping("/Login.do")
-	public String Login(Member mem, HttpServletRequest request) {
+	public String Login(Model model, Member mem, HttpServletRequest request) {
 		// 입력받은 id, pw와 같은 정보가 있는지 확인하고 그 값에 해당하는
 		// 회원의 정보를 가져온다.
 		Member loginMember = mapper.memberLogin(mem);
@@ -160,26 +175,35 @@ public class AsnjController {
 			
 			// 2. 세션에 값 저장(회원정보 데이터를 객체 바인딩)
 			session.setAttribute("loginMember", loginMember);
+			model.addAttribute("msg", "로그인 성공!\\n어서오세요, "+loginMember.getMem_user_name()+"님!");
+    		model.addAttribute("url", "Mainpage.do");
+		} else {
+			model.addAttribute("msg", "로그인 실패! 다시 로그인 해주세요");
+    		model.addAttribute("url", "Loginpage.do");
 		}
-		return "main";
+		return "alert";
 	}
 	
 	// 회원가입 기능
 	@PostMapping("/Join.do")
-	public String Join(Member mem) {
+	public String Join(Member mem, Model model) {
 		int joinMember = mapper.memberJoin(mem);
 		if(joinMember > 0) {
-			return "main";
+			model.addAttribute("msg", "회원가입 성공!\\n어서 오세요, "+mem.getMem_user_name()+"님🎉!");
+			model.addAttribute("url", "Mainpage.do");
 		} else {
-			System.out.println("회원가입 실패!");
-			return "join";	
+			model.addAttribute("msg", "회원가입 실패! 양식에 맞춰 다시 입력해주세요!");
+			model.addAttribute("url", "Joinpage.do");
 		}
+		return "alert";	
 	}
 	// 로그아웃 기능
 	@RequestMapping("/Logout.do")
-	public String Logout(HttpSession session) {
+	public String Logout(HttpSession session, Model model) {
 		session.removeAttribute("loginMember");
-		return "main";
+		model.addAttribute("msg", "로그아웃 성공, 즐거운 하루 되세요😎!");
+		model.addAttribute("url", "index.jsp");
+		return "alert";
 	}
 
 }
