@@ -18,7 +18,7 @@ public interface AsnjMapper {
 	public int memberJoin(Member mem);
 	
 	// 회원정보 수정
-	public void memberUpdate(Member mem);
+	public int memberUpdate(Member mem);
 	
 	// 회원 탈퇴 및 회원 삭제
 	public Member memberDelete(Member mem);
@@ -36,7 +36,7 @@ public interface AsnjMapper {
 	public List<Question> mypagequestionSelect(Member mem);
 	
 	// 문의사항 등록
-	public void questionInsert(Question vo);
+	public int questionInsert(Question vo);
 	
 	// select 태그에 작물 넣기
 	public List<Disease> diseasecropSelect();
