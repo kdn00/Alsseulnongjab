@@ -135,8 +135,7 @@
 
 		<!-- 회원정보 테이블 시작 -->
 		<form method="post" enctype="multipart/form-data" action="" style="margin-left: 5%; margin-right: 5%;">
-			<div class="d-flex justify-content-center center-block"
-				style="display: flex !important; align-items: center; flex-wrap: wrap;">
+			<div class="d-flex justify-content-center center-block"	style="display: flex !important; align-items: center; flex-wrap: wrap;">
 
 				<table class="table bg-white" style="overflow-wrap: anywhere; text-align: center;">
 					<thead class="table-success">
