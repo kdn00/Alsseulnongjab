@@ -39,14 +39,19 @@
         select * from tb_disease where disease_crops=#{disease_crops}
     </select>
     
-    <!-- 질병 상세 정보 페이지(질병명으로 검색) 불러오기 -->
+    <!-- 질병 상세 정보 페이지(질병키로 검색) 불러오기 -->
     <select id="diseaseinfoSelect" parameterType="com.asnj.entity.Disease" resultType="com.asnj.entity.Disease">
         select * from tb_disease where disease_pk=#{disease_pk}
     </select>
     
     <!-- 해충 정보 페이지 불러오기(작물로 검색) 기능 -->
-    <select id="pestsSelect" parameterType="com.asnj.entity.Pests" resultType="com.asnj.entity.Pests">
+    <select id="pestSelect" parameterType="com.asnj.entity.Pest" resultType="com.asnj.entity.Pest">
         select * from tb_pest where pest_crops=#{pest_crops}
+    </select>
+    
+    <!-- 해충 상세 정보 페이지(해충키로 검색) 불러오기 -->
+    <select id="pestinfoSelect" parameterType="com.asnj.entity.Pest" resultType="com.asnj.entity.Pest">
+        select * from tb_pest where pest_pk=#{pest_pk}
     </select>
     
 	<!-- 문의사항 조회 -->
@@ -76,12 +81,12 @@
 	</select>
 	
 	<!-- 해충 검색 -->
-	<select id="pestSearch" parameterType="com.asnj.entity.Disease" resultType="com.asnj.entity.Disease">
+	<select id="pestSearch" parameterType="com.asnj.entity.Pest" resultType="com.asnj.entity.Pest">
 		select * from tb_pest
-		where (pest_crops like concat('%', #{search}, '%'))
-		or pest_name like concat('%', #{search}, '%'))
-		or pest_state like concat('%', #{search}, '%'))
-		or pest_harm like concat('%', #{search}, '%'))
+		where (pest_crops like concat('%', #{search}, '%')
+		or pest_name like concat('%', #{search}, '%')
+		or pest_state like concat('%', #{search}, '%')
+		or pest_harm like concat('%', #{search}, '%')
 		or pest_solution like concat('%', #{search}, '%'))
 	</select>
 	

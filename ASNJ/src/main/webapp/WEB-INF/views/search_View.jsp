@@ -193,7 +193,7 @@ ul {
 					<div class="row list_category_wrap" style="align-items: center;">
 						<div class="mt-5">
 						<c:choose>
-						    <c:when test="${fn:length(diseassearchlist) == 0}">
+						    <c:when test="${fn:length(diseassearchlist) == 0} && ${fn:length(pestsearchlist) == 0}">
 						    <h2>
 							<i class="bi bi-info-circle" style="margin-right: 20px;">
 							</i>&nbsp;"${search}"&nbsp;에 대한 게시글이 없습니다.
@@ -266,48 +266,27 @@ ul {
 										피해</h4></strong></li>
 							<hr>
 							<br>
-
-							<c:forEach items="${diseaselist}" var="list">
-								<a href="PredictionInfoPage.do?disease_pk=${list.disease_pk}"
-									class="theme_thumb" style="color: #000">
-									<li class="theme_item row"><img
-										src="${list.disease_imgpath}" alt="" width="auto;"
-										height="250px;" class="col-sm-3" /> <strong
-										class="title elss col-sm-3" style="font-size: large;">${list.disease_name}</strong>
-										<p class="desc col-sm-6" style="font-size: large;">${list.disease_symptom}</p></li>
-								</a>
-
-							</c:forEach>
+							<c:choose>
+						    <c:when test="${fn:length(pestsearchlist) == 0}">
+						        <h5> 빠른 시일 내에 정보를 등록하겠습니다. 죄송합니다.</h5>
+						    </c:when>
+						    <c:otherwise>
+							<c:forEach items="${pestsearchlist}" var="list">
+							<a href="PestInfoPage.do?pest_pk=${list.pest_pk}"
+								class="theme_thumb" style="color: #000">
+								<li class="theme_item row"><img
+									src="${list.pest_imgpath}" alt="" width="auto;"
+									height="250px;" class="col-sm-3" /> <strong
+									class="title elss col-sm-3" style="font-size: large;">${list.pest_name}</strong>
+									<p class="desc col-sm-6" style="font-size: large;">${list.pest_harm}</p></li>
+							</a>
+							<hr>
+						</c:forEach>
+						</c:otherwise>
+						</c:choose>
 						</ul>
 					</div>
 					<br>
-
-					<div class="group_theme" data-block-id=""
-						data-block-code="PC-THEME-FINANCE-MOBILE-RANKING-DEFAULT-0"
-						data-block-type="MATERIALS"
-						data-template-code="MOBILE-RANKING-LIST" data-da="container"
-						data-index="" data-page="1">
-
-						<div class="list_theme_wrap">
-							<ul class="list_theme container" style="padding-right: 32px;">
-
-								<li class="theme_item row"><strong class="col-sm-3"><h4>•&nbsp;문의사항</h4></strong>
-								</li>
-								<hr>
-								<br>
-
-								<c:forEach items="${diseaselist}" var="list">
-									<a href="PredictionInfoPage.do?disease_pk=${list.disease_pk}"
-										class="theme_thumb" style="color: #000">
-										<li class="theme_item row"><strong
-											class="title elss col-sm-3" style="font-size: large;">${list.disease_name}</strong>
-											<p class="desc col-sm-6" style="font-size: large;">${list.disease_symptom}</p></li>
-									</a>
-									<hr>
-								</c:forEach>
-							</ul>
-						</div>
-					</div>
 
 					<!-- 개별 링크 클릭 코드 -->
 					<div class="group_theme" data-block-id=""

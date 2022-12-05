@@ -131,7 +131,7 @@
 								<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">병해충 정보</a>
 								<div class="dropdown-menu m-0">
 									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
-									<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
+									<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item active">해충 피해</a>
 								</div>
 							</div>
 							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
@@ -249,7 +249,7 @@
 						<br>
 
 						<c:forEach items="${pestlist}" var="list">
-							<a href="PredictionInfoPage.do?pest_pk=${list.pest_pk}"
+							<a href="PestInfoPage.do?pest_pk=${list.pest_pk}"
 								class="theme_thumb" style="color: #000">
 								<li class="theme_item row"><img
 									src="${list.pest_imgpath}" alt="" width="auto;"

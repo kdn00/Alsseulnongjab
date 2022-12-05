@@ -167,8 +167,9 @@
 				style="overflow-wrap: anywhere; text-align: center; width: inherit;">
 
 				<!-- 이미지 전송 폼 -->
-				<form id="imgForm" method="post" enctype="multipart/form-data"
-					action="${cpath}/PredictionInfoPage.do">
+				<%-- <form id="imgForm" method="post" enctype="multipart/form-data" action="${cpath}/PredictionInfoPage.do"> --%>
+				<form id="imgForm" method="get" action="${cpath}/Predictionresult.do">
+					<input type="hidden" name="result" value="탄저병">
 					<div class="upload-box"
 						style="width: 100%; overflow-wrap: anywhere; text-align: center;">
 						<div id="drop-file" class="drag-file bg-white"

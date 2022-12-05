@@ -1,6 +1,6 @@
 package com.asnj.entity;
 
-public class Pests {
+public class Pest {
 	
 	private int pest_pk;
 	private String pest_crops;
