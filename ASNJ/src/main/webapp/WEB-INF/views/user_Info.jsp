@@ -140,7 +140,7 @@
 				<table class="table bg-white" style="overflow-wrap: anywhere; text-align: center;">
 					<thead class="table-success">
 						<tr>
-							<th>이름</th>
+							<th>닉네임</th>
 							<th>아이디</th>
 							<th>이메일</th>
 							<th>가입일자</th>

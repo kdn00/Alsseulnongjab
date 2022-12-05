@@ -120,7 +120,7 @@
 							<input type="email" class="form-control" name="mem_user_email" id="mem_user_email">
 							<label for="mem_user_email">이메일</label>
 						</div>
-						<li>사용자</li>
+						<li>직업</li>
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="mem_user_job" id="mem_user_job" value="농부">
 								<label class="form-check-label" for="mem_user_job"> 농부 </label>

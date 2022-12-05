@@ -212,7 +212,7 @@
 										</tr> --%>
 										<!-- 사용자 -->
 										<tr>
-											<td>사용자</td>
+											<td>직업</td>
 											<td>
 											<c:choose>
 											<c:when test="${loginMember.mem_user_job eq '농부'}">
