@@ -45,15 +45,19 @@
 <!-- prediction Stylesheet -->
 <link href="resources/css/prediction.css" rel="stylesheet">
 <style type="text/css">
-	hr {
-	    background-color: green !important;
-	    height:2px !important;
-	    /* border:none; */
-	}
-	
-	ul {
-		list-style: none;	
-	}
+hr {
+	background-color: green !important;
+	height: 2px !important;
+	/* border:none; */
+}
+
+ul {
+	list-style: none;
+}
+
+.theme_thumb:hover {
+	color: #50D050 !important;
+}
 </style>
 </head>
 
@@ -62,11 +66,12 @@
 		<!-- 헤더 시작 -->
 		<jsp:include page="layout/top.jsp" />
 		<!-- 헤더 끝 -->
-	
+
 		<!-- Full Screen Search Start -->
 		<div class="modal fade" id="searchModal" tabindex="-1">
 			<div class="modal-dialog modal-fullscreen">
-				<div class="modal-content" style="background: rgba(29, 40, 51, 0.8);">
+				<div class="modal-content"
+					style="background: rgba(29, 40, 51, 0.8);">
 					<div class="modal-header border-0">
 						<button type="button" class="btn bg-white btn-close"
 							data-bs-dismiss="modal" aria-label="Close"></button>
@@ -86,11 +91,12 @@
 			</div>
 		</div>
 		<!-- Full Screen Search End -->
-	
+
 		<!-- 카테고리 시작 -->
 		<div class="container-xxl py-5 bg-primary hero-header mb-0"
 			style="padding-top: 2rem !important; padding-bottom: 2rem !important; max-width: none;">
-			<div class="container-xxl position-relative p-0" style="margin-right: 0px; max-width: inherit;">
+			<div class="container-xxl position-relative p-0"
+				style="margin-right: 0px; max-width: inherit;">
 				<nav
 					class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
 					style="bottom: 0px;">
@@ -104,45 +110,56 @@
 						<span class="fa fa-bars"></span>
 					</button>
 					<c:choose>
-					<%-- 로그인 안 했을 때 --%>
-					<c:when test="${empty loginMember}">
-					<div class="collapse navbar-collapse" id="navbarCollapse">
-						<div class="navbar-nav ms-auto py-0">
-							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
-							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
-							<div class="nav-item dropdown">
-								<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">병해충 정보</a>
-								<div class="dropdown-menu m-0">
-									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
-									<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
+						<%-- 로그인 안 했을 때 --%>
+						<c:when test="${empty loginMember}">
+							<div class="collapse navbar-collapse" id="navbarCollapse">
+								<div class="navbar-nav ms-auto py-0">
+									<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트
+										소개</a> <a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충
+										분석</a>
+									<div class="nav-item dropdown">
+										<a href="#" class="nav-link dropdown-toggle active"
+											data-bs-toggle="dropdown">병해충 정보</a>
+										<div class="dropdown-menu m-0">
+											<a href="${cpath}/Disease.do?disease_crops=고추"
+												class="dropdown-item">병(病) 피해</a> <a
+												href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item active">해충
+												피해</a>
+										</div>
+									</div>
+									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
+									<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a>
 								</div>
 							</div>
-							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
-							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
-						</div>
-					</div>
-					</c:when>
-					<c:otherwise>
-					<div class="collapse navbar-collapse" id="navbarCollapse">
-						<div class="navbar-nav ms-auto py-0">
-							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
-							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
-							<div class="nav-item dropdown">
-								<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">병해충 정보</a>
-								<div class="dropdown-menu m-0">
-									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
-									<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item active">해충 피해</a>
+						</c:when>
+						<%-- 로그인 했을 때 --%>
+						<c:otherwise>
+							<div class="collapse navbar-collapse" id="navbarCollapse">
+								<div class="navbar-nav ms-auto py-0">
+									<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트
+										소개</a> <a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충
+										분석</a>
+									<div class="nav-item dropdown">
+										<a href="#" class="nav-link dropdown-toggle active"
+											data-bs-toggle="dropdown">병해충 정보</a>
+										<div class="dropdown-menu m-0">
+											<a href="${cpath}/Disease.do?disease_crops=고추"
+												class="dropdown-item">병(病) 피해</a> <a
+												href="${cpath}/Pests.do?pest_crops=고추"
+												class="dropdown-item active">해충 피해</a>
+										</div>
+									</div>
+									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
+									<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a>
+									<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}"
+										class="nav-item nav-link">마이페이지</a>
+									<c:if test="${loginMember.mem_user_job eq '관리자'}">
+										<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보
+											관리</a>
+									</c:if>
 								</div>
 							</div>
-							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
-							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
-							<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}" class="nav-item nav-link">마이페이지</a>
-							<c:if test="${loginMember.mem_user_job eq '관리자'}">
-							<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보 관리</a>
-							</c:if>
-						</div>
-					</div>
-					</c:otherwise>
+						</c:otherwise>
 					</c:choose>
 				</nav>
 			</div>
@@ -173,59 +190,56 @@
 		<div class="main_category row align-items-center table table-hover"
 			style="text-align: center; width: 80%; margin: auto;">
 			<!-- <div class="w-25 p-4 m-5 col-md-auto flex-fill"> -->
-				<div id="NM_THEME_CATE_GROUPS" class="group_category"
-					data-demo-key="default">
-					<div class="mt-5">
-							<c:choose>
-								<c:when test="${pestlist ne null}">
-									<c:forEach items="${pestlist}" var="crops" end="0">
-										<h2>
-											<i class="bi bi-info-circle" style="margin-right: 20px;"></i>"${crops.pest_crops}"&nbsp;작물의
-											해충 정보입니다.
-										</h2>
-									</c:forEach>
-								</c:when>
-							</c:choose>
-						</div>
-					<div class="row list_category_wrap" style="align-items: center;">
-						<div class="col-sm-2" style="text-align: center; margin-left: 14%">
-							<h4 class="searchTitle" style="display: inline-block;">작물 선택</h4>
-							<i class="bi bi-chevron-double-right"></i>
-						</div>
-						<div class="col-sm-7">
-							<form action="${cpath}/Pests.do" method="get"
-								style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;">
-								<input class="form-check-input" type="radio"
-									name="pest_crops" id="고추" value="고추" checked> <label
-									class="form-check-label" for="고추">고추</label>&nbsp;&nbsp;&nbsp;
-								<input class="form-check-input" type="radio"
-									name="pest_crops" id="감" value="감"> <label
-									class="form-check-label" for="감">감</label>&nbsp;&nbsp;&nbsp; <input
-									class="form-check-input" type="radio" name="pest_crops"
-									id="딸기" value="딸기"> <label class="form-check-label"
-									for="딸기">딸기</label>&nbsp;&nbsp;&nbsp; <input
-									class="form-check-input" type="radio" name="pest_crops"
-									id="오이" value="오이"> <label class="form-check-label"
-									for="오이">오이</label>&nbsp;&nbsp;&nbsp; <input
-									class="form-check-input" type="radio" name="pest_crops"
-									id="파" value="파"> <label class="form-check-label"
-									for="파">파</label>&nbsp;&nbsp;&nbsp; <input
-									class="form-check-input" type="radio" name="pest_crops"
-									id="호박" value="호박"> <label class="form-check-label"
-									for="호박">호박</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-									
-									
-									<span style="margin-left: 30px;">
-									<button type="submit"
-										class="btn btn-outline-success searchTitle m-2">
-										<i class="bi bi-hand-index-thumb" style="margin-right: 5px;"></i>보기
-									</button>
-								</span>
+			<div id="NM_THEME_CATE_GROUPS" class="group_category"
+				data-demo-key="default">
+				<div class="mt-5">
+					<c:choose>
+						<c:when test="${pestlist ne null}">
+							<c:forEach items="${pestlist}" var="crops" end="0">
+								<h2>
+									<i class="bi bi-info-circle" style="margin-right: 20px;"></i>"${crops.pest_crops}"&nbsp;작물의
+									해충 정보입니다.
+								</h2>
+							</c:forEach>
+						</c:when>
+					</c:choose>
+				</div>
+				<div class="row list_category_wrap" style="align-items: center;">
+					<div class="col-sm-2" style="text-align: center; margin-left: 14%">
+						<h4 class="searchTitle" style="display: inline-block;">작물 선택</h4>
+						<i class="bi bi-chevron-double-right"></i>
+					</div>
+					<div class="col-sm-7">
+						<form action="${cpath}/Pests.do" method="get"
+							style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;">
+							<input class="form-check-input" type="radio" name="pest_crops"
+								id="고추" value="고추" checked> <label
+								class="form-check-label" for="고추">고추</label>&nbsp;&nbsp;&nbsp; <input
+								class="form-check-input" type="radio" name="pest_crops" id="감"
+								value="감"> <label class="form-check-label" for="감">감</label>&nbsp;&nbsp;&nbsp;
+							<input class="form-check-input" type="radio" name="pest_crops"
+								id="딸기" value="딸기"> <label class="form-check-label"
+								for="딸기">딸기</label>&nbsp;&nbsp;&nbsp; <input
+								class="form-check-input" type="radio" name="pest_crops" id="오이"
+								value="오이"> <label class="form-check-label" for="오이">오이</label>&nbsp;&nbsp;&nbsp;
+							<input class="form-check-input" type="radio" name="pest_crops"
+								id="파" value="파"> <label class="form-check-label"
+								for="파">파</label>&nbsp;&nbsp;&nbsp; <input
+								class="form-check-input" type="radio" name="pest_crops" id="호박"
+								value="호박"> <label class="form-check-label" for="호박">호박</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-							</form>
-						</div>
+
+							<span style="margin-left: 30px;">
+								<button type="submit"
+									class="btn btn-outline-success searchTitle m-2">
+									<i class="bi bi-hand-index-thumb" style="margin-right: 5px;"></i>보기
+								</button>
+							</span>
+
+						</form>
 					</div>
 				</div>
+			</div>
 			<!-- </div> -->
 		</div>
 		<hr>
@@ -251,9 +265,8 @@
 						<c:forEach items="${pestlist}" var="list">
 							<a href="PestInfoPage.do?pest_pk=${list.pest_pk}"
 								class="theme_thumb" style="color: #000">
-								<li class="theme_item row"><img
-									src="${list.pest_imgpath}" alt="" width="auto;"
-									height="250px;" class="col-sm-3" /> <strong
+								<li class="theme_item row"><img src="${list.pest_imgpath}"
+									alt="" width="auto;" height="250px;" class="col-sm-3" /> <strong
 									class="title elss col-sm-3" style="font-size: large;">${list.pest_name}</strong>
 									<p class="desc col-sm-6" style="font-size: large;">${list.pest_harm}</p></li>
 							</a>
@@ -284,7 +297,7 @@
 	</div>
 	<!-- 푸터 끝 -->
 
-	
+
 
 </body>
 </html>
