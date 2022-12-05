@@ -143,6 +143,7 @@ ul {
 											<a href="${cpath}/Disease.do?disease_crops=고추"
 												class="dropdown-item">병(病) 피해</a>
 									<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
+										</div>
 									</div>
 									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
 									<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a>
