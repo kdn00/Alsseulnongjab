@@ -255,14 +255,17 @@
 								</tbody>
 							</table>
 							<!-- 페이징 시작 -->
+							<c:set value="${nownum}" var="num"/>
 							<nav class=" d-flex justify-content-center"
 								aria-label="Page navigation example">
 								<ul class="pagination">
-									<li class="page-item"><a class="page-link" href="#"
+									<li class="page-item"><a class="page-link" href="Notice.do?num=${num-1}"
 										aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
 									</a></li>
-									<li class="page-item active"><a class="page-link" href="#">1</a></li>
-									<li class="page-item"><a class="page-link" href="#"
+									<c:forEach begin="1" end="${pageNum}" var="number">
+									<li class="page-item"><a class="page-link <c:if test="${nownum == number}">active</c:if>" href="Notice.do?num=${number}">${number}</a></li>
+									</c:forEach>
+									<li class="page-item"><a class="page-link" href="Notice.do?num=${num+1}"
 										aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 									</a></li>
 								</ul>
