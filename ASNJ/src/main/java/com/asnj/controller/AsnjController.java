@@ -62,7 +62,6 @@ public class AsnjController {
 		System.out.print("notice.jsp로 이동\n");
 		List<Question> questionlist = mapper.questionSelect();
 		model.addAttribute("questionlist", questionlist);
-		
 		return "notice";
 	}
 	
@@ -130,19 +129,19 @@ public class AsnjController {
 	// 병해충 분석 결과로 이동
 	@GetMapping("/Predictionresult.do")
 	public String Predictionresult(Model model, String result) {
-
+		result = "탄저병";
 		if(result.equals("정상")) {
 			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n다른 병해충 사진을 업로드 해주세요!");
 			model.addAttribute("url", "Prediction.do");
 			
 		} else if(result.equals("탄저병") || result.equals("흰가루병")) {
 			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n해당 질병 정보 페이지로 이동합니다.");
-//			int disease_pk = mapper.질병기본키검색매퍼만들기;
-			model.addAttribute("url", "PredictionInfoPage.do?disease_pk=63");
+			int disease_pk = mapper.PreDiseasePK(result);
+			model.addAttribute("url", "PredictionInfoPage.do?disease_pk="+disease_pk);
 		} else {
 			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n해당 해충 정보 페이지로 이동합니다.");
-//			int pest_pk = mapper.해충기본키검색매퍼만들기;
-			model.addAttribute("url", "PestInfoPage.do?pest_pk=11");
+			int pest_pk = mapper.PrePestPK(result);
+			model.addAttribute("url", "PestInfoPage.do?pest_pk="+pest_pk);
 		}
 		return "alert";
 	}

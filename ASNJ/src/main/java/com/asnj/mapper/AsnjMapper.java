@@ -62,6 +62,12 @@ public interface AsnjMapper {
 	
 	// 질병 상세 정보 페이지(질병명과 작물로 검색) 불러오기
 	public List<Pest> pestinfoSelect(int pest_pk);
+	
+	// 분석 결과 질병 기본키 불러오기
+	public int PreDiseasePK(String disease_name);
+	
+	// 분석 결과 해충 기본키 불러오기
+	public int PrePestPK(String pest_name);
 
 	// ajax 질병 게시판
 	public List<Disease> diseasesList();
@@ -73,7 +79,7 @@ public interface AsnjMapper {
 	public List<Pest> pestSearch(String search);
 	
 	// 페이징
-	// 문의사항 페이징
+	// 문의사항 게시글 개수
 	public int questionCount();
 	
 	// 페이징 처리 후 문의사항 게시글 조회
