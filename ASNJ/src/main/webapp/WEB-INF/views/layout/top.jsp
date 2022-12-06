@@ -61,11 +61,12 @@ input:focus::-webkit-input-placeholder {
 </style>
 
 </head>
+
 <!-- 자동완성 스크립 -->
-<!-- <script>	
+<!--  <script>	
 	$(function () {	//화면 로딩후 시작
 		$("#searchInput").autocomplete({  //오토 컴플릿트 시작
-			source: #,	// source는 data.js파일 내부의 List 배열
+			source: diseaselist,pestlist,	// source는 data.js파일 내부의 List 배열
 			focus : function(event, ui) { // 방향키로 자동완성단어 선택 가능하게 만들어줌	
 				return false;
 			},
