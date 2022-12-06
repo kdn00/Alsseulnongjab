@@ -13,12 +13,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.asnj.entity.Criteria;
 import com.asnj.entity.Disease;
 import com.asnj.entity.Member;
-import com.asnj.entity.PageMaker;
+import com.asnj.entity.Paging;
+import com.asnj.entity.Paging;
 import com.asnj.entity.Pest;
 import com.asnj.entity.Question;
 import com.asnj.mapper.AsnjMapper;
@@ -54,34 +56,44 @@ public class AsnjController {
 		model.addAttribute("diseassearchlist", diseassearchlist);
 		model.addAttribute("pestsearchlist", pestsearchlist);
 		return "search_View";
-	}	
+	}
 	
-	// 커뮤니티(문의사항)
+//	// 커뮤니티(문의사항)
+//	@GetMapping("/Notice.do")
+//	public String Notice(Model model) {
+//		System.out.print("notice.jsp로 이동\n");
+//		List<Question> questionlist = mapper.questionSelect();
+//		model.addAttribute("questionlist", questionlist);
+//		return "notice";
+//	}
+	
+	// 게시물 목록 + 페이징 추가
 	@GetMapping("/Notice.do")
-	public String Notice(Model model) {
-		System.out.print("notice.jsp로 이동\n");
-		List<Question> questionlist = mapper.questionSelect();
-		model.addAttribute("questionlist", questionlist);
-		return "notice";
-	}
+	public String getListPage(Model model, @RequestParam("num") int num) throws Exception {
+	 
+	 // 게시물 총 갯수
+	 int count = mapper.questionCount();
+	  
+	 // 한 페이지에 출력할 게시물 갯수
+	 int endnum = 10;
+	  
+	 // 하단 페이징 번호 ([ 게시물 총 갯수 ÷ 한 페이지에 출력할 갯수 ]의 올림)
+	 int pageNum = (int)Math.ceil((double)count/endnum);
 	
-	@GetMapping("/NoticePage.do")
-	public ModelAndView openBoardList(Criteria cri) throws Exception {
-        
-	    ModelAndView mav = new ModelAndView("/NoticePage.do");
-	        
-	    PageMaker pageMaker = new PageMaker();
-	    pageMaker.setCri(cri);
-	    pageMaker.setTotalCount(100);
-	        
-	    List<Map<String,Object>> list = mapper.questionPagingSelect(cri);
-	    mav.addObject("list", list);
-	    mav.addObject("pageMaker", pageMaker);
-	        
-	    return mav;
-	        
-	}
+	 // 출력할 게시물
+	 int startnum = (num - 1) * endnum;
 
+	 Paging vo = new Paging();
+	 vo.setStartnum(startnum);
+	 vo.setEndnum(endnum);
+	 
+	 List<Question> list = mapper.questionPagingSelect(vo);
+	 model.addAttribute("questionlist", list);   
+	 model.addAttribute("pageNum", pageNum);
+	 model.addAttribute("nownum", num);
+	 
+	 return "notice";
+	}
 
 	// 문의사항 글쓰기
 	@PostMapping("/QuestionInsert.do")
@@ -89,15 +101,15 @@ public class AsnjController {
 		int confirm = mapper.questionInsert(vo);
 		if(confirm > 0) {
 			model.addAttribute("msg", "문의 등록 성공!\\n"+vo.getQues_user_id()+"님의 문의에 빠른 답변 드리겠습니다.");
-    		model.addAttribute("url", "Notice.do");
+    		model.addAttribute("url", "Notice.do?num=1");
 		} else {
 			model.addAttribute("msg", "문의사항 등록 실패!");
-    		model.addAttribute("url", "Notice.do");
+    		model.addAttribute("url", "Notice.do?num=1");
 		}
 		return "alert";
 	}
 	
-	//  문의사항 삭제
+	// 문의사항 삭제
 	@GetMapping("/QuestionDelete.do")
 	public String QuestionDelete(Model model, int ques_pk, int mem_pk) {
 		int confirm = mapper.questionDelete(ques_pk);

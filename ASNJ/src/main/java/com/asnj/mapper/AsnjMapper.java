@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 import com.asnj.entity.Criteria;
 import com.asnj.entity.Disease;
 import com.asnj.entity.Member;
-import com.asnj.entity.PageMaker;
+import com.asnj.entity.Paging;
 import com.asnj.entity.Pest;
 import com.asnj.entity.Question;
 
@@ -83,7 +83,7 @@ public interface AsnjMapper {
 	public int questionCount();
 	
 	// 페이징 처리 후 문의사항 게시글 조회
-	public List<Map<String, Object>> questionPagingSelect(Criteria cri);
+	public List<Question> questionPagingSelect(Paging vo);
 	
 	
 }
