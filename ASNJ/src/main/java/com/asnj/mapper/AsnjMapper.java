@@ -1,12 +1,14 @@
 package com.asnj.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.asnj.entity.Criteria;
 import com.asnj.entity.Disease;
 import com.asnj.entity.Member;
-import com.asnj.entity.Paging;
+import com.asnj.entity.PageMaker;
 import com.asnj.entity.Pest;
 import com.asnj.entity.Question;
 
@@ -23,7 +25,7 @@ public interface AsnjMapper {
 	public int memberUpdate(Member mem);
 	
 	// 회원 탈퇴 및 회원 삭제
-	public Member memberDelete(Member mem);
+	public int memberDelete(int mem_pk);
 
 	// 회원 리스트
 	public List<Member> memberSelect();
@@ -39,6 +41,12 @@ public interface AsnjMapper {
 	
 	// 문의사항 등록
 	public int questionInsert(Question vo);
+	
+	// 문의사항 삭제
+	public int questionDelete(int ques_pk);
+	
+	// 회원 삭제 및 탈퇴시 문의사항 삭제
+	public int questionDeleteMem(int mem_pk);
 	
 	// select 태그에 작물 넣기
 	public List<Disease> diseasecropSelect();
@@ -69,7 +77,7 @@ public interface AsnjMapper {
 	public int questionCount();
 	
 	// 페이징 처리 후 문의사항 게시글 조회
-	public List<Question> questionPagingSelect(Paging num);
+	public List<Map<String, Object>> questionPagingSelect(Criteria cri);
 	
 	
 }

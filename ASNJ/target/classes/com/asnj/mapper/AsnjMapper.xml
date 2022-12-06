@@ -19,6 +19,11 @@
     	select * from tb_member
     </select>
     
+    <!-- 회원 삭제 -->
+    <delete id="memberDelete">
+        delete from tb_member where mem_pk=#{mem_pk} 
+    </delete>
+    
     <!-- 회원 정보 수정 -->
     <update id="memberUpdate" parameterType="com.asnj.entity.Member">
        update tb_member set mem_user_name=#{mem_user_name}, mem_user_pw=#{mem_user_pw}, mem_user_job=#{mem_user_job} where mem_pk=#{mem_pk}
@@ -69,7 +74,15 @@
         insert into tb_question_board(mem_pk, ques_user_id, ques_title, ques_content) values(#{mem_pk}, #{ques_user_id}, #{ques_title}, #{ques_content})
     </insert>
     
+    <!-- 회원 삭제시 문의사항 삭제 -->
+    <delete id="questionDeleteMem">
+        delete from tb_question_board where mem_pk=#{mem_pk}        
+    </delete>
+    
     <!-- 문의사항 삭제 -->
+    <delete id="questionDelete">
+        delete from tb_question_board where ques_pk=#{ques_pk}        
+    </delete>
     
     <!-- 질병 검색 -->
 	<select id="diseaseSearch" parameterType="com.asnj.entity.Disease" resultType="com.asnj.entity.Disease">
@@ -94,11 +107,12 @@
     <!-- 문의사항 페이징 -->
 	<!-- 총 게시글 갯수 출력 -->
 	<select id="questionCount" resultType="int">
-		SELECT COUNT(*) FROM tb_question_board
+		select count(*) from tb_question_board
 	</select>
 	
 	<!-- 페이징 처리 후 게시글 조회 -->
-	<select id="questionPagingSelect" resultType="com.asnj.entity.Question">
-		SELECT * FROM tb_question_board LIMIT #{start}, #{end};
+	<!-- pageStart : 특정 페이지의 첫번째 게시글의 행이다. perPageNum : 한 페이지당 보여줄 게시글의 개수이다. -->
+	<select id="questionPagingSelect" parameterType="hashmap" resultType="hashmap">
+		select * from tb_question_board order by ques_pk desc LIMIT #{pageStart}, #{perPageNum};
 	</select>
 </mapper>

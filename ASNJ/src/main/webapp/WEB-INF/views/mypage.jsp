@@ -45,7 +45,14 @@
 
 <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> -->
-
+<script type="text/javascript">
+	function Delete(mem_pk){
+		location.href="MemberDelet.do?mem_pk="+mem_pk;
+		}
+	function QDel(ques_pk, mem_pk){
+		location.href="QuestionDelete.do?ques_pk="+ques_pk+"&mem_pk="+mem_pk;
+		}
+</script>
 </head>
 
 <body>
@@ -242,9 +249,9 @@
 								</table>
 								<!-- send -->
 								<div style="justify-content: center; margin-left: 40%;">
-									<button class="btn btn-success" style="width:100px; " type="submit" id="button-addon4">저장</button>
+									<button class="btn btn-success" style="width:100px;" type="submit" id="button-addon4">저장</button>
 									&nbsp; &nbsp;
-									<button class="btn btn-success" type="submit" id="button-addon5">회원탈퇴</button>
+									<button class="btn btn-success" type="button" id="button-addon5" onclick="Delete(${loginMember.mem_pk})">회원탈퇴</button>
 								</div>
 							</form>
 						</div>
@@ -260,7 +267,7 @@
 									<h4><i class="bi bi-pen">문의사항</i></h4>
 									<div class="container" style="background-color: rgb(250, 255, 240); width: 100%; height: 600px; border-radius: 1em; margin-top: 5px;">
 										<br>
-										<from action="">
+										
 											<table class="table table-bordered caption-top" style="vertical-align: middle;">
 												<thead class="table table-light" align="center">
 													<th>#</th>
@@ -270,6 +277,7 @@
 													<th>삭제</th>
 												</thead>
 												<tbody>
+												
 												<c:forEach items="${myquestionlist}" var="list" varStatus="status">
 												<c:set var="ques_time" value="${fn:split(list.ques_time, ' ')[0]}"/>
 													<tr>
@@ -277,9 +285,10 @@
 														<td>${list.ques_title}</td>
 														<td>${list.ques_content}</td>
 														<td>${ques_time}</td>
-														<td align="center"><button type="button" class="btn-sm btn-danger">삭제</button></td>
+														<td align="center"><button type="button" class="btn-sm btn-danger" onclick="QDel(${list.ques_pk}, ${list.mem_pk})">삭제</button></td>
 													</tr>
 												</c:forEach>
+												
 												</tbody>
 											</table>
 											<!-- 페이징 시작 -->
@@ -298,8 +307,7 @@
 											    </li>
 											  </ul>
 											</nav>
-											<!-- 페이징 끝 -->											
-										</from>
+											<!-- 페이징 끝 -->	
 									</div>
 								</div>
 								<!-- 문의사항 끝  -->

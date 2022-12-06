@@ -44,6 +44,11 @@
 <!-- prediction Stylesheet -->
 <link href="resources/css/prediction.css" rel="stylesheet">
 </head>
+<script type="text/javascript">
+	function MemDel(mem_pk){
+		location.href="MemberDeletadmin.do?mem_pk="+mem_pk;
+		}
+</script>
 <body>
 	<!-- 헤더 시작 -->
 	<jsp:include page="layout/top.jsp" />
@@ -134,7 +139,7 @@
 
 
 		<!-- 회원정보 테이블 시작 -->
-		<form method="post" enctype="multipart/form-data" action="" style="margin-left: 5%; margin-right: 5%;">
+		<!-- <form method="get" action="MemberDeletadmin.do" style="margin-left: 5%; margin-right: 5%;"> -->
 			<div class="d-flex justify-content-center center-block"	style="display: flex !important; align-items: center; flex-wrap: wrap;">
 
 				<table class="table bg-white" style="overflow-wrap: anywhere; text-align: center;">
@@ -156,19 +161,18 @@
 							<th>${list.mem_user_email}</th>
 							<th>${list.mem_time}</th>
 							<th>${list.mem_user_job}</th>
-							<th><button type="button" class="btn-sm btn-danger">삭제</button></th>
+							<th><button type="submit" class="btn-sm btn-danger" onclick="MemDel(${list.mem_pk})">삭제</button></th>
 						</tr>
 					</c:forEach>
 					</tbody>
 				</table>
 			</div>
 			<!-- 회원정보 테이블 끝 -->
-
 			<div style="justify-content: center; margin-left: 43%;">
 				<!-- <button class="btn btn-success" style="width: 100px;" type="submit"
 					id="button-addon4">저장</button> -->
 			</div>
-		</form>
+		<!-- </form> -->
 	</div>
 	<!-- 여기부터 넣으면 됩니다. 끝 -->
 

@@ -204,7 +204,7 @@
 					<div style="margin-left: 10%;">
 						<div class="mx-auto" style="width: 200px;">
 							<div id="underline">
-								<h2>방제력</h2>
+								<h2>농작업 일정</h2>
 							</div>
 						</div>
 					</div>

@@ -1,6 +1,7 @@
 package com.asnj.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -12,9 +13,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.asnj.entity.Criteria;
 import com.asnj.entity.Disease;
 import com.asnj.entity.Member;
+import com.asnj.entity.PageMaker;
 import com.asnj.entity.Pest;
 import com.asnj.entity.Question;
 import com.asnj.mapper.AsnjMapper;
@@ -61,6 +65,24 @@ public class AsnjController {
 		
 		return "notice";
 	}
+	
+	@GetMapping("/NoticePage.do")
+	public ModelAndView openBoardList(Criteria cri) throws Exception {
+        
+	    ModelAndView mav = new ModelAndView("/NoticePage.do");
+	        
+	    PageMaker pageMaker = new PageMaker();
+	    pageMaker.setCri(cri);
+	    pageMaker.setTotalCount(100);
+	        
+	    List<Map<String,Object>> list = mapper.questionPagingSelect(cri);
+	    mav.addObject("list", list);
+	    mav.addObject("pageMaker", pageMaker);
+	        
+	    return mav;
+	        
+	}
+
 
 	// 문의사항 글쓰기
 	@PostMapping("/QuestionInsert.do")
@@ -76,7 +98,19 @@ public class AsnjController {
 		return "alert";
 	}
 	
-	// 문의사항 삭제
+	//  문의사항 삭제
+	@GetMapping("/QuestionDelete.do")
+	public String QuestionDelete(Model model, int ques_pk, int mem_pk) {
+		int confirm = mapper.questionDelete(ques_pk);
+		if(confirm > 0) {
+			model.addAttribute("msg", "문의사항 삭제 성공!");
+    		model.addAttribute("url", "Mypage.do?mem_pk="+mem_pk);
+		} else {
+			model.addAttribute("msg", "문의사항 삭제 실패!\\n다시 시도해주세요!");
+    		model.addAttribute("url", "Mypage.do?mem_pk="+mem_pk);
+		}
+		return "alert";
+	}
 	
 	
 	// 농업일지 띄우기
@@ -205,6 +239,37 @@ public class AsnjController {
 		List<Question> myquestionlist = mapper.mypagequestionSelect(mem);
 		model.addAttribute("myquestionlist", myquestionlist);
 		return "mypage";
+	}
+	
+	// 회원 탈퇴 기능
+	@GetMapping("/MemberDelet.do")
+	public String MemberDelet(Model model, int mem_pk, HttpSession session) {
+		mapper.questionDeleteMem(mem_pk);
+		int confirm = mapper.memberDelete(mem_pk);
+		if(confirm > 0) {
+			session.removeAttribute("loginMember");
+			model.addAttribute("msg", "회원 정보 삭제 성공!\\n다음에 또 뵈어요!");
+    		model.addAttribute("url", "Mainpage.do");
+		} else {
+			model.addAttribute("msg", "회원 정보 삭제 실패!");
+    		model.addAttribute("url", "Mainpage.do");
+		}
+		return "alert";	
+	}
+	
+	// 회원 삭제 기능
+	@GetMapping("/MemberDeletadmin.do")
+	public String MemberDeletadmin(Model model, int mem_pk, HttpSession session) {
+		mapper.questionDeleteMem(mem_pk);
+		int confirm = mapper.memberDelete(mem_pk);
+		if(confirm > 0) {
+			model.addAttribute("msg", "회원 정보 삭제 성공!");
+    		model.addAttribute("url", "UserInfo.do");
+		} else {
+			model.addAttribute("msg", "회원 정보 삭제 실패!");
+    		model.addAttribute("url", "UserInfo.do");
+		}
+		return "alert";	
 	}
 	
 	// 로그인 기능

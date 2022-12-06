@@ -187,22 +187,18 @@ ul {
 
 
 		<!-- 작물 카테고리 -->
+		<c:choose>
+		<c:when test="${pestlist ne null}">
+		<c:forEach items="${pestlist}" var="crops" end="0">
+		
 		<div class="main_category row align-items-center table table-hover"
 			style="text-align: center; width: 80%; margin: auto;">
 			<!-- <div class="w-25 p-4 m-5 col-md-auto flex-fill"> -->
 			<div id="NM_THEME_CATE_GROUPS" class="group_category"
 				data-demo-key="default">
 				<div class="mt-5">
-					<c:choose>
-						<c:when test="${pestlist ne null}">
-							<c:forEach items="${pestlist}" var="crops" end="0">
-								<h2>
-									<i class="bi bi-info-circle" style="margin-right: 20px;"></i>"${crops.pest_crops}"&nbsp;작물의
-									해충 정보입니다.
-								</h2>
-							</c:forEach>
-						</c:when>
-					</c:choose>
+					<h2> <i class="bi bi-info-circle" style="margin-right: 20px;"></i>"${crops.pest_crops}"&nbsp;작물의 해충 정보입니다. </h2>
+							
 				</div>
 				<div class="row list_category_wrap" style="align-items: center;">
 					<div class="col-sm-2" style="text-align: center; margin-left: 14%">
@@ -212,21 +208,18 @@ ul {
 					<div class="col-sm-7">
 						<form action="${cpath}/Pests.do" method="get"
 							style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;">
-							<input class="form-check-input" type="radio" name="pest_crops"
-								id="고추" value="고추" checked> <label
-								class="form-check-label" for="고추">고추</label>&nbsp;&nbsp;&nbsp; <input
-								class="form-check-input" type="radio" name="pest_crops" id="감"
-								value="감"> <label class="form-check-label" for="감">감</label>&nbsp;&nbsp;&nbsp;
-							<input class="form-check-input" type="radio" name="pest_crops"
-								id="딸기" value="딸기"> <label class="form-check-label"
-								for="딸기">딸기</label>&nbsp;&nbsp;&nbsp; <input
-								class="form-check-input" type="radio" name="pest_crops" id="오이"
-								value="오이"> <label class="form-check-label" for="오이">오이</label>&nbsp;&nbsp;&nbsp;
-							<input class="form-check-input" type="radio" name="pest_crops"
-								id="파" value="파"> <label class="form-check-label"
-								for="파">파</label>&nbsp;&nbsp;&nbsp; <input
-								class="form-check-input" type="radio" name="pest_crops" id="호박"
-								value="호박"> <label class="form-check-label" for="호박">호박</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<input class="form-check-input" type="radio" name="pest_crops" id="고추" value="고추" <c:if test="${crops.pest_crops eq '고추'}" > checked="checked" </c:if>>
+							<label class="form-check-label" for="고추">고추</label>&nbsp;&nbsp;&nbsp;
+							<input class="form-check-input" type="radio" name="pest_crops" id="감" value="감" <c:if test="${crops.pest_crops eq '감'}" > checked="checked" </c:if>>
+							<label class="form-check-label" for="감">감</label>&nbsp;&nbsp;&nbsp;
+							<input class="form-check-input" type="radio" name="pest_crops" id="딸기" value="딸기"<c:if test="${crops.pest_crops eq '딸기'}" > checked="checked" </c:if>>
+							<label class="form-check-label" for="딸기">딸기</label>&nbsp;&nbsp;&nbsp;
+							<input class="form-check-input" type="radio" name="pest_crops" id="오이" value="오이"<c:if test="${crops.pest_crops eq '오이'}" > checked="checked" </c:if>>
+							<label class="form-check-label" for="오이">오이</label>&nbsp;&nbsp;&nbsp;
+							<input class="form-check-input" type="radio" name="pest_crops" id="파" value="파"<c:if test="${crops.pest_crops eq '파'}" > checked="checked" </c:if>>
+							<label class="form-check-label" for="파">파</label>&nbsp;&nbsp;&nbsp;
+							<input class="form-check-input" type="radio" name="pest_crops" id="호박" value="호박"<c:if test="${crops.pest_crops eq '호박'}" > checked="checked" </c:if>>
+							<label class="form-check-label" for="호박">호박</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 							<span style="margin-left: 30px;">
@@ -242,6 +235,9 @@ ul {
 			</div>
 			<!-- </div> -->
 		</div>
+		</c:forEach>
+		</c:when>
+		</c:choose>
 		<hr>
 		<br> <br>
 
