@@ -14,7 +14,7 @@
 <meta content="" name="description">
 
 <!-- Favicon -->
-<link href="resources/image/favicon.ico" rel="icon">
+<link href="resources/image/Tab-icon.png" rel="icon">
 
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
