@@ -213,7 +213,7 @@ ul {
 					<tbody>
 						<tr>
 							<td rowspan="4" colspan="2"><img width="100%" height="240px"
-								alt="" class="imagesize" src="${list.disease_imgpath}"></td>
+								alt="" class="imagesize" src="${list.disease_imgpath}" onerror="this.src='resources/image/img.png'"></td>
 							<td style="text-align: end; width: 180px;"><span class=""><h5>•&nbsp;질병명</h5></span></td>
 							<td>${disease_name_split[0]}</td>
 						</tr>
@@ -233,7 +233,7 @@ ul {
 
 			<%-- 정보별, 시기별, 월별 탭 --%>
 			<img alt="기본정보" src="resources/image/lamp.png"
-				style="width: 30px; height: 30px; float: left;" onerror="this.src='resources/image/img.png'">&nbsp;&nbsp;&nbsp;
+				style="width: 30px; height: 30px; float: left;">&nbsp;&nbsp;&nbsp;
 			<h4>일반정보</h4>
 			<hr>
 			<ul>
