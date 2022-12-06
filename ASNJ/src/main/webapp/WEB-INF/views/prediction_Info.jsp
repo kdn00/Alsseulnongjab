@@ -233,7 +233,7 @@ ul {
 
 			<%-- 정보별, 시기별, 월별 탭 --%>
 			<img alt="기본정보" src="resources/image/lamp.png"
-				style="width: 30px; height: 30px; float: left;">&nbsp;&nbsp;&nbsp;
+				style="width: 30px; height: 30px; float: left;" onerror="this.src='resources/image/img.png'">&nbsp;&nbsp;&nbsp;
 			<h4>일반정보</h4>
 			<hr>
 			<ul>
@@ -268,23 +268,23 @@ ul {
 									<tbody class="container">
 										<tr class="row" style="float: left;">
 											<td class="col p-2 m-2" rowspan="2">
-												<img alt="${list.disease_imginfo}" src="${list.disease_imgpath}"><br>
+												<img alt="${list.disease_imginfo}" src="${list.disease_imgpath}" onerror="this.src='resources/image/img.png'"><br>
 												<strong>${list.disease_imginfo}</strong>
 											</td>
 											<td class="col p-2 m-2" rowspan="2">
-												<img alt="${list.disease_imginfo2}" src="${list.disease_imgpath2}"><br>
+												<img alt="${list.disease_imginfo2}" src="${list.disease_imgpath2}" onerror="this.src='resources/image/img.png'"><br>
 												<strong>${list.disease_imginfo2}</strong>
 											</td>
 											<td class="col p-2 m-2" rowspan="2">
-												<img alt="${list.disease_imginfo3}" src="${list.disease_imgpath3}"><br>
+												<img alt="${list.disease_imginfo3}" src="${list.disease_imgpath3}" onerror="this.src='resources/image/img.png'"><br>
 												<strong>${list.disease_imginfo3}</strong>
 											</td>
 											<td class="col p-2 m-2" rowspan="2">
-												<img alt="${list.disease_imginfo4}"	src="${list.disease_imgpath4}"><br>
+												<img alt="${list.disease_imginfo4}"	src="${list.disease_imgpath4}" onerror="this.src='resources/image/img.png'"><br>
 											<strong>${list.disease_imginfo4}</strong>
 											</td>
 											<td class="col p-2 m-2" rowspan="2">
-												<img alt="${list.disease_imginfo5}" src="${list.disease_imgpath5}"><br>
+												<img alt="${list.disease_imginfo5}" src="${list.disease_imgpath5}" onerror="this.src='resources/image/img.png'"><br>
 												<strong>${list.disease_imginfo5}</strong>
 											</td>
 										</tr>																			

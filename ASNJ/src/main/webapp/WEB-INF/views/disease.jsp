@@ -251,7 +251,7 @@ ul {
 								class="theme_thumb" style="color: #000">
 								<li class="theme_item row"><img
 									src="${list.disease_imgpath}" alt="" width="auto;"
-									height="250px;" class="col-sm-3" /> <strong
+									height="250px;" class="col-sm-3" onerror="this.src='resources/image/img.png'"/> <strong
 									class="title elss col-sm-3" style="font-size: large;">${list.disease_name}</strong>
 									<p class="desc col-sm-6" style="font-size: large;">${list.disease_symptom}</p></li>
 							</a>
