@@ -62,7 +62,7 @@
 					<a href="index.jsp"> 
 						<img alt="" src="resources/image/nong.png"
 						style="float: left; width: 70px; height: 90px;">&nbsp;&nbsp;&nbsp;
-						<h1 class="text-white mb-4"	style="font-style: italic; display: inline-block;">
+						<h1 class="text-white mb-4"	style="font-style: italic; display: inline-block; margin-left: 10px;">
 							알쓸<br>농잡
 						</h1> <!-- <h1 class="text-white mb-4" style="font-style: italic;">농잡</h1>	 -->
 					</a>
@@ -70,7 +70,7 @@
 				<div class="col-lg-4 col-md-3">
 					<div class="row gy-5 g-4">
 						<div class="col-md-8">
-							<h5 class="fw-bold text-white mb-4">About Us</h5>
+							<h2 class="fw-bold text-white mb-4">About Us</h2>
 							<a class="btn btn-link" href="${cpath}/Introduce.do">사이트소개</a> <a
 								class="btn btn-link" href="${cpath}/Notice.do">공지사항</a> <a
 								class="btn btn-link" href="#phone">연락처</a> <a class="btn btn-link"
@@ -79,7 +79,7 @@
 					</div>
 				</div>
 				<div class="col-lg-5 col-md-5">
-					<h5 class="fw-bold text-white mb-4">Team Introduction</h5>
+					<h2 class="fw-bold text-white mb-4">Team Introduction</h2>
 					<p class="mb-2">
 						<i class="fa fa-map-marker-alt me-3"></i>소재지 : 전라남도 순천시 석현동 87 5층,
 						스마트인재개발원 순천점
