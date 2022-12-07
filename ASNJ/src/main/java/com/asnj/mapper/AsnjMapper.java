@@ -5,7 +5,6 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.asnj.entity.Criteria;
 import com.asnj.entity.Disease;
 import com.asnj.entity.Member;
 import com.asnj.entity.Paging;
@@ -84,6 +83,16 @@ public interface AsnjMapper {
 	
 	// 페이징 처리 후 문의사항 게시글 조회
 	public List<Question> questionPagingSelect(Paging vo);
+
+	// 검색 게시글 개수
+	public int searchCountD(String search);
+	public int searchCountP(String search);
+	
+	// 질병 페이징 게시글
+	public List<Disease> diseasePagingSearch(Disease disease);
+	
+	// 해충 페이징 게시글
+	public List<Pest> pestPagingSearch(Pest pest);
 	
 	
 }

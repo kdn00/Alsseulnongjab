@@ -16,10 +16,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.asnj.entity.Criteria;
+
 import com.asnj.entity.Disease;
 import com.asnj.entity.Member;
-import com.asnj.entity.Paging;
 import com.asnj.entity.Paging;
 import com.asnj.entity.Pest;
 import com.asnj.entity.Question;
@@ -47,15 +46,54 @@ public class AsnjController {
 	}
 	
 	// 검색페이지 이동
+//	@GetMapping("/SearchView.do")
+//	public String SearchView(Model model, String search) {
+//		System.out.print("search_View.jsp로 이동\n");
+//		List<Disease> diseassearchlist = mapper.diseaseSearch(search);
+//		List<Pest> pestsearchlist = mapper.pestSearch(search);
+//		model.addAttribute("search", search);
+//		model.addAttribute("diseassearchlist", diseassearchlist);
+//		model.addAttribute("pestsearchlist", pestsearchlist);
+//		return "search_View";
+//	}
+	
+	// 검색페이지 이동 + 페이징 추가
 	@GetMapping("/SearchView.do")
-	public String SearchView(Model model, String search) {
-		System.out.print("search_View.jsp로 이동\n");
-		List<Disease> diseassearchlist = mapper.diseaseSearch(search);
-		List<Pest> pestsearchlist = mapper.pestSearch(search);
-		model.addAttribute("search", search);
-		model.addAttribute("diseassearchlist", diseassearchlist);
-		model.addAttribute("pestsearchlist", pestsearchlist);
-		return "search_View";
+	public String SearchView(Model model, String search, @RequestParam("num") int num) throws Exception {
+	 // 게시물 총 갯수
+	 int count = mapper.searchCountD(search) + mapper.searchCountP(search);
+	 // 한 페이지에 출력할 게시물 갯수
+	 int endnum = 4;
+	 // 하단 페이징 번호 ([ 게시물 총 갯수 ÷ 한 페이지에 출력할 갯수 ]의 올림)
+	 int pageNum = (int)Math.ceil((double)count/endnum);
+	 // 출력할 게시물
+	 int startnum = (num - 1) * endnum;
+	 Paging vo = new Paging();
+	 vo.setStartnum(startnum);
+	 vo.setEndnum(endnum); 
+	 
+	 // vo 파일에 페이지 번호와 검색어 셋팅하기
+	 Disease disease = new Disease();
+	 disease.setStartnum(startnum);
+	 disease.setEndnum(endnum);
+	 disease.setSearch(search);
+	
+	 // vo 파일에 페이지 번호와 검색어 셋팅하기
+	 Pest pest = new Pest();
+	 pest.setStartnum(startnum);
+	 pest.setEndnum(endnum);
+	 pest.setSearch(search);
+	 
+	 List<Disease> diseassearchlist =  mapper.diseasePagingSearch(disease);
+	 List<Pest> pestsearchlist = mapper.pestPagingSearch(pest);
+	 
+	 model.addAttribute("search", search);
+	 model.addAttribute("diseassearchlist", diseassearchlist);
+	 model.addAttribute("pestsearchlist", pestsearchlist);
+	 model.addAttribute("pageNum", pageNum);
+	 model.addAttribute("nownum", num);
+	 
+	 return "search_View";
 	}
 	
 //	// 커뮤니티(문의사항)
@@ -70,19 +108,14 @@ public class AsnjController {
 	// 게시물 목록 + 페이징 추가
 	@GetMapping("/Notice.do")
 	public String getListPage(Model model, @RequestParam("num") int num) throws Exception {
-	 
 	 // 게시물 총 갯수
 	 int count = mapper.questionCount();
-	  
 	 // 한 페이지에 출력할 게시물 갯수
 	 int endnum = 10;
-	  
 	 // 하단 페이징 번호 ([ 게시물 총 갯수 ÷ 한 페이지에 출력할 갯수 ]의 올림)
 	 int pageNum = (int)Math.ceil((double)count/endnum);
-	
 	 // 출력할 게시물
 	 int startnum = (num - 1) * endnum;
-
 	 Paging vo = new Paging();
 	 vo.setStartnum(startnum);
 	 vo.setEndnum(endnum);

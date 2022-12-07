@@ -91,6 +91,7 @@ input:focus::-webkit-input-placeholder {
 			<div class="col-6 flex-grow position-relative w-40 my-3 wow fadeInUp" data-wow-delay="0.3s" style="margin-right: 16px;">
 				<form action="${cpath}/SearchView.do" method="get">
 					<input id="searchInput" class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" name="search" placeholder="검색어를 입력하세요.">
+					<input type="hidden" name="num" value=1>
 					<button type="submit" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-3">검색</button>
 				</form>
 			</div>

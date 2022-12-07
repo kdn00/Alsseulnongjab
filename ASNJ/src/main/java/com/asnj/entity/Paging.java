@@ -15,5 +15,7 @@ public class Paging {
 	}
 	public void setEndnum(int endnum) {
 		this.endnum = endnum;
-	}   
+	}
+    
+    
 }

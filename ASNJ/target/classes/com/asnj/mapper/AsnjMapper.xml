@@ -125,4 +125,43 @@
 	<select id="questionPagingSelect" parameterType="com.asnj.entity.Paging" resultType="com.asnj.entity.Question">
 		select * from tb_question_board order by ques_pk desc LIMIT #{startnum}, #{endnum};
 	</select>
+	
+	<!-- 검색 총 게시글 개수 -->
+	<select id="searchCountD" parameterType="String" resultType="int">
+		select count(*) from tb_disease
+		where (disease_crops like concat('%', #{search}, '%')
+		or disease_name like concat('%', #{search}, '%')
+		or disease_environment like concat('%', #{search}, '%')
+		or disease_solution like concat('%', #{search}, '%'))
+	</select>
+	
+	<select id="searchCountP" parameterType="String" resultType="int">
+		select count(*) from tb_pest
+		where (pest_crops like concat('%', #{search}, '%')
+		or pest_name like concat('%', #{search}, '%')
+		or pest_state like concat('%', #{search}, '%')
+		or pest_harm like concat('%', #{search}, '%')
+		or pest_solution like concat('%', #{search}, '%'))
+	</select>	    
+	
+	<!-- 페이징 처리 후 질병 검색 -->
+	<select id="diseasePagingSearch" parameterType="com.asnj.entity.Disease" resultType="com.asnj.entity.Disease">
+		select * from tb_disease
+		where (disease_crops like concat('%', #{search}, '%')
+		or disease_name like concat('%', #{search}, '%')
+		or disease_environment like concat('%', #{search}, '%')
+		or disease_solution like concat('%', #{search}, '%'))
+		order by disease_pk desc LIMIT  #{startnum}, #{endnum}
+	</select>
+	
+	<!-- 페이징 처리 후 해충 검색 -->
+	<select id="pestPagingSearch" parameterType="com.asnj.entity.Pest" resultType="com.asnj.entity.Pest">
+		select * from tb_pest
+		where (pest_crops like concat('%', #{search}, '%')
+		or pest_name like concat('%', #{search}, '%')
+		or pest_state like concat('%', #{search}, '%')
+		or pest_harm like concat('%', #{search}, '%')
+		or pest_solution like concat('%', #{search}, '%'))
+		order by pest_pk desc LIMIT  #{startnum}, #{endnum}
+	</select>
 </mapper>
