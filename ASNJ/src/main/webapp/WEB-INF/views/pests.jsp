@@ -19,9 +19,8 @@
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
 <link
@@ -101,9 +100,9 @@ ul {
 					class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
 					style="bottom: 0px;">
 					<a href="index.jsp" class="navbar-brand p-0">
-						<h4 class="m-0 text-white" style="font-style: italic;">
+						<h1 class="m-0 text-white" style="font-style: italic;">
 							<i class="fa me-3"></i> 알쓸농잡
-						</h4>
+						</h1>
 					</a>
 					<button class="navbar-toggler" type="button"
 						data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -128,7 +127,7 @@ ul {
 										</div>
 									</div>
 									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
-									<a href="${cpath}/Notice.do?num=1" class="nav-item nav-link">커뮤니티</a>
+									<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a>
 								</div>
 							</div>
 						</c:when>
@@ -150,7 +149,7 @@ ul {
 										</div>
 									</div>
 									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
-									<a href="${cpath}/Notice.do?num=1" class="nav-item nav-link">커뮤니티</a>
+									<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a>
 									<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}"
 										class="nav-item nav-link">마이페이지</a>
 									<c:if test="${loginMember.mem_user_job eq '관리자'}">
@@ -172,12 +171,11 @@ ul {
 	<!-- 해충 피해 타이틀-->
 	<div class="container-xxl bg-white p-0"
 		style="display: flex; justify-content: center; align-items: center; max-width: none;">
-		<div class="container-fluid pt-4 px-4">
-			<div class="mx-auto" style="width: 200px;">
+		<div class="container-fluid p-4 px-4">
+			<div class="mx-auto" style="width: 170px;">
 				<div id="underline">
-					<h3>해충 피해</h3>
-				</div>
-				<br>
+					<h1 style="margin-bottom: 0px;">해충 피해</h1>
+				</div>				
 			</div>
 		</div>
 	</div>
@@ -206,8 +204,8 @@ ul {
 							<div class="row list_category_wrap" style="align-items: center;">
 								<div class="col-sm-2"
 									style="text-align: center; margin-left: 14%">
-									<h4 class="searchTitle" style="display: inline-block;">작물
-										선택</h4>
+									<h2 class="searchTitle" style="display: inline-block;">작물
+										선택</h2>
 									<i class="bi bi-chevron-double-right"></i>
 								</div>
 								<div class="col-sm-7">
@@ -241,7 +239,7 @@ ul {
 
 										<span style="margin-left: 30px;">
 											<button type="submit"
-												class="btn btn-outline-success searchTitle m-2">
+												class="btn btn-outline-success searchTitle m-2" style="width: 100px; font-size: 28px; padding-bottom: 0px;">
 												<i class="bi bi-hand-index-thumb" style="margin-right: 5px;"></i>보기
 											</button>
 										</span>
@@ -269,9 +267,14 @@ ul {
 				<div class="list_theme_wrap">
 					<ul class="list_theme container" style="padding-right: 32px;">
 
-						<li class="theme_item row"><strong class="col-sm-3"><h4>•&nbsp;사진</h4></strong>
-							<strong class="col-sm-3"><h4>•&nbsp;해충명(害蟲名)</h4></strong> <strong
-							class="col-sm-4"><h4>•&nbsp;간략설명</h4></strong></li>
+						<li class="theme_item row">
+						<strong class="col-sm-3">
+						<h2>•&nbsp;사진</h2></strong>
+							<strong class="col-sm-3">
+							<h2 style="float: left;">•&nbsp;해충명(</h2><h3 style="display: inline-block;">害蟲名</h3><h2 style="display: inline-block;">)</h2>
+							</strong> <strong
+							class="col-sm-4"><h2>•&nbsp;간략설명</h2>
+							</strong></li>
 						<hr>
 						<br>
 
@@ -280,8 +283,8 @@ ul {
 								class="theme_thumb" style="color: #000">
 								<li class="theme_item row"><img src="${list.pest_imgpath}"
 									alt="" width="auto;" height="250px;" class="col-sm-3" onerror="this.src='resources/image/img.png'"/> <strong
-									class="title elss col-sm-3" style="font-size: large;">${list.pest_name}</strong>
-									<p class="desc col-sm-6" style="font-size: large;">${list.pest_harm}</p></li>
+									class="title elss col-sm-3" style="font-size: 30px;">${list.pest_name}</strong>
+									<p class="desc col-sm-6" style="font-size: 30px;">${list.pest_harm}</p></li>
 							</a>
 							<hr>
 						</c:forEach>

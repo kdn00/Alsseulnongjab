@@ -19,6 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"	rel="stylesheet">
@@ -84,9 +85,9 @@ function close_pop(flag) {
 			<div class="container-xxl position-relative p-0" style="margin-right: 0px; max-width: inherit;">
 				<nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"	style="bottom: 0px;">
 					<a href="index.jsp" class="navbar-brand p-0">
-						<h4 class="m-0 text-white" style="font-style: italic;">
+						<h1 class="m-0 text-white" style="font-style: italic;">
 							<i class="fa me-3"></i> 알쓸농잡
-						</h4>
+						</h1>
 					</a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 						<span class="fa fa-bars"></span>
@@ -106,7 +107,7 @@ function close_pop(flag) {
 								</div>
 							</div>
 							<a href="${cpath}/Diary.do" class="nav-item nav-link active">농업일지</a> 
-							<a href="${cpath}/Notice.do?num=1" class="nav-item nav-link">커뮤니티</a> 
+							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
 						</div>
 					</div>
 					</c:when>
@@ -123,7 +124,7 @@ function close_pop(flag) {
 								</div>
 							</div>
 							<a href="${cpath}/Diary.do" class="nav-item nav-link active">농업일지</a> 
-							<a href="${cpath}/Notice.do?num=1" class="nav-item nav-link">커뮤니티</a> 
+							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
 							<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}" class="nav-item nav-link">마이페이지</a>
 							<c:if test="${loginMember.mem_user_job eq '관리자'}">
 							<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보 관리</a>
@@ -143,8 +144,8 @@ function close_pop(flag) {
 	<div class="container" style="background-color: rgb(250, 255, 250); width: 70%; height: 100px; border-radius: 1em; box-shadow: 3px 3px 3px gray; margin-top: 10px; max-width: none;">
 		<div>
 			<img src="resources/image/farmicon.png" align=right> 
-			<span align="center"><br>
-				<h2>농업일지</h2>
+			<span align="center">
+				<h1 style="margin-bottom: auto;">농업일지</h1>
 				<p>농업일지를 작성해보세요~♬</p> </span>
 		</div>
 	</div>
