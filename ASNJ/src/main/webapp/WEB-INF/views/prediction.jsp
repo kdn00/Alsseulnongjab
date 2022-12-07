@@ -19,9 +19,8 @@
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link	href="https://fonts.googleapis.com/css2?family=Dongle&display=swap"	rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
 <link
@@ -87,9 +86,9 @@
 					class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
 					style="bottom: 0px;">
 					<a href="index.jsp" class="navbar-brand p-0">
-						<h4 class="m-0 text-white" style="font-style: italic;">
+						<h1 class="m-0 text-white" style="font-style: italic;">
 							<i class="fa me-3"></i> 알쓸농잡
-						</h4>
+						</h1>
 					</a>
 					<button class="navbar-toggler" type="button"
 						data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -110,7 +109,7 @@
 								</div>
 							</div>
 							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
-							<a href="${cpath}/Notice.do?num=1" class="nav-item nav-link">커뮤니티</a> 
+							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
 						</div>
 					</div>
 					</c:when>
@@ -127,7 +126,7 @@
 								</div>
 							</div>
 							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
-							<a href="${cpath}/Notice.do?num=1" class="nav-item nav-link">커뮤니티</a> 
+							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
 							<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}" class="nav-item nav-link">마이페이지</a>
 							<c:if test="${loginMember.mem_user_job eq '관리자'}">
 							<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보 관리</a>
@@ -147,12 +146,11 @@
 	<!-- 병해충 분석 타이틀-->
 	<div class="container-xxl bg-white p-0"
 		style="display: flex; justify-content: center; align-items: center; max-width: none;">
-		<div class="container-fluid pt-4 px-4">
-			<div class="mx-auto" style="width: 200px;">
+		<div class="container-fluid p-4 px-4">
+			<div class="mx-auto" style="width: 170px;">
 				<div id="underline">
-					<h3>병해충 분석</h3>
-				</div>
-				<br>
+					<h1 style="margin-bottom: 0px;">병해충 분석</h1>
+				</div>				
 			</div>
 		</div>
 	</div>
@@ -189,20 +187,17 @@
 						accept="image/png, image/jpeg, image/gif">
 					<div class="fileContainer">
 						<div class="buttonContainer row" style="margin-top: 20px;">
-							<h4 class="col-md-3"
-								style="align-self: flex-end; margin-top: inherit;">파일명 :</h4>
+							<h2 class="col-md-3" style="align-self: flex-end;">파일명 :</h2>
 							<div class="position-relative col-md-9" style="max-width: 75%;">
-								<input id="fileName"
-									class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5"
-									type="text" placeholder="파일명">
-								<button type="submit"
-									class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-4">전송</button>
+								<input id="fileName" class="form-control bg-white border-0 w-100 ps-4 pe-5" type="text" placeholder="파일명" style="font-size: 30px;">
+								<button type="submit" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-1 me-4"
+								 style="width: 70px; font-size: 30px; padding: 0px !important;">전송</button>
 							</div>
 						</div>
 					</div>
 					<br>
 					<div>
-						<button type="reset" id="reset" class="btn btn-warning">초기화</button>
+						<button type="reset" id="reset" class="btn btn-warning" style="width: 70px; font-size: 30px; padding: 0px !important;">초기화</button>
 					</div>
 				</form>
 				<!-- 이미지 전송 폼 -->
