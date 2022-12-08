@@ -163,7 +163,7 @@
 		<div class="container-fluid p-4 px-4">
 			<div class="mx-auto" style="width: 150px;">
 				<div id="underline">
-					<h1 style="margin-bottom: 0px;">커뮤니티</h1>
+					<h3 style="margin-bottom: 0px;">커뮤니티</h3>
 				</div>
 			</div>
 		</div>
@@ -177,15 +177,15 @@
 			<ul class="nav nav-tabs nav-justified nav-pills nav-fill">
 				<li class="nav-item"><a class="nav-link active"
 					data-bs-toggle="tab" href="#actlist">
-						<h3 class="note-tab" style="color: currentcolor;">
+						<h4 class="note-tab" style="color: currentcolor;">
 							<i class="bi bi-megaphone"></i>&nbsp;문의사항
-						</h3>
+						</h4>
 				</a></li>
 				<li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
 					href="#info">
-						<h3 class="note-tab" style="color: currentcolor;">
+						<h4 class="note-tab" style="color: currentcolor;">
 							<i class="bi bi-pen"></i>&nbsp;공지사항
-						</h3>
+						</h4>
 				</a></li>
 			</ul>
 			<div class="tab-content">
@@ -374,9 +374,7 @@
 							<!-- 페이징 끝 --> </from>
 							<!-- 글쓰기 버튼 -->
 							<div class=" d-flex justify-content-end">
-								<button type="button"
-									class="btn btn-sm btn-success bi bi-check-circle"
-									data-bs-toggle="modal" data-bs-target="#myModal">
+								<button type="button" class="btn btn-sm btn-success bi bi-check-circle"	data-bs-toggle="modal" data-bs-target="#myModal">
 									<span> 글쓰기</span>
 								</button>
 							</div>

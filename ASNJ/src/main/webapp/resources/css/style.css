@@ -52,8 +52,7 @@ h6,
 
 /*** Button ***/
 .btn {
-    font-family: 'dongle','Montserrat', sans-serif;
-    font-size: 23px;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     transition: .5s;
 }
@@ -95,8 +94,8 @@ h6,
     position: relative;
     margin-left: 25px;
     padding: 35px 0;
-    font-size: 30px;
-    font-family: dongle,'Montserrat', sans-serif;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
     color: #FFFFFF !important;
     text-transform: uppercase;
     font-weight: 500;
@@ -335,7 +334,7 @@ h6,
 }
 
 .footer p {
-    font-size: 20;
+    font-size: 15px;
 }
 
 .footer .btn.btn-social {
@@ -361,7 +360,7 @@ h6,
     padding: 0;
     text-align: left;
     color: #FFFFFF;
-    font-size: 25px;
+    font-size: 15px;
     font-weight: normal;
     transition: .3s;
 }
@@ -381,7 +380,7 @@ h6,
 
 .footer .copyright {
     padding: 25px 0;
-    font-size: 25px;
+    font-size: 15px;
     border-top: 1px solid rgba(256, 256, 256, .3);
 }
 

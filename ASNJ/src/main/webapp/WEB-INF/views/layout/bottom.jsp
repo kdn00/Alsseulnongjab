@@ -14,7 +14,7 @@
 <meta content="" name="description">
 
 <!-- Favicon -->
-<link href="resources/image/Tab-icon.png" rel="icon">
+<link href="resources/image/favicon.ico" rel="icon">
 
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,6 +42,7 @@
 <!-- Template Stylesheet -->
 <link href="resources/css/style.css" rel="stylesheet">
 </head>
+
 <body>
 
 	<!-- Footer Start -->
@@ -62,7 +63,7 @@
 					<a href="index.jsp"> 
 						<img alt="" src="resources/image/nong.png"
 						style="float: left; width: 70px; height: 90px;">&nbsp;&nbsp;&nbsp;
-						<h1 class="text-white mb-4"	style="font-style: italic; display: inline-block; margin-left: 10px;">
+						<h1 class="text-white mb-4"	style="font-style: italic; display: inline-block;">
 							알쓸<br>농잡
 						</h1> <!-- <h1 class="text-white mb-4" style="font-style: italic;">농잡</h1>	 -->
 					</a>
@@ -70,16 +71,16 @@
 				<div class="col-lg-4 col-md-3">
 					<div class="row gy-5 g-4">
 						<div class="col-md-8">
-							<h2 class="fw-bold text-white mb-4">About Us</h2>
-							<a class="btn btn-link" href="${cpath}/Introduce.do" style="font-size: 28px">사이트소개</a> <a
-								class="btn btn-link" href="${cpath}/Notice.do?num=1" style="font-size: 28px">공지사항</a> <a
-								class="btn btn-link" href="#phone" style="font-size: 28px">연락처</a> 
-								<a class="btn btn-link"	href="${cpath}/Notice.do?num=1" style="font-size: 28px">광고문의</a>
+							<h5 class="fw-bold text-white mb-4">About Us</h5>
+							<a class="btn btn-link" href="${cpath}/Introduce.do">사이트소개</a> <a
+								class="btn btn-link" href="${cpath}/Notice.do">공지사항</a> <a
+								class="btn btn-link" href="#phone">연락처</a> <a class="btn btn-link"
+								href="${cpath}/Notice.do">광고문의</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-5 col-md-5">
-					<h2 class="fw-bold text-white mb-4">Team Introduction</h2>
+					<h5 class="fw-bold text-white mb-4">Get In Touch</h5>
 					<p class="mb-2">
 						<i class="fa fa-map-marker-alt me-3"></i>소재지 : 전라남도 순천시 석현동 87 5층,
 						스마트인재개발원 순천점

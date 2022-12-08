@@ -60,7 +60,7 @@
 									<input type="password" class="form-control" name="mem_user_pw" id="mem_user_pw" placeholder="비밀번호를 입력하세요." style="font-size: 30px;">
 									<label for="floatingPassword">비밀번호</label>
 								</div>
-									<button type="submit" class="btn btn-sm btn-success py-3 w-100 mb-4" style="font-size: 30px;">로그인</button>
+									<button type="submit" class="btn btn-sm btn-success py-3 w-100 mb-4" style="font-size: 25px;">로그인</button>
 							</form>
 							<p class="text-center mb-0">
 								Don't have an Account? <a href="${cpath}/Joinpage.do">회원가입</a>

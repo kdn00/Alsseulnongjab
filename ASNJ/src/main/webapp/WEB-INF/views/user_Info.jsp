@@ -125,7 +125,7 @@
 		<div class="container-fluid p-4 px-4">
 			<div class="mx-auto" style="width: 200px;">
 				<div id="underline">
-					<h1 style="margin-bottom: 0px;">회원정보 관리</h1>
+					<h3 style="margin-bottom: 0px;">회원정보 관리</h3>
 				</div>				
 			</div>
 		</div>
@@ -133,7 +133,7 @@
 	
 	<!-- 여기부터 넣으면 됩니다. -->
 	<div class="container-xs m-5 p-5 my-5 mt-4 borde rounded bg-success"
-		style="max-width: 100%; background-color: #f6ffe191 !important;">
+		style="max-width: 100%; height:auto; background-color: #f6ffe191 !important;">
 
 
 		<!-- 회원정보 테이블 시작 -->

@@ -19,7 +19,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"	rel="stylesheet">
@@ -85,9 +84,9 @@ function close_pop(flag) {
 			<div class="container-xxl position-relative p-0" style="margin-right: 0px; max-width: inherit;">
 				<nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"	style="bottom: 0px;">
 					<a href="index.jsp" class="navbar-brand p-0">
-						<h1 class="m-0 text-white" style="font-style: italic;">
+						<h4 class="m-0 text-white" style="font-style: italic;">
 							<i class="fa me-3"></i> 알쓸농잡
-						</h1>
+						</h4>
 					</a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 						<span class="fa fa-bars"></span>
@@ -103,7 +102,7 @@ function close_pop(flag) {
 								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
 								<div class="dropdown-menu m-0">
 									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
-									<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
+									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
 								</div>
 							</div>
 							<a href="${cpath}/Diary.do" class="nav-item nav-link active">농업일지</a> 
@@ -120,7 +119,7 @@ function close_pop(flag) {
 								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
 								<div class="dropdown-menu m-0">
 									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
-									<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
+									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
 								</div>
 							</div>
 							<a href="${cpath}/Diary.do" class="nav-item nav-link active">농업일지</a> 
@@ -144,8 +143,8 @@ function close_pop(flag) {
 	<div class="container" style="background-color: rgb(250, 255, 250); width: 70%; height: 100px; border-radius: 1em; box-shadow: 3px 3px 3px gray; margin-top: 10px; max-width: none;">
 		<div>
 			<img src="resources/image/farmicon.png" align=right> 
-			<span align="center">
-				<h1 style="margin-bottom: auto;">농업일지</h1>
+			<span align="center"><br>
+				<h2>농업일지</h2>
 				<p>농업일지를 작성해보세요~♬</p> </span>
 		</div>
 	</div>
@@ -158,7 +157,7 @@ function close_pop(flag) {
 				
 				<!-- 달력 시작 -->
 				<!-- 달력 -->
-				<div class="container-fluid pt-4 px-4" style="width: 90%; background-color: white; margin-top: 30px;">
+				<div class="container-fluid pb-4 px-4" style="width: 90%; background-color: white; margin-top: 30px;">
 					<br>
 					<div id="calendar"></div>
 				</div>
@@ -267,4 +266,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	    calendar.render();
 	  });
 </script>
+
+<script src="resources/js/ko.js"></script>
 </html>

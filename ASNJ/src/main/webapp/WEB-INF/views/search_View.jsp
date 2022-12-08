@@ -24,7 +24,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
 <link
@@ -116,15 +115,13 @@ ul {
 						<c:when test="${empty loginMember}">
 							<div class="collapse navbar-collapse" id="navbarCollapse">
 								<div class="navbar-nav ms-auto py-0">
-									<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트
-										소개</a> <a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충
-										분석</a>
+									<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a> 
+									<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
 									<div class="nav-item dropdown">
 										<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
 										<div class="dropdown-menu m-0">
-											<a href="${cpath}/Disease.do?disease_crops=고추"
-												class="dropdown-item">병(病) 피해</a>
-										<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
+											<a href="${cpath}/Disease.do?disease_crops=고추"	class="dropdown-item">병(病) 피해</a>
+											<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
 										</div>
 									</div>
 									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
@@ -135,24 +132,20 @@ ul {
 						<c:otherwise>
 							<div class="collapse navbar-collapse" id="navbarCollapse">
 								<div class="navbar-nav ms-auto py-0">
-									<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트
-										소개</a> <a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충
-										분석</a>
+									<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
+									<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충 분석</a>
 									<div class="nav-item dropdown">
 										<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
 										<div class="dropdown-menu m-0">
-											<a href="${cpath}/Disease.do?disease_crops=고추"
-												class="dropdown-item">병(病) 피해</a>
-										<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
+											<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
+											<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
 										</div>
 									</div>
 									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
 									<a href="${cpath}/Notice.do?num=1" class="nav-item nav-link">커뮤니티</a>
-									<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}"
-										class="nav-item nav-link">마이페이지</a>
+									<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}" class="nav-item nav-link">마이페이지</a>
 									<c:if test="${loginMember.mem_user_job eq '관리자'}">
-										<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보
-											관리</a>
+										<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보 관리</a>
 									</c:if>
 								</div>
 							</div>
@@ -172,7 +165,7 @@ ul {
 		<div class="container-fluid p-4 px-4">
 			<div class="mx-auto" style="width: 170px;">
 				<div id="underline">
-					<h1 style="margin-bottom: 0px;">검색 결과</h3>
+					<h3 style="margin-bottom: 0px;">검색 결과</h3>
 				</div>				
 			</div>
 		</div>

@@ -131,7 +131,7 @@
 							<label class="form-check-label" for="mem_user_job"> 홈가드닝 </label>
 						</div>
 						<br>
-						<button type="submit" class="btn btn-sm btn-success py-3 w-100 mb-4" style="font-size: 30px;">회원가입</button>
+						<button type="submit" class="btn btn-sm btn-success py-3 w-100 mb-4" style="font-size: 25px;">회원가입</button>
 						<p class="text-center mb-0">Already have an Account? <a href="${cpath}/Loginpage.do">로그인</a></p>
 					</form>
 				</div>

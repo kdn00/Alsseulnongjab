@@ -18,8 +18,8 @@
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
+	rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
 <link
@@ -42,36 +42,22 @@
 
 <!-- 이미지 배너 css -->
 <style>
-.carousel-inner .carousel-item .d-block {
-	height: 300px;
-	width: 100%;
-	overflow: hidden;
-}
+.carousel-inner .carousel-item .d-block{height: 300px; width: 100%; overflow: hidden;}
 
-.product-title {
-	text-align: center;
-	display: table;
-	border: 1px solid #cecece;
-	width: 280px;
-	height: 250px;
-}
+.product-title {text-align:center; display:table; border:1px solid #cecece;
+    width:280px; height:250px;}
 
-.image-div {
-	display: table-cell;
-	vertical-align: middle;
-}
+.image-div {display:table-cell; vertical-align:middle;}
 
-.d-block {
-	background-size: contain;
-}
+.d-block {background-size: contain;}
 </style>
 
 <!-- 배너 이미지 사이즈 맞춤 -->
 <style type="text/css">
 .carousel-inner img {
-	width: 300px;
-	height: 150px;
-	object-fit: cover;
+   width: 300px;
+   height: 150px;
+   object-fit: cover;
 }
 </style>
 
@@ -82,14 +68,13 @@
 	<div class="sticky-top">
 		<!-- 헤더 시작 -->
 		<jsp:include page="layout/top.jsp" />
-
+		
 		<!-- 헤더 끝 -->
-
+	
 		<!-- Full Screen Search Start -->
 		<div class="modal fade" id="searchModal" tabindex="-1">
 			<div class="modal-dialog modal-fullscreen">
-				<div class="modal-content"
-					style="background: rgba(29, 40, 51, 0.8);">
+				<div class="modal-content" style="background: rgba(29, 40, 51, 0.8);">
 					<div class="modal-header border-0">
 						<button type="button" class="btn bg-white btn-close"
 							data-bs-dismiss="modal" aria-label="Close"></button>
@@ -109,72 +94,62 @@
 			</div>
 		</div>
 		<!-- Full Screen Search End -->
-
+	
 		<!-- 카테고리 시작 -->
 		<div class="container-xxl py-5 bg-primary hero-header mb-0"
 			style="padding-top: 2rem !important; padding-bottom: 2rem !important; max-width: none;">
-			<div class="container-xxl position-relative p-0"
-				style="margin-right: 0px; max-width: inherit;">
-				<nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"	style="bottom: 0px;">
+			<div class="container-xxl position-relative p-0" style="margin-right: 0px; max-width: inherit;">
+				<nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
+					style="bottom: 0px;">
 					<a href="index.jsp" class="navbar-brand p-0">
-						<h1 class="m-0 text-white" style="font-style: italic;">
+						<h4 class="m-0 text-white" style="font-style: italic;">
 							<i class="fa me-3"></i> 알쓸농잡
-						</h1>
+						</h4>
 					</a>
 					<button class="navbar-toggler" type="button"
 						data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 						<span class="fa fa-bars"></span>
 					</button>
 					<c:choose>
-						<%-- 로그인 안 했을 때 --%>
-						<c:when test="${empty loginMember}">
-							<div class="collapse navbar-collapse" id="navbarCollapse">
-								<div class="navbar-nav ms-auto py-0">
-									<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트
-										소개</a> <a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충
-										분석</a>
-									<div class="nav-item dropdown">
-										<a href="#" class="nav-link dropdown-toggle"
-											data-bs-toggle="dropdown">병해충 정보</a>
-										<div class="dropdown-menu m-0">
-											<a href="${cpath}/Disease.do?disease_crops=고추"
-												class="dropdown-item">병(病) 피해</a> <a
-												href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충
-												피해</a>
-										</div>
-									</div>
-									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
-									<a href="${cpath}/Notice.do?num=1" class="nav-item nav-link">커뮤니티</a>
+					<%-- 로그인 안 했을 때 --%>
+					<c:when test="${empty loginMember}">
+					<div class="collapse navbar-collapse" id="navbarCollapse">
+						<div class="navbar-nav ms-auto py-0">
+							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
+							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
+							<div class="nav-item dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
+								<div class="dropdown-menu m-0">
+									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
+									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
 								</div>
 							</div>
-						</c:when>
-						<c:otherwise>
-							<div class="collapse navbar-collapse" id="navbarCollapse">
-								<div class="navbar-nav ms-auto py-0">
-									<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트
-										소개</a> <a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충
-										분석</a>
-									<div class="nav-item dropdown">
-										<a href="#" class="nav-link dropdown-toggle"
-											data-bs-toggle="dropdown">병해충 정보</a>
-										<div class="dropdown-menu m-0">
-											<a href="${cpath}/Disease.do?disease_crops=고추"
-												class="dropdown-item">병(病) 피해</a> <a
-												href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충
-												피해</a>
-										</div>
-									</div>
-									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
-									<a href="${cpath}/Notice.do?num=1" class="nav-item nav-link">커뮤니티</a>
-									<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}"
-										class="nav-item nav-link">마이페이지</a>
-									<c:if test="${loginMember.mem_user_job eq '관리자'}">
-										<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보
-											관리</a>
-									</c:if>
+							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
+							<a href="${cpath}/Notice.do?num=1" class="nav-item nav-link">커뮤니티</a> 
+						</div>
+					</div>
+					</c:when>
+					<c:otherwise>
+					<div class="collapse navbar-collapse" id="navbarCollapse">
+						<div class="navbar-nav ms-auto py-0">
+							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
+							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
+							<div class="nav-item dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
+								<div class="dropdown-menu m-0">
+									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
+									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
 								</div>
 							</div>
-						</c:otherwise>
+							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
+							<a href="${cpath}/Notice.do?num=1" class="nav-item nav-link">커뮤니티</a> 
+							<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}" class="nav-item nav-link">마이페이지</a>
+							<c:if test="${loginMember.mem_user_job eq '관리자'}">
+							<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보 관리</a>
+							</c:if>
+						</div>
+					</div>
+					</c:otherwise>
 					</c:choose>
 				</nav>
 			</div>
@@ -198,16 +173,13 @@
 		<!-- The slideshow/carousel -->
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="resources/image/farm4.jpg" alt=""
-					class="d-block img-fluid">
+				<img src="resources/image/farm4.jpg" alt="" class="d-block img-fluid">				
 			</div>
 			<div class="carousel-item text-cente image-div">
-				<img src="resources/image/farm2.jpg" alt=""
-					class="d-block img-fluid">
+				<img src="resources/image/farm2.jpg" alt="" class="d-block img-fluid">				
 			</div>
 			<div class="carousel-item text-cente image-div">
-				<img src="resources/image/farm3.jpg" alt=""
-					class="d-block img-fluid">
+				<img src="resources/image/farm3.jpg" alt="" class="d-block img-fluid">				
 			</div>
 		</div>
 
@@ -223,7 +195,7 @@
 	</div>
 	<!-- 이미지 슬라이스 끝 -->
 
-	<!-- 방제력 시작  -->
+<!-- 방제력 시작  -->
 	<div class="container mt-5">
 		<div class="row">
 			<div class="container-xxl bg-white p-0"
@@ -232,7 +204,7 @@
 					<div style="margin-left: 10%;">
 						<div class="mx-auto" style="width: 200px;">
 							<div id="underline">
-								<h1>농작업 일정</h1>
+								<h2>방제력</h2>
 							</div>
 						</div>
 					</div>
@@ -240,13 +212,12 @@
 			</div>
 
 			<!-- 내용 들어갈 곳 -->
-			<div class="container"width: 100%; height:1150px; margin-top: 20px;">
+			<div class="container" width: 100%; height: 1150px; margin-top: 20px;">
 
 				<!-- 방제력 달력 시작 -->
 				<div id="external-events" style="float: right; width: 100%;">
 					<!-- 달력 -->
-					<div
-						style="float: left; width: 85%; height: 100%; background-color: white; margin-top: 30px;">
+					<div class="pb-4 px-4" style="float: left; width: 85%; height: 100%; background-color: white; margin-top: 30px;">
 						<br>
 						<div id="calendar"></div>
 					</div>
@@ -254,30 +225,24 @@
 					<!-- 달력 끝 -->
 					<!-- 방제력 달력 체크 시작 -->
 					<div id="external-events" style="float: right; margin-top: 50px;">
-						<div class="container mt-3"
-							style="display: flex; justify-content: center; align-items: center;">
+						<div class="container mt-3"	style="display: flex; justify-content: center; align-items: center;">
 							<ul class="list-group">
-								<li class="list-group-item checkbox-inline"
-									style="background-color: #3FD739; color: #fff;"><input
-									class='filter' type="checkbox" value="고추" checked> 고추</li>
-								<li class="list-group-item checkbox-inline"
-									style="background-color: #75D19D; color: #fff;"><input
-									class='filter' type="checkbox" value="오이" checked> 오이</li>
-								<li class="list-group-item checkbox-inline"
-									style="background-color: #0099FF; color: #fff;"><input
-									class='filter' type="checkbox" value="파" checked> 파</li>
-								<li class="list-group-item checkbox-inline"
-									style="background-color: #FFB7B7; color: #fff;"><input
-									class='filter' type="checkbox" value="딸기" checked> 딸기</li>
-								<li class="list-group-item checkbox-inline"
-									style="background-color: #FCA651; color: #fff;"><input
-									class='filter' type="checkbox" value="호박" checked> 호박</li>
+								<li class="list-group-item checkbox-inline"	style="background-color: #3FD739; color: #fff;">
+									<input class='filter' type="checkbox" value="고추" checked> 고추</li>
+								<li class="list-group-item checkbox-inline"	style="background-color: #75D19D; color: #fff;">
+									<input class='filter' type="checkbox" value="오이" checked> 오이</li>
+								<li class="list-group-item checkbox-inline"	style="background-color: #0099FF; color: #fff;">
+									<input class='filter' type="checkbox" value="파" checked> 파</li>
+								<li class="list-group-item checkbox-inline"	style="background-color: #FFB7B7; color: #fff;">
+									<input class='filter' type="checkbox" value="딸기" checked> 딸기</li>
+								<li class="list-group-item checkbox-inline" style="background-color: #FCA651; color: #fff;">
+									<input class='filter' type="checkbox" value="호박" checked> 호박</li>
 							</ul>
 						</div>
 					</div>
 					<!-- 방제력 달력 체크 끝 -->
 				</div>
-				<!-- 방재력 달력 끝 -->
+			<!-- 방재력 달력 끝 -->
 			</div>
 			<!-- 내용 들어갈 곳 끝 -->
 		</div>
@@ -290,8 +255,7 @@
 </body>
 
 <!-- 달력 -->
-<link href='resources/fullcalendar-5.11.3/lib/main.min.css'
-	rel='stylesheet' />
+<link href='resources/fullcalendar-5.11.3/lib/main.min.css'	rel='stylesheet' />
 <script src='resources/fullcalendar-5.11.3/lib/main.min.js'></script>
 <script src='resources/js/ko.js'></script>
 

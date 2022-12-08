@@ -19,8 +19,9 @@
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
+	rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
 <link
@@ -44,19 +45,15 @@
 <!-- prediction Stylesheet -->
 <link href="resources/css/prediction.css" rel="stylesheet">
 <style type="text/css">
-hr {
-	background-color: green !important;
-	height: 2px !important;
-	/* border:none; */
-}
-
-ul {
-	list-style: none;
-}
-
-.theme_thumb:hover {
-	color: #50D050 !important;
-}
+	hr {
+	    background-color: green !important;
+	    height:2px !important;
+	    /* border:none; */
+	}
+	
+	ul {
+		list-style: none;	
+	}
 </style>
 </head>
 
@@ -65,12 +62,11 @@ ul {
 		<!-- 헤더 시작 -->
 		<jsp:include page="layout/top.jsp" />
 		<!-- 헤더 끝 -->
-
+	
 		<!-- Full Screen Search Start -->
 		<div class="modal fade" id="searchModal" tabindex="-1">
 			<div class="modal-dialog modal-fullscreen">
-				<div class="modal-content"
-					style="background: rgba(29, 40, 51, 0.8);">
+				<div class="modal-content" style="background: rgba(29, 40, 51, 0.8);">
 					<div class="modal-header border-0">
 						<button type="button" class="btn bg-white btn-close"
 							data-bs-dismiss="modal" aria-label="Close"></button>
@@ -90,75 +86,63 @@ ul {
 			</div>
 		</div>
 		<!-- Full Screen Search End -->
-
+	
 		<!-- 카테고리 시작 -->
 		<div class="container-xxl py-5 bg-primary hero-header mb-0"
 			style="padding-top: 2rem !important; padding-bottom: 2rem !important; max-width: none;">
-			<div class="container-xxl position-relative p-0"
-				style="margin-right: 0px; max-width: inherit;">
+			<div class="container-xxl position-relative p-0" style="margin-right: 0px; max-width: inherit;">
 				<nav
 					class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
 					style="bottom: 0px;">
 					<a href="index.jsp" class="navbar-brand p-0">
-						<h1 class="m-0 text-white" style="font-style: italic;">
+						<h4 class="m-0 text-white" style="font-style: italic;">
 							<i class="fa me-3"></i> 알쓸농잡
-						</h1>
+						</h4>
 					</a>
 					<button class="navbar-toggler" type="button"
 						data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 						<span class="fa fa-bars"></span>
 					</button>
 					<c:choose>
-						<%-- 로그인 안 했을 때 --%>
-						<c:when test="${empty loginMember}">
-							<div class="collapse navbar-collapse" id="navbarCollapse">
-								<div class="navbar-nav ms-auto py-0">
-									<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트
-										소개</a> <a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충
-										분석</a>
-									<div class="nav-item dropdown">
-										<a href="#" class="nav-link dropdown-toggle active"
-											data-bs-toggle="dropdown">병해충 정보</a>
-										<div class="dropdown-menu m-0">
-											<a href="${cpath}/Disease.do?disease_crops=고추"
-												class="dropdown-item">병(病) 피해</a> <a
-												href="${cpath}/Pests.do?pest_crops=고추"
-												class="dropdown-item active">해충 피해</a>
-										</div>
-									</div>
-									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
-									<a href="${cpath}/Notice.do?num=1" class="nav-item nav-link">커뮤니티</a>
+					<%-- 로그인 안 했을 때 --%>
+					<c:when test="${empty loginMember}">
+					<div class="collapse navbar-collapse" id="navbarCollapse">
+						<div class="navbar-nav ms-auto py-0">
+							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
+							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
+							<div class="nav-item dropdown">
+								<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">병해충 정보</a>
+								<div class="dropdown-menu m-0">
+									<a href="${cpath}/Disease.do?disease_crops=고추"	class="dropdown-item">병(病) 피해</a> 
+									<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item active">해충 피해</a>
 								</div>
 							</div>
-						</c:when>
-						<%-- 로그인 했을 때 --%>
-						<c:otherwise>
-							<div class="collapse navbar-collapse" id="navbarCollapse">
-								<div class="navbar-nav ms-auto py-0">
-									<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트
-										소개</a> <a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충
-										분석</a>
-									<div class="nav-item dropdown">
-										<a href="#" class="nav-link dropdown-toggle active"
-											data-bs-toggle="dropdown">병해충 정보</a>
-										<div class="dropdown-menu m-0">
-											<a href="${cpath}/Disease.do?disease_crops=고추"
-												class="dropdown-item">병(病) 피해</a> <a
-												href="${cpath}/Pests.do?pest_crops=고추"
-												class="dropdown-item active">해충 피해</a>
-										</div>
-									</div>
-									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
-									<a href="${cpath}/Notice.do?num=1" class="nav-item nav-link">커뮤니티</a>
-									<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}"
-										class="nav-item nav-link">마이페이지</a>
-									<c:if test="${loginMember.mem_user_job eq '관리자'}">
-										<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보
-											관리</a>
-									</c:if>
+							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
+							<a href="${cpath}/Notice.do?num=1" class="nav-item nav-link">커뮤니티</a> 
+						</div>
+					</div>
+					</c:when>
+					<c:otherwise>
+					<div class="collapse navbar-collapse" id="navbarCollapse">
+						<div class="navbar-nav ms-auto py-0">
+							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
+							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
+							<div class="nav-item dropdown">
+								<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">병해충 정보</a>
+								<div class="dropdown-menu m-0">
+									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
+									<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item active">해충 피해</a>
 								</div>
 							</div>
-						</c:otherwise>
+							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
+							<a href="${cpath}/Notice.do?num=1" class="nav-item nav-link">커뮤니티</a> 
+							<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}" class="nav-item nav-link">마이페이지</a>
+							<c:if test="${loginMember.mem_user_job eq '관리자'}">
+							<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보 관리</a>
+							</c:if>
+						</div>
+					</div>
+					</c:otherwise>
 					</c:choose>
 				</nav>
 			</div>
@@ -171,18 +155,18 @@ ul {
 	<!-- 해충 피해 타이틀-->
 	<div class="container-xxl bg-white p-0"
 		style="display: flex; justify-content: center; align-items: center; max-width: none;">
-		<div class="container-fluid p-4 px-4">
-			<div class="mx-auto" style="width: 170px;">
+		<div class="container-fluid pt-4 px-4">
+			<div class="mx-auto" style="width: 200px;">
 				<div id="underline">
-					<h1 style="margin-bottom: 0px;">해충 피해</h1>
-				</div>				
+					<h3>해충 피해</h3>
+				</div>
+				<br>
 			</div>
 		</div>
 	</div>
 
 	<!--  해충 피해 내용 시작 -->
 	<div id="themecast" class="container-xxl p-0 ml-5">
-
 
 		<!-- 작물 카테고리 -->
 		<c:choose>
@@ -238,7 +222,7 @@ ul {
 
 										<span style="margin-left: 30px;">
 											<button type="submit"
-												class="btn btn-outline-success searchTitle m-2" style="width: 100px; font-size: 28px; padding-bottom: 0px;">
+												class="btn btn-success searchTitle m-2" style="width: 100px; font-size: 20px; padding-bottom: 0px;">
 												<i class="bi bi-hand-index-thumb" style="margin-right: 5px;"></i>보기
 											</button>
 										</span>
@@ -312,7 +296,7 @@ ul {
 	</div>
 	<!-- 푸터 끝 -->
 
-
+	
 
 </body>
 </html>

@@ -151,7 +151,7 @@
 			<div style="margin-left: 10%;">
 				<div class="mx-auto" style="width: 320px;">
 					<div id="underline">
-						<h1 style="margin-bottom: 0px;">${loginMember.mem_user_name}님 마이페이지</h1>
+						<h3 style="margin-bottom: 0px;">${loginMember.mem_user_name}님 마이페이지</h3>
 					</div>
 				</div>
 			</div>	
@@ -164,11 +164,11 @@
 					<ul class="nav nav-tabs nav-justified nav-pills nav-fill">
 						<li class="nav-item">
 							<a class="nav-link active"	data-bs-toggle="tab" href="#info">
-								<h3 class="note-tab" style="color: currentcolor;">개인정보</h3></a>
+								<h4 class="note-tab" style="color: currentcolor;">개인정보</h4></a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" data-bs-toggle="tab" href="#actlist">
-								<h3 class="note-tab" style="color: currentcolor;">활동내역</h3>
+								<h4 class="note-tab" style="color: currentcolor;">활동내역</h4>
 							</a>
 						</li>
 					</ul>
@@ -181,7 +181,7 @@
 								<table class="table table-bordered caption-top"	style="vertical-align: middle;">
 									<thead class="table table-light">
 										<th>아이디</th>
-										<th style="font-size: 35px;">${loginMember.mem_user_id}</th> <!-- 아이디값 받을 곳 -->
+										<th>${loginMember.mem_user_id}</th> <!-- 아이디값 받을 곳 -->
 									</thead>
 									<tbody>
 										<!-- 닉네임  -->
@@ -193,18 +193,18 @@
 										<tr>
 											<td>수정할 닉네임</td>
 											<td>
-												<input type="text" name="mem_user_name" value="${loginMember.mem_user_name}" class="form-control" style="font-size: 30px;" placeholder="수정할 닉네임을 적어주세요" aria-label="Recipient's username1" aria-describedby="button-addon1">
+												<input type="text" name="mem_user_name" value="${loginMember.mem_user_name}" class="form-control" placeholder="수정할 닉네임을 적어주세요" aria-label="Recipient's username1" aria-describedby="button-addon1">
 												<!-- <button class="btn btn-success" type="submit" id="button-addon1">수정하기</button></td> -->
 										</tr>
 										<!-- 비밀번호  -->
 										<tr>
 											<td>비밀번호</td>
-											<td><input type="password" value="${loginMember.mem_user_pw}" style="border: none; font-size: 30px;" disabled/></td>
+											<td><input type="password" value="${loginMember.mem_user_pw}" style="border: none;" disabled/></td>
 										</tr>
 										<!-- 수정할 비밀번호 -->
 										<tr>
 											<td>수정할 비밀번호</td>
-											<td><input type="password" name="mem_user_pw" value="${loginMember.mem_user_pw}" class="form-control" style="font-size: 30px;" placeholder="수정할 비밀번호를 적어주세요" aria-label="Recipient's username2" aria-describedby="button-addon2"/></td>
+											<td><input type="password" name="mem_user_pw" value="${loginMember.mem_user_pw}" class="form-control" placeholder="수정할 비밀번호를 적어주세요" aria-label="Recipient's username2" aria-describedby="button-addon2"/></td>
 										</tr>
 										<%--<!-- 비밀번호 재확인 -->
 										<tr>
@@ -245,9 +245,9 @@
 								</table>
 								<!-- send -->
 								<div style="justify-content: center; margin-left: 40%;">
-									<button class="btn btn-success" style="padding: 0 20px !important; font-size: 30px;" type="submit" id="button-addon4">저장</button>
+									<button class="btn btn-success" style="width:100px; " type="submit" id="button-addon4">저장</button>
 									&nbsp; &nbsp;
-									<button class="btn btn-success" type="submit" id="button-addon5" style="padding: 0 20px !important; font-size: 30px;">회원탈퇴</button>
+									<button class="btn btn-success" type="submit" id="button-addon5">회원탈퇴</button>
 								</div>
 							</form>
 						</div>

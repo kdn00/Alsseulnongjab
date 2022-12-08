@@ -170,7 +170,7 @@ ul {
 		<div class="container-fluid p-4 px-4">
 			<div class="mx-auto" style="width: 200px;">
 				<div id="underline">
-					<h1 style="margin-bottom: 0px;">병해충 정보</h3>
+					<h3 style="margin-bottom: 0px;">병해충 정보</h3>
 				</div>				
 			</div>
 		</div>
@@ -298,13 +298,12 @@ ul {
 				style="max-width: inherit;">
 				<div class="row" style="width: 400px; text-align: center;">
 					<div class="col-sm-6 p-2">
-						<button type="button" class="btn btn-success" onclick="history.go(-1);" style="font-size: 30px; padding: 5px 20px 0px 20px !important;">
-							<strong class=""><i class="bi bi-reply-all"></i>&nbsp;이전
-								페이지로</strong>
+						<button type="button" class="btn btn-success" onclick="history.go(-1);">
+							<strong class=""><i class="bi bi-reply-all"></i>&nbsp;이전 페이지로</strong>
 						</button>
 					</div>
 					<div class="col-sm-6 p-2">
-						<button type="button" class="btn btn-success" style="font-size: 30px; padding: 5px 20px 0px 20px !important;" onclick="location.href='${cpath}/Notice.do?num=1'">
+						<button type="button" class="btn btn-success" onclick="location.href='${cpath}/Notice.do?num=1'">
 							<strong class=""><i class="bi bi-pen"></i>&nbsp;문의하기</strong>
 						</button>
 					</div>

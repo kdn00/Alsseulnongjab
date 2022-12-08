@@ -1,4 +1,4 @@
-<%@page import="com.asnj.entity.Pest"%>
+<%@page import="com.asnj.entity.Disease"%>
 <%@page import="com.asnj.entity.Member"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -25,7 +25,6 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
 	rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
 <link
@@ -104,9 +103,9 @@ ul {
 				<nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
 					style="bottom: 0px;">
 					<a href="index.jsp" class="navbar-brand p-0">
-						<h1 class="m-0 text-white" style="font-style: italic;">
+						<h4 class="m-0 text-white" style="font-style: italic;">
 							<i class="fa me-3"></i> 알쓸농잡
-						</h1>
+						</h4>
 					</a>
 					<button class="navbar-toggler" type="button"
 						data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -123,7 +122,7 @@ ul {
 								<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">병해충 정보</a>
 								<div class="dropdown-menu m-0">
 									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item active">병(病) 피해</a>
-									<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
+									<a href="${cpath}/Notice.do?num=1" class="dropdown-item">해충 피해</a>
 								</div>
 							</div>
 							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
@@ -140,7 +139,7 @@ ul {
 								<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">병해충 정보</a>
 								<div class="dropdown-menu m-0">
 									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item active">병(病) 피해</a>
-									<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
+									<a href="${cpath}/Pests.do?pest_crops=고추 class="dropdown-item">해충 피해</a>
 								</div>
 							</div>
 							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
@@ -164,12 +163,12 @@ ul {
 	<!-- 병 피해 타이틀-->
 	<div class="container-xxl bg-white p-0"
 		style="display: flex; justify-content: center; align-items: center; max-width: none;">
-		<div class="container-fluid p-4 px-4">
-			<div class="mx-auto" style="width: 170px;">
+		<div class="container-fluid pt-4 px-4">
+			<div class="mx-auto" style="width: 200px;">
 				<div id="underline">
-					<h1 style="float: left; margin-bottom: 0px;">병(</h1><h3 style="display: inline-block;">病</h3><h1 style="display: inline-block;margin-bottom: 0px;">) 피해</h1>
+					<h3>병(病) 피해</h3>
 				</div>
-				
+				<br>
 			</div>
 		</div>
 	</div>
@@ -212,7 +211,7 @@ ul {
 								<label class="form-check-label"	for="호박">호박</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 								
 									<span style="margin-left: 30px;">
-									<button type="submit" class="btn btn-outline-success searchTitle m-2" style="width: 100px; font-size: 28px; padding-bottom: 0px;">
+									<button type="submit" class="btn btn-success searchTitle m-2" style="width: 100px; font-size: 20px; padding-bottom: 0px;">
 										<i class="bi bi-hand-index-thumb" style="margin-right: 5px;"></i>보기
 									</button>
 								</span>
@@ -287,13 +286,11 @@ ul {
 	<!-- 푸터 시작 -->
 	<div>
 		<jsp:include page="layout/bottom.jsp" />
+
 	</div>
 	<!-- 푸터 끝 -->
 
 	<!-- js파일 -->
-	<script type="text/javascript">
-		
-	</script>
 
 </body>
 </html>
