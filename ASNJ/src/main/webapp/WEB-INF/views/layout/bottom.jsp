@@ -71,10 +71,10 @@
 					<div class="row gy-5 g-4">
 						<div class="col-md-8">
 							<h2 class="fw-bold text-white mb-4">About Us</h2>
-							<a class="btn btn-link" href="${cpath}/Introduce.do">사이트소개</a> <a
-								class="btn btn-link" href="${cpath}/Notice.do">공지사항</a> <a
-								class="btn btn-link" href="#phone">연락처</a> <a class="btn btn-link"
-								href="${cpath}/Notice.do">광고문의</a>
+							<a class="btn btn-link" href="${cpath}/Introduce.do" style="font-size: 28px">사이트소개</a> <a
+								class="btn btn-link" href="${cpath}/Notice.do?num=1" style="font-size: 28px">공지사항</a> <a
+								class="btn btn-link" href="#phone" style="font-size: 28px">연락처</a> 
+								<a class="btn btn-link"	href="${cpath}/Notice.do?num=1" style="font-size: 28px">광고문의</a>
 						</div>
 					</div>
 				</div>

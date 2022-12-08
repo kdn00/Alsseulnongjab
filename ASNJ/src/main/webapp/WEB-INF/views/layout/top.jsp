@@ -111,16 +111,15 @@ input:focus::-webkit-input-placeholder {
 					</div>
 				</c:when>
 				<c:otherwise>
-					<div class="col-2 p-2 m-3"
+					<div class="col-2 p-2 m-2"
 						style="display: inline-block; min-width: max-content;">
 						<div class="header__login"
 							style="margin-right: 10px; display: flex; align-items: center; color: #7ebc12;">
 							<img alt="" src="resources/image/handshake-simple-solid.svg"
 								style="width: 30px; height: 30px;">&nbsp;&nbsp; <label
 								for="mem_user_pw" style="padding-right: 15px;">
-								<p style="margin-bottom: 0px;">
-									<span
-										style="font-size: x-large; font-weight: bolder; color: #537f07;">${loginMember.mem_user_name}</span>&nbsp;님
+								<p style="margin-bottom: 0px; height: 50px;">
+									<span style="font-size: 50px; font-weight: bolder; color: #537f07;">${loginMember.mem_user_name}</span>&nbsp;님
 								</p>어서오세요!
 							</label>&nbsp;&nbsp; <a href="${cpath}/Logout.do"
 								class="btn btn-outline-success bi bi-door-open"></i>로그아웃</a>

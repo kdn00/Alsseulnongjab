@@ -19,6 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"	rel="stylesheet">
@@ -44,22 +45,22 @@
 					<a href="index.jsp"><img src="resources/img/logo/logo2.png"></a>
 				</div>	
 				<br>
-					<h3 class="text-center">알쓸농잡에 오신것을 환영합니다.</h3>
+					<h2 class="text-center">알쓸농잡에 오신것을 환영합니다.</h2>
 					<br>
-					<h5 class="text-center">알쓸농잡 로그인</h5>
+					<h3 class="text-center" style="font-weight: 100 !important;">알쓸농잡 로그인</h3>
 					<hr>
 					<br>
 					<br>
 							<form class="form-inline" action="Login.do" method="post">
 								<div class="form-floating mb-3">
-									<input type="text" class="form-control" name="mem_user_id" id="mem_user_id" placeholder="name@example.com">
+									<input type="text" class="form-control" name="mem_user_id" id="mem_user_id" placeholder="name@example.com" style="font-size: 30px;">
 									<label for="floatingInput">아이디 </label>
 								</div>
 								<div class="form-floating mb-3">
-									<input type="password" class="form-control" name="mem_user_pw" id="mem_user_pw" placeholder="비밀번호를 입력하세요.">
+									<input type="password" class="form-control" name="mem_user_pw" id="mem_user_pw" placeholder="비밀번호를 입력하세요." style="font-size: 30px;">
 									<label for="floatingPassword">비밀번호</label>
 								</div>
-									<button type="submit" class="btn btn-sm btn-success py-3 w-100 mb-4">로그인</button>
+									<button type="submit" class="btn btn-sm btn-success py-3 w-100 mb-4" style="font-size: 30px;">로그인</button>
 							</form>
 							<p class="text-center mb-0">
 								Don't have an Account? <a href="${cpath}/Joinpage.do">회원가입</a>
