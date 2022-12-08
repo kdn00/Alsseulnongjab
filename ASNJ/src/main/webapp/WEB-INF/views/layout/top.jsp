@@ -92,7 +92,7 @@ input:focus::-webkit-input-placeholder {
 				<form action="${cpath}/SearchView.do" method="get">
 					<input id="searchInput" class="form-control bg-transparent w-100 ps-4 pe-5" type="text" name="search" placeholder="검색어를 입력하세요." style="font-size: 30px;">
 					<input type="hidden" name="num" value=1>
-					<button type="submit" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 me-3" style="margin-top: 3px;">검색</button>
+					<button type="submit" class="btn btn-primary px-3 position-absolute top-0 end-0 me-3" style="margin-top: 6.3px; font-size: 30px; padding: 0 20px !important;">검색</button>
 				</form>
 			</div>
 

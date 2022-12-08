@@ -20,12 +20,8 @@
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
-	rel="stylesheet">
-<link
-	href="https://fonts.googleapis.com/css2?family=Dongle&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
 <link
@@ -46,8 +42,9 @@
 <!-- Template Stylesheet -->
 <link href="resources/css/style.css" rel="stylesheet">
 
+<!-- 본문 탭 active -->
 <style type="text/css">
-.not-tab:active {
+.note-tab:active {
 	color: #50D050 !important;
 }
 </style>
@@ -164,7 +161,7 @@
 	<div class="container-xxl bg-white p-0"
 		style="display: flex; justify-content: center; align-items: center; max-width: none;">
 		<div class="container-fluid p-4 px-4">
-			<div class="mx-auto" style="width: 200px;">
+			<div class="mx-auto" style="width: 150px;">
 				<div id="underline">
 					<h1 style="margin-bottom: 0px;">커뮤니티</h1>
 				</div>
@@ -180,13 +177,13 @@
 			<ul class="nav nav-tabs nav-justified nav-pills nav-fill">
 				<li class="nav-item"><a class="nav-link active"
 					data-bs-toggle="tab" href="#info">
-						<h3 class="not-tab" style="color: currentcolor;">
+						<h3 class="note-tab" style="color: currentcolor;">
 							<i class="bi bi-megaphone"></i>&nbsp;공지사항
 						</h3>
 				</a></li>
 				<li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
 					href="#actlist">
-						<h3 class="not-tab" style="color: currentcolor;">
+						<h3 class="note-tab" style="color: currentcolor;">
 							<i class="bi bi-pen"></i>&nbsp;문의사항
 						</h3>
 				</a></li>
