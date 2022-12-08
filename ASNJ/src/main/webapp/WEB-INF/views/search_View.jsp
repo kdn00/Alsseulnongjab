@@ -23,7 +23,9 @@
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
+	rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
 <link
@@ -99,12 +101,13 @@ ul {
 			style="padding-top: 2rem !important; padding-bottom: 2rem !important; max-width: none;">
 			<div class="container-xxl position-relative p-0"
 				style="margin-right: 0px; max-width: inherit;">
-				<nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
+				<nav
+					class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
 					style="bottom: 0px;">
 					<a href="index.jsp" class="navbar-brand p-0">
-						<h1 class="m-0 text-white" style="font-style: italic;">
+						<h4 class="m-0 text-white" style="font-style: italic;">
 							<i class="fa me-3"></i> 알쓸농잡
-						</h1>
+						</h4>
 					</a>
 					<button class="navbar-toggler" type="button"
 						data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -115,13 +118,17 @@ ul {
 						<c:when test="${empty loginMember}">
 							<div class="collapse navbar-collapse" id="navbarCollapse">
 								<div class="navbar-nav ms-auto py-0">
-									<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a> 
-									<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
+									<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트
+										소개</a> <a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충
+										분석</a>
 									<div class="nav-item dropdown">
-										<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
+										<a href="#" class="nav-link dropdown-toggle"
+											data-bs-toggle="dropdown">병해충 정보</a>
 										<div class="dropdown-menu m-0">
-											<a href="${cpath}/Disease.do?disease_crops=고추"	class="dropdown-item">병(病) 피해</a>
-											<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
+											<a href="${cpath}/Disease.do?disease_crops=고추"
+												class="dropdown-item">병(病) 피해</a> <a
+												href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충
+												피해</a>
 										</div>
 									</div>
 									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
@@ -132,20 +139,26 @@ ul {
 						<c:otherwise>
 							<div class="collapse navbar-collapse" id="navbarCollapse">
 								<div class="navbar-nav ms-auto py-0">
-									<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
-									<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충 분석</a>
+									<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트
+										소개</a> <a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충
+										분석</a>
 									<div class="nav-item dropdown">
-										<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충 정보</a>
+										<a href="#" class="nav-link dropdown-toggle"
+											data-bs-toggle="dropdown">병해충 정보</a>
 										<div class="dropdown-menu m-0">
-											<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
-											<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
+											<a href="${cpath}/Disease.do?disease_crops=고추"
+												class="dropdown-item">병(病) 피해</a> <a
+												href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충
+												피해</a>
 										</div>
 									</div>
 									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
 									<a href="${cpath}/Notice.do?num=1" class="nav-item nav-link">커뮤니티</a>
-									<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}" class="nav-item nav-link">마이페이지</a>
+									<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}"
+										class="nav-item nav-link">마이페이지</a>
 									<c:if test="${loginMember.mem_user_job eq '관리자'}">
-										<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보 관리</a>
+										<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보
+											관리</a>
 									</c:if>
 								</div>
 							</div>
@@ -166,7 +179,7 @@ ul {
 			<div class="mx-auto" style="width: 170px;">
 				<div id="underline">
 					<h3 style="margin-bottom: 0px;">검색 결과</h3>
-				</div>				
+				</div>
 			</div>
 		</div>
 	</div>
@@ -178,28 +191,34 @@ ul {
 		<div class="main_category row align-items-center table table-hover"
 			style="text-align: center; width: 80%; margin: auto;">
 			<!-- <div class="w-25 p-4 m-5 col-md-auto flex-fill"> -->
-				<div id="NM_THEME_CATE_GROUPS" class="group_category d-flex justify-content-around"
-					data-demo-key="default">
-					<div class="row list_category_wrap" style="align-items: center;">
-						<div class="mt-5">
+			<div id="NM_THEME_CATE_GROUPS"
+				class="group_category d-flex justify-content-around"
+				data-demo-key="default">
+				<div class="row list_category_wrap" style="align-items: center;">
+					<div class="mt-5">
 						<c:choose>
-						    <c:when test="${fn:length(diseassearchlist) == 0 and fn:length(pestsearchlist) == 0}">
-						    <h2 style="float: left; display: flex;">
-							<i class="bi bi-info-circle" style="margin-right: 20px;">
-							</i>&nbsp;"</h2><h2 style="color: #04aa5d; display: inline-block; font-size: 4rem;">${search}</h2><h2 style="display: inline-block;">"&nbsp;에 대한 게시글이 없습니다.
-							</h2>
-						    </c:when>
-						    <c:otherwise>
-						    <h2 style="float: left; display: flex;">
-							<i class="bi bi-info-circle" style="margin-right: 20px;">
-							</i>입력하신&nbsp;"</h2><h2 style="color: #04aa5d; display: inline-block; font-size: 4rem;">${search}</h2><h2 style="display: inline-block;">"&nbsp;에  대한 검색 결과입니다.
-							</h2>
-						    </c:otherwise>
-						   </c:choose>
-						
-						</div>
+							<c:when
+								test="${fn:length(diseassearchlist) == 0 and fn:length(pestsearchlist) == 0}">
+								<h3 style="float: left; display: flex;">
+									<i class="bi bi-info-circle" style="margin-right: 20px;"></i>&nbsp;"
+								</h3>
+								<h2 style="color: #04aa5d; display: inline-block;">${search}</h2>
+								<h3 style="display: inline-block;">"&nbsp;에 대한 게시글이 없습니다.</h3>
+							</c:when>
+							<c:otherwise>
+								<h3 style="float: left; display: flex;">
+									<i class="bi bi-info-circle" style="margin-right: 20px;"></i>
+									입력하신 "&nbsp;
+								</h3>
+								<h2 style="color: #04aa5d; display: inline-block;">
+									${search}</h2>
+								<h3 style="display: inline-block;">&nbsp;" 에 대한 검색 결과입니다.</h3>
+							</c:otherwise>
+						</c:choose>
+
 					</div>
 				</div>
+			</div>
 			<!-- </div> -->
 		</div>
 		<br> <br>
@@ -216,81 +235,87 @@ ul {
 					<ul class="list_theme container" style="padding-right: 32px;">
 
 						<li class="theme_item row"><strong class="col-sm-3">
-						<h3>•&nbsp;병해충 피해</h3></strong></li>
+								<h4>•&nbsp;병해충 피해</h4>
+						</strong></li>
 						<hr>
 						<br>
 						<c:choose>
-						    <c:when test="${fn:length(diseassearchlist) == 0} && ${fn:length(pestsearchlist) == 0}">
-						        <h2> 빠른 시일 내에 정보를 등록하겠습니다. 죄송합니다.</h2>
-						    </c:when>
-						    <c:otherwise>
-						    	<%-- <h5>총 ${fn:length(diseassearchlist)}개의 게시글이 있습니다.</h5> --%>
-						        <c:forEach items="${diseassearchlist}" var="Dlist">
-						            <a href="PredictionInfoPage.do?disease_pk=${Dlist.disease_pk}"
-								class="theme_thumb" style="color: #000">
-								<li class="theme_item row"><img
-									src="${Dlist.disease_imgpath}" alt="" width="auto;"
-									height="250px;" class="col-sm-3" onerror="this.src='resources/image/img.png'"/> <strong
-									class="title elss col-sm-3" style="font-size: 30px;;">${Dlist.disease_name}</strong>
-									<p class="desc col-sm-6" style="font-size: 30px;;">${Dlist.disease_symptom}</p></li>
-							</a>
-							<hr>
-						        </c:forEach>
-						    <c:forEach items="${pestsearchlist}" var="Plist">
-							<a href="PestInfoPage.do?pest_pk=${Plist.pest_pk}" class="theme_thumb" style="color: #000">
-							<li class="theme_item row">
-							<img src="${Plist.pest_imgpath}" alt="" width="auto;" height="250px;" class="col-sm-3" onerror="this.src='resources/image/img.png'"/>
-							<strong class="title elss col-sm-3" style="font-size: 30px;">${Plist.pest_name}</strong>
-							<p class="desc col-sm-6" style="font-size: 30px;">${Plist.pest_harm}</p></li>
-							</a>
-							<hr>
-							</c:forEach>
-						    </c:otherwise> 
+							<c:when
+								test="${fn:length(diseassearchlist) == 0} && ${fn:length(pestsearchlist) == 0}">
+								<h2>빠른 시일 내에 정보를 등록하겠습니다. 죄송합니다.</h2>
+							</c:when>
+							<c:otherwise>
+								<%-- <h5>총 ${fn:length(diseassearchlist)}개의 게시글이 있습니다.</h5> --%>
+								<c:forEach items="${diseassearchlist}" var="Dlist">
+									<a href="PredictionInfoPage.do?disease_pk=${Dlist.disease_pk}"
+										class="theme_thumb" style="color: #000">
+										<li class="theme_item row"><img
+											src="${Dlist.disease_imgpath}" alt="" width="auto;"
+											height="250px;" class="col-sm-3"
+											onerror="this.src='resources/image/img.png'" /> <strong
+											class="title elss col-sm-3">${Dlist.disease_name}</strong>
+											<p class="desc col-sm-6">${Dlist.disease_symptom}</p></li>
+									</a>
+									<hr>
+								</c:forEach>
+								<c:forEach items="${pestsearchlist}" var="Plist">
+									<a href="PestInfoPage.do?pest_pk=${Plist.pest_pk}"
+										class="theme_thumb" style="color: #000">
+										<li class="theme_item row"><img
+											src="${Plist.pest_imgpath}" alt="" width="auto;"
+											height="250px;" class="col-sm-3"
+											onerror="this.src='resources/image/img.png'" /> <strong
+											class="title elss col-sm-3">${Plist.pest_name}</strong>
+											<p class="desc col-sm-6">${Plist.pest_harm}</p></li>
+									</a>
+									<hr>
+								</c:forEach>
+							</c:otherwise>
 						</c:choose>
-						
+
 					</ul>
 				</div>
 				<br>
 
-					<!-- 페이징 시작 -->
-					<nav class=" d-flex justify-content-center"
-						aria-label="Page navigation example">
-						<ul class="pagination">
-							<li class="page-item"><a class="page-link" href="#"
-								aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-							</a></li>
-							<c:choose>
-							<c:when test="${fn:length(diseassearchlist) == 0 and fn:length(pestsearchlist) == 0}">
-							<li class="page-item">
-								<a class="page-link" href="#">1</a>
-								</li>
+				<!-- 페이징 시작 -->
+				<nav class=" d-flex justify-content-center"
+					aria-label="Page navigation example">
+					<ul class="pagination">
+						<li class="page-item"><a class="page-link" href="#"
+							aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+						</a></li>
+						<c:choose>
+							<c:when
+								test="${fn:length(diseassearchlist) == 0 and fn:length(pestsearchlist) == 0}">
+								<li class="page-item"><a class="page-link" href="#">1</a></li>
 							</c:when>
 							<c:otherwise>
-							<c:forEach begin="1" end="${pageNum}" var="num">
-								<li class="page-item">
-								<a class="page-link <c:if test="${nownum == num}">active</c:if>" href="SearchView.do?search=${search}&num=${num}">${num}</a></li>
-							</c:forEach>
+								<c:forEach begin="1" end="${pageNum}" var="num">
+									<li class="page-item"><a
+										class="page-link <c:if test="${nownum == num}">active</c:if>"
+										href="SearchView.do?search=${search}&num=${num}">${num}</a></li>
+								</c:forEach>
 							</c:otherwise>
-							</c:choose>
-							<li class="page-item"><a class="page-link" href="#"
-								aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-							</a></li>
-						</ul>
-					</nav>
-					<!-- 페이징 끝 -->
-					<br>
+						</c:choose>
+						<li class="page-item"><a class="page-link" href="#"
+							aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+						</a></li>
+					</ul>
+				</nav>
+				<!-- 페이징 끝 -->
+				<br>
 
-					<!-- 개별 링크 클릭 코드 -->
-					<div class="group_theme" data-block-id=""
-						data-block-code="PC-THEME-FINANCE-MOBILE-RANKING-DEFAULT-10"
-						data-block-type="MATERIALS"
-						data-template-code="MOBILE-RANKING-LIST" data-da="container"
-						data-index="" data-page="6" style="display: none"></div>
-					<!-- 개별 링크 클릭 코드 -->
+				<!-- 개별 링크 클릭 코드 -->
+				<div class="group_theme" data-block-id=""
+					data-block-code="PC-THEME-FINANCE-MOBILE-RANKING-DEFAULT-10"
+					data-block-type="MATERIALS"
+					data-template-code="MOBILE-RANKING-LIST" data-da="container"
+					data-index="" data-page="6" style="display: none"></div>
+				<!-- 개별 링크 클릭 코드 -->
 
-				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 
 	<!-- 내용 끝 -->

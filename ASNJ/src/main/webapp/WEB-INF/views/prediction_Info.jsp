@@ -103,45 +103,53 @@ ul {
 						<span class="fa fa-bars"></span>
 					</button>
 					<c:choose>
-					<%-- 로그인 안 했을 때 --%>
-					<c:when test="${empty loginMember}">
-					<div class="collapse navbar-collapse" id="navbarCollapse">
-						<div class="navbar-nav ms-auto py-0">
-							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
-							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
-							<div class="nav-item dropdown">
-								<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">병해충 정보</a>
-								<div class="dropdown-menu m-0">
-									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
-									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
+						<%-- 로그인 안 했을 때 --%>
+						<c:when test="${empty loginMember}">
+							<div class="collapse navbar-collapse" id="navbarCollapse">
+								<div class="navbar-nav ms-auto py-0">
+									<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트
+										소개</a> <a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충
+										분석</a>
+									<div class="nav-item dropdown">
+										<a href="#" class="nav-link dropdown-toggle active"
+											data-bs-toggle="dropdown">병해충 정보</a>
+										<div class="dropdown-menu m-0">
+											<a href="${cpath}/Disease.do?disease_crops=고추"
+												class="dropdown-item">병(病) 피해</a> <a
+												href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
+										</div>
+									</div>
+									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
+									<a href="${cpath}/Notice.do?num=1" class="nav-item nav-link">커뮤니티</a>
 								</div>
 							</div>
-							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
-							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
-						</div>
-					</div>
-					</c:when>
-					<c:otherwise>
-					<div class="collapse navbar-collapse" id="navbarCollapse">
-						<div class="navbar-nav ms-auto py-0">
-							<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트 소개</a>
-							<a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충	분석</a>
-							<div class="nav-item dropdown">
-								<a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">병해충 정보</a>
-								<div class="dropdown-menu m-0">
-									<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
-									<a href="${cpath}/Pests.do" class="dropdown-item">해충 피해</a>
+						</c:when>
+						<c:otherwise>
+							<div class="collapse navbar-collapse" id="navbarCollapse">
+								<div class="navbar-nav ms-auto py-0">
+									<a href="${cpath}/Introduce.do" class="nav-item nav-link">사이트
+										소개</a> <a href="${cpath}/Prediction.do" class="nav-item nav-link">병해충
+										분석</a>
+									<div class="nav-item dropdown">
+										<a href="#" class="nav-link dropdown-toggle active"
+											data-bs-toggle="dropdown">병해충 정보</a>
+										<div class="dropdown-menu m-0">
+											<a href="${cpath}/Disease.do?disease_crops=고추"
+												class="dropdown-item">병(病) 피해</a> <a
+												href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
+										</div>
+									</div>
+									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
+									<a href="${cpath}/Notice.do?num=1" class="nav-item nav-link">커뮤니티</a>
+									<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}"
+										class="nav-item nav-link">마이페이지</a>
+									<c:if test="${loginMember.mem_user_job eq '관리자'}">
+										<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보
+											관리</a>
+									</c:if>
 								</div>
 							</div>
-							<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a> 
-							<a href="${cpath}/Notice.do" class="nav-item nav-link">커뮤니티</a> 
-							<a href="${cpath}/Mypage.do?mem_pk=${loginMember.mem_pk}" class="nav-item nav-link">마이페이지</a>
-							<c:if test="${loginMember.mem_user_job eq '관리자'}">
-							<a href="${cpath}/UserInfo.do" class="nav-item nav-link">회원정보 관리</a>
-							</c:if>
-						</div>
-					</div>
-					</c:otherwise>
+						</c:otherwise>
 					</c:choose>
 				</nav>
 			</div>
@@ -186,7 +194,7 @@ ul {
 			<hr>
 			<br> <img alt="기본정보" src="resources/image/book.png"
 				style="width: 30px; height: 30px; float: left;">&nbsp;&nbsp;&nbsp;
-			<h4>기본정보</h4>
+			<h2 style="display: inline-block;">기본정보</h2>
 			<hr>
 			<div class="photoSch container-xxl p-0 ml-5">
 				<table class="gridPhoto table table-borderless" id="oInputTable">
@@ -198,18 +206,18 @@ ul {
 					</colgroup>
 					<tbody>
 						<tr>
-							<td rowspan="4" colspan="2"><img width="100%" height="240px"
-								alt="" class="imagesize" src="${list.disease_imgpath}"></td>
-							<td style="text-align: end; width: 180px;"><span class=""><h5>•&nbsp;질병명</h5></span></td>
-							<td>${disease_name_split[0]}</td>
+							<td rowspan="4" colspan="2">
+							<img width="100%" height="240px" alt="" class="imagesize" src="${list.disease_imgpath}"  onerror="this.src='resources/image/img.png'"></td>
+							<td style="text-align: center; width: 180px;vertical-align: middle;"><h3>•&nbsp;질병명</h3></td>
+							<td style="vertical-align: middle;"><h3 style="color: #5a5a5aba">${disease_name_split[0]}</h3></td>
 						</tr>
 						<tr>
-							<td style="text-align: end;"><span class=""><h5>•&nbsp;한문명</h5></span></td>
-							<td>${disease_name_split3[0]}</td>
+							<td style="text-align: center; vertical-align: middle;"><h3>•&nbsp;한문명</h3></td>
+							<td style="vertical-align: middle;"><h3 style="color: #5a5a5aba">${disease_name_split3[0]}</h3></td>
 						</tr>
 						<tr>
-							<td style="text-align: end;"><span class=""><h5>•&nbsp;작물명</h5></span></td>
-							<td>${list.disease_crops}</td>
+							<td style="text-align: center; vertical-align: middle;"><h3>•&nbsp;작물명</h3></td>
+							<td style="vertical-align: middle;"><h3 style="color: #5a5a5aba">${list.disease_crops}</h3></td>
 						</tr>
 					</tbody>
 				</table>
@@ -220,18 +228,18 @@ ul {
 			<%-- 정보별, 시기별, 월별 탭 --%>
 			<img alt="기본정보" src="resources/image/lamp.png"
 				style="width: 30px; height: 30px; float: left;">&nbsp;&nbsp;&nbsp;
-			<h4>일반정보</h4>
+			<h2 style="display: inline-block;">일반정보</h2>
 			<hr>
 			<ul>
-				<li class="photoH5"><h5>•&nbsp;발생환경</h5></li>
+				<li class="photoH5"><h3><strong>•&nbsp;발생환경</strong></h3></li>
 				<li class="article">${list.disease_environment}</li>
 			</ul>
 			<ul>
-				<li class="photoH5"><h5>•&nbsp;증상설명</h5></li>
+				<li class="photoH5"><h3><strong>•&nbsp;증상설명</h3></li>
 				<li class="article">${list.disease_symptom}</li>
 			</ul>
 			<ul>
-				<li class="photoH5"><h5>•&nbsp;방제방법</h5></li>
+				<li class="photoH5"><h3><strong>•&nbsp;방제방법</h3></li>
 				<%-- -를 기준으로 split, <br> 추가해서 forEach 걸기 --%>
 				<li class="article">${list.disease_solution}</li>
 			</ul>
@@ -248,49 +256,58 @@ ul {
 								class="bi bi-caret-down" class="down"><span>사진정보</span></i>
 							</a>
 						</div>
-						<div id="collapseOne" class="collapse show container"	data-bs-parent="#accordion">
+						<div id="collapseOne" class="collapse show container"
+							data-bs-parent="#accordion">
 							<div class="card-body scroll-image d-flex justify-content-center center-block">
-								<table class="table table-borderless" style="overflow-wrap: anywhere; text-align: center;" style= "display: flex !important; align-items: center; flex-wrap: wrap;">									
+								<table class="table table-borderless" style="overflow-wrap: anywhere; text-align: center;"
+									style="display: flex !important; align-items: center; flex-wrap: wrap;">
 									<tbody class="container">
 										<tr class="row" style="float: left;">
-											<td class="col p-2 m-2" rowspan="2">
-												<img alt="${list.disease_imginfo}" src="${list.disease_imgpath}" onerror="this.src='resources/image/img.png'"><br>
-												<strong>${list.disease_imginfo}</strong>
-											</td>
-											<td class="col p-2 m-2" rowspan="2">
-												<img alt="${list.disease_imginfo2}" src="${list.disease_imgpath2}" onerror="this.src='resources/image/img.png'"><br>
-												<strong>${list.disease_imginfo2}</strong>
-											</td>
-											<td class="col p-2 m-2" rowspan="2">
-												<img alt="${list.disease_imginfo3}" src="${list.disease_imgpath3}" onerror="this.src='resources/image/img.png'"><br>
-												<strong>${list.disease_imginfo3}</strong>
-											</td>
-											<td class="col p-2 m-2" rowspan="2">
-												<img alt="${list.disease_imginfo4}"	src="${list.disease_imgpath4}" onerror="this.src='resources/image/img.png'"><br>
-											<strong>${list.disease_imginfo4}</strong>
-											</td>
-											<td class="col p-2 m-2" rowspan="2">
-												<img alt="${list.disease_imginfo5}" src="${list.disease_imgpath5}" onerror="this.src='resources/image/img.png'"><br>
-												<strong>${list.disease_imginfo5}</strong>
-											</td>
-										</tr>																			
+											<td class="col p-2 m-2" rowspan="2"><img alt="${list.disease_imginfo}" src="${list.disease_imgpath}"
+												onerror="this.src='resources/image/img.png'" style="width: 100%; height: 240px;"><br>
+												<strong>${list.disease_imginfo}</strong></td>
+											<td class="col p-2 m-2" rowspan="2"><img
+												alt="${list.disease_imginfo2}"
+												src="${list.disease_imgpath2}"
+												onerror="this.src='resources/image/img.png'" style="width: 100%; height: 240px;"><br>
+												<strong>${list.disease_imginfo2}</strong></td>
+											<td class="col p-2 m-2" rowspan="2"><img
+												alt="${list.disease_imginfo3}"
+												src="${list.disease_imgpath3}"
+												onerror="this.src='resources/image/img.png'" style="width: 100%; height: 240px;"><br>
+												<strong>${list.disease_imginfo3}</strong></td>
+											<td class="col p-2 m-2" rowspan="2"><img
+												alt="${list.disease_imginfo4}"
+												src="${list.disease_imgpath4}"
+												onerror="this.src='resources/image/img.png'" style="width: 100%; height: 240px;"><br>
+												<strong>${list.disease_imginfo4}</strong></td>
+											<td class="col p-2 m-2" rowspan="2"><img
+												alt="${list.disease_imginfo5}"
+												src="${list.disease_imgpath5}"
+												onerror="this.src='resources/image/img.png'" style="width: 100%; height: 240px;"><br>
+												<strong>${list.disease_imginfo5}</strong></td>
+										</tr>
 									</tbody>
-								</table>								
+								</table>
 							</div>
 						</div>
 
 					</div>
 				</div>
-			</div><hr><br>
-			<div class="container d-inline-flex justify-content-center" style="max-width: inherit;">
+			</div>
+			<hr>
+			<br>
+			<div class="container d-inline-flex justify-content-center"
+				style="max-width: inherit;">
 				<div class="row" style="width: 400px; text-align: center;">
 					<div class="col-sm-6 p-2">
 						<button type="button" class="btn btn-success" onclick="history.go(-1);">
-						<strong class="">이전 페이지로</strong></a>
+							<strong class=""><i class="bi bi-reply-all"></i>&nbsp;이전 페이지로</strong></button>
 					</div>
 					<div class="col-sm-6 p-2">
-						<button type="button" class="btn btn-success" onclick="location.href='${cpath}/Notice.do'">
-						<strong class="">문의하기</strong></button>
+						<button type="button" class="btn btn-success" onclick="location.href='${cpath}/Notice.do?num=1'">
+							<strong class=""><i class="bi bi-pen"></i>&nbsp;문의하기</strong>
+						</button>
 					</div>
 				</div>
 			</div>

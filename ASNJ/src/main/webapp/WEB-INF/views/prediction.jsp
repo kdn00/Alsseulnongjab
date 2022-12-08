@@ -86,9 +86,9 @@
 					class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
 					style="bottom: 0px;">
 					<a href="index.jsp" class="navbar-brand p-0">
-						<h1 class="m-0 text-white" style="font-style: italic;">
+						<h4 class="m-0 text-white" style="font-style: italic;">
 							<i class="fa me-3"></i> 알쓸농잡
-						</h1>
+						</h4>
 					</a>
 					<button class="navbar-toggler" type="button"
 						data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -149,7 +149,7 @@
 		<div class="container-fluid p-4 px-4">
 			<div class="mx-auto" style="width: 170px;">
 				<div id="underline">
-					<h1 style="margin-bottom: 0px;">병해충 분석</h1>
+					<h3>병해충 분석</h3>
 				</div>				
 			</div>
 		</div>
@@ -200,7 +200,7 @@
                </div>
 					<br>
 					<div>
-						<button type="reset" id="reset" class="btn btn-warning" style="width: 70px; font-size: 30px; padding: 0px !important;">초기화</button>
+						<button type="reset" id="reset" class="btn btn-warning">초기화</button>
 					</div>
 				</form>
 				<!-- 이미지 전송 폼 -->

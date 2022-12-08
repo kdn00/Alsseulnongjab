@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
 
 <!-- Icon Font Stylesheet -->
 <link
@@ -99,9 +99,9 @@ ul {
 					class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
 					style="bottom: 0px;">
 					<a href="index.jsp" class="navbar-brand p-0">
-						<h1 class="m-0 text-white" style="font-style: italic;">
+						<h4 class="m-0 text-white" style="font-style: italic;">
 							<i class="fa me-3"></i> 알쓸농잡
-						</h1>
+						</h4>
 					</a>
 					<button class="navbar-toggler" type="button"
 						data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -217,11 +217,11 @@ ul {
 						</tr>
 						<tr>
 							<td style="text-align: center; vertical-align: middle;"><h3>•&nbsp;영문명</h3></td>
-							<td style="vertical-align: middle;"><h3 style="color: #5a5a5aba">${list.pest_englishname}</td>
+							<td style="vertical-align: middle;"><h3 style="color: #5a5a5aba">${list.pest_englishname}</h3></td>
 						</tr>
 						<tr>
 							<td style="text-align: center; vertical-align: middle;"><h3>•&nbsp;작물명</h3></td>
-							<td style="vertical-align: middle;"><h3 style="color: #5a5a5aba">${list.pest_crops}</td>
+							<td style="vertical-align: middle;"><h3 style="color: #5a5a5aba">${list.pest_crops}</h3></td>
 						</tr>
 					</tbody>
 				</table>
