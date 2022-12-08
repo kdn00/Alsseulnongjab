@@ -154,7 +154,7 @@ function close_pop(flag) {
 	<div class="container">
 		<!-- 농업일지 시작 -->
 		<div class="row">
-			<div class="container" style="width: 100%; height: 1000px; border-radius: 1em; margin: 10px 0;">
+			<div class="container" style="width: 100%; height: auto; border-radius: 1em; margin: 10px 0;">
 				
 				<!-- 달력 시작 -->
 				<!-- 달력 -->
