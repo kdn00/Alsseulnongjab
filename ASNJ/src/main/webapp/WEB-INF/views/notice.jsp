@@ -176,20 +176,20 @@
 		<div class="container-fluid pt-4 px-4">
 			<ul class="nav nav-tabs nav-justified nav-pills nav-fill">
 				<li class="nav-item"><a class="nav-link active"
-					data-bs-toggle="tab" href="#info">
+					data-bs-toggle="tab" href="#actlist">
 						<h3 class="note-tab" style="color: currentcolor;">
-							<i class="bi bi-megaphone"></i>&nbsp;공지사항
+							<i class="bi bi-megaphone"></i>&nbsp;문의사항
 						</h3>
 				</a></li>
 				<li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
-					href="#actlist">
+					href="#info">
 						<h3 class="note-tab" style="color: currentcolor;">
-							<i class="bi bi-pen"></i>&nbsp;문의사항
+							<i class="bi bi-pen"></i>&nbsp;공지사항
 						</h3>
 				</a></li>
 			</ul>
 			<div class="tab-content">
-				<div class="container tab-pane active" id="info">
+				<div class="container tab-pane fade" id="info">
 					<!-- 공지사항 시작 -->
 					<div class="container"
 						style="width: 100%; height: auto; border-radius: 1em; margin-top: 5px;">
@@ -258,7 +258,7 @@
 				<!-- 공지사항 끝 -->
 
 				<!-- 문의사항 탭 시작  -->
-				<div id="actlist" class="container tab-pane fade">
+				<div id="actlist" class="container tab-pane active">
 					<div class="container-xxl p-0"
 						style="display: flex; justify-content: center; align-items: center;">
 
@@ -276,20 +276,80 @@
 									<th>내용</th>
 									<th>작성자</th>
 									<th style="width: 200px;">작성날짜</th>
+									<c:if test="${loginMember.mem_user_job eq '관리자'}">
+									<th>댓글</th>
+									</c:if>
 								</thead>
 								<tbody>
-									<c:forEach items="${questionlist}" var="list"
-										varStatus="status">
-										<c:set var="ques_time"
-											value="${fn:split(list.ques_time, ' ')[0]}" />
+									<c:forEach items="${questionlist}" var="list" varStatus="status">
+										<c:set var="ques_time" value="${fn:split(list.ques_time, ' ')[0]}" />
 										<tr align="center">
 											<td>${status.count}</td>
 											<td>${list.ques_title}</td>
 											<td>${list.ques_content}</td>
 											<td>${list.ques_user_id}</td>
 											<td>${ques_time}</td>
+										<c:if test="${loginMember.mem_user_job eq '관리자'}">
+										<td><button class="btn btn-sm btn-success" id="button-addon4"
+										data-bs-toggle="modal" data-bs-target="#answerModal" type="button">답변</button></td>
+										</c:if>
 										</tr>
-									</c:forEach>
+										<c:if test="${not empty answerlist[status.index].com_answer}">
+										<c:set var="com_admin_time" value="${fn:split(answerlist[status.index].com_admin_time, ' ')[0]}"/>
+										<tr align="center">
+										<td></td>
+										<td><c:if test="${not empty answerlist[status.index].com_answer}"><strong>답변 완료</strong></c:if></td>
+										<td>${answerlist[status.index].com_answer}</td>
+										<td>${answerlist[status.index].com_admin_id}</td>
+										<td>${com_admin_time}</td>
+										<c:if test="${loginMember.mem_user_job eq '관리자'}">
+										<td><button class="btn btn-sm btn-warning" id="button-addon4"
+										data-bs-toggle="modal" data-bs-target="#answerModal" type="button">수정</button></td>
+										</c:if>
+										</tr>
+										</c:if>
+						<!-- 답변하기 모달 뷰  시작 -->
+						<!-- The Modal -->
+						<div class="modal" id="answerModal" data-bs-backdrop="static">
+							<div class="modal-dialog modal-lg modal-dialog-centered">
+								<div class="modal-content">
+									<!-- Modal Header -->
+									<div class="modal-header">
+										<h4 class="modal-title">답변하기</h4>
+										<button type="button" class="btn-close"
+											data-bs-dismiss="modal"></button>
+									</div>
+
+									<!-- Modal body -->
+									<div class="modal-body">
+										<form action="${cpath}/AnswerInsert.do" method="post">
+											<div id="dialog-confirm">
+											<c:forEach items="${questionlist}" var="list" end="0">
+												<div class="input-group mb-3">
+													<span class="input-group-text" style="font-size: 25px">문의사항 [ ${list.ques_title} ]</span>
+												</div>
+													<p>${list.ques_content}</p>
+													<%-- <input type="hidden" name="ques_pk" value="${list.ques_pk}"> --%>
+												</c:forEach>
+												<textarea style="width: 100%;" name="com_answer" placeholder="답변 내용을 입력하세요."></textarea>
+											</div>
+
+											<!-- Modal footer -->
+											<div class="modal-footer">
+												<button type="submit" class="btn btn-sm btn-success bi bi-check-circle">
+													<span>등록</span>
+												</button>
+												<!-- <button type="submit" class="btn btn-sm btn-success bi bi-check-circle">
+													<span> 삭제</span>
+												</button> -->
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 답변하기 모달 뷰 끝  -->
+						</c:forEach>
 								</tbody>
 							</table>
 							<!-- 페이징 시작 --> <c:set value="${nownum}" var="num" />
