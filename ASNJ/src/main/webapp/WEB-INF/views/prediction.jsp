@@ -166,35 +166,38 @@
 
 				<!-- 이미지 전송 폼 -->
 				<%-- <form id="imgForm" method="post" enctype="multipart/form-data" action="${cpath}/PredictionInfoPage.do"> --%>
-				<form id="imgForm" method="get" action="${cpath}/Predictionresult.do">
-					<input type="hidden" name="result" value="탄저병">
-					<div class="upload-box"
-						style="width: 100%; overflow-wrap: anywhere; text-align: center;">
-						<div id="drop-file" class="drag-file bg-white"
-							style="overflow-wrap: anywhere; text-align: center;">
-							<img src="https://img.icons8.com/pastel-glyph/2x/image-file.png"
-								alt="파일 아이콘" class="image">
-							<p class="message">파일을 드래그해서 여기에 놓으세요!!</p>
-							<img src="" alt="미리보기 이미지" class="preview">
-							<div type="button" class="btn" style="width: 100%;">
-								<label class="file-label" for="chooseFile">👉 파일 검색👈</label>
-							</div>
-						</div>
-					</div>
+				<form id="imgForm" method="post" enctype="multipart/form-data" action="http://127.0.0.1:5050/fileUpload">
+               <!--input type="hidden" name="result" value="탄저병"-->
+               <div class="upload-box"
+                  style="width: 100%; overflow-wrap: anywhere; text-align: center;">
+                  <div id="drop-file" class="drag-file bg-white"
+                     style="overflow-wrap: anywhere; text-align: center;">
+                     <img src="https://img.icons8.com/pastel-glyph/2x/image-file.png"
+                        alt="파일 아이콘" class="image">
+                     <p class="message">파일을 드래그해서 여기에 놓으세요!!</p>
+                     <img src="" alt="미리보기 이미지" class="preview">
+                     <div type="button" class="btn" style="width: 100%;">
+                        <label class="file-label" for="chooseFile">👉 파일 검색👈</label>
+                     </div>
+                  </div>
+               </div>
 
-					<input class="file" id="chooseFile" type="file"
-						onchange="dropFile.handleFiles(this.files)"
-						accept="image/png, image/jpeg, image/gif">
-					<div class="fileContainer">
-						<div class="buttonContainer row" style="margin-top: 20px;">
-							<h2 class="col-md-3" style="align-self: flex-end;">파일명 :</h2>
-							<div class="position-relative col-md-9" style="max-width: 75%;">
-								<input id="fileName" class="form-control bg-white border-0 w-100 ps-4 pe-5" type="text" placeholder="파일명" style="font-size: 30px;">
-								<button type="submit" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-1 me-4"
-								 style="width: 70px; font-size: 30px; padding: 0px !important;">전송</button>
-							</div>
-						</div>
-					</div>
+               <input class="file" id="chooseFile" type="file"
+                  onchange="dropFile.handleFiles(this.files)"
+                  accept="image/png, image/jpeg, image/gif" name="file">
+               <div class="fileContainer">
+                  <div class="buttonContainer row" style="margin-top: 20px;">
+                     <h4 class="col-md-3"
+                        style="align-self: flex-end; margin-top: inherit;">파일명 :</h4>
+                     <div class="position-relative col-md-9" style="max-width: 75%;">
+                        <input id="fileName"
+                           class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5"
+                           type="text" placeholder="파일명">
+                        <button type="submit"
+                           class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-4">전송</button>
+                     </div>
+                  </div>
+               </div>
 					<br>
 					<div>
 						<button type="reset" id="reset" class="btn btn-warning" style="width: 70px; font-size: 30px; padding: 0px !important;">초기화</button>
