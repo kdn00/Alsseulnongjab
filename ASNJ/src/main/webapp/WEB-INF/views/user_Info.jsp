@@ -18,9 +18,8 @@
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
 <link
@@ -88,9 +87,9 @@
 				class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
 				style="bottom: 0px;">
 				<a href="index.jsp" class="navbar-brand p-0">
-					<h4 class="m-0 text-white" style="font-style: italic;">
-						<i class="fa me-3"></i> 알쓸농잡
-					</h4> <!-- <img src="img/logo.png" alt="Logo"> -->
+					<h1 class="m-0 text-white" style="font-style: italic;">
+							<i class="fa me-3"></i> 알쓸농잡
+						</h1> <!-- <img src="img/logo.png" alt="Logo"> -->
 				</a>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -123,12 +122,11 @@
 	<!-- 내용 시작 -->
 	<div class="container-xxl bg-white p-0"
 		style="display: flex; justify-content: center; align-items: center; max-width: none;">
-		<div class="container-fluid pt-4 px-4">
+		<div class="container-fluid p-4 px-4">
 			<div class="mx-auto" style="width: 200px;">
 				<div id="underline">
-					<h3>회원정보 관리</h3>
-				</div>
-				<br>
+					<h1 style="margin-bottom: 0px;">회원정보 관리</h1>
+				</div>				
 			</div>
 		</div>
 	</div>

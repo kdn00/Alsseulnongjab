@@ -23,9 +23,8 @@
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
 <link
@@ -101,13 +100,12 @@ ul {
 			style="padding-top: 2rem !important; padding-bottom: 2rem !important; max-width: none;">
 			<div class="container-xxl position-relative p-0"
 				style="margin-right: 0px; max-width: inherit;">
-				<nav
-					class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
+				<nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
 					style="bottom: 0px;">
 					<a href="index.jsp" class="navbar-brand p-0">
-						<h4 class="m-0 text-white" style="font-style: italic;">
+						<h1 class="m-0 text-white" style="font-style: italic;">
 							<i class="fa me-3"></i> 알쓸농잡
-						</h4>
+						</h1>
 					</a>
 					<button class="navbar-toggler" type="button"
 						data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -171,12 +169,11 @@ ul {
 	<!-- 검색 타이틀-->
 	<div class="container-xxl bg-white p-0"
 		style="display: flex; justify-content: center; align-items: center; max-width: none;">
-		<div class="container-fluid pt-4 px-4">
-			<div class="mx-auto" style="width: 200px;">
+		<div class="container-fluid p-4 px-4">
+			<div class="mx-auto" style="width: 170px;">
 				<div id="underline">
-					<h3>검색 결과</h3>
-				</div>
-				<br>
+					<h1 style="margin-bottom: 0px;">검색 결과</h3>
+				</div>				
 			</div>
 		</div>
 	</div>
@@ -188,21 +185,21 @@ ul {
 		<div class="main_category row align-items-center table table-hover"
 			style="text-align: center; width: 80%; margin: auto;">
 			<!-- <div class="w-25 p-4 m-5 col-md-auto flex-fill"> -->
-				<div id="NM_THEME_CATE_GROUPS" class="group_category"
+				<div id="NM_THEME_CATE_GROUPS" class="group_category d-flex justify-content-around"
 					data-demo-key="default">
 					<div class="row list_category_wrap" style="align-items: center;">
 						<div class="mt-5">
 						<c:choose>
 						    <c:when test="${fn:length(diseassearchlist) == 0 and fn:length(pestsearchlist) == 0}">
-						    <h2>
+						    <h2 style="float: left; display: flex;">
 							<i class="bi bi-info-circle" style="margin-right: 20px;">
-							</i>&nbsp;"${search}"&nbsp;에 대한 게시글이 없습니다.
+							</i>&nbsp;"</h2><h2 style="color: #04aa5d; display: inline-block; font-size: 4rem;">${search}</h2><h2 style="display: inline-block;">"&nbsp;에 대한 게시글이 없습니다.
 							</h2>
 						    </c:when>
 						    <c:otherwise>
-						    <h2>
+						    <h2 style="float: left; display: flex;">
 							<i class="bi bi-info-circle" style="margin-right: 20px;">
-							</i>입력하신&nbsp;"${search}"&nbsp;에  대한 검색 결과입니다.
+							</i>입력하신&nbsp;"</h2><h2 style="color: #04aa5d; display: inline-block; font-size: 4rem;">${search}</h2><h2 style="display: inline-block;">"&nbsp;에  대한 검색 결과입니다.
 							</h2>
 						    </c:otherwise>
 						   </c:choose>
@@ -226,12 +223,12 @@ ul {
 					<ul class="list_theme container" style="padding-right: 32px;">
 
 						<li class="theme_item row"><strong class="col-sm-3">
-						<h4>•&nbsp;병해충 피해</h4></strong></li>
+						<h3>•&nbsp;병해충 피해</h3></strong></li>
 						<hr>
 						<br>
 						<c:choose>
 						    <c:when test="${fn:length(diseassearchlist) == 0} && ${fn:length(pestsearchlist) == 0}">
-						        <h5> 빠른 시일 내에 정보를 등록하겠습니다. 죄송합니다.</h5>
+						        <h2> 빠른 시일 내에 정보를 등록하겠습니다. 죄송합니다.</h2>
 						    </c:when>
 						    <c:otherwise>
 						    	<%-- <h5>총 ${fn:length(diseassearchlist)}개의 게시글이 있습니다.</h5> --%>
@@ -241,8 +238,8 @@ ul {
 								<li class="theme_item row"><img
 									src="${Dlist.disease_imgpath}" alt="" width="auto;"
 									height="250px;" class="col-sm-3" onerror="this.src='resources/image/img.png'"/> <strong
-									class="title elss col-sm-3" style="font-size: large;">${Dlist.disease_name}</strong>
-									<p class="desc col-sm-6" style="font-size: large;">${Dlist.disease_symptom}</p></li>
+									class="title elss col-sm-3" style="font-size: 30px;;">${Dlist.disease_name}</strong>
+									<p class="desc col-sm-6" style="font-size: 30px;;">${Dlist.disease_symptom}</p></li>
 							</a>
 							<hr>
 						        </c:forEach>
@@ -250,8 +247,8 @@ ul {
 							<a href="PestInfoPage.do?pest_pk=${Plist.pest_pk}" class="theme_thumb" style="color: #000">
 							<li class="theme_item row">
 							<img src="${Plist.pest_imgpath}" alt="" width="auto;" height="250px;" class="col-sm-3" onerror="this.src='resources/image/img.png'"/>
-							<strong class="title elss col-sm-3" style="font-size: large;">${Plist.pest_name}</strong>
-							<p class="desc col-sm-6" style="font-size: large;">${Plist.pest_harm}</p></li>
+							<strong class="title elss col-sm-3" style="font-size: 30px;">${Plist.pest_name}</strong>
+							<p class="desc col-sm-6" style="font-size: 30px;">${Plist.pest_harm}</p></li>
 							</a>
 							<hr>
 							</c:forEach>

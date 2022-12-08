@@ -181,17 +181,17 @@ ul {
 		<c:choose>
 		<c:when test="${diseaselist ne null}">
 		<c:forEach items="${diseaselist}" var="crops" end="0">
-		<div class="main_category row align-items-center table table-hover"
-			style="text-align: center; width: 80%; margin: auto;">
-				<div id="NM_THEME_CATE_GROUPS" class="group_category"
-					data-demo-key="default">
-					<div class="mt-5">
-					<h2>
-					<i class="bi bi-info-circle" style="margin-right: 20px;"></i>"${crops.disease_crops}"&nbsp;작물의 질병 정보입니다.</h2>
+		<div class="main_category row align-items-center table table-hover"	style="text-align: center; width: 80%; margin: auto;">
+				<div id="NM_THEME_CATE_GROUPS" class="group_category"	data-demo-key="default">
+					<div class="mt-5" style="display: flex; justify-content: center; align-items: center;">
+					<h2 style="float: left; display: flex;">
+					<i class="bi bi-info-circle" style="margin-right: 20px;"></i>"</h2>
+					<h2 style="color: #04aa5d; display: inline-block; font-size: 4rem;">${crops.disease_crops}</h2>
+					<h2 style="display: inline-block;">"&nbsp;작물의 질병 정보입니다.</h2>
 						</div>
 					<div class="row list_category_wrap" style="align-items: center;">
 						<div class="col-sm-2" style="text-align: center; margin-left: 14%">
-							<h2 class="searchTitle" style="display: inline-block;">작물 선택</h2>
+							<h3 class="searchTitle" style="display: inline-block;">작물 선택</h3>
 							<i class="bi bi-chevron-double-right"></i>
 						</div>
 						<div class="col-sm-7">
@@ -242,14 +242,14 @@ ul {
 
 						<li class="theme_item row">
 						<strong class="col-sm-3">
-						<h2>•&nbsp;사진</h2>
+						<h3>•&nbsp;사진</h3>
 						</strong>
 							<strong class="col-sm-3">
-							<h2 style="float: left;">•&nbsp;병명(</h2><h3 style="display: inline-block;">病名</h3><h2 style="display: inline-block;">)</h2>
+							<h3 style="float: left;">•&nbsp;병명(</h3><h4 style="display: inline-block;">病名</h4><h3 style="display: inline-block;">)</h3>
 							</strong> 
 							<strong
 							class="col-sm-4">
-							<h2>•&nbsp;간략설명</h2>
+							<h3>•&nbsp;간략설명</h3>
 							</strong>
 							</li>
 						<hr>
