@@ -20,9 +20,8 @@
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
 <link
@@ -100,9 +99,9 @@ ul {
 					class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
 					style="bottom: 0px;">
 					<a href="index.jsp" class="navbar-brand p-0">
-						<h4 class="m-0 text-white" style="font-style: italic;">
+						<h1 class="m-0 text-white" style="font-style: italic;">
 							<i class="fa me-3"></i> 알쓸농잡
-						</h4>
+						</h1>
 					</a>
 					<button class="navbar-toggler" type="button"
 						data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -168,12 +167,11 @@ ul {
 	<!-- 병해충 예측 타이틀-->
 	<div class="container-xxl bg-white p-0"
 		style="display: flex; justify-content: center; align-items: center; max-width: none;">
-		<div class="container-fluid pt-4 px-4">
+		<div class="container-fluid p-4 px-4">
 			<div class="mx-auto" style="width: 200px;">
 				<div id="underline">
-					<h3>병해충 정보</h3>
-				</div>
-				<br>
+					<h1 style="margin-bottom: 0px;">병해충 정보</h3>
+				</div>				
 			</div>
 		</div>
 	</div>
@@ -198,9 +196,9 @@ ul {
 				<h2>${list.disease_name}</h2>
 			</div>
 			<hr>
-			<br> <img alt="기본정보" src="resources/image/book.png"
-				style="width: 30px; height: 30px; float: left;">&nbsp;&nbsp;&nbsp;
-			<h4>기본정보</h4>
+			<br> 
+			<img alt="기본정보" src="resources/image/book.png"	style="width: 30px; height: 30px; float: left;">&nbsp;&nbsp;&nbsp;
+			<h2 style="display: inline-block;">기본정보</h2>
 			<hr>
 			<div class="photoSch container-xxl p-0 ml-5">
 				<table class="gridPhoto table table-borderless" id="oInputTable">
@@ -212,18 +210,17 @@ ul {
 					</colgroup>
 					<tbody>
 						<tr>
-							<td rowspan="4" colspan="2"><img width="100%" height="240px"
-								alt="" class="imagesize" src="${list.disease_imgpath}" onerror="this.src='resources/image/img.png'"></td>
-							<td style="text-align: end; width: 180px;"><span class=""><h5>•&nbsp;질병명</h5></span></td>
-							<td>${disease_name_split[0]}</td>
+							<td rowspan="4" colspan="2"><img width="100%" height="240px" alt="" class="imagesize" src="${list.disease_imgpath}" onerror="this.src='resources/image/img.png'"></td>
+							<td style="text-align: center; width: 180px; vertical-align: middle;"><h3>•&nbsp;질병명</h3></td>
+							<td style="vertical-align: middle;"><h3 style="color: #5a5a5aba">${disease_name_split[0]}</h3></td>
 						</tr>
 						<tr>
-							<td style="text-align: end;"><span class=""><h5>•&nbsp;한문명</h5></span></td>
-							<td>${disease_name_split3[0]}</td>
+							<td style="text-align: center; vertical-align: middle;"><h3>•&nbsp;한문명</h3></td>
+							<td style="vertical-align: middle;"><h3 style="color: #5a5a5aba">${disease_name_split3[0]}</h3></td>
 						</tr>
 						<tr>
-							<td style="text-align: end;"><span class=""><h5>•&nbsp;작물명</h5></span></td>
-							<td>${list.disease_crops}</td>
+							<td style="text-align: center; vertical-align: middle;"><h3>•&nbsp;작물명</h3></td>
+							<td style="vertical-align: middle;"><h3 style="color: #5a5a5aba">${list.disease_crops}</h3></td>
 						</tr>
 					</tbody>
 				</table>
@@ -232,20 +229,19 @@ ul {
 			<br>
 
 			<%-- 정보별, 시기별, 월별 탭 --%>
-			<img alt="기본정보" src="resources/image/lamp.png"
-				style="width: 30px; height: 30px; float: left;">&nbsp;&nbsp;&nbsp;
-			<h4>일반정보</h4>
+			<img alt="기본정보" src="resources/image/lamp.png"	style="width: 30px; height: 30px; float: left;">&nbsp;&nbsp;&nbsp;
+			<h2 style="display: inline-block;">일반정보</h2>
 			<hr>
 			<ul>
-				<li class="photoH5"><h5>•&nbsp;발생환경</h5></li>
+				<li class="photoH5"><h3><strong>•&nbsp;발생환경</strong></h3></li>
 				<li class="article">${list.disease_environment}</li>
 			</ul>
 			<ul>
-				<li class="photoH5"><h5>•&nbsp;증상설명</h5></li>
+				<li class="photoH5"><h3><strong>•&nbsp;증상설명</strong></h3></li>
 				<li class="article">${list.disease_symptom}</li>
 			</ul>
 			<ul>
-				<li class="photoH5"><h5>•&nbsp;방제방법</h5></li>
+				<li class="photoH5"><h3><strong>•&nbsp;방제방법</strong></h3></li>
 				<%-- -를 기준으로 split, <br> 추가해서 forEach 걸기 --%>
 				<li class="article">${list.disease_solution}</li>
 			</ul>
@@ -255,8 +251,7 @@ ul {
 			<div class="container mt-3" style="max-width: inherit;">
 				<div id="accordion">
 					<div class="card">
-						<div class="card-header bg-success text-white"
-							style="background-color: #7ebc12 !important; border-radius: 7px !important; height: 40px;">
+						<div class="card-header bg-success text-white" style="background-color: #7ebc12 !important; border-radius: 7px !important; height: 40px; display: flex; align-items: center;">
 							<a class="coll-btn btn-block text-white"
 								data-bs-toggle="collapse" href="#collapseOne"> <i
 								class="bi bi-caret-down" class="down"><span>사진정보</span></i>
@@ -301,15 +296,13 @@ ul {
 				style="max-width: inherit;">
 				<div class="row" style="width: 400px; text-align: center;">
 					<div class="col-sm-6 p-2">
-						<button type="button" class="btn btn-success"
-							onclick="history.go(-1);">
+						<button type="button" class="btn btn-success" onclick="history.go(-1);" style="font-size: 30px; padding: 5px 20px 0px 20px !important;">
 							<strong class=""><i class="bi bi-reply-all"></i>&nbsp;이전
 								페이지로</strong>
 						</button>
 					</div>
 					<div class="col-sm-6 p-2">
-						<button type="button" class="btn btn-success"
-							onclick="location.href='${cpath}/Notice.do'">
+						<button type="button" class="btn btn-success" style="font-size: 30px; padding: 5px 20px 0px 20px !important;" onclick="location.href='${cpath}/Notice.do?num=1'">
 							<strong class=""><i class="bi bi-pen"></i>&nbsp;문의하기</strong>
 						</button>
 					</div>
