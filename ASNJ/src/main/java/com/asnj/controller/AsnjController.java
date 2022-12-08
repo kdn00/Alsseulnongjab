@@ -1,5 +1,11 @@
 package com.asnj.controller;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -198,26 +204,6 @@ public class AsnjController {
 		return "prediction";
 	}
 	
-	// 병해충 분석 결과로 이동
-	@GetMapping("/Predictionresult.do")
-	public String Predictionresult(Model model, String result) {
-		result = "탄저병";
-		if(result.equals("정상")) {
-			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n다른 병해충 사진을 업로드 해주세요!");
-			model.addAttribute("url", "Prediction.do");
-			
-		} else if(result.equals("탄저병") || result.equals("흰가루병")) {
-			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n해당 질병 정보 페이지로 이동합니다.");
-			int disease_pk = mapper.PreDiseasePK(result);
-			model.addAttribute("url", "PredictionInfoPage.do?disease_pk="+disease_pk);
-		} else {
-			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n해당 해충 정보 페이지로 이동합니다.");
-			int pest_pk = mapper.PrePestPK(result);
-			model.addAttribute("url", "PestInfoPage.do?pest_pk="+pest_pk);
-		}
-		return "alert";
-	}
-	
 	// 질병 페이지
 	@GetMapping("/Disease.do")
 	public String Disease(Model model, String disease_crops) {
@@ -386,6 +372,47 @@ public class AsnjController {
 		session.removeAttribute("loginMember");
 		model.addAttribute("msg", "로그아웃 성공, 즐거운 하루 되세요😎!");
 		model.addAttribute("url", "index.jsp");
+		return "alert";
+	}
+	
+//	// 병해충 분석 결과로 이동
+//	@GetMapping("/Predictionresult.do")
+//	public String Predictionresult(Model model, String result) {
+//		result = "꽃노랑총채벌레";
+//		if(result.equals("정상")) {
+//			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n다른 병해충 사진을 업로드 해주세요!");
+//			model.addAttribute("url", "Prediction.do");
+//			
+//		} else if(result.equals("탄저병") || result.equals("흰가루병")) {
+//			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n해당 질병 정보 페이지로 이동합니다.");
+//			int disease_pk = mapper.PreDiseasePK(result);
+//			model.addAttribute("url", "PredictionInfoPage.do?disease_pk="+disease_pk);
+//		} else {
+//			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n해당 해충 정보 페이지로 이동합니다.");
+//			int pest_pk = mapper.PrePestPK(result);
+//			model.addAttribute("url", "PestInfoPage.do?pest_pk="+pest_pk);
+//		}
+//		return "alert";
+//	}
+	
+	// 병해충 분석 결과로 이동
+	@GetMapping("/Predictionresult.do")
+	public String Predictionresult(Model model, String result) {	
+		// 받아온 값 처리
+		if(result.equals("정상")) {
+			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n다른 병해충 사진을 업로드 해주세요!");
+			model.addAttribute("url", "Prediction.do");
+			
+		} else if(result.equals("탄저병") || result.equals("흰가루병")) {
+			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n해당 질병 정보 페이지로 이동합니다.");
+			int disease_pk = mapper.PreDiseasePK(result);
+			model.addAttribute("url", "PredictionInfoPage.do?disease_pk="+disease_pk);
+		} else {
+			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n해당 해충 정보 페이지로 이동합니다.");
+			int pest_pk = mapper.PrePestPK(result);
+			model.addAttribute("url", "PestInfoPage.do?pest_pk="+pest_pk);
+		}
+		
 		return "alert";
 	}
 
