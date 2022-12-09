@@ -186,13 +186,11 @@
                   onchange="dropFile.handleFiles(this.files)"
                   accept="image/png, image/jpeg, image/gif" name="file">
                <div class="fileContainer">
-                  <div class="buttonContainer row" style="margin-top: 20px;">
+                  <div class="buttonContainer row me-2" style="margin-top: 20px;">
                      <h4 class="col-md-3"
                         style="align-self: flex-end; margin-top: inherit;">파일명 :</h4>
                      <div class="position-relative col-md-9" style="max-width: 75%;">
-                        <input id="fileName"
-                           class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5"
-                           type="text" placeholder="파일명">
+                        <input id="fileName" class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="파일명">
                         <button type="submit" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-4" style="font-weight: bolder;"><i class="bi bi-cloud-arrow-up"></i>&nbsp;전송</button>
                      </div>
                   </div>
