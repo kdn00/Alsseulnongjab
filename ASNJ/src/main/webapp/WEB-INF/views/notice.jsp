@@ -361,8 +361,8 @@
 											aria-hidden="true">&laquo;</span>
 									</a></li>
 									<c:forEach begin="1" end="${pageNum}" var="number">
-										<li class="page-item"><a
-											class="page-link <c:if test="${nownum == number}">active</c:if>"
+										<li class="page-item <c:if test="${nownum == number}">active</c:if>"><a
+											class="page-link"
 											href="Notice.do?num=${number}">${number}</a></li>
 									</c:forEach>
 									<li class="page-item"><a class="page-link"

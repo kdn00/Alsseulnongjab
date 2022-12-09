@@ -287,12 +287,12 @@ ul {
 						<c:choose>
 							<c:when
 								test="${fn:length(diseassearchlist) == 0 and fn:length(pestsearchlist) == 0}">
-								<li class="page-item"><a class="page-link" href="#">1</a></li>
+								<li class="page-item active"><a class="page-link" href="#">1</a></li>
 							</c:when>
 							<c:otherwise>
 								<c:forEach begin="1" end="${pageNum}" var="num">
-									<li class="page-item"><a
-										class="page-link <c:if test="${nownum == num}">active</c:if>"
+									<li class="page-item <c:if test="${nownum == num}">active</c:if>"><a
+										class="page-link"
 										href="SearchView.do?search=${search}&num=${num}">${num}</a></li>
 								</c:forEach>
 							</c:otherwise>

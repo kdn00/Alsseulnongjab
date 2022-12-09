@@ -94,7 +94,8 @@ input:focus::-webkit-input-placeholder {
 					type="text" name="search" name="search" placeholder="검색어를 입력하세요.">
 					<input type="hidden" name="num" value=1>
 				<button type="submit" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-3">검색</button>
-			</div>
+				</form>
+			</div>	
 			<c:choose>
 				<%-- 로그인 안 했을 때 --%>
 				<c:when test="${empty loginMember}">
