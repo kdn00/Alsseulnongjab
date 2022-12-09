@@ -261,7 +261,7 @@
 								<!-- 문의사항 시작 -->
 								<div class="container-fluid pt-4 px-4">
 									<h3><i class="bi bi-pen">문의사항</i></h3>
-									<div class="container" style="background-color: rgb(250, 255, 240); width: 100%; height: auto; border-radius: 1em; margin-top: 5px;">
+									<div class="container" style=" width: 100%; height: auto; border-radius: 1em; margin-top: 5px;">
 										<br>
 										<from action="">
 											<table class="table table-bordered caption-top" style="vertical-align: middle;">
@@ -269,8 +269,8 @@
 													<th>#</th>
 													<th >제목</th>
 													<th>내용</th>
-													<th style="width:110px;">작성날짜</th>
-													<th>삭제</th>
+													<th style="width:120px;">작성날짜</th>
+													<th style="width:120px;">삭제</th>
 												</thead>
 												<tbody>
 												<c:forEach items="${myquestionlist}" var="list" varStatus="status">

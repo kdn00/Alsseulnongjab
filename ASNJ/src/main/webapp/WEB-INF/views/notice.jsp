@@ -227,7 +227,7 @@
 									data-bs-parent="#accordionFlushExample">
 									<div class="accordion-body"
 										style="background-color: rgb(250, 255, 240);">
-										<span>방제력 업데이트 중입니다.</span>
+										<span>농작업 일정 업데이트 중입니다.</span>
 									</div>
 								</div>
 							</div>
@@ -374,7 +374,9 @@
 							<!-- 페이징 끝 --> </from>
 							<!-- 글쓰기 버튼 -->
 							<div class=" d-flex justify-content-end">
-								<button type="button" class="btn btn-sm btn-success bi bi-check-circle"	data-bs-toggle="modal" data-bs-target="#myModal">
+								<button type="button"
+									class="btn btn-sm btn-success bi bi-check-circle"
+									data-bs-toggle="modal" data-bs-target="#myModal">
 									<span> 글쓰기</span>
 								</button>
 							</div>
