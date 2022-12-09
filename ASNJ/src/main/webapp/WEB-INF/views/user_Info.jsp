@@ -87,9 +87,9 @@
 				class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
 				style="bottom: 0px;">
 				<a href="index.jsp" class="navbar-brand p-0">
-					<h1 class="m-0 text-white" style="font-style: italic;">
+					<h4 class="m-0 text-white" style="font-style: italic;">
 							<i class="fa me-3"></i> 알쓸농잡
-						</h1> <!-- <img src="img/logo.png" alt="Logo"> -->
+						</h4> <!-- <img src="img/logo.png" alt="Logo"> -->
 				</a>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -104,7 +104,7 @@
 							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">병해충
 								정보</a>
 							<div class="dropdown-menu m-0">
-								<a href="${cpath}/Disease.do" class="dropdown-item">병(病)</a>
+								<a href="${cpath}/Disease.do?disease_crops=고추" class="dropdown-item">병(病) 피해</a>
 							<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
 							</div>
 						</div>

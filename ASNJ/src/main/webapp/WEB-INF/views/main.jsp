@@ -200,11 +200,11 @@
 		<div class="row">
 			<div class="container-xxl bg-white p-0"
 				style="display: flex; justify-content: center; align-items: center;">
-				<div class="container-fluid pt-4 px-4">
+				<div class="container-fluid p-4 px-4">
 					<div style="margin-left: 10%;">
 						<div class="mx-auto" style="width: 200px;">
 							<div id="underline">
-								<h2>농잡업 일정</h2>
+								<h3>농작업 일정</h3>
 							</div>
 						</div>
 					</div>

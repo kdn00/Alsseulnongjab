@@ -136,12 +136,11 @@
 	
 	<!-- 사이트 타이틀 시작 -->
 	<div class="container-xxl bg-white p-0"	style="display: flex; justify-content: center; align-items: center; max-width: none;">
-		<div class="container-fluid pt-4 px-4">
+		<div class="container-fluid p-4 px-4">
 			<div class="mx-auto" style="width: 200px;">
 				<div id="underline">
 					<h3>사이트 소개</h3>
 				</div>
-				<br>
 			</div>
 		</div>
 	</div>
@@ -187,14 +186,14 @@
 		<br>
 		<br>
 		<!-- 여기까지 -->
+		
 		<!-- 프로젝트 소개 시작 -->
 		<div class="container-xxl bg-white p-0"	style="display: flex; justify-content: center; align-items: center; max-width: none;">
-			<div class="container-fluid pt-4 px-4">
+			<div class="container-fluid p-4 px-4">
 				<div class="mx-auto" style="width: 200px;">
 					<div id="underline">
 						<h3>프로젝트 소개</h3>
 				</div>
-				<br>
 			</div>
 		</div>
 	</div>
