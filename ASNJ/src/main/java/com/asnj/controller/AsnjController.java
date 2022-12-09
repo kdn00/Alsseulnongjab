@@ -307,8 +307,10 @@ public class AsnjController {
 	// 회원 삭제 기능
 	@GetMapping("/MemberDeletadmin.do")
 	public String MemberDeletadmin(Model model, int mem_pk, HttpSession session) {
-		int ques_pk = mapper.answerSelectmem(mem_pk);
-		mapper.answerDeleteMem(ques_pk);
+//		if(mapper.answerSelectmem(mem_pk) > 0) {
+//			int ques_pk = mapper.answerSelectmem(mem_pk);
+//			mapper.answerDeleteMem(ques_pk);
+//		}
 		mapper.questionDeleteMem(mem_pk);
 		int confirm = mapper.memberDelete(mem_pk);
 		if(confirm > 0) {
