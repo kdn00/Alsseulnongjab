@@ -234,17 +234,17 @@ ul {
 			<h2 style="display: inline-block;">일반정보</h2>
 			<hr>
 			<ul>
-				<li class="photoH5"><h3><strong>•&nbsp;발생환경</strong></h3></li>
-				<li class="article">${list.pest_state}</li>
+				<li class="photoH5"><h3>•&nbsp;발생환경</h3></li>
+				<li class="article"><strong>${list.pest_state}</strong></li>
 			</ul>
 			<ul>
-				<li class="photoH5"><h3><strong>•&nbsp;피해 증상</strong></h3></li>
-				<li class="article">${list.pest_harm}</li>
+				<li class="photoH5"><h3>•&nbsp;피해 증상</h3></li>
+				<li class="article"><strong>${list.pest_harm}</strong></li>
 			</ul>
 			<ul>
-				<li class="photoH5"><h3><strong>•&nbsp;방제방법</strong></h3></li>
+				<li class="photoH5"><h3>•&nbsp;방제방법</h3></li>
 				<%-- -를 기준으로 split, <br> 추가해서 forEach 걸기 --%>
-				<li class="article">${list.pest_solution}</li>
+				<li class="article"><strong>${list.pest_solution}</strong></li>
 			</ul>
 			<br>
 			<hr>

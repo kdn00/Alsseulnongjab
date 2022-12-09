@@ -231,17 +231,17 @@ ul {
 			<h2 style="display: inline-block;">일반정보</h2>
 			<hr>
 			<ul>
-				<li class="photoH5"><h3><strong>•&nbsp;발생환경</strong></h3></li>
-				<li class="article">${list.disease_environment}</li>
+				<li class="photoH5"><h3>•&nbsp;발생환경</h3></li>
+				<li class="article"><strong>${list.disease_environment}</strong></li>
 			</ul>
 			<ul>
-				<li class="photoH5"><h3><strong>•&nbsp;증상설명</h3></li>
-				<li class="article">${list.disease_symptom}</li>
+				<li class="photoH5"><h3>•&nbsp;증상설명</h3></li>
+				<li class="article"><strong>${list.disease_symptom}</strong></li>
 			</ul>
 			<ul>
-				<li class="photoH5"><h3><strong>•&nbsp;방제방법</h3></li>
+				<li class="photoH5"><h3>•&nbsp;방제방법</h3></li>
 				<%-- -를 기준으로 split, <br> 추가해서 forEach 걸기 --%>
-				<li class="article">${list.disease_solution}</li>
+				<li class="article"><strong>${list.disease_solution}</strong></li>
 			</ul>
 			<br>
 			<hr>
