@@ -241,8 +241,8 @@ ul {
 						<br>
 						<c:choose>
 							<c:when
-								test="${fn:length(diseassearchlist) == 0} && ${fn:length(pestsearchlist) == 0}">
-								<h2>빠른 시일 내에 정보를 등록하겠습니다. 죄송합니다.</h2>
+								test="${fn:length(diseassearchlist) == 0 and fn:length(pestsearchlist) == 0}">
+								<h4>빠른 시일 내에 정보를 등록하겠습니다. 죄송합니다.</h4>
 							</c:when>
 							<c:otherwise>
 								<%-- <h5>총 ${fn:length(diseassearchlist)}개의 게시글이 있습니다.</h5> --%>
