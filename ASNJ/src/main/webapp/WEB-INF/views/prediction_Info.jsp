@@ -207,7 +207,7 @@ ul {
 					<tbody>
 						<tr>
 							<td rowspan="4" colspan="2">
-							<img width="100%" height="240px" alt="" class="imagesize" src="${list.disease_imgpath}"  onerror="this.src='resources/image/img.png'"></td>
+							<img style="width: 100%; height: 280px;" alt="" class="imagesize" src="${list.disease_imgpath}"  onerror="this.src='resources/image/img.png'"></td>
 							<td style="text-align: center; width: 180px;vertical-align: middle;"><h3>•&nbsp;질병명</h3></td>
 							<td style="vertical-align: middle;"><h3 style="color: #5a5a5aba">${disease_name_split[0]}</h3></td>
 						</tr>
