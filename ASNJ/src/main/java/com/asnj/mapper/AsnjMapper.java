@@ -55,6 +55,12 @@ public interface AsnjMapper {
 	// 회원 삭제 및 탈퇴시 문의사항 삭제
 	public int questionDeleteMem(int mem_pk);
 	
+	// 회원의 문의 답변 찾기
+	public int answerSelectmem(int mem_pk);
+	
+	// 회원 삭제 및 탈퇴시 답변 삭제
+	public int answerDeleteMem(int ques_pk);
+	
 	// select 태그에 작물 넣기
 	public List<Disease> diseasecropSelect();
 	

@@ -91,12 +91,22 @@
     
     <!-- 답변 등록 -->
     <insert id="answerInsert" parameterType="com.asnj.entity.Answer">
-        insert into tb_comment_board(ques_pk, com_admin_id, com_answer) values(25, 'admin', #{com_answer})
+        insert into tb_comment_board(ques_pk, com_admin_id, com_answer) values(29, 'admin', #{com_answer})
     </insert>
     
     <!-- 회원 삭제시 문의사항 삭제 -->
     <delete id="questionDeleteMem">
         delete from tb_question_board where mem_pk=#{mem_pk}        
+    </delete>
+    
+    <!-- 회원 삭제시 답변 찾기 -->
+     <select id="answerSelectmem" parameterType="int" resultType="int">
+        select ques_pk from tb_question_board where mem_pk=#{mem_pk}  
+    </select>
+    
+    <!-- 회원 삭제시 답변 삭제 -->
+    <delete id="answerDeleteMem">
+        delete from tb_comment_board where ques_pk=#{ques_pk}        
     </delete>
     
     <!-- 문의사항 삭제 -->

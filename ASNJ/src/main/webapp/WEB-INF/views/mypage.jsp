@@ -51,6 +51,15 @@
 	color: #50D050 !important;
 }
 </style>
+
+<script type="text/javascript">
+	function Delete(mem_pk){
+		location.href="MemberDelet.do?mem_pk="+mem_pk;
+		}
+	function QDel(ques_pk, mem_pk){
+		location.href="QuestionDelete.do?ques_pk="+ques_pk+"&mem_pk="+mem_pk;
+		}
+</script>
 </head>
 
 <body>
@@ -280,7 +289,7 @@
 														<td>${list.ques_title}</td>
 														<td>${list.ques_content}</td>
 														<td>${ques_time}</td>
-														<td align="center"><button type="button" class="btn-sm btn-danger">삭제</button></td>
+														<td align="center"><button type="button" class="btn-sm btn-danger" onclick="QDel(${list.ques_pk}, ${list.mem_pk})">삭제</button></td>
 													</tr>
 												</c:forEach>
 												</tbody>
