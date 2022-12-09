@@ -45,22 +45,22 @@
 					<a href="index.jsp"><img src="resources/img/logo/logo2.png"></a>
 				</div>	
 				<br>
-					<h2 class="text-center">알쓸농잡에 오신것을 환영합니다.</h2>
+					<h4 class="text-center">알쓸농잡에 오신것을 환영합니다.</h4>
 					<br>
-					<h3 class="text-center" style="font-weight: 100 !important;">알쓸농잡 로그인</h3>
+					<h5 class="text-center" style="font-weight: 100 !important;">알쓸농잡 로그인</h5>
 					<hr>
 					<br>
 					<br>
 							<form class="form-inline" action="Login.do" method="post">
 								<div class="form-floating mb-3">
-									<input type="text" class="form-control" name="mem_user_id" id="mem_user_id" placeholder="name@example.com" style="font-size: 30px;">
+									<input type="text" class="form-control" name="mem_user_id" id="mem_user_id" placeholder="name@example.com">
 									<label for="floatingInput">아이디 </label>
 								</div>
 								<div class="form-floating mb-3">
-									<input type="password" class="form-control" name="mem_user_pw" id="mem_user_pw" placeholder="비밀번호를 입력하세요." style="font-size: 30px;">
+									<input type="password" class="form-control" name="mem_user_pw" id="mem_user_pw" placeholder="비밀번호를 입력하세요.">
 									<label for="floatingPassword">비밀번호</label>
 								</div>
-									<button type="submit" class="btn btn-sm btn-success py-3 w-100 mb-4" style="font-size: 25px;">로그인</button>
+									<button type="submit" class="btn btn-sm btn-success py-3 w-100 mb-4">로그인</button>
 							</form>
 							<p class="text-center mb-0">
 								Don't have an Account? <a href="${cpath}/Joinpage.do">회원가입</a>

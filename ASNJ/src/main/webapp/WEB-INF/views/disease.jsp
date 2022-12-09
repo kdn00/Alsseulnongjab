@@ -182,13 +182,14 @@ ul {
 
 	<!-- 병 피해 내용 시작 -->
 	<div id="themecast" class="container-xxl p-0 ml-5">
-		<div>
+		
 			<!-- 작물 카테고리 -->
 			<c:choose>
 				<c:when test="${diseaselist ne null}">
 					<c:forEach items="${diseaselist}" var="crops" end="0">
+					
 						<div class="main_category row align-items-center table table-hover"
-							style="text-align: center; width: 80%; margin: auto;">
+							style="text-align: center; width: 90%; margin: auto;">
 							<div id="NM_THEME_CATE_GROUPS" class="group_category"
 								data-demo-key="default">
 								<div class="mt-5 d-flex justify-content-center">
@@ -198,15 +199,17 @@ ul {
 									<h2 style="color: #04aa5d; display: inline-block;">${crops.disease_crops}</h2>
 									<h3 style="display: inline-block;">" 작물의 질병 정보입니다.</h3>
 								</div>
-								<div class="row list_category_wrap" style="align-items: center; display: flex; justify-content: space-around; margin-right: 70px;">
+								<div class="row list_category_wrap" 
+								style="align-items: center; display: flex; justify-content: space-evenly; flex-wrap: nowrap; margin-right: 70px;">
 									<div class="col-sm-2"
 										style="text-align: center; margin-left: 14%">
 										<h3 class="searchTitle" style="display: inline-block;">작물
 											선택</h3>
 										<i class="bi bi-chevron-double-right"></i>
 									</div>
-									<div class="col-sm-7" style="display:contents;">
-										<form action="${cpath}/Disease.do" method="get"	style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;">
+									<div class="col-sm-7">
+										<form action="${cpath}/Disease.do" method="get"	
+										style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;">
 											<input class="form-check-input" type="radio"
 												name="disease_crops" id="고추" value="고추"
 												<c:if test="${crops.disease_crops eq '고추'}" > checked="checked" </c:if>>
@@ -296,7 +299,7 @@ ul {
 			<!-- 개별 링크 클릭 코드 -->
 
 		</div>
-	</div>
+	
 
 	<!-- 내용 끝 -->
 

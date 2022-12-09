@@ -192,7 +192,7 @@ ul {
 				<c:forEach items="${pestlist}" var="crops" end="0">
 
 					<div class="main_category row align-items-center table table-hover"
-						style="text-align: center; width: 80%; margin: auto;">
+						style="text-align: center; width: 90%; margin: auto;">
 						<!-- <div class="w-25 p-4 m-5 col-md-auto flex-fill"> -->
 						<div id="NM_THEME_CATE_GROUPS" class="group_category"
 							data-demo-key="default">
@@ -203,14 +203,15 @@ ul {
 								<h2 style="color: #04aa5d; display: inline-block;">${crops.pest_crops}</h2>
 								<h3 style="display: inline-block;">" 작물의 해충 정보입니다.</h3>								
 							</div>
-							<div class="row list_category_wrap" style="align-items: center; display: flex; justify-content: space-around; margin-right: 70px;">
+							<div class="row list_category_wrap" 
+							style="align-items: center; display: flex; justify-content: space-evenly; flex-wrap: nowrap; margin-right: 70px;">
 								<div class="col-sm-2"
 									style="text-align: center; margin-left: 14%">
 									<h3 class="searchTitle" style="display: inline-block;">작물
 										선택</h3>
 									<i class="bi bi-chevron-double-right"></i>
 								</div>
-								<div class="col-sm-7" style="display:contents;">
+								<div class="col-sm-7">
 									<form action="${cpath}/Pests.do" method="get"
 										style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;">
 										<input class="form-check-input" type="radio" name="pest_crops"

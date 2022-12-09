@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
 
 <!-- Icon Font Stylesheet -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"	rel="stylesheet">
@@ -98,27 +98,27 @@
 					<a href="index.jsp"><img src="resources/img/logo/logo2.png"></a>
 				</div>	
 				<br>
-					<h2 class="text-center">알쓸농잡에 오신것을 환영합니다.</h2>
+					<h4 class="text-center">알쓸농잡에 오신것을 환영합니다.</h4>
 					<br>
-					<h3 class="text-center" style="font-weight: 100 !important;">알쓸농잡 회원가입</h3>
+					<h5 class="text-center" style="font-weight: 100 !important;">알쓸농잡 회원가입</h5>
 					<hr>
 					<br>
 					<br>
 					<form class="form-inline" action="${cpath}/Join.do" method="post">
 						<div class="form-floating mb-3">
-							<input type="text" class="form-control" name="mem_user_id" id="mem_user_id" style="font-size: 30px;">
+							<input type="text" class="form-control" name="mem_user_id" id="mem_user_id">
 							<label for="mem_user_id">ID</label>
 						</div>
 						<div class="form-floating mb-3">
-							<input type="password" class="form-control" name="mem_user_pw" id="mem_user_pw" style="font-size: 30px;">
+							<input type="password" class="form-control" name="mem_user_pw" id="mem_user_pw">
 							<label for="mem_user_pw">Password</label>
 						</div>
 						<div class="form-floating mb-3">
-							<input type="text" class="form-control" name="mem_user_name" id="mem_user_name" style="font-size: 30px;">
+							<input type="text" class="form-control" name="mem_user_name" id="mem_user_name">
 							<label for="mem_user_name">닉네임</label>
 						</div>
 						<div class="form-floating mb-3">
-							<input type="email" class="form-control" name="mem_user_email" id="mem_user_email" style="font-size: 30px;">
+							<input type="email" class="form-control" name="mem_user_email" id="mem_user_email">
 							<label for="mem_user_email">이메일</label>
 						</div>
 						<li>직업</li>
@@ -131,14 +131,13 @@
 							<label class="form-check-label" for="mem_user_job"> 홈가드닝 </label>
 						</div>
 						<br>
-						<button type="submit" class="btn btn-sm btn-success py-3 w-100 mb-4" style="font-size: 25px;">회원가입</button>
+						<button type="submit" class="btn btn-sm btn-success py-3 w-100 mb-4"">회원가입</button>
 						<p class="text-center mb-0">Already have an Account? <a href="${cpath}/Loginpage.do">로그인</a></p>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
-	</div>
+	
 </body>
 </html>
