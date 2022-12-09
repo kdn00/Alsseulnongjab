@@ -202,7 +202,7 @@ ul {
 								<h3 style="float: left; display: flex;">
 									<i class="bi bi-info-circle" style="margin-right: 20px;"></i>&nbsp;"
 								</h3>
-								<h2 style="color: #04aa5d; display: inline-block;">${search}</h2>
+								<h2 style="color: #04aa5d; display: inline-block;">&nbsp;${search}</h2>
 								<h3 style="display: inline-block;">"&nbsp;에 대한 게시글이 없습니다.</h3>
 							</c:when>
 							<c:otherwise>
