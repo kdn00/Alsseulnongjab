@@ -1,6 +1,14 @@
 package com.asnj.controller;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -12,9 +20,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.asnj.entity.Answer;
 import com.asnj.entity.Disease;
 import com.asnj.entity.Member;
+import com.asnj.entity.Paging;
 import com.asnj.entity.Pest;
 import com.asnj.entity.Question;
 import com.asnj.mapper.AsnjMapper;
@@ -41,25 +53,98 @@ public class AsnjController {
 	}
 	
 	// 검색페이지 이동
-	@GetMapping("/SearchView.do")
-	public String SearchView(Model model, String search) {
-		System.out.print("search_View.jsp로 이동\n");
-		List<Disease> diseassearchlist = mapper.diseaseSearch(search);
-		List<Pest> pestsearchlist = mapper.pestSearch(search);
-		model.addAttribute("search", search);
-		model.addAttribute("diseassearchlist", diseassearchlist);
-		model.addAttribute("pestsearchlist", pestsearchlist);
-		return "search_View";
-	}	
+//	@GetMapping("/SearchView.do")
+//	public String SearchView(Model model, String search) {
+//		System.out.print("search_View.jsp로 이동\n");
+//		List<Disease> diseassearchlist = mapper.diseaseSearch(search);
+//		List<Pest> pestsearchlist = mapper.pestSearch(search);
+//		model.addAttribute("search", search);
+//		model.addAttribute("diseassearchlist", diseassearchlist);
+//		model.addAttribute("pestsearchlist", pestsearchlist);
+//		return "search_View";
+//	}
 	
-	// 커뮤니티(문의사항)
+	// 검색페이지 이동 + 페이징 추가
+	@GetMapping("/SearchView.do")
+	public String SearchView(Model model, String search, @RequestParam("num") int num) throws Exception {
+	 // 게시물 총 갯수
+	 int count = mapper.searchCountD(search) + mapper.searchCountP(search);
+	 // 한 페이지에 출력할 게시물 갯수
+	 int endnum = 4;
+	 // 하단 페이징 번호 ([ 게시물 총 갯수 ÷ 한 페이지에 출력할 갯수 ]의 올림)
+	 int pageNum = (int)Math.ceil((double)count/endnum);
+	 // 출력할 게시물
+	 int startnum = (num - 1) * endnum;
+	 Paging vo = new Paging();
+	 vo.setStartnum(startnum);
+	 vo.setEndnum(endnum); 
+	 
+	 // vo 파일에 페이지 번호와 검색어 셋팅하기
+	 Disease disease = new Disease();
+	 disease.setStartnum(startnum);
+	 disease.setEndnum(endnum);
+	 disease.setSearch(search);
+	
+	 // vo 파일에 페이지 번호와 검색어 셋팅하기
+	 Pest pest = new Pest();
+	 pest.setStartnum(startnum);
+	 pest.setEndnum(endnum);
+	 pest.setSearch(search);
+	 
+	 List<Disease> diseassearchlist =  mapper.diseasePagingSearch(disease);
+	 List<Pest> pestsearchlist = mapper.pestPagingSearch(pest);
+	 
+	 model.addAttribute("search", search);
+	 model.addAttribute("diseassearchlist", diseassearchlist);
+	 model.addAttribute("pestsearchlist", pestsearchlist);
+	 model.addAttribute("pageNum", pageNum);
+	 model.addAttribute("nownum", num);
+	 
+	 return "search_View";
+	}
+	
+//	// 커뮤니티(문의사항)
+//	@GetMapping("/Notice.do")
+//	public String Notice(Model model) {
+//		System.out.print("notice.jsp로 이동\n");
+//		List<Question> questionlist = mapper.questionSelect();
+//		model.addAttribute("questionlist", questionlist);
+//		return "notice";
+//	}
+	
+	// 게시물 목록 + 페이징 추가
 	@GetMapping("/Notice.do")
-	public String Notice(Model model) {
-		System.out.print("notice.jsp로 이동\n");
-		List<Question> questionlist = mapper.questionSelect();
-		model.addAttribute("questionlist", questionlist);
-		
-		return "notice";
+	public String getListPage(Model model, String key, @RequestParam("num") int num) throws Exception {
+	 
+	 // 게시물 총 갯수
+	 int count = mapper.questionCount();
+	  
+	 // 한 페이지에 출력할 게시물 갯수
+	 int endnum = 4;
+	  
+	 // 하단 페이징 번호 ([ 게시물 총 갯수 ÷ 한 페이지에 출력할 갯수 ]의 올림)
+	 int pageNum = (int)Math.ceil((double)count/endnum);
+	
+	 // 출력할 게시물
+	 int startnum = (num - 1) * endnum;
+
+	 Paging vo = new Paging();
+	 vo.setStartnum(startnum);
+	 vo.setEndnum(endnum);
+	 
+	 List<Question> list = mapper.questionPagingSelect(vo);
+	 
+	 System.out.println();
+	 ArrayList<Answer> answerlist = new ArrayList<Answer>();
+	 for(int i=0; i<list.size(); i++) {
+		 answerlist.add(mapper.answerSelect(list.get(i).getQues_pk()));
+	 }
+	 model.addAttribute("questionlist", list);   
+	 model.addAttribute("answerlist", answerlist); 
+	 model.addAttribute("pageNum", pageNum);
+	 model.addAttribute("nownum", num);
+	 
+	 return "notice";
 	}
 
 	// 문의사항 글쓰기
@@ -68,15 +153,41 @@ public class AsnjController {
 		int confirm = mapper.questionInsert(vo);
 		if(confirm > 0) {
 			model.addAttribute("msg", "문의 등록 성공!\\n"+vo.getQues_user_id()+"님의 문의에 빠른 답변 드리겠습니다.");
-    		model.addAttribute("url", "Notice.do");
+    		model.addAttribute("url", "Notice.do?num=1");
 		} else {
 			model.addAttribute("msg", "문의사항 등록 실패!");
-    		model.addAttribute("url", "Notice.do");
+    		model.addAttribute("url", "Notice.do?num=1");
 		}
 		return "alert";
 	}
 	
 	// 문의사항 삭제
+	@GetMapping("/QuestionDelete.do")
+	public String QuestionDelete(Model model, int ques_pk, int mem_pk) {
+		int confirm = mapper.questionDelete(ques_pk);
+		if(confirm > 0) {
+			model.addAttribute("msg", "문의사항 삭제 성공!");
+    		model.addAttribute("url", "Mypage.do?mem_pk="+mem_pk);
+		} else {
+			model.addAttribute("msg", "문의사항 삭제 실패!\\n다시 시도해주세요!");
+    		model.addAttribute("url", "Mypage.do?mem_pk="+mem_pk);
+		}
+		return "alert";
+	}
+
+	// 문의사항 답변
+	@PostMapping("/AnswerInsert.do")
+	public String AnswerInsert(Model model, Answer answer) {
+		int confirm = mapper.answerInsert(answer);
+		if(confirm > 0) {
+			model.addAttribute("msg", "문의사항 답변 성공!");
+    		model.addAttribute("url", "Notice.do?num=1");
+		} else {
+			model.addAttribute("msg", "문의사항 답변 실패!\\n오류코드 찾아오세요!");
+    		model.addAttribute("url", "Notice.do?num=1");
+		}
+		return "alert";
+	}
 	
 	
 	// 농업일지 띄우기
@@ -91,26 +202,6 @@ public class AsnjController {
 	public String Prediction() {
 		System.out.print("prediction.jsp로 이동\n");
 		return "prediction";
-	}
-	
-	// 병해충 분석 결과로 이동
-	@GetMapping("/Predictionresult.do")
-	public String Predictionresult(Model model, String result) {
-
-		if(result.equals("정상")) {
-			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n다른 병해충 사진을 업로드 해주세요!");
-			model.addAttribute("url", "Prediction.do");
-			
-		} else if(result.equals("탄저병") || result.equals("흰가루병")) {
-			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n해당 질병 정보 페이지로 이동합니다.");
-//			int disease_pk = mapper.질병기본키검색매퍼만들기;
-			model.addAttribute("url", "PredictionInfoPage.do?disease_pk=63");
-		} else {
-			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n해당 해충 정보 페이지로 이동합니다.");
-//			int pest_pk = mapper.해충기본키검색매퍼만들기;
-			model.addAttribute("url", "PestInfoPage.do?pest_pk=11");
-		}
-		return "alert";
 	}
 	
 	// 질병 페이지
@@ -207,6 +298,37 @@ public class AsnjController {
 		return "mypage";
 	}
 	
+	// 회원 탈퇴 기능
+	@GetMapping("/MemberDelet.do")
+	public String MemberDelet(Model model, int mem_pk, HttpSession session) {
+		mapper.questionDeleteMem(mem_pk);
+		int confirm = mapper.memberDelete(mem_pk);
+		if(confirm > 0) {
+			session.removeAttribute("loginMember");
+			model.addAttribute("msg", "회원 정보 삭제 성공!\\n다음에 또 뵈어요!");
+    		model.addAttribute("url", "Mainpage.do");
+		} else {
+			model.addAttribute("msg", "회원 정보 삭제 실패!");
+    		model.addAttribute("url", "Mainpage.do");
+		}
+		return "alert";	
+	}
+	
+	// 회원 삭제 기능
+	@GetMapping("/MemberDeletadmin.do")
+	public String MemberDeletadmin(Model model, int mem_pk, HttpSession session) {
+		mapper.questionDeleteMem(mem_pk);
+		int confirm = mapper.memberDelete(mem_pk);
+		if(confirm > 0) {
+			model.addAttribute("msg", "회원 정보 삭제 성공!");
+    		model.addAttribute("url", "UserInfo.do");
+		} else {
+			model.addAttribute("msg", "회원 정보 삭제 실패!");
+    		model.addAttribute("url", "UserInfo.do");
+		}
+		return "alert";	
+	}
+	
 	// 로그인 기능
 	@PostMapping("/Login.do")
 	public String Login(Model model, Member mem, HttpServletRequest request) {
@@ -250,6 +372,47 @@ public class AsnjController {
 		session.removeAttribute("loginMember");
 		model.addAttribute("msg", "로그아웃 성공, 즐거운 하루 되세요😎!");
 		model.addAttribute("url", "index.jsp");
+		return "alert";
+	}
+	
+//	// 병해충 분석 결과로 이동
+//	@GetMapping("/Predictionresult.do")
+//	public String Predictionresult(Model model, String result) {
+//		result = "꽃노랑총채벌레";
+//		if(result.equals("정상")) {
+//			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n다른 병해충 사진을 업로드 해주세요!");
+//			model.addAttribute("url", "Prediction.do");
+//			
+//		} else if(result.equals("탄저병") || result.equals("흰가루병")) {
+//			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n해당 질병 정보 페이지로 이동합니다.");
+//			int disease_pk = mapper.PreDiseasePK(result);
+//			model.addAttribute("url", "PredictionInfoPage.do?disease_pk="+disease_pk);
+//		} else {
+//			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n해당 해충 정보 페이지로 이동합니다.");
+//			int pest_pk = mapper.PrePestPK(result);
+//			model.addAttribute("url", "PestInfoPage.do?pest_pk="+pest_pk);
+//		}
+//		return "alert";
+//	}
+	
+	// 병해충 분석 결과로 이동
+	@GetMapping("/Predictionresult.do")
+	public String Predictionresult(Model model, String result) {	
+		// 받아온 값 처리
+		if(result.equals("정상")) {
+			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n다른 병해충 사진을 업로드 해주세요!");
+			model.addAttribute("url", "Prediction.do");
+			
+		} else if(result.equals("탄저병") || result.equals("흰가루병")) {
+			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n해당 질병 정보 페이지로 이동합니다.");
+			int disease_pk = mapper.PreDiseasePK(result);
+			model.addAttribute("url", "PredictionInfoPage.do?disease_pk="+disease_pk);
+		} else {
+			model.addAttribute("msg", "분석 성공! 결과는 "+result+"입니다.\\n해당 해충 정보 페이지로 이동합니다.");
+			int pest_pk = mapper.PrePestPK(result);
+			model.addAttribute("url", "PestInfoPage.do?pest_pk="+pest_pk);
+		}
+		
 		return "alert";
 	}
 
