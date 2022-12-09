@@ -265,23 +265,23 @@ ul {
 									<tbody class="container">
 										<tr class="row" style="float: left;">
 											<td class="col p-2 m-2" rowspan="2">
-												<img alt="${list.pest_imgpath}" src="${list.pest_imgpath}" onerror="this.src='resources/image/img.png'"><br>
+												<img class="imgMore" alt="${list.pest_imgpath}" src="${list.pest_imgpath}" onerror="this.src='resources/image/img.png'"><br>
 												<strong>${list.pest_imginfo}</strong>
 											</td>
 											<td class="col p-2 m-2" rowspan="2">
-												<img alt="${list.pest_imginfo2}" src="${list.pest_imgpath2}" onerror="this.src='resources/image/img.png'"><br>
+												<img class="imgMore" alt="${list.pest_imginfo2}" src="${list.pest_imgpath2}" onerror="this.src='resources/image/img.png'"><br>
 												<strong>${list.pest_imginfo2}</strong>
 											</td>
 											<td class="col p-2 m-2" rowspan="2">
-												<img alt="${list.pest_imginfo3}" src="${list.pest_imgpath3}" onerror="this.src='resources/image/img.png'"><br>
+												<img class="imgMore" alt="${list.pest_imginfo3}" src="${list.pest_imgpath3}" onerror="this.src='resources/image/img.png'"><br>
 												<strong>${list.pest_imginfo3}</strong>
 											</td>
 											<td class="col p-2 m-2" rowspan="2">
-												<img alt="${list.pest_imginfo4}"	src="${list.pest_imgpath4}" onerror="this.src='resources/image/img.png'"><br>
+												<img class="imgMore" alt="${list.pest_imginfo4}" src="${list.pest_imgpath4}" onerror="this.src='resources/image/img.png'"><br>
 											<strong>${list.pest_imginfo4}</strong>
 											</td>
 											<td class="col p-2 m-2" rowspan="2">
-												<img alt="${list.pest_imginfo5}" src="${list.pest_imgpath5}" onerror="this.src='resources/image/img.png'"><br>
+												<img class="imgMore" alt="${list.pest_imginfo5}" src="${list.pest_imgpath5}" onerror="this.src='resources/image/img.png'"><br>
 												<strong>${list.pest_imginfo5}</strong>
 											</td>
 										</tr>																			
@@ -323,6 +323,15 @@ ul {
 	</div>
 	<!-- 푸터 끝 -->
 
+	<!-- 이미지 클릭 시 새창으로 -->
+	<script type="text/javascript">
+		var img = document.getElementsByClassName("imgMore");
+		for (var x = 0; x < img.length; x++) {
+			img.item(x).onclick = function() {
+				window.open(this.src)				
+			};
+		}
 	</script>
+	
 </body>
 </html>

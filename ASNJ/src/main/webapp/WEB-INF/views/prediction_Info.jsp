@@ -263,25 +263,25 @@ ul {
 									style="display: flex !important; align-items: center; flex-wrap: wrap;">
 									<tbody class="container">
 										<tr class="row" style="float: left;">
-											<td class="col p-2 m-2" rowspan="2"><img alt="${list.disease_imginfo}" src="${list.disease_imgpath}"
+											<td class="col p-2 m-2" rowspan="2"><img class="imgMore" alt="${list.disease_imginfo}" src="${list.disease_imgpath}"
 												onerror="this.src='resources/image/img.png'" style="width: 100%; height: 240px;"><br>
 												<strong>${list.disease_imginfo}</strong></td>
-											<td class="col p-2 m-2" rowspan="2"><img
+											<td class="col p-2 m-2" rowspan="2"><img class="imgMore"
 												alt="${list.disease_imginfo2}"
 												src="${list.disease_imgpath2}"
 												onerror="this.src='resources/image/img.png'" style="width: 100%; height: 240px;"><br>
 												<strong>${list.disease_imginfo2}</strong></td>
-											<td class="col p-2 m-2" rowspan="2"><img
+											<td class="col p-2 m-2" rowspan="2"><img class="imgMore"
 												alt="${list.disease_imginfo3}"
 												src="${list.disease_imgpath3}"
 												onerror="this.src='resources/image/img.png'" style="width: 100%; height: 240px;"><br>
 												<strong>${list.disease_imginfo3}</strong></td>
-											<td class="col p-2 m-2" rowspan="2"><img
+											<td class="col p-2 m-2" rowspan="2"><img class="imgMore"
 												alt="${list.disease_imginfo4}"
 												src="${list.disease_imgpath4}"
 												onerror="this.src='resources/image/img.png'" style="width: 100%; height: 240px;"><br>
 												<strong>${list.disease_imginfo4}</strong></td>
-											<td class="col p-2 m-2" rowspan="2"><img
+											<td class="col p-2 m-2" rowspan="2"><img class="imgMore"
 												alt="${list.disease_imginfo5}"
 												src="${list.disease_imgpath5}"
 												onerror="this.src='resources/image/img.png'" style="width: 100%; height: 240px;"><br>
@@ -325,6 +325,15 @@ ul {
 	</div>
 	<!-- 푸터 끝 -->
 
+	<!-- 이미지 클릭 시 새창으로 -->
+	<script type="text/javascript">
+		var img = document.getElementsByClassName("imgMore");
+		for (var x = 0; x < img.length; x++) {
+			img.item(x).onclick = function() {
+				window.open(this.src)				
+			};
+		}
 	</script>
+	
 </body>
 </html>
