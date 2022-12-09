@@ -193,14 +193,13 @@
                         <input id="fileName"
                            class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5"
                            type="text" placeholder="파일명">
-                        <button type="submit"
-                           class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-4">전송</button>
+                        <button type="submit" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-4" style="font-weight: bolder;"><i class="bi bi-cloud-arrow-up"></i>&nbsp;전송</button>
                      </div>
                   </div>
                </div>
 					<br>
 					<div>
-						<button type="reset" id="reset" class="btn btn-warning">초기화</button>
+						<button type="reset" id="reset" class="btn btn-warning text-white" style="font-weight: bolder; background-color: #fb9200"><i class="bi bi-arrow-clockwise"></i>&nbsp;초기화</button>
 					</div>
 				</form>
 				<!-- 이미지 전송 폼 -->

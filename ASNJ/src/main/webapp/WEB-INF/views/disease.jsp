@@ -236,7 +236,7 @@ ul {
 											<label class="form-check-label" for="호박">호박</label>
 
 											<span style="margin-left: 30px;">
-												<button type="submit" class="btn btn-outline-success searchTitle m-2">
+												<button type="submit" class="btn btn-outline-success searchTitle m-2" style="font-weight: bolder;">
 													<i class="bi bi-hand-index-thumb" style="margin-right: 5px;"></i>보기
 												</button>
 											</span>

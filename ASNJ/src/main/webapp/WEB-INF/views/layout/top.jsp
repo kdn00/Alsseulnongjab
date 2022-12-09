@@ -19,16 +19,13 @@
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
 	rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
-<link
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
 	rel="stylesheet">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
 	rel="stylesheet">
 
 <!-- Libraries Stylesheet -->
@@ -89,11 +86,11 @@ input:focus::-webkit-input-placeholder {
 			<!-- 검색창 -->
 			<div class="col-6 flex-grow position-relative w-40 my-3 wow fadeInUp" data-wow-delay="0.3s" style="margin-right: 16px;">
 				<form action="${cpath}/SearchView.do" method="get">
-				<input id="searchInput"
-					class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
+				<input id="searchInput"	class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
 					type="text" name="search" name="search" placeholder="검색어를 입력하세요.">
 					<input type="hidden" name="num" value=1>
-				<button type="submit" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-3">검색</button>
+				<button type="submit" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-4" style="font-weight: bolder;">
+				<img alt="" src="resources/image/search-heart.png" style="width: 20px; height: 20px;">검색</button>
 				</form>
 			</div>	
 			<c:choose>
@@ -103,10 +100,10 @@ input:focus::-webkit-input-placeholder {
 						style="display: inline-block; min-width: max-content;">
 						<div class="header__login" style="margin-right: 10px;">
 							<a href="${cpath}/Joinpage.do"
-								class="btn btn-outline-success bi bi-person-circle"> 회원가입</a> <a
+								class="btn btn-outline-success bi bi-person-circle" style="font-weight: bolder;"> 회원가입</a> <a
 								href="${cpath}/Loginpage.do"
 								class="btn btn-outline-success bi bi-person"
-								style="margin-left: 30px;"> 로그인</a>
+								style="margin-left: 30px; font-weight: bolder;"> 로그인</a>
 						</div>
 					</div>
 				</c:when>
@@ -119,7 +116,7 @@ input:focus::-webkit-input-placeholder {
 							<p style="margin-bottom: 0px;">
 								<span style="font-size: x-large; font-weight: bolder; color: #537f07;">${loginMember.mem_user_name}</span>&nbsp;님
 							</p>어서오세요!</label>&nbsp;&nbsp;
-							 <a href="${cpath}/Logout.do" class="btn btn-outline-success bi bi-door-open"></i>로그아웃</a>
+							 <a href="${cpath}/Logout.do" class="btn btn-outline-success bi bi-door-open" style="font-weight: bolder;"></i>로그아웃</a>
 						</div>
 					</div>
 				</c:otherwise>

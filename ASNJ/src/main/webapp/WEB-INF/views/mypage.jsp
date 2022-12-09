@@ -164,11 +164,11 @@
 					<ul class="nav nav-tabs nav-justified nav-pills nav-fill">
 						<li class="nav-item">
 							<a class="nav-link active"	data-bs-toggle="tab" href="#info">
-								<h4 class="note-tab" style="color: currentcolor;">개인정보</h4></a>
+								<h4 class="note-tab" style="color: currentcolor;"><i class="bi bi-file-lock2"></i>&nbsp;개인정보</h4></a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" data-bs-toggle="tab" href="#actlist">
-								<h4 class="note-tab" style="color: currentcolor;">활동내역</h4>
+								<h4 class="note-tab" style="color: currentcolor;"><i class="bi bi-clipboard-data"></i>&nbsp;활동내역</h4>
 							</a>
 						</li>
 					</ul>
@@ -244,10 +244,10 @@
 									</tbody>
 								</table>
 								<!-- send -->
-								<div style="justify-content: center; margin-left: 40%;">
-									<button class="btn btn-success" style="width:100px; " type="submit" id="button-addon4">저장</button>
-									&nbsp; &nbsp;
-									<button class="btn btn-success" type="submit" id="button-addon5">회원탈퇴</button>
+								<div style="display:flex; justify-content: center; align-items: center;">
+									<button class="btn btn-success" style="width:100px; " type="submit" id="button-addon4"><i class="bi bi-inboxes"></i>&nbsp;저장</button>
+									&nbsp; &nbsp;&nbsp; &nbsp;
+									<button class="btn btn-success" type="submit" id="button-addon5"><i class="bi bi-emoji-frown"></i>&nbsp;회원탈퇴</button>
 								</div>
 							</form>
 						</div>
