@@ -121,7 +121,7 @@ ul {
 										<div class="dropdown-menu m-0">
 											<a href="${cpath}/Disease.do?disease_crops=고추"
 												class="dropdown-item">병(病) 피해</a>
-												<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
+												<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item active">해충 피해</a>
 										</div>
 									</div>
 									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
@@ -141,7 +141,7 @@ ul {
 										<div class="dropdown-menu m-0">
 											<a href="${cpath}/Disease.do?disease_crops=고추"
 												class="dropdown-item">병(病) 피해</a>
-									<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item">해충 피해</a>
+									<a href="${cpath}/Pests.do?pest_crops=고추" class="dropdown-item active">해충 피해</a>
 									</div>
 									</div>
 									<a href="${cpath}/Diary.do" class="nav-item nav-link">농업일지</a>
@@ -170,7 +170,7 @@ ul {
 		<div class="container-fluid p-4 px-4">
 			<div class="mx-auto" style="width: 200px;">
 				<div id="underline">
-					<h3 style="margin-bottom: 0px;">병해충 정보</h3>
+					<h3 style="margin-bottom: 0px;">해충 정보</h3>
 				</div>				
 			</div>
 		</div>
