@@ -201,7 +201,7 @@
 			<div class="container-xxl bg-white p-0"
 				style="display: flex; justify-content: center; align-items: center;">
 				<div class="container-fluid p-4 px-4">
-					<div style="margin-left: 10%;">
+					<div style="margin-left: 30px;">
 						<div class="mx-auto" style="width: 200px;">
 							<div id="underline">
 								<h3>농작업 일정</h3>
