@@ -1,4 +1,4 @@
-<!-- 제일 위나 산출문서 부분 아래에 내 역할 작성하기 -->
+<!-- 제일 위나 산출문서 부분 아래에 내 역할 작성하기 -->   
 <!-- 
 ![header](https://capsule-render.vercel.app/api?type=transparent&height=100&text=나의%20역할%20:%20Java,%20Python,%20DB&fontColor=0055ff&fontSize=50)
 ### 1. Java와 Python를 사용해 웹 서비스의 백엔드 기능 구현
