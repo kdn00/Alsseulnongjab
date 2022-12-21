@@ -69,7 +69,13 @@
   - DB 요구사항 분석서
   - 테이블 명세서
   - 화면 설계서
-  - 빅데이터 분석서
+  - 빅데이터 분석서   
+
+![11](https://user-images.githubusercontent.com/89984853/208929841-ca4b5385-b699-476a-9aef-3a0038c085cb.jpg)
+![12](https://user-images.githubusercontent.com/89984853/208929871-ed410796-403d-435a-b246-b257c93c9a22.jpg)
+![13](https://user-images.githubusercontent.com/89984853/208929882-a237d598-0688-4768-bb7c-243c492830d2.jpg)
+![14](https://user-images.githubusercontent.com/89984853/208929890-55bb9d44-f612-483b-b009-c51c3d1c2a59.jpg)
+![15](https://user-images.githubusercontent.com/89984853/208929896-fcd1fdba-d3c4-4ec4-8797-2b276628f33b.jpg)
 
 ---
 
